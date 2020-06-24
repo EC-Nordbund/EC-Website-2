@@ -26,19 +26,19 @@
 </template>
 <script>
 export default {
-  async asyncData({$content}) {
-    const  [
+  async asyncData({ $content }) {
+    const [
       kontakt,
       mitarbeiter,
       mitglieder,
       teilnehmer,
-      website
+      website,
     ] = await Promise.all([
       $content('datenschutz/kontakt').fetch(),
       $content('datenschutz/mitarbeiter').fetch(),
       $content('datenschutz/mitglieder').fetch(),
       $content('datenschutz/teilnehmer').fetch(),
-      $content('datenschutz/website').fetch()
+      $content('datenschutz/website').fetch(),
     ])
 
     return {
@@ -46,13 +46,13 @@ export default {
       mitarbeiter,
       mitglieder,
       teilnehmer,
-      website
+      website,
     }
   },
   data() {
     return {
-      tab: 0
+      tab: 0,
     }
-  }
+  },
 }
 </script>

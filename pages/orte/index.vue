@@ -5,12 +5,11 @@
 </template>
 
 <script>
-
 export default {
-  async asyncData({ $content, params, redirect, route }) {
+  async asyncData({ $content }) {
     const page = await $content('orte').fetch()
 
-    return {page}
+    return { page }
   },
 }
 </script>

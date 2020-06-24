@@ -1,3 +1,3 @@
 <template lang="pug">
-  <div>Startseite</div>
+  div Startseite
 </template>

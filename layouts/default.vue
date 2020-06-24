@@ -99,7 +99,7 @@
 import { defineComponent, ref, onMounted } from 'nuxt-composition-api'
 // import copy from 'copy-to-clipboard'
 
-import axios from 'axios'
+// import axios from 'axios'
 function useLosungen() {
   const losungen = ref({
     losung: {

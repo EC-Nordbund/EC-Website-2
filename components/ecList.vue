@@ -3,10 +3,11 @@
 </template>
 <script>
 export default {
-  props: [
+  props: {
     data: {
       type: Array,
-    }
-  ]
+      default: () => [],
+    },
+  },
 }
 </script>
