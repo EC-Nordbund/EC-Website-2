@@ -8,7 +8,7 @@
 export default {
   async asyncData({ $content, params, redirect, route }) {
     try {
-      const page = await $content('veranstaltung/' + params.id).fetch()
+      const page = await $content('veranstaltung', params.id).fetch()
 
       return { page }
     } catch (e) {
