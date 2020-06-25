@@ -1,16 +1,15 @@
 ---
-title: EC-Elmshorn
-strasse: Feldstraße 17
-plz: 25335
-ort: Elmshorn
+title: EC-Schleswig
+strasse: Am Schulberg 13
+plz: 24837
+ort: Schleswig
 
-lat: 52.516181
-long: 13.376935
+lat: 54.50146484375
+long: 9.542572021484375
 ---
 
-# EC-Elmshorn
+# EC-Schleswig
 
-<ec-ort-info></ec-ort-info>
 
 ## Veranstaltungen
 

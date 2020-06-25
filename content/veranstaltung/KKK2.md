@@ -1,8 +1,10 @@
 ---
-title: KalmiKurzKämp I
-begin: 28.06.2020 
-ende: 01.07.2020
+title: KalmiKurzKämp II
+begin: '2020-06-31'
+ende: '2020-07-01'
 
+description: 'Wer hätte das gedacht: Nachdem alle Sommerfreizeiten in ihrer bekannten, beliebten und bewährten Form abgesagt werden mussten, gibt es jetzt doch noch die Chance auf ein paar Tage original Karlsmindefeeling. Ganz anders und doch megagenial. Ein Kurztripp mit Tiefgang.'
+featuredImage: https://www.ec-nordbund.de/wp-content/uploads/29-LandesJungscharFreizeiten05-privat-1-640x427.jpg
 
 strasse: Feldstraße 17
 plz: 25335
@@ -13,6 +15,11 @@ long: 13.376935
 
 minAlter: 8
 maxAlter: 12
+
+warteliste:
+  allgemein: false
+  männlich: true
+  weiblich: false
 ---
     
 # EC-Elmshorn

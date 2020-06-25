@@ -91,12 +91,15 @@
             ul
               li
                 nuxt-link(to="/impressum") Impressum
+            ul(v-if="isDev")
+              li
+                nuxt-link(to="/admin") Admin
       v-container(fluid class="secondary darken-2")
         v-row
           v-col(class="text-center") © by EC-Nordbund
 </template>
-<script lang="ts">
-import { defineComponent, ref, onMounted } from 'nuxt-composition-api'
+<script>
+import { defineComponent, ref, onMounted, useContext } from 'nuxt-composition-api'
 // import copy from 'copy-to-clipboard'
 
 // import axios from 'axios'
@@ -115,6 +118,8 @@ function useLosungen() {
     // losungen.value = (
     //   await axios.get('https://mathekrueger.de/api/losungen')
     // ).data
+
+    losungen.value = { "losung": { "text": "Ich, der HERR, bin dein Heiland, und ich, der M&auml;chtige, dein Erl&ouml;ser.", "stelle": "Jesaja 60,16" }, "lehrtext": { "text": "Wer will uns scheiden von der Liebe Christi?", "stelle": "R&ouml;mer 8,35" } }
   })
   return { losungen }
 }
@@ -122,10 +127,14 @@ export default defineComponent({
   setup() {
     const { losungen } = useLosungen()
     const drawer = ref(false)
+
+    const {isDev} = useContext()
+
     return {
       losungen,
       drawer,
       copy2clip: () => {},
+      isDev,
     }
   },
 })

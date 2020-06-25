@@ -1,7 +1,7 @@
-<template>
-  <v-container>
-    <nuxt-content :document="page" />
-  </v-container>
+<template lang="pug">
+  v-container
+    ec-location(:marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; height: 500px; z-index: 0;")
+    nuxt-content(:document="page")
 </template>
 <script>
 export default {
