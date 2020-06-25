@@ -1,4 +1,5 @@
 ---
+veranstaltungsID: 430
 title: KalmiKurzKämp I
 begin: '2020-06-28'
 ende: '2020-07-01'
@@ -24,6 +25,17 @@ warteliste:
 tags:
   - Karlsminde
   - Freizeit
+anmeldung:
+  hatEssen: true
+  hatGesundheit: true
+  hatErlaubnisBoot: true
+  hatErlaubnisKlettern: true
+  hatErlaubnisFahrrad: true
+  hatErlaubnisSchwimmen: true
+  hatErlaubnisSichEntfernen: true
+  hatFahrgemeinschaft: true
+  hatFreizeitleitung: true
+  extraFields: []
 ---
     
 # EC-Elmshorn

@@ -1,13 +1,274 @@
 <template lang="pug">
-  p Anmeldung
+  v-form
+    v-radio-group(v-model="data.geschlecht" required label="Geschlecht" @change="geschlechtEvent" :error-messages="geschlechtErrors")
+      v-radio(value="m" label="Männlich")
+      v-radio(value="w" label="Weiblich")
+    v-text-field(v-model="data.vorname" required label="Vorname" counter="50" @change="vornameEvent" :error-messages="vornameErrors")
+    v-text-field(v-model="data.nachname" required label="Nachname" counter="50" @change="nachnameEvent" :error-messages="nachnameErrors")
+    ec-datepicker(v-model="data.gebDat" label="Geburtsdatum" required gebDat :max="new Date().toISOString().substr(0, 10)" min="1950-01-01" @change="gebDatEvent" :error-messages="gebDatErrors")
+    p(v-if="zuJung")
+      span(class="font-weight-bold") Hinweis:
+      br
+      | Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+    p(v-if="zuAlt")
+      span(class="font-weight-bold") Hinweis:
+        br
+        | Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+    p(v-if="zuJung||zuAlt")
+      | Du kannst dich trotzdem anmelden.
+      br
+      | Wir behalten uns allerdings vor, dir den Platz zu verwähren und andere Teilnehmer im Zielgruppenalter zu bevorzugen.
+      br
+      | In diesem Falle werden wir uns bei dir melden.
+    v-text-field(v-model="data.strasse" required label="Straße" counter="50" @change="strasseEvent" :error-messages="strasseErrors")
+    ec-adresse(v-model="data.plzOrt" :errorMap="errorMap.plzOrt")
+    v-text-field(label="E-Mail" type="email" required v-model="data.email" counter="50" @change="emailEvent" :error-messages="emailErrors")
+    v-text-field(label="Telefon" type="telefon" required v-model="data.telefon" @input="telefonEvent" :error-messages="telefonErrors")
+    v-checkbox(v-if="hatEssen" label="Ich möchte vegetarisches Essen" v-model="data.vegetarisch")
+    v-textarea(v-if="hatEssen" label="Lebensmittelallergien" v-model="data.lebensmittelallergien" counter="250" @change="lebensmittelallergienEvent" :error-messages="lebensmittelallergienErrors")
+    v-textarea(v-if="hatGesundheit" label="Gesundheitsinformationen" v-model="data.gesundheit" counter="250" @change="gesundheitEvent" :error-messages="gesundheitErrors")
+    v-textarea(label="Bemerkungen" v-model="data.bemerkungen" counter="250" @change="bemerkungenEvent" :error-messages="bemerkungenErrors")
+    div(v-if="hatErlaubnisse && under18")
+      h3 Erlaubnisse
+      p(class="pt-3") Mein
+        span(v-if="data.geschlecht === 'w'") e Tochter
+        span(v-else-if="data.geschlecht === 'm'")  Sohn
+        span(v-else)  Kind
+        |  darf...
+      v-checkbox(dense class="mt-0" label="Bootfahren" v-model="data.bootfahren")
+      v-checkbox(dense class="mt-0" label="Radfahren" v-model="data.fahrrad")
+      v-checkbox(dense class="mt-0" label="Klettern" v-model="data.klettern")
+      v-checkbox(dense class="mt-0" label="Sich in Gruppen von mindestens 3 Personen entfernen" v-model="data.sichEntfernen")
+      div
+        v-radio-group(label="Schwimmen / Baden (unter Aufsicht)" v-model="data.schwimmen" class="mt-0")
+          v-radio(:value="0" class="ml-2" label="Nicht erlaubt")
+          v-radio(:value="1" class="ml-2" label="Erlaubt - nicht Schwimmer")
+          v-radio(:value="2" class="ml-2" label="Erlaubt - mittlmäßiger Schwimmer")
+          v-radio(:value="3" class="ml-2" label="Erlaubt - guter Schwimmer")
+    div(v-if="extraFields.length > 0")
+      h3 Weitere Felder
+      template(v-for="el in extraFields")
+        v-autocomplete(v-if="el.type==='autocomplete'" :label="el.label" v-model="data.extra[el.name]" :items="el.items" :key="el.name")
+        v-select(v-if="el.type==='select'" :label="el.label" v-model="data.extra[el.name]" :items="el.items" :key="el.name")
+    v-checkbox(required v-model="data.datenschutz" @change="datenschutzEvent" :error-messages="datenschutzErrors")
+      template(v-slot:label)
+        p Ich nehme zur Kenntnis, dass meine eingegebenen Daten vorerst für&nbsp;
+          strong 24 Stunden&nbsp;
+          | zwischengespeichert werden und mir eine&nbsp;
+          strong E-Mail zur Bestätigung und Vervollständigung meiner Anmeldung&nbsp;
+          | zugeschickt wird.
+    v-checkbox(required v-model="data.tnBedingungen" @change="tnBedingungenEvent" :error-messages="tnBedingungenErrors")
+      template(v-slot:label)
+        p Ich erkenne die&nbsp;
+          strong Teilnahmebedingungen&nbsp;
+          | für Freizeiten an und melde mich hiermit verbindlich an. (ggf. Einverständnis des Erziehungsberechtigten)
+    v-checkbox(required v-model="data.freizeitLeitung" @change="freizeitLeitungEvent" :error-messages="freizeitLeitungErrors")
+      template(v-slot:label)
+        p Ich versichere, dass mein Kind von mir angewiesen wurde, den Anordnungen der Freizeitleitung Folge zu leisten.
+    v-checkbox(v-if="hatFahrgemeinschaft" v-model="data.fahrgemeinschaften")
+      template(v-slot:label)
+        p
+          strong Optional:
+          br
+          | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
+    v-btn(@click="submit" :disabled="!valid") Absenden
 </template>
 <script>
-export default {
-  props: {
-    data: {
-      type: Array,
-      default: () => [],
-    },
-  },
+import {
+  defineComponent,
+  reactive,
+  computed,
+  watchEffect,
+  toRefs
+} from 'nuxt-composition-api'
+import $axios from 'axios'
+import { useValidation, ruleLib } from '@/plugins/validate'
+import { useAlter } from '@/plugins/alter'
+function useExtraFields(extraFields) {
+  const extra = {}
+  const extraRules = {}
+  for (let i = 0; i < extraFields.length; i++) {
+    const el = extraFields[i]
+    extra[el.name] = ''
+    if (el.required) {
+      extraRules[el.name] = [
+        (v) => (!v ? el.err || 'Du musst ein Element auswählen!' : true)
+      ]
+    }
+  }
+  return {
+    extraData: extra,
+    extraRules
+  }
 }
+function useData(extra) {
+  const data = reactive({
+    vorname: '',
+    nachname: '',
+    gebDat: '',
+    geschlecht: '',
+    strasse: '',
+    plzOrt: {
+      plz: '',
+      ort: ''
+    },
+    email: '',
+    telefon: '',
+    vegetarisch: false,
+    lebensmittelallergien: '',
+    bemerkungen: '',
+    gesundheit: '',
+    klettern: false,
+    bootfahren: false,
+    schwimmen: 0,
+    fahrrad: false,
+    sichEntfernen: false,
+    datenschutz: false, // no-save
+    tnBedingungen: false, // no-save
+    freizeitLeitung: false, // no-save
+    fahrgemeinschaften: false, // no-save
+    extra
+  })
+  return { data }
+}
+function handleFreizeitleitung(
+  data,
+  props
+) {
+  let oldHatFreizeitleitung = null
+  watchEffect(() => {
+    if (oldHatFreizeitleitung !== props.hatFreizeitleitung) {
+      data.freizeitLeitung = !props.hatFreizeitleitung
+      oldHatFreizeitleitung = props.hatFreizeitleitung
+    }
+  })
+}
+export default defineComponent({
+  props: {
+    hatEssen: Boolean,
+    hatGesundheit: Boolean,
+    hatErlaubnisBoot: Boolean,
+    hatErlaubnisKlettern: Boolean,
+    hatErlaubnisFahrrad: Boolean,
+    hatErlaubnisSchwimmen: Boolean,
+    hatErlaubnisSichEntfernen: Boolean,
+    hatFahrgemeinschaft: Boolean,
+    hatFreizeitleitung: Boolean,
+    veranstaltungsBegin: {
+      type: String,
+      required: true
+    },
+    minAlter: {
+      type: Number,
+      default: -1
+    },
+    maxAlter: {
+      type: Number,
+      default: 999
+    },
+    extraFields: {
+      type: Array,
+      default: () => []
+    },
+    veranstaltungsID: {
+      type: Number,
+      required: true
+    }
+  },
+  setup(props) {
+    const hatErlaubnisse = computed(
+      () =>
+        props.hatErlaubnisBoot ||
+        props.hatErlaubnisKlettern ||
+        props.hatErlaubnisFahrrad ||
+        props.hatErlaubnisSchwimmen ||
+        props.hatErlaubnisSichEntfernen
+    )
+    const { extraData, extraRules } = useExtraFields(
+      props.extraFields
+    )
+    const { data } = useData(extraData)
+    handleFreizeitleitung(data, props)
+    const submit = () => {
+      const submitData = {
+        vorname: data.vorname,
+        nachname: data.nachname,
+        gebDat: data.gebDat,
+        geschlecht: data.geschlecht,
+        strasse: data.strasse,
+        plz: data.plzOrt.plz,
+        ort: data.plzOrt.ort,
+        email: data.email,
+        telefon: data.telefon,
+        vegetarisch: data.vegetarisch,
+        lebensmittelallergien: data.lebensmittelallergien,
+        bemerkungen: data.bemerkungen,
+        gesundheit: data.gesundheit,
+        klettern: data.klettern,
+        bootfahren: data.bootfahren,
+        schwimmen: data.schwimmen,
+        fahrrad: data.fahrrad,
+        sichEntfernen: data.sichEntfernen,
+        fahrgemeinschaften: data.fahrgemeinschaften,
+        extra: data.extra
+      }
+      $axios.post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
+    }
+    const validation = useValidation(
+      data,
+      {
+        vorname: ruleLib.vorname,
+        nachname: ruleLib.nachname,
+        geschlecht: ruleLib.geschlecht,
+        gebDat: ruleLib.gebDat,
+        strasse: ruleLib.strasse,
+        plzOrt: {
+          plz: ruleLib.plz,
+          ort: ruleLib.ort
+        },
+        email: ruleLib.email,
+        telefon: ruleLib.telefon,
+        bemerkungen: ruleLib.textArea250,
+        lebensmittelallergien: ruleLib.textArea250,
+        gesundheit: ruleLib.textArea250,
+        datenschutz: ruleLib.datenschutz,
+        freizeitLeitung: ruleLib.checkboxRequired,
+        tnBedingungen: ruleLib.tnBedingungen,
+        extra: extraRules
+      },
+      [
+        'vorname',
+        'nachname',
+        'geschlecht',
+        'gebDat',
+        'strasse',
+        'email',
+        'datenschutz',
+        'telefon',
+        'tnBedingungen',
+        'freizeitLeitung',
+        'lebensmittelallergien',
+        'bemerkungen',
+        'gesundheit'
+      ]
+    )
+    const { alter, under18 } = useAlter(
+      toRefs(data).gebDat,
+      props.veranstaltungsBegin
+    )
+    const alterData = {
+      under18,
+      zuJung: computed(() => alter.value < props.minAlter),
+      zuAlt: computed(() => alter.value > props.maxAlter)
+    }
+    return {
+      ...validation.rootMapper,
+      ...alterData,
+      ...validation,
+      data,
+      submit,
+      hatErlaubnisse
+    }
+  }
+})
 </script>

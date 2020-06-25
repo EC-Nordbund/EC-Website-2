@@ -16,6 +16,9 @@
     animation: marquee linear infinite;
     color: var(--v-secondary-lighten1);
   }
+  &:hover > span {
+    animation-play-state: paused;
+  }
 }
 @keyframes marquee {
   0% {
