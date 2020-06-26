@@ -13,7 +13,7 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
-    "@nuxt/content": "https://github.com/nuxt/content.git",
+    "@nuxt/content": "https://github.com/mathe42/content.git",
     "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "axios": "^0.19.2",

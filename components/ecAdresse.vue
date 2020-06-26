@@ -3,7 +3,7 @@
     v-autocomplete(required label="PLZ" :items="plzs" @input="plzChange" :value="localState.plz" :loading="!plzs" @change="plzEvent" :error-messages="plzErrors")
     v-select(required label="Ort" :disabled="!localState.plz" :items="orte" :value="localState.ort" @input="ortChange" @change="ortEvent" :error-messages="ortErrors")
 </template>
-<script lang="ts">
+<script>
 import {
   defineComponent,
   reactive,
@@ -26,9 +26,9 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    const orte = ref<Array<string>>([])
-    const plzs = useAsync<Array<any>>(async () => {
-      return (await axios.get('/api/plz/plz.json')).data
+    const orte = ref([])
+    const plzs = useAsync(async () => {
+      return (await axios.get('/plz/plz.json')).data
     })
 
     const localState = reactive({
@@ -41,22 +41,22 @@ export default defineComponent({
       localState.ort = props.value.ort
     })
 
-    const ortChange = (ort: string) => {
+    const ortChange = (ort) => {
       localState.ort = ort
 
       ctx.emit('input', localState)
     }
 
-    const plzChange = async (plz: string) => {
+    const plzChange = async (plz) => {
       localState.plz = plz
       localState.ort = ''
       ctx.emit('input', localState)
 
-      const orte_for_plz = (await axios.get(`/api/plz/${plz}.json`)).data
+      const orte_for_plz = (await axios.get(`/plz/${plz}.json`)).data
 
-      if (typeof orte_for_plz === 'string') {
-        orte.value = [orte_for_plz]
-        localState.ort = orte_for_plz
+      if (orte_for_plz.length === 1) {
+        orte.value = orte_for_plz
+        localState.ort = orte_for_plz[0]
         errorData.ortEvent()
       } else {
         orte.value = orte_for_plz

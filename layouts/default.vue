@@ -128,7 +128,10 @@ export default defineComponent({
     const { losungen } = useLosungen()
     const drawer = ref(false)
 
-    const {isDev} = useContext()
+    const {isDev, $content} = useContext()
+
+    const lsg = $content('api','losungen').body.FreeXml.Losungen.filter(v=>v.Datum.startsWith(`${new Date().getFullYear()}-${new Date().getMonth()+1<10?'0'+(new Date().getMonth()+1):new Date().getMonth()+1}-${new Date().getDate()<10?'0'+new Date().getDate():new Date().getDate()}`))[0]
+    console.log(lsg)
 
     return {
       losungen,
