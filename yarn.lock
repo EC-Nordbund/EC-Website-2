@@ -1789,7 +1789,7 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/composition-api@^0.6.3":
+"@vue/composition-api@^0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-0.6.7.tgz#4481b547cea65dc936432f7efcf1a39f9c69420c"
   integrity sha512-WAWEQK4urEsMNe3OyOp7VnMmegRZT2yRB3fDGLRXPMdfuo4+nM+uMEhUgDiUg9LFSXfLWhjwuFOJ2hnS2X7AUw==
@@ -6765,12 +6765,12 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt-composition-api@0.9.3:
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.9.3.tgz#01037b0ae94ca35b57375e02f868d997bce9175b"
-  integrity sha512-iUIGqpa9HsZLwGO/200Am/GfIVIDd+2S9jofFcAjdX3qnRwJcC60JdRiK2HJUcoaVbQf/0R+WeVvzWk/xagClQ==
+nuxt-composition-api@0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.10.2.tgz#09e006f29c3b1fb04c7bfebde150f0e0107addf7"
+  integrity sha512-0VOd3sfpj5X9SkyBwfmrrOWGJyARNxv7Gai6wHEPznpAT1tHi0DQxasQfqAhOX5Ku+gxZIYyQD4xO4wlCkJPfw==
   dependencies:
-    "@vue/composition-api" "^0.6.3"
+    "@vue/composition-api" "^0.6.7"
     defu "^2.0.4"
 
 nuxt@2.13.1:
