@@ -1,0 +1,12 @@
+// Official EC colors
+@import './fonts.scss';
+
+// Definiere Gradient
+.ec-gradient {
+  background: var(--v-gradient-left-base);
+  background: linear-gradient(
+    90deg,
+    var(--v-gradient-left-base) 0%,
+    var(--v-gradient-right-base) 100%
+  );
+}

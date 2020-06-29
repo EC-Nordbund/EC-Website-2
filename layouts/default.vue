@@ -15,11 +15,11 @@
               ec-marquee(:length="losungen.Losungstext[0].length + losungen.Losungsvers[0].length + losungen.Lehrtext[0].length + losungen.Lehrtextvers[0].length + 140")
                 span(v-html="losungen.Losungstext[0].split('/').join('<b><i>').split(':<b><i>').join(':</i></b>')")
                 |  —
-                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/search/LUT/${losungen.Losungsvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Losungsvers[0]")
+                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/LUT/${losungen.Losungsvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Losungsvers[0]")
                 | +++
                 span(class="pl-6" v-html="losungen.Lehrtext[0].split('/').join('<i>').split(':<i>').join(':</i>')")
                 |  —
-                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/search/LUT/${losungen.Lehrtextvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Lehrtextvers[0]")
+                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/LUT/${losungen.Lehrtextvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Lehrtextvers[0]")
                 | +++
                 a(class="no-underline" href="https://www.herrnhuter.de/" target="_blank" rel="noopener" class="pl-6 pr-2") © Evangelische Brüder-Unität – Herrnhuter Brüdergemeine
                 |  —

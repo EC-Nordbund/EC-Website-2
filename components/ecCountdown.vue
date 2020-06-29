@@ -51,7 +51,7 @@ export default defineComponent({
     onMounted(() => {
       inter = setInterval(() => {
         now.value = new Date()
-      })
+      }, 500)
     })
 
     watchEffect(() => {

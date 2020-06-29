@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Lato-Normal';
+  font-display: swap;
+  src: url('../fonts/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  font-display: swap;
+  src: url('../fonts/lato/Lato-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-Heavy';
+  font-display: swap;
+  src: url('../fonts/lato/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: 'SmoothStone';
+  font-display: swap;
+  src: url('../fonts/smoth-stone-script/SmoothStone-Regular.ttf');
+}
+
+// Standard Font
+* {
+  font-family: 'Lato-Normal';
+}
+
+// Klassen für Font
+.ec-font-light {
+  font-family: 'Lato-Light';
+}
+
+.ec-font-heavy {
+  font-family: 'Lato-Heavy';
+}

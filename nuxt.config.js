@@ -52,12 +52,12 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
   },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/styles/global.scss'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -97,7 +97,7 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/assets/styles/variables-vuetify.scss'],
     theme: {
       disable: false,
       options: {
@@ -125,6 +125,10 @@ export default {
     },
     preset: undefined,
   },
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: { color: '#95C11F' },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
