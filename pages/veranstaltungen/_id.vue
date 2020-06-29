@@ -1,7 +1,7 @@
 <template lang="pug">
   v-container
     nuxt-content(:document="page")
-    ec-location(:marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; height: 500px; z-index: 0;")
+    ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; height: 500px; z-index: 0;")
     template(v-if="page.anmeldung")
       h2 Anmeldung
       ec-anmeldung(

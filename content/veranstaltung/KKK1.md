@@ -13,8 +13,8 @@ plz: 25335
 ort: Elmshorn
 
 # GPS Koordinaten
-lat: 52.516181
-long: 13.376935
+lat: 54.5
+long: 9.9484807
 
 # Alter
 minAlter: 8

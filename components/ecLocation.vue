@@ -1,6 +1,6 @@
 <template lang="pug">
    client-only
-      l-map(:zoom="7" :center="marker[0].marker")
+      l-map(:zoom="zoom" :center="marker[0].marker")
         //- :center="[ecKreis.gps.lat,ecKreis.gps.long]"
         l-tile-layer(:email="`app@ec-nordbund.de`" url="https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png" attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors')
         l-control-scale(position="topright" metric)
@@ -27,6 +27,10 @@ export default defineComponent({
       type: Array,
       required: true,
     },
+    zoom: {
+      type: Number,
+      default: 7
+    }
   },
 })
 </script>
