@@ -2,14 +2,15 @@
   v-container
     nuxt-content(:document="page")
     ec-location(:marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; height: 500px; z-index: 0;")
-    h2 Anmeldung
-    ec-anmeldung(
-      v-bind="page.anmeldung"
-      :veranstaltungsBegin="page.begin"
-      :minAlter="page.minAlter"
-      :maxAlter="page.maxAlter"
-      :veranstaltungsID="page.veranstaltungsID"
-    )
+    template(v-if="page.anmeldung")
+      h2 Anmeldung
+      ec-anmeldung(
+        v-bind="page.anmeldung"
+        :veranstaltungsBegin="page.begin"
+        :minAlter="page.minAlter"
+        :maxAlter="page.maxAlter"
+        :veranstaltungsID="page.veranstaltungsID"
+      )
 </template>
 
 <script>
