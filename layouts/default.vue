@@ -11,17 +11,17 @@
             v-btn(icon medium class="mx-n1 hover-youtube" href="https://www.youtube.com/channel/UC0kn9I7w4sCwl7IJ6ZOTF0w" target="_blank" rel="noopener" aria-label="YouTube")
               v-icon mdi-youtube
             v-spacer
-            v-col(sm=6 md=8 xl=10 align-self="center" v-if="losungen.losung.text" class="hidden-xs-only")
-              ec-marquee(:length="losungen.losung.text.length + losungen.losung.stelle.length + losungen.lehrtext.text.length + losungen.lehrtext.stelle.length + 140")
-                span(v-html="losungen.losung.text")
+            v-col(sm=6 md=8 xl=10 align-self="center" v-if="losungen.Losungstext" class="hidden-xs-only")
+              ec-marquee(:length="losungen.Losungstext[0].length + losungen.Losungsvers[0].length + losungen.Lehrtext[0].length + losungen.Lehrtextvers[0].length + 140")
+                span(v-html="losungen.Losungstext[0]")
                 |  —
-                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/${losungen.losung.stelle}`" target="_blank" rel="noopener" v-html="losungen.losung.stelle")
+                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/search/LUT/${losungen.Losungsvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Losungsvers[0]")
                 | +++
-                span(class="pl-6" v-html="losungen.lehrtext.text")
+                span(class="pl-6" v-html="losungen.Lehrtext[0]")
                 |  —
-                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/${losungen.lehrtext.stelle}`" target="_blank" rel="noopener" v-html="losungen.lehrtext.stelle")
+                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/search/LUT/${losungen.Lehrtextvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Lehrtextvers[0]")
                 | +++
-                a(class="no-underline" href="https://www.hernhuter.de" target="_blank" rel="noopener" class="pl-6 pr-2") © Evangelische Brüder-Unität – Herrnhuter Brüdergemeine
+                a(class="no-underline" href="https://www.herrnhuter.de/" target="_blank" rel="noopener" class="pl-6 pr-2") © Evangelische Brüder-Unität – Herrnhuter Brüdergemeine
                 |  —
                 a(class="no-underline" href="https://www.losungen.de" target="_blank" rel="noopener" class="pl-2") Weitere Informationen zu den Losungen findest du hier.
             v-spacer
@@ -100,38 +100,18 @@
 </template>
 <script>
 import { defineComponent, ref, onMounted, useContext } from 'nuxt-composition-api'
-// import copy from 'copy-to-clipboard'
 
-// import axios from 'axios'
-function useLosungen() {
-  const losungen = ref({
-    losung: {
-      text: '',
-      stelle: '',
-    },
-    lehrtext: {
-      text: '',
-      stelle: '',
-    },
-  })
-  onMounted(async () => {
-    // losungen.value = (
-    //   await axios.get('https://mathekrueger.de/api/losungen')
-    // ).data
-
-    losungen.value = { "losung": { "text": "Ich, der HERR, bin dein Heiland, und ich, der M&auml;chtige, dein Erl&ouml;ser.", "stelle": "Jesaja 60,16" }, "lehrtext": { "text": "Wer will uns scheiden von der Liebe Christi?", "stelle": "R&ouml;mer 8,35" } }
-  })
-  return { losungen }
-}
 export default defineComponent({
   setup() {
-    const { losungen } = useLosungen()
     const drawer = ref(false)
 
     const {isDev, $content} = useContext()
 
-    const lsg = $content('api','losungen').body.FreeXml.Losungen.filter(v=>v.Datum.startsWith(`${new Date().getFullYear()}-${new Date().getMonth()+1<10?'0'+(new Date().getMonth()+1):new Date().getMonth()+1}-${new Date().getDate()<10?'0'+new Date().getDate():new Date().getDate()}`))[0]
-    console.log(lsg)
+    const losungen = ref({})
+    
+    onMounted(async () => {
+      losungen.value = (await $content('api','losungen').fetch()).body.FreeXml.Losungen.filter(v=>v.Datum[0].startsWith(`${new Date().getFullYear()}-${new Date().getMonth()+1<10?'0'+(new Date().getMonth()+1):new Date().getMonth()+1}-${new Date().getDate()<10?'0'+new Date().getDate():new Date().getDate()}`))[0]
+    })
 
     return {
       losungen,

@@ -182,6 +182,6 @@ export default {
       }
     },
     // Es sollte getestet werden ob true oder false hier besser ist. (default: false)
-    // extractCSS: true
+    extractCSS: true,
   },
 }

@@ -23,7 +23,7 @@ Wir setzen keine Cookies mit außnahme einses Session-Cookies. Im nächsten Absc
 
 ## Service Workers
 
-Wir benutzen eine Technologie die sich Service Worker nennt. Dadurch werden teile der Website lokal bei dir gespeichert. Dadurch ist bei deinem nächsten Besuch die Seite schneller geladen. Außerdem kannst du auf deinem Smartphone die Option "Zum Home-Screen hinzufügen" nutzen. Dadurch erhältst du ein icon mit dem du direkt unsere Website aufrufen kannst. Wir benutzen Service Workers nicht um im Hintergrund Dinge zu tun sondern nur um die Website schneller zu machen. So sparst du mobil z.B. Datenvolumen.
+Wir benutzen eine Technologie die sich Service Worker nennt. Dadurch werden teile der Website lokal bei dir gespeichert. Dadurch ist bei deinem nächsten Besuch die Seite schneller geladen. Außerdem kannst du auf deinem Smartphone die Option "Zum Home-Screen hinzufügen" nutzen. Dadurch erhältst du ein icon mit dem du direkt unsere Website aufrufen kannst. Wir benutzen Service Workers nicht um im Hintergrund Dinge zu tun sondern nur um die Website schneller zu machen. So sparst du mobil z.B. Datenvolumen. Außerdem kannst du so bereits aufgerufene Seiten unserer Website auch Offline ansehen.
 
 ## ServerLogs
 
