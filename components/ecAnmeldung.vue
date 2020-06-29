@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-form
+  v-form(v-if="!disabled && !countdown")
     v-radio-group(v-model="data.geschlecht" required label="Geschlecht" @change="geschlechtEvent" :error-messages="geschlechtErrors")
       v-radio(value="m" label="Männlich")
       v-radio(value="w" label="Weiblich")
@@ -72,6 +72,11 @@
           br
           | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
     v-btn(@click="submit" :disabled="!valid") Absenden
+  div(v-else-if="disabled")
+    p Die Anmeldung ist gesperrt. Dies kann verschiedene Gründe haben.
+  v-card(v-else class="anmeldung-locked" elevation="5" style="border: 1px solid #000; border-radius: 10px; margin: 0 calc(50% - 205px); padding: 15px 0;")
+    h3(style="text-align: center") Die Anmeldung wird freigeschaltet in:
+    ec-countdown(:target="startAt")
 </template>
 <script>
 import {
@@ -79,7 +84,7 @@ import {
   reactive,
   computed,
   watchEffect,
-  toRefs
+  toRefs,
 } from 'nuxt-composition-api'
 import $axios from 'axios'
 import { useValidation, ruleLib } from '@/plugins/validate'
@@ -92,13 +97,13 @@ function useExtraFields(extraFields) {
     extra[el.name] = ''
     if (el.required) {
       extraRules[el.name] = [
-        (v) => (!v ? el.err || 'Du musst ein Element auswählen!' : true)
+        (v) => (!v ? el.err || 'Du musst ein Element auswählen!' : true),
       ]
     }
   }
   return {
     extraData: extra,
-    extraRules
+    extraRules,
   }
 }
 function useData(extra) {
@@ -110,7 +115,7 @@ function useData(extra) {
     strasse: '',
     plzOrt: {
       plz: '',
-      ort: ''
+      ort: '',
     },
     email: '',
     telefon: '',
@@ -127,14 +132,11 @@ function useData(extra) {
     tnBedingungen: false, // no-save
     freizeitLeitung: false, // no-save
     fahrgemeinschaften: false, // no-save
-    extra
+    extra,
   })
   return { data }
 }
-function handleFreizeitleitung(
-  data,
-  props
-) {
+function handleFreizeitleitung(data, props) {
   let oldHatFreizeitleitung = null
   watchEffect(() => {
     if (oldHatFreizeitleitung !== props.hatFreizeitleitung) {
@@ -156,24 +158,26 @@ export default defineComponent({
     hatFreizeitleitung: Boolean,
     veranstaltungsBegin: {
       type: String,
-      required: true
+      required: true,
     },
     minAlter: {
       type: Number,
-      default: -1
+      default: -1,
     },
     maxAlter: {
       type: Number,
-      default: 999
+      default: 999,
     },
     extraFields: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     veranstaltungsID: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
+    disabled: Boolean,
+    startAt: String,
   },
   setup(props) {
     const hatErlaubnisse = computed(
@@ -184,9 +188,7 @@ export default defineComponent({
         props.hatErlaubnisSchwimmen ||
         props.hatErlaubnisSichEntfernen
     )
-    const { extraData, extraRules } = useExtraFields(
-      props.extraFields
-    )
+    const { extraData, extraRules } = useExtraFields(props.extraFields)
     const { data } = useData(extraData)
     handleFreizeitleitung(data, props)
     const submit = () => {
@@ -210,7 +212,7 @@ export default defineComponent({
         fahrrad: data.fahrrad,
         sichEntfernen: data.sichEntfernen,
         fahrgemeinschaften: data.fahrgemeinschaften,
-        extra: data.extra
+        extra: data.extra,
       }
       $axios.post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
     }
@@ -224,7 +226,7 @@ export default defineComponent({
         strasse: ruleLib.strasse,
         plzOrt: {
           plz: ruleLib.plz,
-          ort: ruleLib.ort
+          ort: ruleLib.ort,
         },
         email: ruleLib.email,
         telefon: ruleLib.telefon,
@@ -234,7 +236,7 @@ export default defineComponent({
         datenschutz: ruleLib.datenschutz,
         freizeitLeitung: ruleLib.checkboxRequired,
         tnBedingungen: ruleLib.tnBedingungen,
-        extra: extraRules
+        extra: extraRules,
       },
       [
         'vorname',
@@ -249,7 +251,7 @@ export default defineComponent({
         'freizeitLeitung',
         'lebensmittelallergien',
         'bemerkungen',
-        'gesundheit'
+        'gesundheit',
       ]
     )
     const { alter, under18 } = useAlter(
@@ -259,16 +261,19 @@ export default defineComponent({
     const alterData = {
       under18,
       zuJung: computed(() => alter.value < props.minAlter),
-      zuAlt: computed(() => alter.value > props.maxAlter)
+      zuAlt: computed(() => alter.value > props.maxAlter),
     }
     return {
       ...validation.rootMapper,
       ...alterData,
       ...validation,
+      // disabled: props.disabled,
+      // startAt: props.startAt,
       data,
       submit,
-      hatErlaubnisse
+      hatErlaubnisse,
+      countdown: new Date().getTime() < new Date(props.startAt).getTime(),
     }
-  }
+  },
 })
 </script>

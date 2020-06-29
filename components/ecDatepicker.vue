@@ -14,20 +14,19 @@
       @change="changeDate"
     )
 </template>
-<script lang="ts">
+<script lang="js">
 import {
   defineComponent,
   ref,
   computed,
   watch,
   toRefs,
-  Ref
 } from 'nuxt-composition-api'
 
-function handleGebDat(gebDat: Ref<boolean>, menu: Ref<boolean>) {
+function handleGebDat(gebDat, menu) {
   let firstTime = true
-  let watcher: (() => void) | null
-  const picker = ref<any>()
+  let watcher
+  const picker = ref()
 
   function watchHandler() {
     if (watcher) {
@@ -57,35 +56,32 @@ export default defineComponent({
   props: {
     value: {
       type: String,
-      required: true
+      required: true,
     },
     gebDat: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   setup(props, { emit }) {
     const menu = ref(false)
 
     const picker = handleGebDat(toRefs(props).gebDat, menu)
 
-    const changeDate = (date: string) => {
+    const changeDate = (date) => {
       emit('input', date)
     }
 
     const germanDate = computed(() => {
-      return props.value
-        .split('-')
-        .reverse()
-        .join('.')
+      return props.value.split('-').reverse().join('.')
     })
 
     return {
       menu,
       germanDate,
       changeDate,
-      picker
+      picker,
     }
-  }
+  },
 })
 </script>

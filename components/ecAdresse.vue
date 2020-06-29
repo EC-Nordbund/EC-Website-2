@@ -9,7 +9,7 @@ import {
   reactive,
   ref,
   watchEffect,
-  useAsync
+  useAsync,
 } from 'nuxt-composition-api'
 import axios from 'axios'
 import { mapper } from '@/plugins/validate'
@@ -52,14 +52,14 @@ export default defineComponent({
       localState.ort = ''
       ctx.emit('input', localState)
 
-      const orte_for_plz = (await axios.get(`/plz/${plz}.json`)).data
+      const orteForPLZ = (await axios.get(`/plz/${plz}.json`)).data
 
-      if (orte_for_plz.length === 1) {
-        orte.value = orte_for_plz
-        localState.ort = orte_for_plz[0]
+      if (orteForPLZ.length === 1) {
+        orte.value = orteForPLZ
+        localState.ort = orteForPLZ[0]
         errorData.ortEvent()
       } else {
-        orte.value = orte_for_plz
+        orte.value = orteForPLZ
       }
       ctx.emit('input', localState)
     }

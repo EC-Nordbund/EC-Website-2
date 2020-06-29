@@ -22,7 +22,19 @@ export default {
     // const sub2 = await $content('veranstaltung').fetch()
     // console.log(sub2)
 
-    const veranstaltungen = await $content('veranstaltung').only(['slug', 'title','begin','ende','description','featuredImage','warteliste', 'tags']).sortBy('begin').fetch()
+    const veranstaltungen = await $content('veranstaltung')
+      .only([
+        'slug',
+        'title',
+        'begin',
+        'ende',
+        'description',
+        'featuredImage',
+        'warteliste',
+        'tags',
+      ])
+      .sortBy('begin')
+      .fetch()
 
     return { page, veranstaltungen }
   },

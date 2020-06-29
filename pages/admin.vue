@@ -4,8 +4,8 @@
 </template>
 <script>
 export default {
-  validate({isDev}) {
+  validate({ isDev }) {
     return isDev
-  }
+  },
 }
 </script>

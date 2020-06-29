@@ -30,8 +30,8 @@
 </template>
 <script>
 import { defineComponent, ref, reactive } from 'nuxt-composition-api'
-import { ruleLib, useValidation } from '@/plugins/validate'
 import $axios from 'axios'
+import { ruleLib, useValidation } from '@/plugins/validate'
 export default defineComponent({
   // async asyncData() {
   //   const ecKreise = (await $axios.get('/api/website/ecKreise/mini')).data

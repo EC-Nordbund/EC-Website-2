@@ -1,4 +1,3 @@
-
 <template lang="pug">
    client-only
       l-map(:zoom="7" :center="marker[0].marker")

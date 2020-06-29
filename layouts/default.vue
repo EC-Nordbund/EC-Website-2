@@ -13,11 +13,11 @@
             v-spacer
             v-col(sm=6 md=8 xl=10 align-self="center" v-if="losungen.Losungstext" class="hidden-xs-only")
               ec-marquee(:length="losungen.Losungstext[0].length + losungen.Losungsvers[0].length + losungen.Lehrtext[0].length + losungen.Lehrtextvers[0].length + 140")
-                span(v-html="losungen.Losungstext[0]")
+                span(v-html="losungen.Losungstext[0].split('/').join('<b><i>').split(':<b><i>').join(':</i></b>')")
                 |  —
                 a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/search/LUT/${losungen.Losungsvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Losungsvers[0]")
                 | +++
-                span(class="pl-6" v-html="losungen.Lehrtext[0]")
+                span(class="pl-6" v-html="losungen.Lehrtext[0].split('/').join('<i>').split(':<i>').join(':</i>')")
                 |  —
                 a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/search/LUT/${losungen.Lehrtextvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Lehrtextvers[0]")
                 | +++
@@ -99,24 +99,45 @@
           v-col(class="text-center") © by EC-Nordbund
 </template>
 <script>
-import { defineComponent, ref, onMounted, useContext } from 'nuxt-composition-api'
+import {
+  defineComponent,
+  ref,
+  onMounted,
+  useContext,
+} from 'nuxt-composition-api'
+
+import copy from "copy-to-clipboard";
 
 export default defineComponent({
   setup() {
     const drawer = ref(false)
 
-    const {isDev, $content} = useContext()
+    const { isDev, $content } = useContext()
 
     const losungen = ref({})
-    
+
     onMounted(async () => {
-      losungen.value = (await $content('api','losungen').fetch()).body.FreeXml.Losungen.filter(v=>v.Datum[0].startsWith(`${new Date().getFullYear()}-${new Date().getMonth()+1<10?'0'+(new Date().getMonth()+1):new Date().getMonth()+1}-${new Date().getDate()<10?'0'+new Date().getDate():new Date().getDate()}`))[0]
+      losungen.value = (
+        await $content('api', 'losungen').fetch()
+      ).body.FreeXml.Losungen.filter((v) =>
+        v.Datum[0].startsWith(
+          `${new Date().getFullYear()}-${
+            new Date().getMonth() + 1 < 10
+              ? '0' + (new Date().getMonth() + 1)
+              : new Date().getMonth() + 1
+          }-${
+            new Date().getDate() < 10
+              ? '0' + new Date().getDate()
+              : new Date().getDate()
+          }`
+        )
+      )[0]
     })
 
     return {
       losungen,
       drawer,
-      copy2clip: () => {},
+      copy2clip: copy,
       isDev,
     }
   },

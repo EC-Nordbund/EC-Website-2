@@ -43,9 +43,11 @@ anmeldung:
   hatFahrgemeinschaft: true
   hatFreizeitleitung: true
   extraFields: []
+  disabled: false
+  startAt: '2020-06-31 06:17:23'
 ---
     
-# EC-Elmshorn
+# KalmiKurzKämp
 
 **\*\*\* Corona-Spezial \*\*\* Corona-Spezial \*\*\* Corona-Spezial \*\*\* Corona-Spezial \*\*\***
 

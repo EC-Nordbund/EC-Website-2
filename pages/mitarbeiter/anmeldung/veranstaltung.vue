@@ -15,7 +15,7 @@ import $axios from 'axios'
 export default {
   data: () => ({
     password: '',
-    valid: true
+    valid: true,
   }),
   created() {
     if (this.$route.query.notvalid !== undefined) {
@@ -27,7 +27,7 @@ export default {
       // console.log('start submitt')
       const valid = (
         await $axios.post('/api/website/anmeldung/ma/checkToken', {
-          token: this.password
+          token: this.password,
         })
       ).data
 
@@ -35,12 +35,12 @@ export default {
 
       if (valid) {
         this.$router.push({
-          path: `/mitarbeiter/anmeldung/${this.password}`
+          path: `/mitarbeiter/anmeldung/${this.password}`,
         })
       } else {
         this.valid = false
       }
-    }
-  }
+    },
+  },
 }
 </script>

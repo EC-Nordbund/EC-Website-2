@@ -11,7 +11,9 @@
 export default {
   async asyncData({ $content }) {
     const page = await $content('orte').fetch()
-    const orte = await $content('ort').only(['title', 'strasse', 'plz', 'ort', 'lat', 'long', 'slug']).fetch()
+    const orte = await $content('ort')
+      .only(['title', 'strasse', 'plz', 'ort', 'lat', 'long', 'slug'])
+      .fetch()
 
     return { orte, page }
   },
