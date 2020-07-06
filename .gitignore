@@ -90,3 +90,5 @@ sw.*
 *.swp
 
 static/plz
+static/downloads
+content/downloadFiles.json

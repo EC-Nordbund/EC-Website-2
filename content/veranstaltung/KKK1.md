@@ -44,7 +44,7 @@ anmeldung:
   hatFreizeitleitung: true
   extraFields: []
   disabled: false
-  startAt: '2020-06-31 06:17:23'
+  startAt: '2020-06-29 06:17:23'
 ---
     
 # KalmiKurzKämp

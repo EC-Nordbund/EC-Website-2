@@ -1,0 +1,73 @@
+title: Downloads
+description: Liste mit Downloads
+files:
+  - filename: '/test/a/a.test'
+    title: Testdatei
+    description: enthällt viele Dinge.
+folders:
+  testFolder:
+    title: Testordner
+    description: enthällt viele Dinge die viele Dinge enthalten.
+    files:
+      - filename: '/test/a/a.test'
+        title: Testdatei
+        description: enthällt viele Dinge.
+      - filename: '/test/a/a.test'
+        title: Testdatei
+        description: enthällt viele Dinge.
+    folders:
+      testFolder:
+        title: Testordner
+        description: enthällt viele Dinge die viele Dinge enthalten.
+        files:
+          - filename: '/test/a/a.test'
+            title: Testdatei
+            description: enthällt viele Dinge.
+          - filename: '/test/a/a.test'
+            title: Testdatei
+            description: enthällt viele Dinge.
+        folders:
+          testFolder:
+            title: Testordner
+            description: enthällt viele Dinge die viele Dinge enthalten.
+            files:
+              - filename: '/test/a/a.test'
+                title: Testdatei
+                description: enthällt viele Dinge.
+              - filename: '/test/a/a.test'
+                title: Testdatei
+                description: enthällt viele Dinge.
+            folders: {}
+  testFolder2:
+    title: Testordner
+    description: enthällt viele Dinge die viele Dinge enthalten.
+    files:
+      - filename: '/test/a/a.test'
+        title: Testdatei
+        description: enthällt viele Dinge.
+      - filename: '/test/a/a.test'
+        title: Testdatei
+        description: enthällt viele Dinge.
+    folders:
+      testFolder:
+        title: Testordner
+        description: enthällt viele Dinge die viele Dinge enthalten.
+        files:
+          - filename: '/test/a/a.test'
+            title: Testdatei
+            description: enthällt viele Dinge.
+          - filename: '/test/a/a.test'
+            title: Testdatei
+            description: enthällt viele Dinge.
+        folders:
+          testFolder:
+            title: Testordner
+            description: enthällt viele Dinge die viele Dinge enthalten.
+            files:
+              - filename: '/test/a/a.test'
+                title: Testdatei
+                description: enthällt viele Dinge.
+              - filename: '/test/a/a.test'
+                title: Testdatei
+                description: enthällt viele Dinge.
+            folders: {}

@@ -13,13 +13,13 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
-    "@nuxt/content": "https://github.com/nuxt/content.git",
+    "@nuxt/content": "^1.4.1",
     "@nuxt/typescript-runtime": "0.4.10",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "axios": "0.19.2",
     "copy-to-clipboard": "3.3.1",
     "leaflet": "https://github.com/EC-Nordbund/Leaflet.git",
-    "leaflet-nuxt-async": "4.0.0",
+    "leaflet-nuxt-async": "https://github.com/EC-Nordbund/leaflet-nuxt-async.git",
     "nuxt": "2.13.2",
     "nuxt-composition-api": "0.10.2",
     "vue2-leaflet": "2.5.2",
