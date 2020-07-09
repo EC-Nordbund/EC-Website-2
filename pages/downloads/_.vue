@@ -67,7 +67,7 @@ export default defineComponent({
       for(let i=0; i < depth; i++) {
         curr = curr?.folders?.[fileRoute[i]]
       }
-      item.text = curr.title
+      item.text = curr?.title
 
       // add link to subpath
       if ( fileRoute.length > depth ) {
