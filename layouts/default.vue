@@ -87,7 +87,7 @@
                 nuxt-link(to="/") Startseite
             ul
               li
-                nuxt-link(to="/download/") Downloads
+                nuxt-link(to="/downloads/") Downloads
             ul
               li
                 nuxt-link(to="/datenschutz") Datenschutz
