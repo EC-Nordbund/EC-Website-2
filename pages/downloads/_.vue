@@ -10,6 +10,7 @@
           v-icon mdi-arrow-left
         v-list-item-content
           v-list-item-title Zurück
+      v-divider
       v-list-item(v-for="el in data.files" :key="$route.fullpath + el.filename" :href="`/downloads/${el.filename}`" two-line)
         v-list-item-avatar
           v-icon {{ {'pdf': 'mdi-file-pdf-outline', docx: 'mdi-file-word', jpg: 'mdi-file-image', png: 'mdi-file-image'}[el.filename.split('.')[1].toLowerCase()] || 'mdi-file' }}
