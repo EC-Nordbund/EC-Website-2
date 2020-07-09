@@ -4,12 +4,12 @@
     h1 {{data.title}}
     p {{data.description}}
 
-    v-list(:key="$route.fullpath")
-      v-list-item(v-if="fileRoute.length > 0")
+    v-list(:key="$route.fullpath" flat)
+      v-list-item(v-if="fileRoute.length > 0" :href="`/downloads/${fileRoute.slice(0, -1).join('/')}`")
         v-list-item-avatar
           v-icon mdi-arrow-left
         v-list-item-content
-          v-list-item-title Ordner hoch
+          v-list-item-title Zurück
       v-list-item(v-for="el in data.files" :key="$route.fullpath + el.filename" :href="`/downloads/${el.filename}`" two-line)
         v-list-item-avatar
           v-icon {{ {'pdf': 'mdi-file-pdf-outline', docx: 'mdi-file-word', jpg: 'mdi-file-image', png: 'mdi-file-image'}[el.filename.split('.')[1].toLowerCase()] || 'mdi-file' }}
