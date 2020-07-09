@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    v-breadcrumbs(:items="['Downloads',...fileRoute].map(v=>({text: v}))" divider="/")
+    v-breadcrumbs(:items="['Downloads',...fileRoute].map(toBreadcrumb)" divider="/" large)
     h1 {{data.title}}
     p {{data.description}}
 
@@ -57,8 +57,31 @@ export default defineComponent({
       }
     })
 
+    function toBreadcrumb(key = '', depth = 0) {
+      var item = {
+        text: key,
+        href: '/downloads/'
+      }, curr = fileData.value
 
-    return { fileRoute, data }
+      // add title to subpath
+      for(let i=0; i < depth; i++) {
+        curr = curr?.folders?.[fileRoute[i]]
+      }
+      item.text = curr.title
+
+      // add link to subpath
+      if ( fileRoute.length > depth ) {
+        item.href += fileRoute.slice(0, -fileRoute.length+depth).join('/')
+      } else if( fileRoute.length === depth) {
+        item.href += fileRoute.join('/')
+      } else {
+        item.href = undefined
+      }
+     
+      return item
+    }
+
+    return { fileRoute, data, toBreadcrumb }
   }
 })
 </script>
