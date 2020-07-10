@@ -5,7 +5,7 @@
     p {{data.description}}
 
     v-list(:key="$route.fullpath")
-      v-list-item(v-if="fileRoute.length > 0")
+      v-list-item(v-if="fileRoute.length > 0" to="../")
         v-list-item-avatar
           v-icon mdi-arrow-left
         v-list-item-content

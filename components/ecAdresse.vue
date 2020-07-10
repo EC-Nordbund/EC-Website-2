@@ -12,7 +12,7 @@ import {
   useAsync,
 } from 'nuxt-composition-api'
 import axios from 'axios'
-import { mapper } from '@/plugins/validate'
+import { mapper } from '../plugins/validate'
 
 export default defineComponent({
   props: {

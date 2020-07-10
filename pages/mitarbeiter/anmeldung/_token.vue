@@ -32,7 +32,7 @@
 <script>
 import { defineComponent, reactive } from 'nuxt-composition-api'
 import $axios from 'axios'
-import { ruleLib, useValidation } from '@/plugins/validate'
+import { ruleLib, useValidation } from '../../../plugins/validate'
 
 export default defineComponent({
   // async validate({ route, redirect }: Context) {

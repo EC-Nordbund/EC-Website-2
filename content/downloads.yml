@@ -9,10 +9,16 @@ folders:
     title: Testordner
     description: enthällt viele Dinge die viele Dinge enthalten.
     files:
-      - filename: '/test/a/a.test'
+      - filename: '/test/a/a.jpg'
         title: Testdatei
         description: enthällt viele Dinge.
-      - filename: '/test/a/a.test'
+      - filename: '/test/a/a.png'
+        title: Testdatei
+        description: enthällt viele Dinge.
+      - filename: '/test/a/a.pdf'
+        title: Testdatei
+        description: enthällt viele Dinge.
+      - filename: '/test/a/a.docx'
         title: Testdatei
         description: enthällt viele Dinge.
     folders:

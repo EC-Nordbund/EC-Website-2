@@ -87,8 +87,8 @@ import {
   toRefs,
 } from 'nuxt-composition-api'
 import $axios from 'axios'
-import { useValidation, ruleLib } from '@/plugins/validate'
-import { useAlter } from '@/plugins/alter'
+import { useValidation, ruleLib } from '../plugins/validate'
+import { useAlter } from '../plugins/alter'
 function useExtraFields(extraFields) {
   const extra = {}
   const extraRules = {}

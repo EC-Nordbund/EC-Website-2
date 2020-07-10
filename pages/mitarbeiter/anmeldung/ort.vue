@@ -31,14 +31,8 @@
 <script>
 import { defineComponent, ref, reactive } from 'nuxt-composition-api'
 import $axios from 'axios'
-import { ruleLib, useValidation } from '@/plugins/validate'
+import { ruleLib, useValidation } from '../../../plugins/validate'
 export default defineComponent({
-  // async asyncData() {
-  //   const ecKreise = (await $axios.get('/api/website/ecKreise/mini')).data
-  //   return {
-  //     ecKreise,
-  //   }
-  // },
   setup() {
     const data = reactive({
       vorname: '',
