@@ -1,24 +1,25 @@
 <template lang="pug">
   v-container
-    v-breadcrumbs(:items="['Downloads',...fileRoute].map(v=>({text: v}))" divider="/")
+    v-breadcrumbs(:items="['Downloads',...fileRoute].map(toBreadcrumb)" divider="/" large)
     h1 {{data.title}}
     p {{data.description}}
 
     v-list(:key="$route.fullpath")
-      v-list-item(v-if="fileRoute.length > 0" to="../")
+      v-list-item(v-if="fileRoute.length > 0" :to="`/downloads/${fileRoute.slice(0, -1).join('/')}`")
         v-list-item-avatar
-          v-icon mdi-arrow-left
+          v-icon(size="26") mdi-arrow-up
         v-list-item-content
-          v-list-item-title Ordner hoch
-      v-list-item(v-for="el in data.files" :key="$route.fullpath + el.filename" :href="`/downloads/${el.filename}`" two-line)
+          v-list-item-title Zurück
+      v-divider
+      v-list-item(v-for="el in data.files" :key="$route.fullpath + el.filename" :href="`/downloads/${el.filename}`" :download="el.filename" two-line)
         v-list-item-avatar
-          v-icon {{ {'pdf': 'mdi-file-pdf-outline', docx: 'mdi-file-word', jpg: 'mdi-file-image', png: 'mdi-file-image'}[el.filename.split('.')[1].toLowerCase()] || 'mdi-file' }}
+          v-icon(size="32") {{ {'pdf': 'mdi-file-pdf-outline', docx: 'mdi-file-word', jpg: 'mdi-file-image', png: 'mdi-file-image'}[el.filename.split('.')[1].toLowerCase()] || 'mdi-file' }}
         v-list-item-content
           v-list-item-title {{el.title}}
           v-list-item-subtitle {{el.description}}
       v-list-item(v-for="key in Object.keys(data.folders)" :key="$route.fullpath + key" :to="key + '/'" two-line)
         v-list-item-avatar
-          v-icon mdi-folder
+          v-icon(size="36") mdi-folder
         v-list-item-content
           v-list-item-title {{data.folders[key].title}}
           v-list-item-subtitle {{data.folders[key].description}}
@@ -56,8 +57,31 @@ export default defineComponent({
       }
     })
 
+    function toBreadcrumb(key = '', depth = 0) {
+      var item = {
+        text: key,
+        href: '/downloads/'
+      }, curr = fileData.value
 
-    return { fileRoute, data }
+      // add title to subpath
+      for(let i=0; i < depth; i++) {
+        curr = curr?.folders?.[fileRoute[i]]
+      }
+      item.text = curr?.title
+
+      // add link to subpath
+      if ( fileRoute.length > depth ) {
+        item.href += fileRoute.slice(0, -fileRoute.length+depth).join('/')
+      } else if( fileRoute.length === depth) {
+        item.href += fileRoute.join('/')
+      } else {
+        item.href = undefined
+      }
+     
+      return item
+    }
+
+    return { fileRoute, data, toBreadcrumb }
   }
 })
 </script>

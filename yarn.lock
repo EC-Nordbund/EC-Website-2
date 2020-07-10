@@ -7529,15 +7529,10 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-number-is-nan@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
-  integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
-
-nuxt-composition-api@0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.10.3.tgz#d5d1b8e47148d88aaaa57b1cf93d3e3dd954bce1"
-  integrity sha512-FOjZtbG8a6VYLD/1Qe29GeCE530no8zbvej3I1XmEQs2TAW3EDe08TWq+LHfUsYpgdVWvU8RD4vOJx2s+fVWtg==
+nuxt-composition-api@0.10.4:
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.10.4.tgz#45f5e5d29713f2a4b7fd5dd6af02e7871488f86d"
+  integrity sha512-+slQouBzKP5NNz5MWX0sNhaqeJzs79SxxFACpk+8n186oly2urzH26uLFuJGSkdR+/UPRN1IDlX6phVNYkBTVw==
   dependencies:
     "@vue/composition-api" "^0.6.7"
     defu "^2.0.4"
