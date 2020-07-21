@@ -2,7 +2,7 @@
   v-container
     //- p {{ veranstaltungen }}
     v-list(three-line)
-      v-list-item(v-for="item in veranstaltungen" @click="$router.push(`/veranstaltungen/${item.slug}`)" :key="item.slug")
+      v-list-item(v-for="item in veranstaltungen" @click="$router.push(`/blog/${item.slug}`)" :key="item.slug")
         v-list-item-avatar
           v-img(:src="item.featuredImage")
         v-list-item-content
