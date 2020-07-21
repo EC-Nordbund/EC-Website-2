@@ -4,7 +4,7 @@
     h1 {{data.title}}
     p {{data.description}}
 
-    v-list(:key="$route.fullpath")
+    v-list
       v-list-item(v-if="fileRoute.length > 0" :to="`/downloads/${fileRoute.slice(0, -1).join('/')}`")
         v-list-item-avatar
           v-icon(size="26") mdi-arrow-up
@@ -24,23 +24,30 @@
           v-list-item-title {{data.folders[key].title}}
           v-list-item-subtitle {{data.folders[key].description}}
 </template> 
-<script>
-import { defineComponent, useContext, useAsync, computed } from "nuxt-composition-api";
-
-
+<script lang="ts">
+import {
+  defineComponent,
+  useContext,
+  useAsync,
+  computed,
+} from 'nuxt-composition-api'
 
 export default defineComponent({
   setup() {
     const { route, $content } = useContext()
-    
-    const fileRoute = route.value.params.pathMatch.split('/').filter(v=>v!== '')
 
-    const fileData = useAsync(async () => await $content('downloads').fetch())
+    const fileRoute = route.value.params.pathMatch
+      .split('/')
+      .filter((v) => v !== '')
+
+    const fileData = useAsync(
+      async () => await $content('downloads').fetch<any>()
+    )
 
     const data = computed(() => {
-      if(fileData.value === null) {
-        return {files: [], folders: []}
-      } else if(route.value.params.pathMatch.length < 2) {
+      if (fileData.value === null) {
+        return { files: [], folders: [] }
+      } else if (route.value.params.pathMatch.length < 2) {
         return fileData.value
       } else {
         let pointer = fileData.value
@@ -48,8 +55,8 @@ export default defineComponent({
         for (let i = 0; i < fileRoute.length; i++) {
           pointer = pointer?.folders?.[fileRoute[i]]
 
-          if(!pointer) {
-            return {files: [], folders: []}
+          if (!pointer) {
+            return { files: [], folders: [] }
           }
         }
 
@@ -58,30 +65,32 @@ export default defineComponent({
     })
 
     function toBreadcrumb(key = '', depth = 0) {
-      var item = {
+      let item = {
         text: key,
-        href: '/downloads/'
-      }, curr = fileData.value
+        href: '/downloads/',
+      }
+
+      let curr = fileData.value
 
       // add title to subpath
-      for(let i=0; i < depth; i++) {
+      for (let i = 0; i < depth; i++) {
         curr = curr?.folders?.[fileRoute[i]]
       }
       item.text = curr?.title
 
       // add link to subpath
-      if ( fileRoute.length > depth ) {
-        item.href += fileRoute.slice(0, -fileRoute.length+depth).join('/')
-      } else if( fileRoute.length === depth) {
+      if (fileRoute.length > depth) {
+        item.href += fileRoute.slice(0, -fileRoute.length + depth).join('/')
+      } else if (fileRoute.length === depth) {
         item.href += fileRoute.join('/')
       } else {
-        item.href = undefined
+        delete item.href
       }
-     
+
       return item
     }
 
     return { fileRoute, data, toBreadcrumb }
-  }
+  },
 })
 </script>
