@@ -18,7 +18,7 @@ export default {
     // const sub2 = await $content('veranstaltung').fetch()
     // console.log(sub2)
 
-    const posts = await $content('blog').fetch()
+    const posts = await $content('blog').without(['body']).sortBy('published', 'desc').fetch()
 
     return { posts }
   },

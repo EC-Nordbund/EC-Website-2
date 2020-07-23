@@ -1,0 +1,16 @@
+---
+title: "Na also"
+published: 2017-04-10T23:35:02
+description: ""
+featuredImage: http://localhost:3000/card.png
+---
+
+# Na also
+
+<p>&#8230; da sind wir schon seit so vielen Jahren auf Rømø und erst in diesem Jahr finden wir einen Platz zum Grillen.</p>
+<p>Was für ein genialer Abend. Geniales Wetter. Schöner Ort. Nette Leute. Gutes Essen&#8230;</p>
+<p>Danke an unser geniales Küchenteam, das diesen Platz gefunden hat und auch spontan das Barbecue möglich gemacht hat.</p>
+<p>Das Essen bleibt wohl im Programm fürs nächste Jahr.</p>
+<p>Coole Überraschung als wir nach Hause kamen: Das ganze Lager im bunten Meer von leuchtenden Luftballons.</p>
+<p>#Lieblingsstreich #meinEC</p>
+<p><img data-attachment-id="846" data-permalink="https://www.ec-nordbund.de/na-also/dsc_3844/" data-orig-file="https://www.ec-nordbund.de/wp-content/uploads/DSC_3844.jpg" data-orig-size="3840,2160" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;2&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;D5503&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;1491849498&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;4.9&quot;,&quot;iso&quot;:&quot;160&quot;,&quot;shutter_speed&quot;:&quot;0.015625&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="DSC_3844" data-image-description="" data-medium-file="https://www.ec-nordbund.de/wp-content/uploads/DSC_3844-300x169.jpg" data-large-file="https://www.ec-nordbund.de/wp-content/uploads/DSC_3844-1024x576.jpg" class="alignnone size-medium wp-image-846" src="https://www.ec-nordbund.de/wp-content/uploads/DSC_3844-300x169.jpg" alt="" width="300" height="169" srcset="https://www.ec-nordbund.de/wp-content/uploads/DSC_3844-300x169.jpg 300w, https://www.ec-nordbund.de/wp-content/uploads/DSC_3844-768x432.jpg 768w, https://www.ec-nordbund.de/wp-content/uploads/DSC_3844-1024x576.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /> <img data-attachment-id="847" data-permalink="https://www.ec-nordbund.de/na-also/dsc_3851/" data-orig-file="https://www.ec-nordbund.de/wp-content/uploads/DSC_3851.jpg" data-orig-size="3840,2160" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;2&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;D5503&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;1491861513&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;4.9&quot;,&quot;iso&quot;:&quot;6400&quot;,&quot;shutter_speed&quot;:&quot;0.125&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="DSC_3851" data-image-description="" data-medium-file="https://www.ec-nordbund.de/wp-content/uploads/DSC_3851-300x169.jpg" data-large-file="https://www.ec-nordbund.de/wp-content/uploads/DSC_3851-1024x576.jpg" class="alignnone size-medium wp-image-847" src="https://www.ec-nordbund.de/wp-content/uploads/DSC_3851-300x169.jpg" alt="" width="300" height="169" srcset="https://www.ec-nordbund.de/wp-content/uploads/DSC_3851-300x169.jpg 300w, https://www.ec-nordbund.de/wp-content/uploads/DSC_3851-768x432.jpg 768w, https://www.ec-nordbund.de/wp-content/uploads/DSC_3851-1024x576.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></p>

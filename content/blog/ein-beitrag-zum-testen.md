@@ -2,6 +2,7 @@
 title: Ein Beitrag zum Testen
 description: 'An diesem Beitrag können neue Features gestestet und ausprobiert werden. Der Inhalt ist vernachlässigbar!'
 featuredImage: https://images.unsplash.com/photo-1456428746267-a1756408f782?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
+published: 2020-10-21T14:41:55
 
 # Zusätzliche Chips in der Liste
 tags:
