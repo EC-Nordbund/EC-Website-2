@@ -24,7 +24,7 @@
           v-list-item-title {{data.folders[key].title}}
           v-list-item-subtitle {{data.folders[key].description}}
 </template>
-<script>
+<script lang="ts">
 import {
   defineComponent,
   useContext,
@@ -40,7 +40,9 @@ export default defineComponent({
       .split('/')
       .filter((v) => v !== '')
 
-    const fileData = useAsync(async () => await $content('downloads').fetch())
+    const fileData = useAsync(
+      async () => await $content('downloads').fetch<any>()
+    )
 
     const data = computed(() => {
       if (fileData.value === null) {
@@ -81,7 +83,7 @@ export default defineComponent({
       } else if (fileRoute.length === depth) {
         item.href += fileRoute.join('/')
       } else {
-        item.href = undefined
+        item.href = (undefined as unknown) as string
       }
 
       return item

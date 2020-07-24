@@ -29,7 +29,7 @@
           v-spacer
           v-btn(@click="submit") Absenden
 </template>
-<script>
+<script lang="ts">
 import { defineComponent, reactive } from 'nuxt-composition-api'
 import $axios from 'axios'
 import { ruleLib, useValidation } from '../../../plugins/validate'
