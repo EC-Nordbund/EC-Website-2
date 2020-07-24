@@ -54,5 +54,19 @@ export default {
       tab: 0,
     }
   },
+   head() {
+    return {
+      title: 'Datenschutz',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Unsere Datenschutzerklärung für alle Personengruppen.' },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: 'Datenschutz' },
+        { hid: 'og:description', property: 'og:description', content: 'Unsere Datenschutzerklärung für alle Personengruppen.' },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: 'Datenschutz' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'Unsere Datenschutzerklärung für alle Personengruppen.' }
+      ]
+    }
+  }
 }
 </script>
