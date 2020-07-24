@@ -5,14 +5,14 @@
 <script>
 export default {
   async asyncData({ $content, params, redirect, route }) {
-    const {slugs} = await $content('old-news-slugs').fetch()
+    const { slugs } = await $content('old-news-slugs').fetch()
     console.log(slugs)
-    
-    if(slugs.includes(params.id)) {
+
+    if (slugs.includes(params.id)) {
       redirect('/blog/' + params.id)
     } else {
       redirect('/404', { path: route.path })
     }
-  }
+  },
 }
 </script>

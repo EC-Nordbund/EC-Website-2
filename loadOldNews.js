@@ -1,5 +1,5 @@
-const axios = require('axios')
 const fs = require('fs')
+const axios = require('axios')
 
 const file = []
 const slugs = []
@@ -40,7 +40,7 @@ async function main() {
     file.push(
       ...v.content
         .split('src="')
-        .filter((v, i) => i !== 0)
+        .filter((_v, i) => i !== 0)
         .map((v) => v.split('"')[0].split('?')[0])
         .filter((v) =>
           v.startsWith('https://www.ec-nordbund.de/wp-content/uploads/')
@@ -49,7 +49,7 @@ async function main() {
     file.push(
       ...v.content
         .split('src-set="')
-        .filter((v, i) => i !== 0)
+        .filter((_v, i) => i !== 0)
         .map((v) => v.split('"')[0].split('?')[0])
         .filter((v) =>
           v.startsWith('https://www.ec-nordbund.de/wp-content/uploads/')

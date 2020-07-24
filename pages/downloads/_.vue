@@ -23,24 +23,29 @@
         v-list-item-content
           v-list-item-title {{data.folders[key].title}}
           v-list-item-subtitle {{data.folders[key].description}}
-</template> 
+</template>
 <script>
-import { defineComponent, useContext, useAsync, computed } from "nuxt-composition-api";
-
-
+import {
+  defineComponent,
+  useContext,
+  useAsync,
+  computed,
+} from 'nuxt-composition-api'
 
 export default defineComponent({
   setup() {
     const { route, $content } = useContext()
-    
-    const fileRoute = route.value.params.pathMatch.split('/').filter(v=>v!== '')
+
+    const fileRoute = route.value.params.pathMatch
+      .split('/')
+      .filter((v) => v !== '')
 
     const fileData = useAsync(async () => await $content('downloads').fetch())
 
     const data = computed(() => {
-      if(fileData.value === null) {
-        return {files: [], folders: []}
-      } else if(route.value.params.pathMatch.length < 2) {
+      if (fileData.value === null) {
+        return { files: [], folders: [] }
+      } else if (route.value.params.pathMatch.length < 2) {
         return fileData.value
       } else {
         let pointer = fileData.value
@@ -48,8 +53,8 @@ export default defineComponent({
         for (let i = 0; i < fileRoute.length; i++) {
           pointer = pointer?.folders?.[fileRoute[i]]
 
-          if(!pointer) {
-            return {files: [], folders: []}
+          if (!pointer) {
+            return { files: [], folders: [] }
           }
         }
 
@@ -58,26 +63,27 @@ export default defineComponent({
     })
 
     function toBreadcrumb(key = '', depth = 0) {
-      var item = {
+      const item = {
         text: key,
-        href: '/downloads/'
-      }, curr = fileData.value
+        href: '/downloads/',
+      }
+      let curr = fileData.value
 
       // add title to subpath
-      for(let i=0; i < depth; i++) {
+      for (let i = 0; i < depth; i++) {
         curr = curr?.folders?.[fileRoute[i]]
       }
       item.text = curr?.title
 
       // add link to subpath
-      if ( fileRoute.length > depth ) {
-        item.href += fileRoute.slice(0, -fileRoute.length+depth).join('/')
-      } else if( fileRoute.length === depth) {
+      if (fileRoute.length > depth) {
+        item.href += fileRoute.slice(0, -fileRoute.length + depth).join('/')
+      } else if (fileRoute.length === depth) {
         item.href += fileRoute.join('/')
       } else {
         item.href = undefined
       }
-     
+
       return item
     }
 
@@ -87,15 +93,27 @@ export default defineComponent({
     return {
       title: 'Downloads',
       meta: [
-        { hid: 'description', name: 'description', content: 'Download von Vorlagen, Dokumenten etc.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Download von Vorlagen, Dokumenten etc.',
+        },
         // Open Graph
         { hid: 'og:title', property: 'og:title', content: 'Downloads' },
-        { hid: 'og:description', property: 'og:description', content: 'Download von Vorlagen, Dokumenten etc.' },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Download von Vorlagen, Dokumenten etc.',
+        },
         // Twitter Card
         { hid: 'twitter:title', name: 'twitter:title', content: 'Downloads' },
-        { hid: 'twitter:description', name: 'twitter:description', content: 'Download von Vorlagen, Dokumenten etc..' }
-      ]
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Download von Vorlagen, Dokumenten etc..',
+        },
+      ],
     }
-  }
+  },
 })
 </script>

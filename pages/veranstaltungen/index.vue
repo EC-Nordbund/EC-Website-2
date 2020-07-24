@@ -42,15 +42,31 @@ export default {
     return {
       title: 'Veranstaltungen',
       meta: [
-        { hid: 'description', name: 'description', content: 'Liste aller Veranstaltungen des EC-Nordbundes.' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Liste aller Veranstaltungen des EC-Nordbundes.',
+        },
         // Open Graph
         { hid: 'og:title', property: 'og:title', content: 'Veranstaltungen' },
-        { hid: 'og:description', property: 'og:description', content: 'Liste aller Veranstaltungen des EC-Nordbundes.' },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Liste aller Veranstaltungen des EC-Nordbundes.',
+        },
         // Twitter Card
-        { hid: 'twitter:title', name: 'twitter:title', content: 'Veranstaltungen' },
-        { hid: 'twitter:description', name: 'twitter:description', content: 'Liste aller Veranstaltungen des EC-Nordbundes..' }
-      ]
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Veranstaltungen',
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Liste aller Veranstaltungen des EC-Nordbundes..',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
