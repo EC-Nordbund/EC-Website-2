@@ -33,18 +33,20 @@ const pagination = {
 
 export default {
   async asyncData({ $content, query }) {
+    const page = parseInt(query.page || '1') || 1
+
     const [posts, pageCount] = await Promise.all([
-      pagination.getPostsOfPage($content, query.page || '1'),
+      pagination.getPostsOfPage($content, page),
       pagination.getNumberOfPages($content),
     ])
 
-    return { posts, page: parseInt(query.page || '1'), pageCount }
+    return { posts, page, pageCount }
   },
   data() {
     return {
       posts: [],
-      page: 0,
-      pagesCount: 1,
+      page: 1,
+      pageCount: 1,
     }
   },
   watch: {
@@ -53,7 +55,6 @@ export default {
       this.posts = await pagination.getPostsOfPage(this.$content, this.page)
     },
   },
-  methods: pagination,
 
   head() {
     return {
