@@ -398,6 +398,12 @@ async function main() {
   ])
 
   data.forEach((data) => {
+    // data.data.forEach((v) => {
+    //   if (v.meta.jetpack_publicize_message.trim() === '') {
+    //     console.log('[SEO] Keine Beschreibung: ' + v.slug)
+    //   }
+    // })
+
     const _f = data.data.map((v) => ({
       filename: `./content/blog/${v.slug}.md`,
       content: `---\ntitle: "${v.title.rendered
