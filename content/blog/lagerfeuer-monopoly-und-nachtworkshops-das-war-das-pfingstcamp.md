@@ -7,4 +7,37 @@ featuredImage: /card.png
 
 # Lagerfeuer, Monopoly und Nachtworkshops  Das war das PfingstCamp
 
-<p>Wir waren trotz Regen im Wald, bei Sonne im Wasser und in der Nacht aktiv. Diesmal war wirklich alles drin, was Karlsminde zu bieten hatte. Ein fest für alle Sinne und zu jeder Zeit überraschend. Wir haben nicht nur mit allen Sinnen unser Leben genossen, sondern auch überlegt, wie es sich sinnvoll leben lässt. Wir haben auf unser Leben geschaut, erste Berührungspunkte mit Jesus gesucht und gefunden und angefangen konkret auf sein Wort zu hören.</p><p>Das alles ist Pfingsten. Ein Fest, an dem Gott uns nahe kommt, obwohl er sich seit Himmelfahrt unserer optischen Wahrnehmung entzogen hat. Gott füllt unser Leben von innen und verleiht uns dadurch eine Strahlkraft, die sich in ungebremster Lebensfreude ausdrücken kann, darf und soll.</p><p>Deshalb ist dieses Wochenende auch jedes Jahr wieder ein Highlight in unserem Nordbund-Fest-Kalender. Diesmal haben wir mit 1.000 Bällen gespielt, einen Kriminalfall gelöst, Monopoly in einer Reallife-Edition gespielt, Stockbrote am Lagerfeuer gemacht, als Spione Bandenbosse gefangen und einen richtig bunten Abend erlebt. Und trotzdem gab es noch Zeit zum Chillen und Grillen, zum Baden im Meer, zum nächtlichen Carrerabahn-Battle und zur Lobpreissassion um Mitternacht. Und dabei ist das Live-Escape-Game noch gar nicht erwähnt.</p><p>Das glaubst du nicht? Zu viel für drei Tage? Eigentlich schon, aber auch das ist ein Pfingstwunder.</p><p>Du zweifelst noch? Dann überzeuge dich doch selbst und sei im nächsten Jahr Teil dieses Phänomens.</p><p></p><p><img src="/old/PfingstCamp-640x122.png" alt width="640" height="122"></p><p><img src="/old/IMG_7335-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7380-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7481-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7543-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7567-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7640-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7663-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7679-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7694-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7758-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7772-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7889-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7965-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_7993-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_8035-640x427.jpg" alt width="640" height="427"><img src="/old/IMG_8044-640x427.jpg" alt width="640" height="427"></p>
+Wir waren trotz Regen im Wald, bei Sonne im Wasser und in der Nacht aktiv. Diesmal war wirklich alles drin, was Karlsminde zu bieten hatte. Ein fest für alle Sinne und zu jeder Zeit überraschend. Wir haben nicht nur mit allen Sinnen unser Leben genossen, sondern auch überlegt, wie es sich sinnvoll leben lässt. Wir haben auf unser Leben geschaut, erste Berührungspunkte mit Jesus gesucht und gefunden und angefangen konkret auf sein Wort zu hören.
+
+Das alles ist Pfingsten. Ein Fest, an dem Gott uns nahe kommt, obwohl er sich seit Himmelfahrt unserer optischen Wahrnehmung entzogen hat. Gott füllt unser Leben von innen und verleiht uns dadurch eine Strahlkraft, die sich in ungebremster Lebensfreude ausdrücken kann, darf und soll.
+
+Deshalb ist dieses Wochenende auch jedes Jahr wieder ein Highlight in unserem Nordbund-Fest-Kalender. Diesmal haben wir mit 1.000 Bällen gespielt, einen Kriminalfall gelöst, Monopoly in einer Reallife-Edition gespielt, Stockbrote am Lagerfeuer gemacht, als Spione Bandenbosse gefangen und einen richtig bunten Abend erlebt. Und trotzdem gab es noch Zeit zum Chillen und Grillen, zum Baden im Meer, zum nächtlichen Carrerabahn-Battle und zur Lobpreissassion um Mitternacht. Und dabei ist das Live-Escape-Game noch gar nicht erwähnt.
+
+Das glaubst du nicht? Zu viel für drei Tage? Eigentlich schon, aber auch das ist ein Pfingstwunder.
+
+Du zweifelst noch? Dann überzeuge dich doch selbst und sei im nächsten Jahr Teil dieses Phänomens.
+
+&nbsp;
+
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/PfingstCamp.png" alt width="100%">
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 5px;">
+<img src="/old/IMG_7335.jpg" alt width="100%">
+<img src="/old/IMG_7380.jpg" alt width="100%">
+<img src="/old/IMG_7481.jpg" alt width="100%">
+<img src="/old/IMG_7543.jpg" alt width="100%">
+<img src="/old/IMG_7567.jpg" alt width="100%">
+<img src="/old/IMG_7640.jpg" alt width="100%">
+<img src="/old/IMG_7663.jpg" alt width="100%">
+<img src="/old/IMG_7679.jpg" alt width="100%">
+<img src="/old/IMG_7694.jpg" alt width="100%">
+<img src="/old/IMG_7758.jpg" alt width="100%">
+<img src="/old/IMG_7772.jpg" alt width="100%">
+<img src="/old/IMG_7889.jpg" alt width="100%">
+<img src="/old/IMG_7965.jpg" alt width="100%">
+<img src="/old/IMG_7993.jpg" alt width="100%">
+<img src="/old/IMG_8035.jpg" alt width="100%">
+<img src="/old/IMG_8044.jpg" alt width="100%">
+</div>

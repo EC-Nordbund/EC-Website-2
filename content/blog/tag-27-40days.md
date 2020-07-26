@@ -7,4 +7,10 @@ featuredImage: /card.png
 
 # Tag 27  #40days
 
-<p><img src="/old/40DAYS_03-16_OUT-tag-27-480x480.jpg" alt width="480" height="480"></p><p>Wann hast du das letzte Mal mit einem Nichtchristen über deinen Glauben gesprochen?</p><p>#my40days #gefragt #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-16_OUT-tag-27.jpg" alt width="100%">
+</div>
+
+Wann hast du das letzte Mal mit einem Nichtchristen über deinen Glauben gesprochen?
+
+#my40days #gefragt #meinEC #ecjugend

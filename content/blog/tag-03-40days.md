@@ -7,4 +7,10 @@ featuredImage: /card.png
 
 # Tag 03  #40days
 
-<p><img src="/old/40DAYS_02-16_UP-tag-03-1-480x480.jpg" alt width="480" height="480"></p><p>Wann und wie hast du Gott zuletzt erlebt? Schreibe deine Erlebnisse auf, um sie nicht zu vergessen.</p><p>#my40days #gefragt #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_02-16_UP-tag-03-1.jpg" alt width="100%">
+</div>
+
+Wann und wie hast du Gott zuletzt erlebt? Schreibe deine Erlebnisse auf, um sie nicht zu vergessen.
+
+#my40days #gefragt #meinEC #ecjugend

@@ -1,6 +1,8 @@
 const fs = require('fs')
 const axios = require('axios')
 
+let allConntent = ''
+
 const file = []
 const slugs = []
 
@@ -92,6 +94,8 @@ const remClass = [
   'youtube-player',
 ]
 
+const cl = {}
+
 const links = ['href', 'src']
 const delAttrs = [
   'id',
@@ -114,8 +118,14 @@ const delAttrs = [
   'data-medium-file',
   'data-large-file',
   'data-permalink',
+  'data-id',
+  'data-link',
   'srcset',
   'sizes',
+  'style',
+  'aria-describedby',
+  'width',
+  'height',
 ]
 
 const parseElement = (el) => {
@@ -133,15 +143,20 @@ const parseElement = (el) => {
         return
       }
 
-      l = l.split(/i\d.wp.com\//).join('')
+      l = l
+        .split(/i\d.wp.com\//)
+        .join('')
+        .split(/-\d+x\d+/)
+        .join('')
 
       if (l.startsWith('https://www.ec-nordbund.de/wp-content/uploads/')) {
+        l = l.split('?')[0]
+
+        console.log(l)
+
         l = l
           .split('https://www.ec-nordbund.de/wp-content/uploads/')
           .join('/old/')
-
-        // TODO: LOG
-        console.log(l)
       }
 
       el.setAttribute(att, l)
@@ -158,6 +173,14 @@ const parseElement = (el) => {
         .join(' ')
         .trim()
 
+      klassen.forEach((k) => {
+        if (cl[k]) {
+          cl[k]++
+        } else {
+          cl[k] = 1
+        }
+      })
+
       // if (klassen.some((v) => v === 'wp-block-gallery')) {
       //   console.log(el.tagName, el)
       // }
@@ -172,16 +195,190 @@ const parseElement = (el) => {
         el.removeAttribute('class')
       }
     }
+
+    if (el.childNodes.some((v) => v.tagName === 'img')) {
+      let content = ''
+      let pContent = ''
+
+      let imgOn = false
+
+      el.childNodes.forEach((child) => {
+        if (child.tagName === 'img') {
+          child.setAttribute('width', '100%')
+          // console.log(child)
+          if (imgOn) {
+            pContent += child.toString() + '\n'
+          } else {
+            imgOn = true
+            pContent = `<section class="img-gallery">\n`
+            pContent += child.toString() + '\n'
+          }
+        } else {
+          if (imgOn) {
+            pContent += `</section>`
+            content += pContent
+              .split('\n\n')
+              .join('\n')
+              .split('\n\n')
+              .join('\n')
+              .split('\n\n')
+              .join('\n')
+              .split('\n\n')
+              .join('\n')
+              .split('\n\n')
+              .join('\n')
+              .split('\n\n')
+              .join('\n')
+            imgOn = false
+            content += child.toString()
+          } else {
+            content += child.toString()
+          }
+        }
+      })
+
+      if (imgOn) {
+        content += pContent
+      }
+
+      // const parted = el.toString().split('<img')
+
+      // parted[0] += '<div class="ec-image-list-old">'
+
+      // const last = parted[parted.length - 1].split('>')
+      // last[1] = '</div>' + last[1]
+
+      // parted[parted.length - 1] = last.join('>')
+
+      // el.set_content(parted.join('<img'))
+      el.set_content(content)
+    }
+
+    // if (el.tagName === 'img') {
+    //   console.log(el)
+    // }
   }
 }
 
 const parseFile = (el) => {
   const p = HTMLParser.parse(el)
-  p.removeWhitespace()
+  // p.removeWhitespace()
 
   parseElement(p)
 
-  return p.toString()
+  const c = p
+    .toString()
+    .split('\r')
+    .join('')
+    .split('\t')
+    .join('  ')
+    // .split('<img')
+    // .join('\n* <img')
+    .split('<div>')
+    .join('')
+    .split('</div>')
+    .join('\n\n')
+    .split('<br>')
+    .join(' ')
+    .split('<em>')
+    .join('*')
+    .split('</em>')
+    .join('*')
+    .split('<strong>')
+    .join('**')
+    .split('</strong>')
+    .join('**')
+    .split('<p>')
+    .join('')
+    .split('</p>')
+    .join('\n\n')
+    .split('<ul>')
+    .join('')
+    .split('</ul>')
+    .join('\n\n')
+    .split('<ol>')
+    .join('')
+    .split('</ol>')
+    .join('\n\n')
+    .split('<li>')
+    .join('* ')
+    .split('</li>')
+    .join('\n')
+    .split('<figure>')
+    .join('')
+    .split('</figure>')
+    .join('')
+    .split('<h2>')
+    .join('## ')
+    .split('</h2>')
+    .join('')
+    .split('<h3>')
+    .join('### ')
+    .split('</h3>')
+    .join('')
+    .split('<h4>')
+    .join('#### ')
+    .split('</h4>')
+    .join('')
+    .split('<h5>')
+    .join('##### ')
+    .split('</h5>')
+    .join('')
+    .split(/<figcaption>.*<\/figcaption>/)
+    .join('')
+    .split('<hr>')
+    .join('\n---\n')
+    .split('### ###')
+    .join('###')
+    .split('<meta>')
+    .join('')
+    .split('* <section class="img-gallery">')
+    .join('<section class="img-gallery">')
+    .split('</section>\n<section class="img-gallery">\n')
+    .join('')
+    .split('</section> <section class="img-gallery">')
+    .join('')
+    .split('<section class="img-gallery">')
+    .join('<section class="img-gallery">\n\n')
+    .split('<section class="img-gallery">')
+    .map((v, i) => {
+      if (i === 0) {
+        return v
+      }
+
+      const p = v.split('</section>')
+
+      const imgs = p[0]
+        .split('\n')
+        .map((v) => v.trim())
+        .filter((v) => v !== '')
+
+      return (
+        `<div style="display: grid; grid-template-columns: repeat(${Math.min(
+          5,
+          imgs.length
+        )}, 1fr); grid-gap: 5px;">\n${imgs.join('\n')}\n</div>` +
+        p.slice(1).join('</section>')
+      )
+    })
+    .join('')
+    .split('\n')
+    .filter((v) => v.trim() !== '*')
+    .join('\n')
+    .split('   ')
+    .filter((v) => v.trim() !== '')
+    .join('  ')
+    .split('\n\n\n')
+    .filter((v) => v.trim() !== '')
+    .join('\n\n')
+
+  // .split('>\n\n* <img')
+  // .join('>\n * <img')
+
+  allConntent += c
+  allConntent += '\n\n\n\n'
+
+  return c
 }
 
 async function main() {
@@ -242,6 +439,19 @@ async function main() {
       slugs.push(v.slug)
     })
   })
+
+  // console.log(allConntent)
+
+  // console.log(
+  //   Object.keys(cl)
+  //     // .filter((a) => cl[a] === 1)
+  //     .filter((a) => cl[a] > 1)
+  //     .sort((a, b) => cl[a] - cl[b])
+  //     // .sort()
+  //     .reverse()
+  //     .map((v) => `${v}: ${cl[v]}`)
+  //     .join('\n')
+  // )
 
   // console.log(file)
   // console.log(

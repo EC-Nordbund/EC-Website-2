@@ -7,4 +7,19 @@ featuredImage: /card.png
 
 # Na also
 
-<p>&#8230; da sind wir schon seit so vielen Jahren auf Rømø und erst in diesem Jahr finden wir einen Platz zum Grillen.</p><p>Was für ein genialer Abend. Geniales Wetter. Schöner Ort. Nette Leute. Gutes Essen&#8230;</p><p>Danke an unser geniales Küchenteam, das diesen Platz gefunden hat und auch spontan das Barbecue möglich gemacht hat.</p><p>Das Essen bleibt wohl im Programm fürs nächste Jahr.</p><p>Coole Überraschung als wir nach Hause kamen: Das ganze Lager im bunten Meer von leuchtenden Luftballons.</p><p>#Lieblingsstreich #meinEC</p><p><img src="/old/DSC_3844-300x169.jpg" alt width="300" height="169"><img src="/old/DSC_3851-300x169.jpg" alt width="300" height="169"></p>
+&#8230; da sind wir schon seit so vielen Jahren auf Rømø und erst in diesem Jahr finden wir einen Platz zum Grillen.
+
+Was für ein genialer Abend. Geniales Wetter. Schöner Ort. Nette Leute. Gutes Essen&#8230;
+
+Danke an unser geniales Küchenteam, das diesen Platz gefunden hat und auch spontan das Barbecue möglich gemacht hat.
+
+Das Essen bleibt wohl im Programm fürs nächste Jahr.
+
+Coole Überraschung als wir nach Hause kamen: Das ganze Lager im bunten Meer von leuchtenden Luftballons.
+
+#Lieblingsstreich #meinEC
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_3844.jpg" alt width="100%">
+<img src="/old/DSC_3851.jpg" alt width="100%">
+</div>

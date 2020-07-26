@@ -7,4 +7,85 @@ featuredImage: /card.png
 
 # Kreuzweg 2020
 
-<div style="grid-template-columns:auto 40%"><figure><video controls src="/old/Kreuzweg-MQ.m4v"></video></figure><div><div style="height:36px" aria-hidden="true"></div><p>Erlebe den letzten Weg Jesu ans Kreuz neu und ganz persönlich.<br></p><hr><p>Dich erwarten sieben Stationen mit Impulsen, Fragen und Aufgaben für alle Sinne.</p><div style="height:36px" aria-hidden="true"></div></div></div><div style="height:50px" aria-hidden="true"></div><h2>Vorab Informationen</h2><p>Für den Kreuzweg solltest du vorher Folgendes wissen bzw. vorbereiten:</p><ul><li>Achtung: Schau nicht schon vorher die Stationen durch #spoiler!!</li><li>Dir werden die Stationen als Fotos und Audiodateien<a href="#stationen">hier</a>bereitgestellt.<br>Lade sie am besten vorher herunter.</li><li>Jede Station beinhaltet mehrere Fotos, deren Reihenfolge du auch an den Zahlen unten links erkennen kannst.</li><li>Bei einigen Stationen kannst du selbst entscheiden, ob du direkt in der Bibel lesen oder lieber die entsprechende Audiodatei hören möchtest.</li><li>Gehe erst zum nächsten Bild, wenn du die Aufgabe beendet hast.</li><li>Lies langsam und mach Pausen, wo du welche brauchst. Plane für den Kreuzweg 1-2 Studen Zeit ein.</li></ul><h2>Das brauchst du</h2><ul><li>Kleine Tasche für die Gegenstände</li><li>Möglichst großer Nagel</li><li>Edding</li><li>Ca. 1m Schnur</li><li>kleiner Spiegel</li><li>Esslöffel Essig (keine Essenz!)<em>oder</em>ein Stück Zitrone</li><li>Impulse und Audios auf dem Handy</li><li>Bibel<em>oder</em>Bibelapp</li><li>Spotify Playlist<em>(</em>&#8222;Kreuzweg EC-NDS&#8220;<em>)</em><br><em>oder</em>5-8 Worship-Lieder deiner Wahl (mit inhaltlichem Fokus auf das Kreuz)<br><em>oder</em>ein Liederbuch aus dem du gerne singst</li></ul><div style="height:50px" aria-hidden="true"></div><div><div><div style="height:50px" aria-hidden="true"></div><p></p></div></div><div><div><h2>Los geht&#8217;s</h2><p>Wandere ein Stück und suche dir für die erste Station einen Ort, wo du ungestört bist und von wo aus du nach jeder Station noch ungestört weitergehen kannst.</p><p>Nutze diesen ersten Weg, um innerlich still zu werden.<br>Sprich mit Gott, wie mit einem Freund über alles, was dir in den Kopf kommt &#8211; egal ob Todo-Liste, Schule, Familienzeug, Corona&#8230;</p><p>Wenn nötig, mach dir einen kleine Notiz im Handy, damit du die innerliche Todo-Liste nicht vergisst aber aus dem Kopf bekommst.</p><p>Lies langsam, mach Pausen, wo du welche brauchst, wiederhole, was du verinnerlichen willst, lass aus, was dir zu viel ist.</p><p>Nimm dir nach jeder Station den Weg/die Zeit, den/die du brauchst, um die nächste Station zu starten.</p></div></div><div style="height:100px" aria-hidden="true"></div><hr><div><div><h2>Das Projekt</h2><p>Der Kreuzweg 2020 ist ein Projekt des Niedersächsischen EC Verbandes.</p><p>Inhaltliche Ausarbeitung: Evi Stroppel<br>Grafische Gestaltung: Maike Busemann<br>Musikalische Umsetzung: Christina Sauer</p><p>Mit freundlicher Genehmigung der deutschen Bibelgesellschaft</p><p>Texte aus: Die große Hörbibel &#8211; Lutherbibel 1984, © 2007 Deutsche Bibelgesellschaft, Stuttgart, www.die-bibel.de</p></div></div><p></p>
+
+<video controls src="/old/Kreuzweg-MQ.m4v"></video>
+<div aria-hidden="true">
+
+Erlebe den letzten Weg Jesu ans Kreuz neu und ganz persönlich. 
+
+
+---
+
+
+
+Dich erwarten sieben Stationen mit Impulsen, Fragen und Aufgaben für alle Sinne.
+
+<div aria-hidden="true">
+
+
+
+<div aria-hidden="true">
+
+## Vorab Informationen
+
+
+Für den Kreuzweg solltest du vorher Folgendes wissen bzw. vorbereiten:
+
+* Achtung: Schau nicht schon vorher die Stationen durch #spoiler!!
+* Dir werden die Stationen als Fotos und Audiodateien <a href="#stationen">hier</a> bereitgestellt. Lade sie am besten vorher herunter.
+* Jede Station beinhaltet mehrere Fotos, deren Reihenfolge du auch an den Zahlen unten links erkennen kannst.
+* Bei einigen Stationen kannst du selbst entscheiden, ob du direkt in der Bibel lesen oder lieber die entsprechende Audiodatei hören möchtest.
+* Gehe erst zum nächsten Bild, wenn du die Aufgabe beendet hast.
+* Lies langsam und mach Pausen, wo du welche brauchst. Plane für den Kreuzweg 1-2 Studen Zeit ein.
+
+
+## Das brauchst du
+
+
+* Kleine Tasche für die Gegenstände
+* Möglichst großer Nagel
+* Edding
+* Ca. 1m Schnur
+* kleiner Spiegel
+* Esslöffel Essig (keine Essenz!) *oder* ein Stück Zitrone 
+* Impulse und Audios auf dem Handy
+* Bibel *oder* Bibelapp
+* Spotify Playlist *(*&#8222;Kreuzweg EC-NDS&#8220;*)* *oder* 5-8 Worship-Lieder deiner Wahl (mit inhaltlichem Fokus auf das Kreuz) *oder* ein Liederbuch aus dem du gerne singst
+
+
+<div aria-hidden="true">
+
+
+<div aria-hidden="true">
+
+
+## Los geht&#8217;s
+
+
+Wandere ein Stück und suche dir für die erste Station einen Ort, wo du ungestört bist und von wo aus du nach jeder Station noch ungestört weitergehen kannst.
+
+Nutze diesen ersten Weg, um innerlich still zu werden. Sprich mit Gott, wie mit einem Freund über alles, was dir in den Kopf kommt &#8211; egal ob Todo-Liste, Schule, Familienzeug, Corona&#8230;
+
+Wenn nötig, mach dir einen kleine Notiz im Handy, damit du die innerliche Todo-Liste nicht vergisst aber aus dem Kopf bekommst.
+
+Lies langsam, mach Pausen, wo du welche brauchst, wiederhole, was du verinnerlichen willst, lass aus, was dir zu viel ist.
+
+Nimm dir nach jeder Station den Weg/die Zeit, den/die du brauchst, um die nächste Station zu starten.
+
+
+
+<div aria-hidden="true">
+
+
+---
+
+## Das Projekt
+
+
+Der Kreuzweg 2020 ist ein Projekt des Niedersächsischen EC Verbandes.
+
+Inhaltliche Ausarbeitung: Evi Stroppel Grafische Gestaltung: Maike Busemann Musikalische Umsetzung: Christina Sauer
+
+Mit freundlicher Genehmigung der deutschen Bibelgesellschaft
+
+Texte aus: Die große Hörbibel &#8211; Lutherbibel 1984, © 2007 Deutsche Bibelgesellschaft, Stuttgart, www.die-bibel.de

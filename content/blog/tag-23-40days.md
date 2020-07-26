@@ -7,4 +7,20 @@ featuredImage: /card.png
 
 # Tag 23  #40days
 
-<p><img src="/old/40DAYS_03-12_WITH-tag-23-480x480.jpg" alt width="480" height="480"></p><p>1. Korinther. 12,12 Es ist wie beim menschlichen Körper:</p><p>Er bildet eine Einheit</p><p>und besteht doch aus vielen Körperteilen.</p><p>Aber obwohl es viele Teile sind,</p><p>ist es doch ein einziger Leib.</p><p>So ist es auch mit Christus. (Basisbibel)</p><p>#my40days #gotteswort #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-12_WITH-tag-23.jpg" alt width="100%">
+</div>
+
+1. Korinther. 12,12 Es ist wie beim menschlichen Körper:
+
+Er bildet eine Einheit
+
+und besteht doch aus vielen Körperteilen.
+
+Aber obwohl es viele Teile sind,
+
+ist es doch ein einziger Leib.
+
+So ist es auch mit Christus. (Basisbibel)
+
+#my40days #gotteswort #meinEC #ecjugend

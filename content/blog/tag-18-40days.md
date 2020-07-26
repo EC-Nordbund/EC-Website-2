@@ -7,4 +7,10 @@ featuredImage: /card.png
 
 # Tag 18  #40days
 
-<p><img src="/old/40DAYS_03-06_WITH-tag-18-480x480.jpg" alt width="480" height="480"></p><p>Gehe am Sonntag in eine Gemeinde, in der du noch nie warst und wo du Neues erleben wirst. Was erwartest du dir von der Gemeinde?</p><p>#my40days #challenge #meinEC</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-06_WITH-tag-18.jpg" alt width="100%">
+</div>
+
+Gehe am Sonntag in eine Gemeinde, in der du noch nie warst und wo du Neues erleben wirst. Was erwartest du dir von der Gemeinde?
+
+#my40days #challenge #meinEC

@@ -7,4 +7,10 @@ featuredImage: /card.png
 
 # Ostern  #40days
 
-<p><img src="/old/40DAYS_04-01_beziehungskompass_ostern-480x480.jpg" alt width="480" height="480"></p><p>Feiere! Der Herr ist auferstanden!</p><p>Wem kannst du das heute neu oder zum ersten Mal sagen oder schreiben?</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_04-01_beziehungskompass_ostern.jpg" alt width="100%">
+</div>
+
+Feiere! Der Herr ist auferstanden!
+
+Wem kannst du das heute neu oder zum ersten Mal sagen oder schreiben?

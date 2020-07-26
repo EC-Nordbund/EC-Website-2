@@ -7,4 +7,19 @@ featuredImage: /card.png
 
 # Herzlich willkommen, Dortje Gaertner
 
-<figure><img src="/old/Dortje-Einführung-1200x436.jpg" alt></figure><h2>Wir begrüßen unsere neue Kinder- und Jungscharreferentin im EC-Nordbund.</h2><p style="text-align:left">Dortje Gaertner kommt ursprünglich aus dem Nordbund, genauer gesagt aus Burg in Dithmarschen. Jetzt ist sie wieder in den Norden zurück gekehrt und wird zukünftig zu 50% die EC-Jugendarbeit in Uetersen betreuen und mit 50% die überregionale Kinder- und Jungschararbeit voranbringen.<br>Wir freuen uns auf viele geniale Begegnung mit ihr. Eine erste wird die offizielle Diensteinführung sein.</p><p>Wenn Du dabei sein willst, dann komm gerne vorbei.<br><em><strong>Gemeinschaft i.d.Ev. Kirche Uetersen/Pinneberg<br>Martin-Luther-Haus<br>Am Markt, 25436 Uetersen</strong></em></p><figure><img src="/old/rechteckig_2-1200x800.png" alt></figure>
+
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/Dortje-Einführung.jpg" alt width="100%">
+</div>
+
+
+## Wir begrüßen unsere neue Kinder- und Jungscharreferentin im EC-Nordbund.
+
+
+Dortje Gaertner kommt ursprünglich aus dem Nordbund, genauer gesagt aus Burg in Dithmarschen. Jetzt ist sie wieder in den Norden zurück gekehrt und wird zukünftig zu 50% die EC-Jugendarbeit in Uetersen betreuen und mit 50% die überregionale Kinder- und Jungschararbeit voranbringen. Wir freuen uns auf viele geniale Begegnung mit ihr. Eine erste wird die offizielle Diensteinführung sein.
+
+Wenn Du dabei sein willst, dann komm gerne vorbei. ***Gemeinschaft i.d.Ev. Kirche Uetersen/Pinneberg Martin-Luther-Haus Am Markt, 25436 Uetersen***
+
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/rechteckig_2.png" alt width="100%">
+</div>

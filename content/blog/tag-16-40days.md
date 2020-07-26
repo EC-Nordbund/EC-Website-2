@@ -7,4 +7,10 @@ featuredImage: /card.png
 
 # Tag 16  #40days
 
-<p><img src="/old/40DAYS_03-03_IN-tag-16-480x480.jpg" alt width="480" height="480"></p><p>Warum machst du beim EC mit? Kommentiere, warum du mitmachst.</p><p>#my40days #erlebt #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-03_IN-tag-16.jpg" alt width="100%">
+</div>
+
+Warum machst du beim EC mit? Kommentiere, warum du mitmachst.
+
+#my40days #erlebt #meinEC #ecjugend

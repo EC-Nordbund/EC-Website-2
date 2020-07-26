@@ -7,4 +7,23 @@ featuredImage: /card.png
 
 # #decm2017  SaturdayReport
 
-<p>Hier in Baunatal sind heute um 10 Uhr die deutschen EC-Meisterschaften feierlich eröffnet wurden.<br>Wir der<a href="https://www.ec-nordbund.de/">EC-Nordbund</a>wird dort durch eine Fußballmannschaft und seit längerem auch wieder durch eine Volleyballmannschaft vertreten.</p><p></p><div style="width: 650px"><img aria-describedby="caption-attachment-1018" src="/old/G0081854-e-640x480.jpg" alt width="640" height="480"><p>T. Krause</p></div><p></p><div style="width: 650px"><img aria-describedby="caption-attachment-1019" src="/old/G0012317-e-640x480.jpg" alt width="640" height="480"><p>T. Krause</p></div><p>Gestern Abend kam das erste Auto aus dem Nordbund an und übernachtete bereits eine Nacht auf dem Sportgelände.<br>Im Gegensatz zum gestrigen Wetter strahlt heute die Sonne und wird nur selten von einem Wölkchen verdeckt. Es ist warm, so dass die Fußballer auch ohne zu spiele ordentlich ins Schwitzen geraten.</p><p>Ergebnisse und Spielbericht gibt&#8217;s erst morgen im SundayReport!</p>
+Hier in Baunatal sind heute um 10 Uhr die deutschen EC-Meisterschaften feierlich eröffnet wurden. 
+Wir der <a href="https://www.ec-nordbund.de/">EC-Nordbund</a> wird dort durch eine Fußballmannschaft und seit längerem auch wieder durch eine Volleyballmannschaft vertreten.
+
+
+
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/G0081854-e.jpg" alt width="100%">
+</div>T. Krause
+
+
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/G0012317-e.jpg" alt width="100%">
+</div>T. Krause
+
+
+
+Gestern Abend kam das erste Auto aus dem Nordbund an und übernachtete bereits eine Nacht auf dem Sportgelände. 
+Im Gegensatz zum gestrigen Wetter strahlt heute die Sonne und wird nur selten von einem Wölkchen verdeckt. Es ist warm, so dass die Fußballer auch ohne zu spiele ordentlich ins Schwitzen geraten.
+
+Ergebnisse und Spielbericht gibt&#8217;s erst morgen im SundayReport!

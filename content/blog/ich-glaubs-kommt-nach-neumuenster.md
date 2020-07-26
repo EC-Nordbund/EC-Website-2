@@ -7,4 +7,14 @@ featuredImage: /card.png
 
 # ich glaubs kommt  nach Neumünster
 
-<p><img src="/old/WhatsApp-Image-2017-05-16-at-20.49.13-640x359.jpeg" alt width="640" height="359"></p><p>Noch sind die Reihen leer. Das nennt sich die Ruhe vor dem Sturm. Denn schon in wenigen Stunden geht es los. Der EC-Neumünster lädt ein zur &#8222;ich glaub&#8217;s&#8220;-Woche.</p><p>Vom 17.-20.05.2017 gibt es immer um 18:30 Uhr volles Programm. Alle Teens und Jugendlichen sind eingeladen, sich neu damit auseinanderzusetzen, was und wie man heute glauben kann.</p><p>Neben Tilli Linz (Sozialarbeiterin aus dem Ruhrpott) kommen auch wir selber an jedem Abend zu Wort. Gemeinsam ins Gespräch vertieft&#8230; oder am Kickertisch vereint&#8230; oder bei guter Musik in der Lounge versackt&#8230;</p><p>Gemeinsam machts am meisten Spaß und am Meisten sind wir, wenn am Wenigsten fehlen. Sehen wir uns?</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/WhatsApp-Image-2017-05-16-at-20.49.13.jpeg" alt width="100%">
+</div>
+
+Noch sind die Reihen leer. Das nennt sich die Ruhe vor dem Sturm. Denn schon in wenigen Stunden geht es los. Der EC-Neumünster lädt ein zur &#8222;ich glaub&#8217;s&#8220;-Woche.
+
+Vom 17.-20.05.2017 gibt es immer um 18:30 Uhr volles Programm. Alle Teens und Jugendlichen sind eingeladen, sich neu damit auseinanderzusetzen, was und wie man heute glauben kann.
+
+Neben Tilli Linz (Sozialarbeiterin aus dem Ruhrpott) kommen auch wir selber an jedem Abend zu Wort. Gemeinsam ins Gespräch vertieft&#8230; oder am Kickertisch vereint&#8230; oder bei guter Musik in der Lounge versackt&#8230;
+
+Gemeinsam machts am meisten Spaß und am Meisten sind wir, wenn am Wenigsten fehlen. Sehen wir uns?

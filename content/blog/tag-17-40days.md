@@ -7,4 +7,24 @@ featuredImage: /card.png
 
 # Tag 17  #40days
 
-<p><img src="/old/40DAYS_03-05_IN-tag-17-480x480.jpg" alt width="480" height="480"></p><p>Apostelgeschichte 2,42</p><p>Die Menschen, die zum Glauben gekommen waren,</p><p>trafen sich regelmäßig.</p><p>Sie ließen sich von den Aposteln unterweisen,</p><p>pflegten ihre Gemeinschaft,</p><p>brachen das Brot</p><p>und beteten.</p><p>(Basisbibel)</p><p>#my40days #gotteswort #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-05_IN-tag-17.jpg" alt width="100%">
+</div>
+
+Apostelgeschichte 2,42
+
+Die Menschen, die zum Glauben gekommen waren,
+
+trafen sich regelmäßig.
+
+Sie ließen sich von den Aposteln unterweisen,
+
+pflegten ihre Gemeinschaft,
+
+brachen das Brot
+
+und beteten.
+
+(Basisbibel)
+
+#my40days #gotteswort #meinEC #ecjugend

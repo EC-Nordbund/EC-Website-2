@@ -7,4 +7,10 @@ featuredImage: /card.png
 
 # Break IV  #40days
 
-<p><img src="/old/40DAYS_03-11_WITH-break4-480x480.jpg" alt width="480" height="480"></p><p>Nimm dir Zeit und lass den heutigen Gottesdienst noch einmal an dir vorüberziehen. Was war neu? Was war anders als sonst? Was bleibt hängen?</p><p>#my40days #break #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-11_WITH-break4.jpg" alt width="100%">
+</div>
+
+Nimm dir Zeit und lass den heutigen Gottesdienst noch einmal an dir vorüberziehen. Was war neu? Was war anders als sonst? Was bleibt hängen?
+
+#my40days #break #meinEC #ecjugend

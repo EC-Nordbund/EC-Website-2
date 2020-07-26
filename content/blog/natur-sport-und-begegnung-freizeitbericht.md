@@ -7,4 +7,137 @@ featuredImage: /card.png
 
 # Natur, Sport und Begegnung  Freizeitbericht
 
-<p>Am 11.08. machte sich eine bunte Truppe in den Morgenstunden auf den Weg. Nach dem Treffen<br>in Rendsburg und dem Verteilen auf die Autos, begann dann die Reise nach Dalsland, Schweden.</p><p><img src="/old/DSC_5703-640x426.jpeg" alt width="640" height="426"><br>10 Kajaks wurden von uns 14 Jugendlichen beladen, um 8 Tage durch die schöne Natur Schwedens<br>und Norwegens zu paddeln. Dabei durften wir Gottes nahezu unberührte Schöpfung genießen.<br>Unsere Zelte haben wir auf verschiedenen Untergründen aufschlagen, vom Strand, über Wälder, bis<br>zu einem Plateau war alles dabei. Bei einer Fahrt von insgesamt ca. 60 km konnten wir neben dem<br>für Manche ungewöhnlichen Sport des Kajakfahrens auch andere besondere Aktivitäten<br>durchführen, so waren ein riesiger ehemaliger Schmuggelplatz für Autoteile auf einer Insel, das<br>Schlafen in Hängematten und das Beobachten von Polarlichtern bei klarem Sternenhimmel Teil der<br>Jugendfreizeit.<br>Durch das direkte Leben in der Natur kamen wir Gott auf besondere Weise nahe und haben in<br>Bibelarbeiten mehr über die Geschichte israelitischer Könige und den Weg Jesu erfahren, als wir<br>Texte aus dem 1. Könige-Buch und dem Johannesevangelium lesen durften. In einer offenen Runde<br>hat man so verschiedenen Blickwinkeln folgen und eine ergiebige Diskussionsrunde führen können.<br>Auch Lobpreis-Abende wurden trotz mangelnder Liederbücher und Instrumente nicht ausgelassen,<br>dabei haben eine Ukulele, zwei Liederbücher, Marshmallows und Stockbrotteig die Menge am<br>Lagerfeuer gehalten.</p><p></p><div><div style="width: 500px; height: 166px;"><div style="width: 166px; height: 166px;"><div><a href="/old/DSC_5783.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5783.jpeg?w=162&h=162&crop=1&ssl=1" width="162" height="162" title="DSC_5783" alt="DSC_5783" style="width: 162px; height: 162px;"></a></div></div><div style="width: 166px; height: 166px;"><div><a href="/old/DSC_5656.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5656.jpeg?w=162&h=162&crop=1&ssl=1" width="162" height="162" title="DSC_5656" alt="DSC_5656" style="width: 162px; height: 162px;"></a></div></div><div style="width: 166px; height: 166px;"><div><a href="/old/DSC_5646.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5646.jpeg?w=162&h=162&crop=1&ssl=1" width="162" height="162" title="DSC_5646" alt="DSC_5646" style="width: 162px; height: 162px;"></a></div></div></div></div><p>Neben all den Aktivitäten wurde gebadet und verschiedene Kartenspiele gespielt, wodurch auch bei<br>kürzeren Touren nie Langeweile aufkam.<br>So haben wir uns von Unterkunft zu Unterkunft gepaddelt, und wenn kein Shelter frei war, weil die<br>Morgensonne nicht ausreichte, um die Leiter früh genug aus den Schlafsäcken zu holen, wurde<br>spontan eine Lösung gefunden und das Lager selbst kreiert. Dabei hat Gott die Freizeit immer<br>wieder aufs Neue gesegnet, denn auch bei ungünstigem Gelände und Platzmangel hat jeder einen<br>Schlafplatz gefunden.<br>Gerade, wenn es mal nicht nach Plan lief, hatten wir besonders viel Spaß.<br>Trotz der unmittelbaren Berührung mit der Natur haben wir leider keine Elche gesehen, wobei<br>einige Abenteurer sehr nah dran waren. So bleiben sie, neben der Eskimorolle, auch noch auf der<br>To-Do-Liste für zukünftige Paddeltouren in Skandinavien.</p><p>Für den Ernstfall hatten wir ein Kentertraining, das nicht nur für Spaß sorgte, sondern auch<br>beibrachte, wie man ein gekentertes Kajak ausleert, umdreht und der Gekenterte seinen angedachten<br>Platz wieder einnehmen kann.<br>Nach einer längeren Tour mit Gegenwind, jedoch einer effizienten Kettenformation, neigte sich die<br>Freizeit dann ihrem Ende, die ohne große Verletzungen eine tolle Erfahrung für jeden bot, der<br>tapfer genug war, um sie zu bestreiten.</p><p></p><div><div style="width: 500px; height: 223px;"><div style="width: 334px; height: 223px;"><div><a href="/old/DSC_5615.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5615.jpeg?w=330&h=219&ssl=1" width="330" height="219" title="DSC_5615" alt="DSC_5615" style="width: 330px; height: 219px;"></a></div></div><div style="width: 166px; height: 223px;"><div><a href="/old/DSC_5675.jpg?ssl=1"><meta><meta><img src="/old/DSC_5675.jpg?w=162&h=107&ssl=1" width="162" height="107" title="DSC_5675" alt="DSC_5675" style="width: 162px; height: 107px;"></a></div><div><a href="/old/DSC_5775.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5775.jpeg?w=162&h=108&ssl=1" width="162" height="108" title="DSC_5775" alt="DSC_5775" style="width: 162px; height: 108px;"></a></div></div></div><div style="width: 500px; height: 223px;"><div style="width: 166px; height: 223px;"><div><a href="/old/DSC_5746.jpg?ssl=1"><meta><meta><img src="/old/DSC_5746.jpg?w=162&h=108&ssl=1" width="162" height="108" title="DSC_5746" alt="DSC_5746" style="width: 162px; height: 108px;"></a></div><div><a href="/old/DSC_5846.jpg?ssl=1"><meta><meta><img src="/old/DSC_5846.jpg?w=162&h=107&ssl=1" width="162" height="107" title="DSC_5846" alt="DSC_5846" style="width: 162px; height: 107px;"></a></div></div><div style="width: 334px; height: 223px;"><div><a href="/old/DSC_5752.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5752.jpeg?w=330&h=219&ssl=1" width="330" height="219" title="DSC_5752" alt="DSC_5752" style="width: 330px; height: 219px;"></a></div></div></div><div style="width: 500px; height: 84px;"><div style="width: 125px; height: 84px;"><div><a href="/old/DSC_5726.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5726.jpeg?w=121&h=80&ssl=1" width="121" height="80" title="DSC_5726" alt="DSC_5726" style="width: 121px; height: 80px;"></a></div></div><div style="width: 125px; height: 84px;"><div><a href="/old/DSC_5754.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5754.jpeg?w=121&h=80&ssl=1" width="121" height="80" title="DSC_5754" alt="DSC_5754" style="width: 121px; height: 80px;"></a></div></div><div style="width: 125px; height: 84px;"><div><a href="/old/DSC_5810.jpeg?ssl=1"><meta><meta><img src="/old/DSC_5810.jpeg?w=121&h=80&ssl=1" width="121" height="80" title="DSC_5810" alt="DSC_5810" style="width: 121px; height: 80px;"></a></div></div><div style="width: 125px; height: 84px;"><div><a href="/old/DSC_5860.jpg?ssl=1"><meta><meta><img src="/old/DSC_5860.jpg?w=121&h=80&ssl=1" width="121" height="80" title="DSC_5860" alt="DSC_5860" style="width: 121px; height: 80px;"></a></div></div></div></div><p>Alles in allem war die Freizeit ein großes Abenteuer, bei dem wir viel über Gott gelernt haben und<br>in atemberaubender Natur Gemeinschaft genießen konnten.<br>Wir werden noch oft an die Freizeit zurückdenken!</p>
+Am 11.08. machte sich eine bunte Truppe in den Morgenstunden auf den Weg. Nach dem Treffen 
+in Rendsburg und dem Verteilen auf die Autos, begann dann die Reise nach Dalsland, Schweden.
+
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5703.jpeg" alt width="100%">
+</div> 
+10 Kajaks wurden von uns 14 Jugendlichen beladen, um 8 Tage durch die schöne Natur Schwedens 
+und Norwegens zu paddeln. Dabei durften wir Gottes nahezu unberührte Schöpfung genießen. 
+Unsere Zelte haben wir auf verschiedenen Untergründen aufschlagen, vom Strand, über Wälder, bis 
+zu einem Plateau war alles dabei. Bei einer Fahrt von insgesamt ca. 60 km konnten wir neben dem 
+für Manche ungewöhnlichen Sport des Kajakfahrens auch andere besondere Aktivitäten 
+durchführen, so waren ein riesiger ehemaliger Schmuggelplatz für Autoteile auf einer Insel, das 
+Schlafen in Hängematten und das Beobachten von Polarlichtern bei klarem Sternenhimmel Teil der 
+Jugendfreizeit. 
+Durch das direkte Leben in der Natur kamen wir Gott auf besondere Weise nahe und haben in 
+Bibelarbeiten mehr über die Geschichte israelitischer Könige und den Weg Jesu erfahren, als wir 
+Texte aus dem 1. Könige-Buch und dem Johannesevangelium lesen durften. In einer offenen Runde 
+hat man so verschiedenen Blickwinkeln folgen und eine ergiebige Diskussionsrunde führen können. 
+Auch Lobpreis-Abende wurden trotz mangelnder Liederbücher und Instrumente nicht ausgelassen, 
+dabei haben eine Ukulele, zwei Liederbücher, Marshmallows und Stockbrotteig die Menge am 
+Lagerfeuer gehalten.
+
+
+
+   <a href="/old/DSC_5656.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5656.jpeg" title="DSC_5656" alt="DSC_5656" width="100%">
+</div> </a> 
+
+ 
+
+  <a href="/old/DSC_5646.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5646.jpeg" title="DSC_5646" alt="DSC_5646" width="100%">
+</div> </a> 
+
+ 
+
+  <a href="/old/DSC_5783.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5783.jpeg" title="DSC_5783" alt="DSC_5783" width="100%">
+</div> </a> 
+
+ 
+
+ 
+
+ 
+
+Neben all den Aktivitäten wurde gebadet und verschiedene Kartenspiele gespielt, wodurch auch bei 
+kürzeren Touren nie Langeweile aufkam. 
+So haben wir uns von Unterkunft zu Unterkunft gepaddelt, und wenn kein Shelter frei war, weil die 
+Morgensonne nicht ausreichte, um die Leiter früh genug aus den Schlafsäcken zu holen, wurde 
+spontan eine Lösung gefunden und das Lager selbst kreiert. Dabei hat Gott die Freizeit immer 
+wieder aufs Neue gesegnet, denn auch bei ungünstigem Gelände und Platzmangel hat jeder einen 
+Schlafplatz gefunden. 
+Gerade, wenn es mal nicht nach Plan lief, hatten wir besonders viel Spaß. 
+Trotz der unmittelbaren Berührung mit der Natur haben wir leider keine Elche gesehen, wobei 
+einige Abenteurer sehr nah dran waren. So bleiben sie, neben der Eskimorolle, auch noch auf der 
+To-Do-Liste für zukünftige Paddeltouren in Skandinavien.
+
+Für den Ernstfall hatten wir ein Kentertraining, das nicht nur für Spaß sorgte, sondern auch 
+beibrachte, wie man ein gekentertes Kajak ausleert, umdreht und der Gekenterte seinen angedachten 
+Platz wieder einnehmen kann. 
+Nach einer längeren Tour mit Gegenwind, jedoch einer effizienten Kettenformation, neigte sich die 
+Freizeit dann ihrem Ende, die ohne große Verletzungen eine tolle Erfahrung für jeden bot, der 
+tapfer genug war, um sie zu bestreiten.
+
+
+
+   <a href="/old/DSC_5860.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5860.jpg" title="DSC_5860" alt="DSC_5860" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5752.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5752.jpeg" title="DSC_5752" alt="DSC_5752" width="100%">
+</div> </a> 
+
+  <a href="/old/DSC_5810.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5810.jpeg" title="DSC_5810" alt="DSC_5810" width="100%">
+</div> </a> 
+
+ 
+
+  
+
+    <a href="/old/DSC_5775.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5775.jpeg" title="DSC_5775" alt="DSC_5775" width="100%">
+</div> </a> 
+
+  <a href="/old/DSC_5615.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5615.jpeg" title="DSC_5615" alt="DSC_5615" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5726.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5726.jpeg" title="DSC_5726" alt="DSC_5726" width="100%">
+</div> </a> 
+
+ 
+
+  
+
+    <a href="/old/DSC_5846.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5846.jpg" title="DSC_5846" alt="DSC_5846" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5746.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5746.jpg" title="DSC_5746" alt="DSC_5746" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5675.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5675.jpg" title="DSC_5675" alt="DSC_5675" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5754.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5754.jpeg" title="DSC_5754" alt="DSC_5754" width="100%">
+</div> </a> 
+
+ 
+
+  
+
+  
+
+Alles in allem war die Freizeit ein großes Abenteuer, bei dem wir viel über Gott gelernt haben und 
+in atemberaubender Natur Gemeinschaft genießen konnten. 
+Wir werden noch oft an die Freizeit zurückdenken!

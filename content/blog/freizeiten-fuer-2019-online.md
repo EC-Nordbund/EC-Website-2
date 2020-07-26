@@ -7,4 +7,13 @@ featuredImage: /card.png
 
 # Freizeiten für 2019 sind online
 
-<p>Alle Feizeiten, Events und Seminare gibts ab sofort auf dieser Website unter<a href="https://www.ec-nordbund.de/veranstaltung/">Veranstaltungen</a>zu finden.</p><p><em><strong>Informiere dich, trag sie in deinen Kalender ein und lade deine Freude ein, denn&#8230;</strong></em></p><h3>&#8230;der Countdown läuft</h3><p>In genau<strong>6 Tagen</strong>(um 15 Uhr) beginnt die Anmeldephase für die aktuellen Freizeiten.</p><p>Übrigens: Wir haben in diesem Jahr unser Anmeldesystem erneuert. Dir werden bestimmt ein paar Änderungen auffallen. 😉</p><p></p>
+Alle Feizeiten, Events und Seminare gibts ab sofort auf dieser Website unter <a href="https://www.ec-nordbund.de/veranstaltung/">Veranstaltungen</a> zu finden.
+
+***Informiere dich, trag sie in deinen Kalender ein und lade deine Freude ein, denn&#8230;***
+
+### &#8230;der Countdown läuft
+In genau **6 Tagen** (um 15 Uhr) beginnt die Anmeldephase für die aktuellen Freizeiten.
+
+Übrigens: Wir haben in diesem Jahr unser Anmeldesystem erneuert. Dir werden bestimmt ein paar Änderungen auffallen. 😉
+
+&nbsp;

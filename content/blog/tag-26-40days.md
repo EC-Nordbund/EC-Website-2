@@ -7,4 +7,12 @@ featuredImage: /card.png
 
 # Tag 26  #40days
 
-<p><img src="/old/40DAYS_03-15_WITH-tag-26-480x480.jpg" alt width="480" height="480"></p><p>&#8222;Alle Menschen haben einen Zugang zu Gott, aber jeder einen anderen.&#8220;</p><p>(Dr. Martin Buber)</p><p>#my40days #copypaste #meinEC #ecjugend</p>
+<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/40DAYS_03-15_WITH-tag-26.jpg" alt width="100%">
+</div>
+
+&#8222;Alle Menschen haben einen Zugang zu Gott, aber jeder einen anderen.&#8220;
+
+(Dr. Martin Buber)
+
+#my40days #copypaste #meinEC #ecjugend
