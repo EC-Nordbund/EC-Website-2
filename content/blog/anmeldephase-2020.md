@@ -10,6 +10,6 @@ featuredImage: /card.png
 
 Es geht wieder los! 🎉
 
-Am **Sonntag den 10.11.2019 ab 15 Uhr** ist es möglich sich für die <a href="https://www.ec-nordbund.de/veranstaltung/">Freizeiten und Veranstaltungen in 2020</a> anzumelden.
+Am **Sonntag den 10.11.2019 ab 15 Uhr** ist es möglich sich für die <a href="/veranstaltung/">Freizeiten und Veranstaltungen in 2020</a> anzumelden.
 
 Bis zum 30.11.2019 gibt es einen Rabatt von 10% auf alle Freizeiten. Also zügig anmelden und dein Frühbucher-Rabatt sichern 😉

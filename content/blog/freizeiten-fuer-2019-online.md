@@ -7,7 +7,7 @@ featuredImage: /card.png
 
 # Freizeiten für 2019 sind online
 
-Alle Feizeiten, Events und Seminare gibts ab sofort auf dieser Website unter <a href="https://www.ec-nordbund.de/veranstaltung/">Veranstaltungen</a> zu finden.
+Alle Feizeiten, Events und Seminare gibts ab sofort auf dieser Website unter <a href="/veranstaltung/">Veranstaltungen</a> zu finden.
 
 ***Informiere dich, trag sie in deinen Kalender ein und lade deine Freude ein, denn&#8230;***
 

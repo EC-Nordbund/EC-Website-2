@@ -159,6 +159,14 @@ const parseElement = (el) => {
           .join('/old/')
       }
 
+      if (l.startsWith('https://www.ec-nordbund.de/')) {
+        l = l.split('?')[0]
+
+        console.log(l)
+
+        l = l.split('https://www.ec-nordbund.de/').join('/')
+      }
+
       el.setAttribute(att, l)
     })
 

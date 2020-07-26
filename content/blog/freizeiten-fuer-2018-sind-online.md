@@ -10,4 +10,4 @@ featuredImage: /card.png
 Richtig gehört&#8230; Die Anmeldephase für Freizeiten, Seminare und Events startet am **Samstag, den 11.11.2017**. 
 Ab **9:00 Uhr** werden die Anmeldungen freigeschaltet!
 
-Unser neues Freizeitangebot findest du <a href="https://www.ec-nordbund.de/veranstaltung/">hier</a>.
+Unser neues Freizeitangebot findest du <a href="/veranstaltung/">hier</a>.

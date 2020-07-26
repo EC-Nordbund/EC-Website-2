@@ -9,7 +9,7 @@ featuredImage: /card.png
 
 Falls Du beim &#8222;about us&#8220;- Wochenende nicht dabei sein konntest, sind hier nochmal die Highlights in Videoform zusammen gefasst.
 
-Wenn Du mehr auf lesen stehst, gibt es <a href="https://www.ec-nordbund.de/about-us-alles-neu/">hier</a> auch noch den Bericht in Textform zu lesen.
+Wenn Du mehr auf lesen stehst, gibt es <a href="/about-us-alles-neu/">hier</a> auch noch den Bericht in Textform zu lesen.
 
 
 

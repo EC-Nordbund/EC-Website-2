@@ -14,5 +14,5 @@ featuredImage: /card.png
  
 Wenn dir die Kombination aus Auszeit, Action, Bibelstudium und Gemeinschaft gefällt, dann ist das BibleCamp auf jeden Fall etwas für dich! 
 Am **3. April 2018** gehts los auf die Insel Rømø, Dänemark.
-**Nicht lang fackeln, gleich <a href="https://www.ec-nordbund.de/veranstaltung/32/biblecamp/#anmeldung">anmelden</a>! **😉** 
+**Nicht lang fackeln, gleich <a href="/veranstaltung/32/biblecamp/#anmeldung">anmelden</a>! **😉** 
 **

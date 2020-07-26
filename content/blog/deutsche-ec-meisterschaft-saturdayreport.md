@@ -8,7 +8,7 @@ featuredImage: /card.png
 # #decm2017  SaturdayReport
 
 Hier in Baunatal sind heute um 10 Uhr die deutschen EC-Meisterschaften feierlich eröffnet wurden. 
-Wir der <a href="https://www.ec-nordbund.de/">EC-Nordbund</a> wird dort durch eine Fußballmannschaft und seit längerem auch wieder durch eine Volleyballmannschaft vertreten.
+Wir der <a href="/">EC-Nordbund</a> wird dort durch eine Fußballmannschaft und seit längerem auch wieder durch eine Volleyballmannschaft vertreten.
 
 
 

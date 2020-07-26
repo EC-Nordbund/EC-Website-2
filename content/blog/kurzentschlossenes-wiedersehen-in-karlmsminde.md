@@ -9,7 +9,7 @@ featuredImage: /card.png
 
 Für Kurzentschlossene kommt hier noch einmal die Einladung allem Stress zu Hause zu entfliehen und ein geniales Wochenende im ausklingenden Super-Sommer 2018 an der Ostsee in Karlsminde zu genießen und gleichzeitig viele Freunde wiederzusehen!
 
-**Möglichst jetzt zur <a href="https://www.ec-nordbund.de/veranstaltung/58/karlsminde-freizeit-fuer-junge-erwachsene/" target="_blank" rel="noopener">Freizeit für Junge Erwachsene</a> anmelden!**
+**Möglichst jetzt zur <a href="/veranstaltung/58/karlsminde-freizeit-fuer-junge-erwachsene/" target="_blank" rel="noopener">Freizeit für Junge Erwachsene</a> anmelden!**
 
 Ganz liebe Grüße im Namen des Vorbereitungsteams,
 
