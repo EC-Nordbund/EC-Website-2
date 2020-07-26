@@ -8,7 +8,7 @@ const slugs = []
 
 const HTML_ENCODED = /&#[0-9]\d*;/
 
-var HTMLParser = require('node-html-parser')
+const HTMLParser = require('node-html-parser')
 
 const classes = []
 
@@ -213,27 +213,25 @@ const parseElement = (el) => {
             pContent = `<section class="img-gallery">\n`
             pContent += child.toString() + '\n'
           }
+        } else if (imgOn) {
+          pContent += `</section>`
+          content += pContent
+            .split('\n\n')
+            .join('\n')
+            .split('\n\n')
+            .join('\n')
+            .split('\n\n')
+            .join('\n')
+            .split('\n\n')
+            .join('\n')
+            .split('\n\n')
+            .join('\n')
+            .split('\n\n')
+            .join('\n')
+          imgOn = false
+          content += child.toString()
         } else {
-          if (imgOn) {
-            pContent += `</section>`
-            content += pContent
-              .split('\n\n')
-              .join('\n')
-              .split('\n\n')
-              .join('\n')
-              .split('\n\n')
-              .join('\n')
-              .split('\n\n')
-              .join('\n')
-              .split('\n\n')
-              .join('\n')
-              .split('\n\n')
-              .join('\n')
-            imgOn = false
-            content += child.toString()
-          } else {
-            content += child.toString()
-          }
+          content += child.toString()
         }
       })
 

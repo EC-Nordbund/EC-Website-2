@@ -3,12 +3,7 @@
     nuxt-content(:document="page")
 </template>
 <script>
-import imggallery from "~/components/global/imggallery.vue";
-
 export default {
-  components: {
-    imggallery,
-  },
   async asyncData({ $content, params, redirect, route }) {
     try {
       const page = await $content('blog', params.id).fetch()

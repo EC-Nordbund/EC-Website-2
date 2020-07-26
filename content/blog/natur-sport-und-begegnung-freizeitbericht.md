@@ -31,14 +31,14 @@ Lagerfeuer gehalten.
 
 
 
-   <a href="/old/DSC_5656.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5656.jpeg" title="DSC_5656" alt="DSC_5656" width="100%">
+   <a href="/old/DSC_5646.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5646.jpeg" title="DSC_5646" alt="DSC_5646" width="100%">
 </div> </a> 
 
  
 
-  <a href="/old/DSC_5646.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5646.jpeg" title="DSC_5646" alt="DSC_5646" width="100%">
+  <a href="/old/DSC_5656.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5656.jpeg" title="DSC_5656" alt="DSC_5656" width="100%">
 </div> </a> 
 
  
@@ -74,29 +74,7 @@ tapfer genug war, um sie zu bestreiten.
 
 
 
-   <a href="/old/DSC_5860.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5860.jpg" title="DSC_5860" alt="DSC_5860" width="100%">
-</div> </a> 
-
- 
-
-   <a href="/old/DSC_5752.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5752.jpeg" title="DSC_5752" alt="DSC_5752" width="100%">
-</div> </a> 
-
-  <a href="/old/DSC_5810.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5810.jpeg" title="DSC_5810" alt="DSC_5810" width="100%">
-</div> </a> 
-
- 
-
-  
-
-    <a href="/old/DSC_5775.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5775.jpeg" title="DSC_5775" alt="DSC_5775" width="100%">
-</div> </a> 
-
-  <a href="/old/DSC_5615.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+   <a href="/old/DSC_5615.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
 <img src="/old/DSC_5615.jpeg" title="DSC_5615" alt="DSC_5615" width="100%">
 </div> </a> 
 
@@ -106,18 +84,16 @@ tapfer genug war, um sie zu bestreiten.
 <img src="/old/DSC_5726.jpeg" title="DSC_5726" alt="DSC_5726" width="100%">
 </div> </a> 
 
- 
-
-  
-
-    <a href="/old/DSC_5846.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5846.jpg" title="DSC_5846" alt="DSC_5846" width="100%">
+  <a href="/old/DSC_5754.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5754.jpeg" title="DSC_5754" alt="DSC_5754" width="100%">
 </div> </a> 
 
  
 
-   <a href="/old/DSC_5746.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5746.jpg" title="DSC_5746" alt="DSC_5746" width="100%">
+  
+
+    <a href="/old/DSC_5810.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5810.jpeg" title="DSC_5810" alt="DSC_5810" width="100%">
 </div> </a> 
 
  
@@ -128,8 +104,34 @@ tapfer genug war, um sie zu bestreiten.
 
  
 
-   <a href="/old/DSC_5754.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_5754.jpeg" title="DSC_5754" alt="DSC_5754" width="100%">
+   <a href="/old/DSC_5846.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5846.jpg" title="DSC_5846" alt="DSC_5846" width="100%">
+</div> </a> 
+
+ 
+
+  
+
+    <a href="/old/DSC_5746.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5746.jpg" title="DSC_5746" alt="DSC_5746" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5860.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5860.jpg" title="DSC_5860" alt="DSC_5860" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5775.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5775.jpeg" title="DSC_5775" alt="DSC_5775" width="100%">
+</div> </a> 
+
+ 
+
+   <a href="/old/DSC_5752.jpeg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_5752.jpeg" title="DSC_5752" alt="DSC_5752" width="100%">
 </div> </a> 
 
  

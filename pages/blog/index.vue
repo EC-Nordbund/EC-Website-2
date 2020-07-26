@@ -1,6 +1,5 @@
 <template lang="pug">
   v-container
-    //- p {{ posts }}
     v-list(three-line)
       v-list-item(v-for="item in posts" @click="$router.push(`/blog/${item.slug}`)" :key="item.slug")
         v-list-item-avatar
@@ -12,33 +11,34 @@
           v-list-item-subtitle {{item.description}}
     v-pagination(
       v-model="page"
-      :length="pagesCount"
+      :length="pageCount"
       :total-visible="7"
     )
 </template>
 <script>
+const pagination = {
+  getPostsOfPage($content, page) {
+    return $content('blog')
+      .only(['title', 'tags', 'description', 'featuredImage', 'slug'])
+      .sortBy('published', 'desc')
+      .skip(10 * (page - 1))
+      .limit(10)
+      .fetch()
+  },
+
+  async getNumberOfPages($content) {
+    return Math.ceil((await $content('blog').only([]).fetch()).length / 10)
+  },
+}
+
 export default {
   async asyncData({ $content, query }) {
-    const page = parseInt(query.page || '1')
+    const [posts, pageCount] = await Promise.all([
+      pagination.getPostsOfPage($content, query.page || '1'),
+      pagination.getNumberOfPages($content),
+    ])
 
-    const skip = page * 10 - 10
-
-    const posts = await $content('blog')
-      .without(['body'])
-      .sortBy('published', 'desc')
-      .limit(10)
-      .skip(skip)
-      .fetch()
-
-    const pagesCount = Math.ceil(
-      (
-        await $content('blog')
-          .without(['body', 'title', 'description', 'featuredImage'])
-          .fetch()
-      ).length / 10
-    )
-
-    return { posts, page, pagesCount }
+    return { posts, page: parseInt(query.page || '1'), pageCount }
   },
   data() {
     return {
@@ -48,25 +48,16 @@ export default {
     }
   },
   watch: {
-    page: {
-      handler: 'goToPage',
-    },
-  },
-  methods: {
-    async goToPage() {
+    async page() {
       this.$router.replace({ path: '/blog', query: { page: this.page } })
-      this.posts = await this.$content('blog')
-        .without(['body'])
-        .sortBy('published', 'desc')
-        .limit(10)
-        .skip(this.page * 10 - 10)
-        .fetch()
+      this.posts = await pagination.getPostsOfPage(this.$content, this.page)
     },
   },
+  methods: pagination,
 
   head() {
     return {
-      title: 'Blog',
+      title: `Blog (Seite ${this.page})`,
       meta: [
         {
           hid: 'description',
@@ -75,7 +66,11 @@ export default {
             'Blog des EC-Nordbundes mit allen wichtigen Informationen, Veranstaltungsberichten etc.',
         },
         // Open Graph
-        { hid: 'og:title', property: 'og:title', content: 'Blog' },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `Blog (Seite ${this.page})`,
+        },
         {
           hid: 'og:description',
           property: 'og:description',
@@ -83,7 +78,11 @@ export default {
             'Blog des EC-Nordbundes mit allen wichtigen Informationen, Veranstaltungsberichten etc.',
         },
         // Twitter Card
-        { hid: 'twitter:title', name: 'twitter:title', content: 'Blog' },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `Blog (Seite ${this.page})`,
+        },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
