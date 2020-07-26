@@ -94,6 +94,9 @@
                 nuxt-link(to="/") Startseite
             ul
               li
+                nuxt-link(to="/suche/") Suche
+            ul
+              li
                 nuxt-link(to="/downloads/") Downloads
             ul
               li
