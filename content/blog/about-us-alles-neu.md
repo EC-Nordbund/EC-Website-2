@@ -15,22 +15,22 @@ Also ging es dieses Jahr schon am Freitagabend los und zwar mit einem gemeinsame
 
 
 
-   <a href="/old/DSC_0233.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+   <a href="/old/DSC_0223.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+<img src="/old/DSC_0223.jpg" title="DSC_0223" alt="Foto: Pia Stammerjohan" width="100%">
+</div> </a>  Foto: Pia Stammerjohan 
+
+ 
+
+  <a href="/old/DSC_0233.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
 <img src="/old/DSC_0233.jpg" title="DSC_0233" alt="Foto: Pia Stammerjohan" width="100%">
 </div> </a>  Foto: Pia Stammerjohan 
 
  
 
-  <a href="/old/DSC_0256.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
+ 
+
+   <a href="/old/DSC_0256.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
 <img src="/old/DSC_0256.jpg" title="DSC_0256" alt="Foto: Pia Stammerjohan" width="100%">
-</div> </a>  Foto: Pia Stammerjohan 
-
- 
-
- 
-
-   <a href="/old/DSC_0223.jpg">  <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_0223.jpg" title="DSC_0223" alt="Foto: Pia Stammerjohan" width="100%">
 </div> </a>  Foto: Pia Stammerjohan 
 
  

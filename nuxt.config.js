@@ -164,6 +164,7 @@ export default {
       locales: { de },
     },
     preset: undefined,
+    defaultAssets: false,
   },
   /*
    ** Customize the progress-bar color
