@@ -25,12 +25,12 @@ const vuetifyTheme = {
   in: '#92c355',
 
   // Standard colors TODO: set this colors
-  accent: '#5286c2',
-  secondary: '#58676f',
-  info: '#9b84ba',
-  warning: '#b9965a',
-  error: '#f06643',
-  success: '#b9965a',
+  accent: '#fac189',
+  secondary: '#282925',
+  info: '#583a70',
+  warning: '#fac189',
+  error: '#fac189',
+  success: '#92c355',
 }
 
 export default {
