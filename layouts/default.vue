@@ -34,7 +34,7 @@
             v-col(sm=12 class="d-flex align-center px-0")
               nuxt-link(class="d-flex align-center mr-auto no-underline"  to="/")
                 ec-logo(size="42px" alt="EC")
-                h1(class="font-weight-regular ec-font-heavy") Nordbund
+                h1 Nordbund
               v-btn(text class="hidden-sm-and-down mr-2" to="/veranstaltungen" color="primary")
                 span(class="subtitle-1 text-capitalize font-weight-medium") Veranstaltungen
               v-btn(text class="hidden-sm-and-down mr-2" to="/orte" color="primary")
@@ -65,7 +65,7 @@
       v-container
         v-row(justify="space-between")
           v-col(md="4" )
-            h2(class="ec-font-heavy") Spenden
+            h2 Spenden
             v-list(dark color="transparent px-0")
               v-list-item(class="px-0" @click="copy2clip('Sparkasse Südholstein')")
                 v-list-item-content
@@ -81,7 +81,7 @@
                   v-list-item-subtitle BIC
           //- v-col(md="4" align-self="end") © by EC-Nordbund
           v-col(md="4")
-            h2(class="ec-font-heavy") Links
+            h2 Links
             ul
               li
                 nuxt-link(to="/") Startseite

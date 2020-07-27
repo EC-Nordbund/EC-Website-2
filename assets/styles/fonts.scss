@@ -1,45 +1,25 @@
+@import '~/node_modules/typeface-montserrat/index.css';
+
+@for $i from 1 through 10 {
+  @font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    font-weight: #{$i * 10};
+    src: url('../fonts/EC-EXTRA-SYM.woff');
+  }
+}
+
 @font-face {
   font-family: 'Goldney-Regular';
   font-display: swap;
   src: url('../fonts/Goldney-Regular.otf');
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  font-weight: bold;
-  font-display: swap;
-  src: url('../fonts/Montserrat-Bold.otf');
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/Montserrat-Bold.otf');
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  font-display: swap;
-  src: url('../fonts/Montserrat-Light_EC-Edition.otf');
-}
-
-// // Standard Font is set by vuetify
-// * {
-//   font-family: 'Lato-Normal';
-// }
-
-// Klassen für Font
-.ec-font-light {
-  // font-family: 'Montserrat';
-}
-
-.ec-font-heavy {
-  // font-family: 'Montserrat';
-  font-weight: bold;
-}
-
 .ec-font-extra {
   font-family: 'Goldney-Reqular';
   font-size: 40pt;
+}
+
+* {
+  font-family: 'Montserrat';
 }
