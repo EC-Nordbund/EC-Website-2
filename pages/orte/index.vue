@@ -17,5 +17,31 @@ export default {
 
     return { orte, page }
   },
+  head() {
+    return {
+      title: 'EC-Kreise',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Überblick über alle EC Standorte.',
+        },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: 'EC-Kreise' },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Überblick über alle EC Standorte.',
+        },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: 'EC-Kreise' },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Überblick über alle EC Standorte.',
+        },
+      ],
+    }
+  },
 }
 </script>

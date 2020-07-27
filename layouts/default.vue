@@ -35,6 +35,8 @@
               nuxt-link(class="d-flex align-center mr-auto no-underline"  to="/")
                 ec-logo(size="42px" alt="EC")
                 h1(class="font-weight-regular ec-font-heavy") Nordbund
+              v-btn(text class="hidden-sm-and-down mr-2" to="/blog" color="primary")
+                span(class="subtitle-1 text-capitalize font-weight-medium") Blog
               v-btn(text class="hidden-sm-and-down mr-2" to="/veranstaltungen" color="primary")
                 span(class="subtitle-1 text-capitalize font-weight-medium") Veranstaltungen
               v-btn(text class="hidden-sm-and-down mr-2" to="/orte" color="primary")
@@ -44,6 +46,11 @@
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
     v-navigation-drawer(app right temporary v-model="drawer" dark color="primary darken-1")
       v-list(nav)
+        v-list-item(link to="/blog")
+          v-list-item-icon
+            v-icon mdi-calendar
+          v-list-item-content
+            v-list-item-title Blog
         v-list-item(link to="/veranstaltungen")
           v-list-item-icon
             v-icon mdi-calendar
@@ -85,6 +92,9 @@
             ul
               li
                 nuxt-link(to="/") Startseite
+            ul
+              li
+                nuxt-link(to="/suche/") Suche
             ul
               li
                 nuxt-link(to="/downloads/") Downloads
