@@ -3,19 +3,28 @@ import icons from 'vuetify/es5/services/icons/presets/mdi-svg'
 import { getIconInjector } from 'vuetify-icon-injector'
 
 const vuetifyTheme = {
-  primary: '#8dc44f',
-  grey: '#58676f',
-  'gradient-left': '#a3cf4b',
-  'gradient-right': '#5da635',
-  up: '#32b3ca',
-  out: '#f39200',
-  with: '#95609f',
-  in: '#afcb37',
-  blue: '#5286c2',
-  red: '#f06643',
-  purple: '#9b84ba',
-  brown: '#b9965a',
-  // Fix colors
+  primary: '#92c355',
+  dunkelGrau: '#282925',
+  neonOrange: '#fac189',
+  offWihte: '#f8f5f4',
+  lila: '#583a70',
+  'born-verlag': '#903557',
+  seelsorge: '#1f5533',
+  pfadfinder: '#bc946d',
+  koralle: '#ea4c60',
+  sport: '#70b6d4',
+  studiEC: '#5d5d5c',
+  ebz: '#445d9d',
+  musik: '#ffd633',
+  freiwilligendienste: '#9184be',
+  'Sozial-Missionarische-Arbeit': '#ffd633',
+
+  up: '#4eb3d8',
+  out: '#fac189',
+  with: '#9c8aa8',
+  in: '#92c355',
+
+  // Standard colors TODO: set this colors
   accent: '#5286c2',
   secondary: '#58676f',
   info: '#9b84ba',

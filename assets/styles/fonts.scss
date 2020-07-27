@@ -1,37 +1,45 @@
 @font-face {
-  font-family: 'Lato-Normal';
+  font-family: 'Goldney-Regular';
   font-display: swap;
-  src: url('../fonts/lato/Lato-Regular.ttf');
+  src: url('../fonts/Goldney-Regular.otf');
 }
 
 @font-face {
-  font-family: 'Lato-Light';
+  font-family: 'Montserrat';
+  font-weight: bold;
   font-display: swap;
-  src: url('../fonts/lato/Lato-Light.ttf');
+  src: url('../fonts/Montserrat-Bold.otf');
 }
 
 @font-face {
-  font-family: 'Lato-Heavy';
+  font-family: 'Montserrat';
+  font-weight: 500;
   font-display: swap;
-  src: url('../fonts/lato/Lato-Black.ttf');
+  src: url('../fonts/Montserrat-Bold.otf');
 }
 
 @font-face {
-  font-family: 'SmoothStone';
+  font-family: 'Montserrat';
   font-display: swap;
-  src: url('../fonts/smoth-stone-script/SmoothStone-Regular.ttf');
+  src: url('../fonts/Montserrat-Light_EC-Edition.otf');
 }
 
-// Standard Font
-* {
-  font-family: 'Lato-Normal';
-}
+// // Standard Font is set by vuetify
+// * {
+//   font-family: 'Lato-Normal';
+// }
 
 // Klassen für Font
 .ec-font-light {
-  font-family: 'Lato-Light';
+  // font-family: 'Montserrat';
 }
 
 .ec-font-heavy {
-  font-family: 'Lato-Heavy';
+  // font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+.ec-font-extra {
+  font-family: 'Goldney-Reqular';
+  font-size: 40pt;
 }
