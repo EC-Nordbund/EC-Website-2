@@ -7516,10 +7516,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-composition-api@0.10.6:
-  version "0.10.6"
-  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.10.6.tgz#80931829bcc91c861c6c49b7ee22ab099a0359f3"
-  integrity sha512-p/yIljQFquys33mxY0RNLjei30I1/dym0AoAIE7QPPXJutB8/N+UXRr8B2niqbAEWlmMwXy49vFTK9pIzeZOiA==
+nuxt-composition-api@0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.11.0.tgz#4f69ba076cfb7ae8668a79692cb9fea962eda6b2"
+  integrity sha512-73LzfIiMWjwuPLJxITAkYBsb4W7k7DLN3YSdc9mH+wu/RrVr+Wvd02bW96DR44B81hR2gcSv52zh4/HkUN9Cag==
   dependencies:
     "@vue/composition-api" "^0.6.7"
     defu "^2.0.4"
