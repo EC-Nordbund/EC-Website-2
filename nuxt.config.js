@@ -2,6 +2,11 @@ import de from 'vuetify/es5/locale/de'
 import icons from 'vuetify/es5/services/icons/presets/mdi-svg'
 import { getIconInjector } from 'vuetify-icon-injector'
 
+const URL =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000/'
+    : 'https://www.ec-nordbund.de/'
+
 const vuetifyTheme = {
   primary: '#92c355',
   dunkelGrau: '#282925',
@@ -50,15 +55,50 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    titleTemplate: '%s - EC-Nordbund',
-    title: 'Homepage',
+    titleTemplate: (chunk) => {
+      if (chunk) {
+        return `${chunk} | EC-Nordbund`
+      }
+
+      return 'EC-Nordbund'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // Open Graph
+      { hid: 'og:site_name', property: 'og:site_name', content: 'EC-Nordbund' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || '',
+        hid: 'og:url',
+        property: 'og:url',
+        content: URL,
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${URL}card.png`,
+      },
+      // Twitter Card
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:url',
+        content: URL,
+      },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'EC-Nordbund' },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: `${URL}card.png`,
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'Seite des EC-Nordbundes',
       },
     ],
     link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
@@ -133,6 +173,7 @@ export default {
       locales: { de },
     },
     preset: undefined,
+    defaultAssets: false,
   },
   /*
    ** Customize the progress-bar color

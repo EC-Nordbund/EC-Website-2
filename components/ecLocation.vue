@@ -29,8 +29,8 @@ export default defineComponent({
     },
     zoom: {
       type: Number,
-      default: 7
-    }
+      default: 7,
+    },
   },
 })
 </script>
