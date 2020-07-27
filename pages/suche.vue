@@ -53,13 +53,13 @@ export default {
           ])
           .sortBy('begin')
           .search(this.suche)
-          // .limit(3)
+          .limit(3)
           .fetch(),
         this.$content('blog')
           .only(['title', 'tags', 'description', 'featuredImage', 'slug'])
           .sortBy('published', 'desc')
           .search(this.suche)
-          // .limit(5)
+          .limit(5)
           .fetch(),
       ])
 
