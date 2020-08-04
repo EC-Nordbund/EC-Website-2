@@ -132,7 +132,7 @@ app.post('/anmeldung/ma/ort', (req, res) => {
 
     const { email } = req.body
 
-    // TODO: Create Email
+    // TODO: send Email
   
     res.status(200)
     res.json({
@@ -148,8 +148,105 @@ app.post('/anmeldung/ma/ort', (req, res) => {
 })
 
 
-app.post('/anmeldung/ma/veranstaltung', (req, res) => {})
-app.post('/anmeldung/tn', (req, res) => {})
+app.post('/anmeldung/ma/veranstaltung', (req, res) => {
+  const rules = {
+    vorname: ruleLib.vorname,
+    nachname: ruleLib.nachname,
+    geschlecht: ruleLib.geschlecht,
+    gebDat: ruleLib.gebDat,
+    strasse: ruleLib.strasse,
+    plzOrt: {
+      plz: ruleLib.plz,
+      ort: ruleLib.ort,
+    },
+    email: ruleLib.email,
+    datenschutz: ruleLib.datenschutz,
+    telefon: ruleLib.telefon,
+    lebensmittelallergien: ruleLib.textArea250,
+    bemerkungen: ruleLib.textArea250,
+  }
+
+  const errVals = validate(rules, req.body)
+
+  if(errVals.length !== 0) {
+    res.status(400)
+    res.json({
+      status: 'ERROR',
+      context: errVals
+    })
+    return
+  }
+
+  try {
+    const token = saveForConfirm(req.body, 5)
+
+    const { email } = req.body
+
+    // TODO: send Email
+  
+    res.status(200)
+    res.json({
+      status: 'OK'
+    })
+  } catch (ex) {
+    res.status(500)
+    res.json({
+      status: 'ERROR',
+      context: ex
+    })
+  }
+})
+app.post('/anmeldung/tn', (req, res) => {
+  const rules = {
+    vorname: ruleLib.vorname,
+    nachname: ruleLib.nachname,
+    geschlecht: ruleLib.geschlecht,
+    gebDat: ruleLib.gebDat,
+    strasse: ruleLib.strasse,
+    plzOrt: {
+      plz: ruleLib.plz,
+      ort: ruleLib.ort,
+    },
+    email: ruleLib.email,
+    telefon: ruleLib.telefon,
+    bemerkungen: ruleLib.textArea250,
+    lebensmittelallergien: ruleLib.textArea250,
+    gesundheit: ruleLib.textArea250,
+    datenschutz: ruleLib.datenschutz,
+    freizeitLeitung: ruleLib.checkboxRequired,
+    tnBedingungen: ruleLib.tnBedingungen,
+  }
+
+  const errVals = validate(rules, req.body)
+
+  if(errVals.length !== 0) {
+    res.status(400)
+    res.json({
+      status: 'ERROR',
+      context: errVals
+    })
+    return
+  }
+
+  try {
+    const token = saveForConfirm(req.body, 5)
+
+    const { email } = req.body
+
+    // TODO: send Email
+  
+    res.status(200)
+    res.json({
+      status: 'OK'
+    })
+  } catch (ex) {
+    res.status(500)
+    res.json({
+      status: 'ERROR',
+      context: ex
+    })
+  }
+})
 app.post('/confirm/:token', (req, res) => {})
 
 
