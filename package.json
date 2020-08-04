@@ -9,10 +9,12 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
-    "release": "git checkout master && git pull && standard-version && git push --follow-tags origin master"
+    "release": "git checkout master && git pull && standard-version && git push --follow-tags origin master",
+    "docker:dev": "yarn && yarn dev",
+    "docker:builder": "yarn && yarn build"
   },
   "dependencies": {
-    "@nuxt/content": "1.5.0",
+    "@nuxt/content": "1.5.3",
     "@nuxt/typescript-runtime": "1.0.0",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "axios": "0.19.2",
@@ -34,7 +36,7 @@
     "@nuxtjs/stylelint-module": "4.0.0",
     "@nuxtjs/vuetify": "1.11.2",
     "babel-eslint": "10.1.0",
-    "eslint": "7.5.0",
+    "eslint": "7.6.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-nuxt": "1.0.0",
     "eslint-plugin-prettier": "3.1.4",
