@@ -5,6 +5,15 @@ Die Adresse unserer Website ist: https://www.ec-nordbund.de.
 
 # Welche personenbezogenen Daten wir sammeln und warum wir sie sammeln
 
+## Analytics
+Wir nutzen als Analytics (ackee)[https://ackee.electerious.com/] dies hat folgende Vortaile (für dich) gegenüber z.B. Google Analytics
+
+1. Daten bleiben die ganze Zeit bei uns (daten werden nur auf unseren Servern verarbeitet)
+2. Niemand bekommt die Rohdaten zu sehen
+3. Wir haben die volle Kontrolle über die Daten.
+
+Du willst nicht das wir dich tracken? Dann kannst du in deinem Browser die "Do Not Track" Einstellung aktivieren. 
+
 ## Anmeldung
 
 Wir bieten an unterschiedlichen Stellen Anmeldeformulare zu Veranstaltungen an. In diesem müssen (bei deiner Anmeldung) verschiedene persönliche Daten angegeben werden. Diese Daten werden temporär auf unserem Server zwischengespeichert.
