@@ -41,7 +41,9 @@ export default {
   features: {
     deprecations: false,
     fetch: false,
-    store: false
+    store: false,
+    middleware: false,
+    validate: false
   },
   fetch: {
     client: false,

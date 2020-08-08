@@ -86,7 +86,7 @@ import {
   watchEffect,
   toRefs,
 } from 'nuxt-composition-api'
-import $axios from 'axios'
+import { post } from "~/helpers/fetch";
 import { useValidation, ruleLib } from '../plugins/validate'
 import { useAlter } from '../plugins/alter'
 function useExtraFields(extraFields) {
@@ -214,7 +214,7 @@ export default defineComponent({
         fahrgemeinschaften: data.fahrgemeinschaften,
         extra: data.extra,
       }
-      $axios.post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
+      post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
     }
     const validation = useValidation(
       data,
