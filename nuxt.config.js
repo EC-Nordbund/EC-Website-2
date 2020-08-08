@@ -102,7 +102,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/analytics.ts', mode: 'client' }, 
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -209,16 +211,16 @@ export default {
                 reuseExistingChunk: true,
               },
               // Chunk der alle Notwendigen Module und Polyfiles enthält
-              main: {
-                test: /([\\/]node_modules[\\/](vue-style-loader|webpack|process|copy-to-clipboard|deepmerge|defu|setimmediate|timers-browserify|toggle-selection|extract-css-chunks-webpack-plugin|html-webpack-plugin|vuetify-loader|vue-loader|file-loader|css-loader|ts-loader|url-loader|sass-loader|raw-loader|postcss-loader|pug-plain-loader|babel-loader|core-js|@babel|unfetch|regenerator-runtime|@nuxtjs|vuex|vue-router|vue-meta|vue|axios|@vue[\\/]composition-api|vuetify[\\/]lib[\\/](services|util|locale|presets|mixins|directives){1}){1}[\\/]|[\\/].nuxt[\\/]|[\\/]node_modules[\\/]vuetify[\\/]lib[\\/](install.js|framework.js){1}|[\\/](layouts|plugins){1}[\\/]|[\\/]package.json){1}/,
-                minChunks: 1,
-                chunks: 'all',
-                priority: 200,
-                minSize: 0,
-                maxSize: 999999999,
-                reuseExistingChunk: true,
-                name: true,
-              },
+              // main: {
+              //   test: /([\\/]node_modules[\\/](vue-style-loader|webpack|process|copy-to-clipboard|deepmerge|defu|setimmediate|timers-browserify|toggle-selection|extract-css-chunks-webpack-plugin|html-webpack-plugin|vuetify-loader|vue-loader|file-loader|css-loader|ts-loader|url-loader|sass-loader|raw-loader|postcss-loader|pug-plain-loader|babel-loader|core-js|@babel|unfetch|regenerator-runtime|@nuxtjs|vuex|vue-router|vue-meta|vue|axios|@vue[\\/]composition-api|vuetify[\\/]lib[\\/](services|util|locale|presets|mixins|directives){1}){1}[\\/]|[\\/].nuxt[\\/]|[\\/]node_modules[\\/]vuetify[\\/]lib[\\/](install.js|framework.js){1}|[\\/](layouts|plugins){1}[\\/]|[\\/]package.json){1}/,
+              //   minChunks: 1,
+              //   chunks: 'all',
+              //   priority: 200,
+              //   minSize: 0,
+              //   maxSize: 999999999,
+              //   reuseExistingChunk: true,
+              //   name: true,
+              // },
             },
           },
           concatenateModules: false,
