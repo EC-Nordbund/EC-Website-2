@@ -6827,12 +6827,6 @@ launch-editor@^2.2.1:
     chalk "^2.3.0"
     shell-quote "^1.6.1"
 
-"leaflet-nuxt-async@https://github.com/EC-Nordbund/leaflet-nuxt-async.git":
-  version "4.0.0"
-  resolved "https://github.com/EC-Nordbund/leaflet-nuxt-async.git#62595431f746bb8c1ec76fd10d502b5b1aa5a1ba"
-  dependencies:
-    vue2-leaflet "^2.5.2"
-
 "leaflet@https://github.com/EC-Nordbund/Leaflet.git":
   version "1.6.0"
   resolved "https://github.com/EC-Nordbund/Leaflet.git#14edf1acfc3b67087f4f233ea032b96516eabccd"
@@ -11612,7 +11606,14 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue2-leaflet@2.5.2, vue2-leaflet@^2.5.2:
+vue2-leaflet-nuxt@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vue2-leaflet-nuxt/-/vue2-leaflet-nuxt-1.0.4.tgz#a7fc4d9fee580cc44e1291fc617963cec73ad2b4"
+  integrity sha512-QI07v0tUxLIJrYNsf7MbEI5+UsxkEk6Uw0h2CTVORvJTjyWy2m4yUiH0tRVAyLub4D4ZVISSXegRkCqkNFhN+g==
+  dependencies:
+    vue2-leaflet "^2.5.2"
+
+vue2-leaflet@^2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/vue2-leaflet/-/vue2-leaflet-2.5.2.tgz#b89c056fe741c7ce7cb9df5aca90809092e5eb8d"
   integrity sha512-9eN0TxqCkyXbaI7waO3u+n0OAezkxjb811tstG6gRLAZy/ocXlNLC3JqTWE0FwBUlqBbMpyzsIk6LrEhs8oVBQ==

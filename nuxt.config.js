@@ -123,9 +123,8 @@ export default {
    */
   modules: [
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    'leaflet-nuxt-async/nuxt',
+    'vue2-leaflet-nuxt'
   ],
   /*
    ** Content module configuration
@@ -175,7 +174,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    transpile: ['leaflet'],
+    transpile: ['leaflet', 'Vue2Leaflet'],
     loaders: {
       vue: {
         compilerOptions: {
