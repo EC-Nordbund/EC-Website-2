@@ -11,24 +11,26 @@ const okPackages = [
   '@nuxt/components',
   'nuxt-composition-api',
   '@nuxt/content',
-  'regenerator-runtime',
-  'setimmediate',
-  'timers-browserify',
-  'process',
   'vue-router',
   'vue-client-only',
   'vue2-leaflet-nuxt',
   '@vue/composition-api',
+  'core-js',
+  'property-information',
+
+  'regenerator-runtime',
+  'setimmediate',
+  'timers-browserify',
+  'process',
   'defu',
   'deepmerge',
-  'core-js',
   '@babel/runtime',
   'html-webpack-plugin',
   'xtend',
   'webpack',
-  // 'prismjs',
-  'property-information',
 ]
+
+const packs = []
 
 files.forEach((f) => {
   const items = require('fs')
@@ -66,4 +68,42 @@ files.forEach((f) => {
       .filter((v) => v.license !== 'MIT'),
     filItems.length
   )
+
+  packs.push(...filItems)
 })
+
+const infos = packs.sort().filter((v, i, t) => v !== t[i - 1]).map(p=>{
+  const pp = require(p + '/package.json')
+
+  return {
+    name: pp.name,
+    version: pp.version,
+    repository: pp.repository,
+    license: pp.license,
+    author: pp.author || pp.contributors
+  }
+}).map(p=>{
+  if(typeof p.author === 'object' && p.author.name) {
+    p.author = p.author.name
+  } else if(Array.isArray(p.author)) {
+    p.author = p.author.map(v=>v.name || v).join(' und ')
+  }
+
+  p.repository = p.repository?.url || p.repository
+
+  if(typeof p.repository === 'string') {
+    p.repository = p.repository.split('.git').join('').split('git+').join('').split('git@').join('').split('git://').join('').split('github.com:').join('')
+
+    if(!p.repository.startsWith('http')) {
+      if(p.repository.startsWith('github.com/')) {
+        p.repository = 'https://' + p.repository
+      } else {
+        p.repository = 'https://github.com/' + p.repository
+      }
+    }
+  }
+
+  return p
+})
+
+require('fs').writeFileSync('./content/packages.json', JSON.stringify(infos))
