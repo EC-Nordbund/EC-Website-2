@@ -30,21 +30,14 @@ const vuetifyTheme = {
 }
 
 export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
   mode: 'universal',
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
   target: 'server',
   modern: true,
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
+  
+  components: true,
+
+  loading: { color: '#8dc44f' },
+
   head: {
     titleTemplate: (chunk) => {
       if (chunk) {
@@ -94,47 +87,24 @@ export default {
     ],
     link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
   },
-  /*
-   ** Global CSS
-   */
+  
   css: ['~/assets/styles/global.scss'],
-  /*
-   ** Plugins to load before mounting the App
-   ** https://nuxtjs.org/guide/plugins
-   */
   plugins: [],
-  /*
-   ** Auto import components
-   ** See https://nuxtjs.org/api/configuration-components
-   */
-  components: true,
-  /*
-   ** Nuxt.js dev-modules
-   */
+  
+
   buildModules: [
     'nuxt-composition-api',
     '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
   ],
-  /*
-   ** Nuxt.js modules
-   */
+  
   modules: [
     '@nuxtjs/pwa',
     '@nuxt/content',
     'vue2-leaflet-nuxt'
   ],
-  /*
-   ** Content module configuration
-   ** See https://content.nuxtjs.org/configuration
-   */
-  content: {},
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
+  
   vuetify: {
     customVariables: ['~/assets/styles/variables-vuetify.scss'],
     theme: {
@@ -165,14 +135,7 @@ export default {
     preset: undefined,
     defaultAssets: false,
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#95C11F' },
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
+  
   build: {
     transpile: ['leaflet', 'Vue2Leaflet'],
     loaders: {

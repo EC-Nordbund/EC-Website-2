@@ -22,7 +22,7 @@
     "leaflet": "https://github.com/EC-Nordbund/Leaflet.git",
     "nuxt": "2.14.1",
     "nuxt-composition-api": "0.11.0",
-    "vue2-leaflet-nuxt": "^1.0.4",
+    "vue2-leaflet-nuxt": "^1.0.8",
     "vuetify-icon-injector": "1.3.0"
   },
   "devDependencies": {
