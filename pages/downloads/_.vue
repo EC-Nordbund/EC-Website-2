@@ -30,7 +30,7 @@ import {
   useContext,
   useAsync,
   computed,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   setup() {

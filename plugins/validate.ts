@@ -1,4 +1,4 @@
-import { computed, Ref, ref } from 'nuxt-composition-api'
+import { computed, Ref, ref } from '@nuxtjs/composition-api'
 
 export { ruleLib } from './validateLib'
 
