@@ -30,22 +30,11 @@
           v-btn(@click="submit") Absenden
 </template>
 <script lang="ts">
-import { defineComponent, reactive } from 'nuxt-composition-api'
-import $axios from 'axios'
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+import { post } from '~/helpers/fetch'
 import { ruleLib, useValidation } from '../../../plugins/validate'
 
 export default defineComponent({
-  // async validate({ route, redirect }: Context) {
-  //   const valid = (
-  //     await $axios.post('/api/website/anmeldung/ma/checkToken', {
-  //       token: route.params.token,
-  //     })
-  //   ).data
-  //   if (!valid) {
-  //     redirect(301, '/mitarbeiter/anmeldung/veranstaltung', { notvalid: '1' })
-  //   }
-  //   return valid
-  // },
   setup(_props, ctx) {
     const data = reactive({
       vorname: '',
@@ -80,7 +69,7 @@ export default defineComponent({
         bemerkungen: data.bemerkungen,
         token: ctx.parent?.$route.params.token,
       }
-      $axios.post('/api/anmeldung/ma', submitData)
+      post('/api/anmeldung/ma', submitData)
     }
     const validation = useValidation(
       data,

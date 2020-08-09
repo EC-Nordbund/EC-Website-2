@@ -29,8 +29,8 @@
           v-btn(@click="submit" :disabled="!valid") Absenden
 </template>
 <script>
-import { defineComponent, ref, reactive } from 'nuxt-composition-api'
-import $axios from 'axios'
+import { defineComponent, ref, reactive } from '@nuxtjs/composition-api'
+import { post } from "~/helpers/fetch";
 import { ruleLib, useValidation } from '../../../plugins/validate'
 export default defineComponent({
   setup() {
@@ -62,7 +62,7 @@ export default defineComponent({
         email: data.email,
         ecKreis: data.ecKreis,
       }
-      $axios.post('/api/anmeldung/ort', submitData)
+      post('/api/anmeldung/ort', submitData)
     }
     const validation = useValidation(
       data,

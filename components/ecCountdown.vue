@@ -26,7 +26,7 @@ import {
   onUnmounted,
   shallowRef,
   watchEffect,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {

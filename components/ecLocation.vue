@@ -19,7 +19,7 @@
               a(v-if="!m.noMore" @click="$router.push(m.more)" style="cursor: pointer") mehr...
 </template>
 <script>
-import { defineComponent } from 'nuxt-composition-api'
+import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {
