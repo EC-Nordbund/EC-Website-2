@@ -12,7 +12,15 @@ Wir nutzen als Analytics (ackee)[https://ackee.electerious.com/] dies hat folgen
 2. Niemand bekommt die Rohdaten zu sehen
 3. Wir haben die volle Kontrolle über die Daten.
 
-Du willst nicht das wir dich tracken? Dann kannst du in deinem Browser die "Do Not Track" Einstellung aktivieren. 
+Du willst nicht das wir dich tracken? Dann kannst du in deinem Browser die "Do Not Track" Einstellung aktivieren. Beachte dass nicht alle Browser das unterstrützen siehe (MDN Docs)[https://developer.mozilla.org/en-US/docs/Web/API/navigator/doNotTrack].
+
+Wir erhalten dabei aber KEINE personenbezogene Daten. Es wird für jeden Nutzer eine clientID generiert. Diese setzt sich zusammen aus
+
+1. IP-Adresse
+2. Täglichen Zufallscode
+3. Browser daten
+
+Wir können aus der clientID nicht auf die IP schließen. Wir dokumentieren zusäzulich zu "es hat jemand die Seite besucht" sondern auch welchen Browser und Geräteinformationen. Wir haben dabei aber nur Zugriff auf absolut werte z.B.: In den letzten 7 Tagen hat die hälfte der Besucher das von einem Handy gemacht.
 
 ## Anmeldung
 
