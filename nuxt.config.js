@@ -109,9 +109,21 @@ export default {
   },
   
   css: ['~/assets/styles/global.scss'],
-  plugins: [],
-  
-
+  /*
+   ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
+   */
+  plugins: [
+    { src: '~/plugins/analytics.ts', mode: 'client' }, 
+  ],
+  /*
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
+  components: true,
+  /*
+   ** Nuxt.js dev-modules
+   */
   buildModules: [
     '@nuxtjs/composition-api',
     '@nuxt/typescript-build',
