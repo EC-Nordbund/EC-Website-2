@@ -113,7 +113,7 @@ export default {
   
 
   buildModules: [
-    'nuxt-composition-api',
+    '@nuxtjs/composition-api',
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
