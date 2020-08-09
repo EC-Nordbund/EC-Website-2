@@ -11,7 +11,8 @@
           v-btn(@click="submit" variant="primary") Absenden
 </template>
 <script>
-import $axios from 'axios'
+import { post } from "~/helpers/fetch";
+
 export default {
   data: () => ({
     password: '',
@@ -26,7 +27,7 @@ export default {
     async submit() {
       // console.log('start submitt')
       const valid = (
-        await $axios.post('/api/website/anmeldung/ma/checkToken', {
+        await post('/api/website/anmeldung/ma/checkToken', {
           token: this.password,
         })
       ).data

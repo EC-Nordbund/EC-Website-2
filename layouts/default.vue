@@ -117,9 +117,9 @@ import {
   ref,
   onMounted,
   useContext,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 
-import copy from "copy-to-clipboard";
+import copy from "~/helpers/copy";
 
 export default defineComponent({
   setup() {
