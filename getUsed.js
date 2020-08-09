@@ -1,20 +1,22 @@
 const files = ['./.nuxt/stats/client.json', './.nuxt/stats/modern.json']
 
-const addPackages = ['nuxt-composition-api', '@nuxt/content', 'nuxt']
+const addPackages = ['@nuxtjs/composition-api', '@nuxt/content', 'nuxt']
 
 const okPackages = [
-  'vuetify',
-  'vue-meta',
-  'vue2-leaflet',
-  'leaflet',
   'vue',
-  '@nuxt/components',
-  'nuxt-composition-api',
-  '@nuxt/content',
+  'vue-meta',
+  'vuetify',
+  'vue2-leaflet',
+  'vue2-leaflet-nuxt',
+  'leaflet',
   'vue-router',
   'vue-client-only',
-  'vue2-leaflet-nuxt',
+
+  '@nuxt/components',
+  '@nuxt/content',
+  '@nuxtjs/composition-api',
   '@vue/composition-api',
+
   'core-js',
   'property-information',
   'nuxt',
@@ -29,7 +31,7 @@ const okPackages = [
   'html-webpack-plugin',
   'xtend',
   'webpack',
-  'extract-css-chunks-webpack-plugin'
+  'extract-css-chunks-webpack-plugin',
 ]
 
 const packs = []

@@ -29,7 +29,7 @@
           v-btn(@click="submit" :disabled="!valid") Absenden
 </template>
 <script>
-import { defineComponent, ref, reactive } from 'nuxt-composition-api'
+import { defineComponent, ref, reactive } from '@nuxtjs/composition-api'
 import { post } from "~/helpers/fetch";
 import { ruleLib, useValidation } from '../../../plugins/validate'
 export default defineComponent({

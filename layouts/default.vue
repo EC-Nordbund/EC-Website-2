@@ -117,7 +117,7 @@ import {
   ref,
   onMounted,
   useContext,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 
 import copy from "~/helpers/copy";
 

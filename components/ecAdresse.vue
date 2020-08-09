@@ -10,7 +10,7 @@ import {
   ref,
   watchEffect,
   useAsync,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 import { get } from "~/helpers/fetch";
 import { mapper } from '../plugins/validate'
 

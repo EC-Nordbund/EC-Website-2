@@ -85,7 +85,7 @@ import {
   computed,
   watchEffect,
   toRefs,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 import { post } from "~/helpers/fetch";
 import { useValidation, ruleLib } from '../plugins/validate'
 import { useAlter } from '../plugins/alter'

@@ -21,7 +21,7 @@ import {
   computed,
   watch,
   toRefs,
-} from 'nuxt-composition-api'
+} from '@nuxtjs/composition-api'
 
 function handleGebDat(gebDat, menu) {
   let firstTime = true

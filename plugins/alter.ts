@@ -1,4 +1,4 @@
-import { Ref, computed } from 'nuxt-composition-api'
+import { Ref, computed } from '@nuxtjs/composition-api'
 
 function getAge(gebDat: Ref<string>, wann?: string | Date) {
   const today = wann ? new Date(wann) : new Date()
