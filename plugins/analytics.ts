@@ -9,7 +9,7 @@ const plugin: Plugin = (context) => {
     const ackee = create(
       {
         server: 'next.analytics.ec-nordbund.de',
-        domainId: '',
+        domainId: '12ac1013-cf6c-4515-89b4-64ea9514b3e0',
       },
       {
         ignoreLocalhost: false,
