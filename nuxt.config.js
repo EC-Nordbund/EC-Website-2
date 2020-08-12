@@ -30,21 +30,34 @@ const vuetifyTheme = {
 }
 
 export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
   mode: 'universal',
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
   target: 'server',
   modern: true,
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
+  
+  components: true,
+
+  loading: { color: '#8dc44f' },
+
+  features: {
+    deprecations: false,
+    fetch: false,
+    store: false,
+    middleware: false,
+    validate: false
+  },
+  fetch: {
+    client: false,
+    server: false
+  },
+
+  content: {
+    markdown: {
+      prism: {
+        theme: false
+      }
+    }
+  },
+
   head: {
     titleTemplate: (chunk) => {
       if (chunk) {
@@ -94,15 +107,15 @@ export default {
     ],
     link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
   },
-  /*
-   ** Global CSS
-   */
+  
   css: ['~/assets/styles/global.scss'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/analytics.ts', mode: 'client' }, 
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -112,30 +125,18 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    'nuxt-composition-api',
+    '@nuxtjs/composition-api',
     '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
   ],
-  /*
-   ** Nuxt.js modules
-   */
+  
   modules: [
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    'leaflet-nuxt-async/nuxt',
+    'vue2-leaflet-nuxt'
   ],
-  /*
-   ** Content module configuration
-   ** See https://content.nuxtjs.org/configuration
-   */
-  content: {},
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
+  
   vuetify: {
     customVariables: ['~/assets/styles/variables-vuetify.scss'],
     theme: {
@@ -166,16 +167,9 @@ export default {
     preset: undefined,
     defaultAssets: false,
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: '#95C11F' },
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
+  
   build: {
-    transpile: ['leaflet'],
+    transpile: ['leaflet', 'Vue2Leaflet'],
     loaders: {
       vue: {
         compilerOptions: {
@@ -209,16 +203,16 @@ export default {
                 reuseExistingChunk: true,
               },
               // Chunk der alle Notwendigen Module und Polyfiles enthält
-              main: {
-                test: /([\\/]node_modules[\\/](vue-style-loader|webpack|process|copy-to-clipboard|deepmerge|defu|setimmediate|timers-browserify|toggle-selection|extract-css-chunks-webpack-plugin|html-webpack-plugin|vuetify-loader|vue-loader|file-loader|css-loader|ts-loader|url-loader|sass-loader|raw-loader|postcss-loader|pug-plain-loader|babel-loader|core-js|@babel|unfetch|regenerator-runtime|@nuxtjs|vuex|vue-router|vue-meta|vue|axios|@vue[\\/]composition-api|vuetify[\\/]lib[\\/](services|util|locale|presets|mixins|directives){1}){1}[\\/]|[\\/].nuxt[\\/]|[\\/]node_modules[\\/]vuetify[\\/]lib[\\/](install.js|framework.js){1}|[\\/](layouts|plugins){1}[\\/]|[\\/]package.json){1}/,
-                minChunks: 1,
-                chunks: 'all',
-                priority: 200,
-                minSize: 0,
-                maxSize: 999999999,
-                reuseExistingChunk: true,
-                name: true,
-              },
+              // main: {
+              //   test: /([\\/]node_modules[\\/](vue-style-loader|webpack|process|copy-to-clipboard|deepmerge|defu|setimmediate|timers-browserify|toggle-selection|extract-css-chunks-webpack-plugin|html-webpack-plugin|vuetify-loader|vue-loader|file-loader|css-loader|ts-loader|url-loader|sass-loader|raw-loader|postcss-loader|pug-plain-loader|babel-loader|core-js|@babel|unfetch|regenerator-runtime|@nuxtjs|vuex|vue-router|vue-meta|vue|axios|@vue[\\/]composition-api|vuetify[\\/]lib[\\/](services|util|locale|presets|mixins|directives){1}){1}[\\/]|[\\/].nuxt[\\/]|[\\/]node_modules[\\/]vuetify[\\/]lib[\\/](install.js|framework.js){1}|[\\/](layouts|plugins){1}[\\/]|[\\/]package.json){1}/,
+              //   minChunks: 1,
+              //   chunks: 'all',
+              //   priority: 200,
+              //   minSize: 0,
+              //   maxSize: 999999999,
+              //   reuseExistingChunk: true,
+              //   name: true,
+              // },
             },
           },
           concatenateModules: false,
