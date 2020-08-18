@@ -16,7 +16,7 @@
   "dependencies": {
     "@nuxt/content": "1.6.1",
     "@nuxt/typescript-runtime": "1.0.0",
-    "@nuxtjs/composition-api": "^0.12.1",
+    "@nuxtjs/composition-api": "^0.12.2",
     "@nuxtjs/pwa": "3.0.1",
     "ackee-tracker": "^4.0.0",
     "axios": "0.19.2",
