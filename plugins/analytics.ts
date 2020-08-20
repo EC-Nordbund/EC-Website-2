@@ -8,7 +8,7 @@ const plugin: Plugin = (context) => {
   if(!doNotTracking) {
     const ackee = create(
       {
-        server: 'next.analytics.ec-nordbund.de',
+        server: 'https://next.analytics.ec-nordbund.de',
         domainId: '12ac1013-cf6c-4515-89b4-64ea9514b3e0',
       },
       {

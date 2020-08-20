@@ -22,6 +22,15 @@ Wir erhalten dabei aber KEINE personenbezogene Daten. Es wird für jeden Nutzer 
 
 Wir können aus der clientID nicht auf die IP schließen. Wir dokumentieren zusäzulich zu "es hat jemand die Seite besucht" sondern auch welchen Browser und Geräteinformationen. Wir haben dabei aber nur Zugriff auf absolut werte z.B.: In den letzten 7 Tagen hat die hälfte der Besucher das von einem Handy gemacht.
 
+Wir erhalten dabei folgende Informationen:
+1. Betriebsystem
+2. Browser name
+3. Browser Version
+4. eingestellte Sprache
+5. Größe des Browsers (in Pixel)
+
+Wobei wir nur ABSOLUTE anzahlen abrufen können.
+
 ## Anmeldung
 
 Wir bieten an unterschiedlichen Stellen Anmeldeformulare zu Veranstaltungen an. In diesem müssen (bei deiner Anmeldung) verschiedene persönliche Daten angegeben werden. Diese Daten werden temporär auf unserem Server zwischengespeichert.
