@@ -1616,10 +1616,10 @@
     webpack-node-externals "^2.5.1"
     webpackbar "^4.0.0"
 
-"@nuxtjs/composition-api@^0.12.1":
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.12.1.tgz#d1305696eab9e1dfd0df93c9e2f57443cd45743d"
-  integrity sha512-YApDUaqFkBVzt8UhyvzNzjdwCWAbu7e8nslsEEAhhQCNLz/ud/tE5/8vpOZqSJir5ZrWGq9+DAcOgQQQ8zSo5Q==
+"@nuxtjs/composition-api@^0.12.2":
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.12.2.tgz#d1154d83eed1f89bd89f518d61b7bf4434b87c48"
+  integrity sha512-q+uguWwfexU4p5VMnqor3dt7aKH/o1yibcI5fUDDtAmKUf5/gfu/nZrTtDiUItv7a4zqppQJmXLc0SDFVSj7bg==
   dependencies:
     "@vue/composition-api" "^1.0.0-beta.10"
     defu "^3.1.0"
