@@ -19,7 +19,7 @@
     "@nuxtjs/composition-api": "^0.12.2",
     "@nuxtjs/pwa": "3.0.1",
     "ackee-tracker": "^4.0.0",
-    "axios": "0.19.2",
+    "axios": "0.20.0",
     "leaflet": "https://github.com/EC-Nordbund/Leaflet.git",
     "nuxt": "2.14.3",
     "vue2-leaflet-nuxt": "^1.0.9",
