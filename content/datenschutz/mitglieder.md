@@ -30,7 +30,7 @@ Wir benutzen verschiedene Programme für die Verwaltung:
 Hierbei nutzen wir insbesondere Word, Excel und Outlook.
 
 ## Verwaltungssoftware
-Diese wird von Tobias Krause und Sebastian Krüger extra für unsere Zwecke entwickelt. Der Quelltext ist Open Source und kann unter github.com/EC-Nordbund/EC-Website eingesehen werden.
+Diese wird von Tobias Krause und Sebastian Krüger extra für unsere Zwecke entwickelt. Der Quelltext ist Open Source und kann unter github.com/EC-Nordbund eingesehen werden.
 
 ## Datenbank
 Als Datenbank verwenden wir MariaDB was eine weiterentwicklung von MySQL ist.
