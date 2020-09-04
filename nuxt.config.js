@@ -129,9 +129,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
   ],
-
   modules: ['@nuxtjs/pwa', '@nuxt/content', 'vue2-leaflet-nuxt'],
-
   vuetify: {
     customVariables: ['~/assets/styles/variables-vuetify.scss'],
     theme: {
