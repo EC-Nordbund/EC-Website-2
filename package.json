@@ -18,7 +18,7 @@
     "@nuxt/typescript-runtime": "2.0.0",
     "@nuxtjs/composition-api": "^0.12.3",
     "@nuxtjs/pwa": "3.0.2",
-    "ackee-tracker": "^4.0.0",
+    "ackee-tracker": "^4.0.1",
     "axios": "0.20.0",
     "leaflet": "https://github.com/EC-Nordbund/Leaflet.git",
     "nuxt": "2.14.4",
