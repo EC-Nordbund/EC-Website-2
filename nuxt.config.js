@@ -33,7 +33,7 @@ export default {
   mode: 'universal',
   target: 'server',
   modern: true,
-  
+
   components: true,
 
   loading: { color: '#8dc44f' },
@@ -43,19 +43,20 @@ export default {
     fetch: false,
     store: false,
     middleware: false,
-    validate: false
+    validate: false,
   },
   fetch: {
     client: false,
-    server: false
+    server: false,
   },
 
   content: {
     markdown: {
       prism: {
-        theme: false
-      }
-    }
+        theme: false,
+      },
+    },
+    editor: '../../node_modules/nuxt-content-editor/editor.vue',
   },
 
   head: {
@@ -107,15 +108,13 @@ export default {
     ],
     link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
   },
-  
+
   css: ['~/assets/styles/global.scss'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [
-    { src: '~/plugins/analytics.ts', mode: 'client' }, 
-  ],
+  plugins: [{ src: '~/plugins/analytics.ts', mode: 'client' }],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -130,13 +129,7 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
   ],
-  
-  modules: [
-    '@nuxtjs/pwa',
-    '@nuxt/content',
-    'vue2-leaflet-nuxt'
-  ],
-  
+  modules: ['@nuxtjs/pwa', '@nuxt/content', 'vue2-leaflet-nuxt'],
   vuetify: {
     customVariables: ['~/assets/styles/variables-vuetify.scss'],
     theme: {
@@ -167,7 +160,7 @@ export default {
     preset: undefined,
     defaultAssets: false,
   },
-  
+
   build: {
     transpile: ['leaflet', 'Vue2Leaflet'],
     loaders: {
