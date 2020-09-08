@@ -20,7 +20,6 @@
     "@nuxtjs/pwa": "3.0.2",
     "ackee-tracker": "^4.0.1",
     "axios": "0.20.0",
-    "ackee-tracker": "^3.3.0",
     "body-parser": "^1.19.0",
     "copy-to-clipboard": "3.3.1",
     "express": "^4.17.1",

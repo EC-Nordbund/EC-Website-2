@@ -5,6 +5,8 @@ import { sha3_512 as sha } from 'js-sha3';
 const ANMELDUNG_SAVE_DIR = '../confirm'
 export function cleanup() {
   fs.readdirSync(path.join(__dirname, ANMELDUNG_SAVE_DIR)).forEach(file => {
+    if(file === '.gitkeep') {return}
+
     const exp = JSON.parse(fs.readFileSync(path.join(__dirname, ANMELDUNG_SAVE_DIR, file), 'utf-8')).__internals.expires;
     if (expired(exp)) {
       fs.unlinkSync(path.join(__dirname, ANMELDUNG_SAVE_DIR, file));
