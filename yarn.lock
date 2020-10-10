@@ -1646,12 +1646,12 @@
     webpack-node-externals "^2.5.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/composition-api@^0.12.5":
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.12.5.tgz#0603d36da64ecb573ce222ad1aee74ee3f5b9756"
-  integrity sha512-srUwqaxwc4/8nKH68kDaMn0+3H2LD7awpjFdtzQWFiGK0Go38hrIsR+W7Xi1K5wC3kDo9SaNt9nvZy8d8VauDw==
+"@nuxtjs/composition-api@^0.12.6":
+  version "0.12.6"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.12.6.tgz#0010b44e445d3a8c01d1b2bfcd0a89eb37ab2a67"
+  integrity sha512-OvxWd3vtM2GGzVHycaXBmHN2fw4dL06Td6O5/gp6GKFVhYFBFMzVa2FHm6xhhUTgzmE6t8W5w0rrJx+BKlawlQ==
   dependencies:
-    "@vue/composition-api" "1.0.0-beta.14"
+    "@vue/composition-api" "1.0.0-beta.16"
     defu "^3.1.0"
     normalize-path "^3.0.0"
 
@@ -1686,16 +1686,16 @@
     consola "^2.15.0"
     eslint-webpack-plugin "^2.1.0"
 
-"@nuxtjs/pwa@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-3.0.2.tgz#ff7ea391a7e5bbbfc0b92c5856f90dd1c0a0c43d"
-  integrity sha512-te7lzQ+pDI72GwDHETrt9mmrJaA35j0YyrzirjAElT7XipWwf3NQXWqkkHNmlKCiQ9nCXVU6mPLAN7SJeKc8NA==
+"@nuxtjs/pwa@3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-3.1.2.tgz#5d974e95b1cbd89075ca62e8d07e0877281164c0"
+  integrity sha512-731zNtYk22ZO9nB0nstXhYggIPwfKeyCpJzmRF8AFpntMDOkF+aP+GpclO46eUNZwk+3ABFRqHdTSAXU6SK7rg==
   dependencies:
     defu "^3.1.0"
     execa "^4.0.3"
     fs-extra "^9.0.1"
-    hasha "^5.2.0"
-    jimp-compact "^0.12.1"
+    hasha "^5.2.1"
+    jimp-compact "^0.16.1"
     workbox-cdn "^5.1.3"
 
 "@nuxtjs/stylelint-module@4.0.0":
@@ -2318,10 +2318,10 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/composition-api@1.0.0-beta.14":
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.0.0-beta.14.tgz#b243d906ae5dcda7483e0b5a2b5ea1aa971a4e00"
-  integrity sha512-HYBe87RG//qpN/2+ZtgdhrIafdO8bYK/Tu1+/jMS4iNGYJi42XCbPydhEAiaRcTvsEJjZQEfP+hKKIuH+iPICg==
+"@vue/composition-api@1.0.0-beta.16":
+  version "1.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.0.0-beta.16.tgz#9f7202125214e9398f68018c1162b57b14fd0bdc"
+  integrity sha512-FZgmL2qb2Hy3TGFKCEXHwaddFdTfG17GoA1YFCNGTg5mD3+GfWVchsKKR7XxHIAwOaXiHK/djWWsviSD1NeFFw==
   dependencies:
     tslib "^2.0.1"
 
@@ -4882,10 +4882,10 @@ eslint-ast-utils@^1.1.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-prettier@6.11.0:
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.11.0.tgz#f6d2238c1290d01c859a8b5c1f7d352a0b0da8b1"
-  integrity sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
+eslint-config-prettier@6.12.0:
+  version "6.12.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.12.0.tgz#9eb2bccff727db1c52104f0b49e87ea46605a0d2"
+  integrity sha512-9jWPlFlgNwRUYVoujvWTQ1aMO8o6648r+K7qU7K5Jmkbyqav1fuEZC0COYpGBxyiAJb65Ra9hrmFx19xRGwXWw==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -5018,12 +5018,20 @@ eslint-scope@^4.0.3:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-scope@^5.0.0, eslint-scope@^5.1.0:
+eslint-scope@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-5.1.0.tgz#d0f971dfe59c69e0cada684b23d49dbf82600ce5"
   integrity sha512-iiGRvtxWqgtx5m8EyQUJihBloE4EnYeGE/bz1wSPwJE6tZuJUtHlhqDM4Xj2ukE8Dyy1+HCZ4hE0fzIVMzb58w==
   dependencies:
     esrecurse "^4.1.0"
+    estraverse "^4.1.1"
+
+eslint-scope@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
+  integrity sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==
+  dependencies:
+    esrecurse "^4.3.0"
     estraverse "^4.1.1"
 
 eslint-template-visitor@^2.0.0:
@@ -5048,6 +5056,11 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz#30ebd1ef7c2fdff01c3a4f151044af25fab0523e"
   integrity sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==
 
+eslint-visitor-keys@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
+  integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
+
 eslint-webpack-plugin@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/eslint-webpack-plugin/-/eslint-webpack-plugin-2.1.0.tgz#6d54f8539897b02f682007eb74fac987965e0b11"
@@ -5059,10 +5072,10 @@ eslint-webpack-plugin@^2.1.0:
     micromatch "^4.0.2"
     schema-utils "^2.7.0"
 
-eslint@7.9.0:
-  version "7.9.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.9.0.tgz#522aeccc5c3a19017cf0cb46ebfd660a79acf337"
-  integrity sha512-V6QyhX21+uXp4T+3nrNfI3hQNBDa/P8ga7LoQOenwrlEFXrEnUEE+ok1dMtaS3b6rmLXhT1TkTIsG75HMLbknA==
+eslint@7.11.0:
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.11.0.tgz#aaf2d23a0b5f1d652a08edacea0c19f7fadc0b3b"
+  integrity sha512-G9+qtYVCHaDi1ZuWzBsOWo2wSwd70TXnU6UHA3cTYHp7gCTXZcpggWFoUVAMRarg68qtPoNfFbzPh+VdOgmwmw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@eslint/eslintrc" "^0.1.3"
@@ -5072,9 +5085,9 @@ eslint@7.9.0:
     debug "^4.0.1"
     doctrine "^3.0.0"
     enquirer "^2.3.5"
-    eslint-scope "^5.1.0"
+    eslint-scope "^5.1.1"
     eslint-utils "^2.1.0"
-    eslint-visitor-keys "^1.3.0"
+    eslint-visitor-keys "^2.0.0"
     espree "^7.3.0"
     esquery "^1.2.0"
     esutils "^2.0.2"
@@ -5144,6 +5157,13 @@ esrecurse@^4.1.0:
   dependencies:
     estraverse "^4.1.0"
 
+esrecurse@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/esrecurse/-/esrecurse-4.3.0.tgz#7ad7964d679abb28bee72cec63758b1c5d2c9921"
+  integrity sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==
+  dependencies:
+    estraverse "^5.2.0"
+
 estraverse@^4.1.0, estraverse@^4.1.1:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.3.0.tgz#398ad3f3c5a24948be7725e83d11a7de28cdbd1d"
@@ -5153,6 +5173,11 @@ estraverse@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-5.1.0.tgz#374309d39fd935ae500e7b92e8a6b4c720e59642"
   integrity sha512-FyohXK+R0vE+y1nHLoBM7ZTyqRpqAlhdZHCWIWEviFLiGB8b04H6bQs8G+XTthacvT8VuwvteiP7RJSxMs8UEw==
+
+estraverse@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-5.2.0.tgz#307df42547e6cc7324d3cf03c155d5cdb8c53880"
+  integrity sha512-BxbNGGNm0RyRYvUdHpIwv9IWzeM9XClbOxwoATuFdOE7ZE6wHL+HQ5T8hoPM+zHvmKzzsEqhgy0GrQ5X13afiQ==
 
 esutils@^2.0.2:
   version "2.0.3"
@@ -6040,6 +6065,14 @@ hasha@^5.2.0:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
 
+hasha@^5.2.1:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/hasha/-/hasha-5.2.2.tgz#a48477989b3b327aea3c04f53096d816d97522a1"
+  integrity sha512-Hrp5vIK/xr5SkeN2onO32H0MgNZ0f17HRNH39WfL0SYUNOTZ5Lz1TJ8Pajo/87dYGEFlLMm7mIc/k/s6Bvz9HQ==
+  dependencies:
+    is-stream "^2.0.0"
+    type-fest "^0.8.0"
+
 hast-to-hyperscript@^7.0.0:
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/hast-to-hyperscript/-/hast-to-hyperscript-7.0.4.tgz#7c4c037d9a8ea19b0a3fdb676a26448ad922353d"
@@ -6845,10 +6878,10 @@ jest-worker@^25.4.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jimp-compact@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.12.1.tgz#f35ae542f83659f7f1b2fa4f955a27869dbe15ea"
-  integrity sha512-WEIxAvP4t7ZrGTExPx4pWa28/fxP+meQ90JedM2Jtwg/6IK2gVCS24hB5ggOEXsA3cBWQAaCdFgSB8WkMYykHA==
+jimp-compact@^0.16.1:
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/jimp-compact/-/jimp-compact-0.16.1.tgz#9582aea06548a2c1e04dd148d7c3ab92075aefa3"
+  integrity sha512-dZ6Ra7u1G8c4Letq/B5EzAxj4tLFHL+cGtdpR+PVm4yzPDj+lCk+AbivWt1eOM+ikzkowtyV7qSqX6qr3t71Ww==
 
 jiti@^0.1.11:
   version "0.1.11"
@@ -10900,10 +10933,10 @@ stylelint-webpack-plugin@^2.0.0:
     micromatch "^4.0.2"
     schema-utils "^2.7.0"
 
-stylelint@13.7.1:
-  version "13.7.1"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.7.1.tgz#bee97ee78d778a3f1dbe3f7397b76414973e263e"
-  integrity sha512-qzqazcyRxrSRdmFuO0/SZOJ+LyCxYy0pwcvaOBBnl8/2VfHSMrtNIE+AnyJoyq6uKb+mt+hlgmVrvVi6G6XHfQ==
+stylelint@13.7.2:
+  version "13.7.2"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.7.2.tgz#6f3c58eea4077680ed0ceb0d064b22b100970486"
+  integrity sha512-mmieorkfmO+ZA6CNDu1ic9qpt4tFvH2QUB7vqXgrMVHe5ENU69q7YDq0YUg/UHLuCsZOWhUAvcMcLzLDIERzSg==
   dependencies:
     "@stylelint/postcss-css-in-js" "^0.37.2"
     "@stylelint/postcss-markdown" "^0.36.1"
