@@ -2,7 +2,7 @@
 @import './fonts.scss';
 
 // Definiere Gradient
-.ec-gradient {
+.ec-gradient, .nuxt-progress:not(.nuxt-progress-failed) {
   background: var(--v-gradient-left-base);
   background: linear-gradient(
     90deg,
