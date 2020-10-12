@@ -49,7 +49,7 @@ export default {
 
   components: true,
 
-  loading: { color: '#8dc44f' },
+  loading: { color: '#92c355', failedColor: '#ea4c60' },
 
   features: {
     deprecations: false,
