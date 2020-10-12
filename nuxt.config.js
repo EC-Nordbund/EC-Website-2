@@ -13,29 +13,33 @@ const vuetifyTheme = {
   neonOrange: '#fac189',
   offWihte: '#f8f5f4',
   lila: '#583a70',
-  'born-verlag': '#903557',
-  seelsorge: '#1f5533',
-  pfadfinder: '#bc946d',
+  denkelRot: '#903557',
+  dunkelGrün: '#1f5533',
+  ocker: '#bc946d',
   koralle: '#ea4c60',
-  sport: '#70b6d4',
-  studiEC: '#5d5d5c',
-  ebz: '#445d9d',
-  musik: '#ffd633',
-  freiwilligendienste: '#9184be',
-  'Sozial-Missionarische-Arbeit': '#ffd633',
+  hellBlau: '#70b6d4',
+  hellGrau: '#5d5d5c',
+  ecOrange: '#ea571d',
+  dunkelBlau: '#445d9d',
+  gelb: '#ffd633',
+  flieder: '#9184be',
 
   up: '#4eb3d8',
   out: '#fac189',
   with: '#9c8aa8',
   in: '#92c355',
 
-  // Standard colors TODO: set this colors
-  accent: '#fac189',
-  secondary: '#282925',
-  info: '#583a70',
-  warning: '#fac189',
-  error: '#fac189',
-  success: '#92c355',
+  // Standard colors
+  accent: '#583a70', // lila
+  secondary: '#282925', // dunkelGrau
+  info: '#70b6d4', // hellBlau
+  warning: '#ffd633', // gelb
+  error: '#ea4c60', // koralle
+  success: '#92c355', // grün (primary)
+
+  // Gradient
+  'gradient-left': '#a3cf4b',
+  'gradient-right': '#5da635',
 }
 
 export default {
