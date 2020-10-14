@@ -3,10 +3,10 @@
 
 // Definiere Gradient
 .ec-gradient, .nuxt-progress:not(.nuxt-progress-failed) {
-  background: var(--v-gradient-left-base);
+  background: var(--v-gradient-left-base) !important;
   background: linear-gradient(
     90deg,
     var(--v-gradient-left-base) 0%,
     var(--v-gradient-right-base) 100%
-  );
+  ) !important;
 }
