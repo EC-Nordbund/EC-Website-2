@@ -63,9 +63,6 @@ export default {
   async asyncData({ $content }) {
     const page = await $content('veranstaltungen').fetch()
 
-    // const sub2 = await $content('veranstaltung').fetch()
-    // console.log(sub2)
-
     const veranstaltungen = await $content('veranstaltung')
       .only([
         'slug',
