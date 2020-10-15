@@ -4,7 +4,7 @@
     //- TODO: sortby by date (asc/desc), alphabetic (asc/desc) 
     //- TODO: filter by tags, age, date-range
     v-row
-      v-col(v-for="item in veranstaltungen" cols="12" sm="6" md="12")
+      v-col(v-for="item in veranstaltungen" cols="12" sm="6" md="12" :key="item.slug")
         v-card(outlined tile hover class="overflow-hidden" color="offWhite")
           v-row(no-gutters @click="$router.push(`/veranstaltungen/${item.slug}`)")
             v-col(cols="12" md="6" lg="4" class="hellGrau")
