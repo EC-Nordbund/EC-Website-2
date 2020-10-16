@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2 Veranstaltungen
+    h1 Freizeiten & Events
     //- TODO: sortby by date (asc/desc), alphabetic (asc/desc) 
     //- TODO: filter by tags, age, date-range
     v-row
