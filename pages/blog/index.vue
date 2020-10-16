@@ -117,7 +117,7 @@ export default {
 
   head() {
     return {
-      title: `Blog (Seite ${this.page})`,
+      title: `Blog`,
       meta: [
         {
           hid: 'description',
@@ -129,7 +129,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `Blog (Seite ${this.page})`,
+          content: `Blog`,
         },
         {
           hid: 'og:description',
@@ -141,7 +141,7 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `Blog (Seite ${this.page})`,
+          content: `Blog`,
         },
         {
           hid: 'twitter:description',
