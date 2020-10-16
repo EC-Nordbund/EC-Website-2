@@ -25,8 +25,8 @@
                   //- labels
                   v-row(no-gutters)
                     //- categories
-                    v-col(cols="12" lg="8" class="d-flex mb-1 ml-n2 mt-3")
-                      v-chip(color="secondary" text-color="primary" class="ml-2 font-weight-medium" outlined small v-for="tag in item.tags" :key="tag")
+                    v-col(cols="12" lg="8" class="d-flex flex-wrap mb-n1 ml-n2 mt-3")
+                      v-chip(color="secondary" text-color="primary" class="ml-2 mb-1 font-weight-medium" outlined small v-for="tag in item.tags" :key="tag")
                         | {{ tag }}
                   //- description
                   v-row
