@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2 Beiträge
+    h1 Beiträge
     //- TODO: filter by tags, author, source (if instagram-feed is included)
     v-row
       v-col(v-for="item in posts" cols="12" :key="item.slug")
@@ -37,7 +37,7 @@
                 v-spacer
                 v-btn(color="primary" class="ec-gradient" depressed tile large @click="$router.push(`/blog/${item.slug}`)")
                   //- TODO: hexagon shape for button (maybe in a custom component)
-                  | Weiter Lesen
+                  | Mehr Anzeigen
                   v-icon mdi-arrow-right
 
     v-pagination(
@@ -88,7 +88,7 @@ export default {
       if(typeof item.description == "string" && item.description.length > 0) {
         return item.description;
       }
-      return 'Klicke auf "Weiter Lesen" um den Betrag zu vollständig zu lesen.';
+      return 'Klicke auf "Mehr Anzeigen" um den Betrag zu vollständig zu lesen.';
     }
   },
   async asyncData({ $content, query }) {
