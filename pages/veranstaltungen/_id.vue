@@ -32,18 +32,28 @@
           v-col(cols="12" md="6" class="d-flex justify-start justify-sm-end flex-wrap-reverse")
             v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
               | {{ tag }}
+
     v-container
       nuxt-content(:document="page")
-      ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; height: 500px; z-index: 0;")
-      template(v-if="page.anmeldung")
-        h2 Anmeldung
-        ec-anmeldung(
-          v-bind="page.anmeldung"
-          :veranstaltungsBegin="page.begin"
-          :minAlter="page.minAlter"
-          :maxAlter="page.maxAlter"
-          :veranstaltungsID="page.veranstaltungsID"
-        )
+
+    v-container(fluid class="grey lighten-4")
+      v-row
+        v-col(cols="12" md="6" xl="7" class="d-flex flex-column")
+          h2(class="mb-2 text-center") Ort
+          ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+        v-col(cols="12" md="6" xl="5")
+          h2(class="mb-2 text-center") Preisstaffelung
+          ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" dense-breakpoint="xsOnly")
+
+    v-container(v-if="page.anmeldung && !page.anmeldung.disabled")
+          h2(class="mt-4 mb-2") Anmeldung
+          ec-anmeldung(
+            v-bind="page.anmeldung"
+            :veranstaltungsBegin="page.begin"
+            :minAlter="page.minAlter"
+            :maxAlter="page.maxAlter"
+            :veranstaltungsID="page.veranstaltungsID"
+          )
 </template>
 <style lang="scss">
 .nuxt-content {
