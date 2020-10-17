@@ -72,11 +72,14 @@
           br
           | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
     v-btn(@click="submit" :disabled="!valid") Absenden
-  div(v-else-if="disabled")
-    p Die Anmeldung ist gesperrt. Dies kann verschiedene Gründe haben.
-  v-card(v-else class="anmeldung-locked" elevation="5" style="border: 1px solid #000; border-radius: 10px; margin: 0 calc(50% - 205px); padding: 15px 0;")
-    h3(style="text-align: center") Die Anmeldung wird freigeschaltet in:
-    ec-countdown(:target="startAt")
+  div(v-else-if="disabled" class="anmeldung-disabled")
+    slot(name="disabled")
+      p Die Anmeldung ist gesperrt.
+  div(v-else class="anmeldung-locked")
+    slot(name="countdown")
+      v-card
+        h3(class="text-center") Die Anmeldung wird freigeschaltet in:
+        ec-countdown(:target="startAt")
 </template>
 <script>
 import {
