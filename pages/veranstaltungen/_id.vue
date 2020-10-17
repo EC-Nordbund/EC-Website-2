@@ -45,15 +45,26 @@
           h2(class="mb-2 text-center") Preisstaffelung
           ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" dense-breakpoint="xsOnly")
 
-    v-container(v-if="page.anmeldung && !page.anmeldung.disabled")
-          h2(class="mt-4 mb-2") Anmeldung
-          ec-anmeldung(
-            v-bind="page.anmeldung"
-            :veranstaltungsBegin="page.begin"
-            :minAlter="page.minAlter"
-            :maxAlter="page.maxAlter"
-            :veranstaltungsID="page.veranstaltungsID"
-          )
+    v-container(v-if="page.anmeldung")
+      h2(class="mb-2 text-center") Anmeldung
+      ec-anmeldung(
+        v-bind="page.anmeldung"
+        :veranstaltungsBegin="page.begin"
+        :minAlter="page.minAlter"
+        :maxAlter="page.maxAlter"
+        :veranstaltungsID="page.veranstaltungsID"
+      )
+        v-alert(slot="disabled" type="info" color="hellGrau" dense text outlined) Die Anmeldung zu dieser Veranstaltung ist deaktiviert.
+        v-row(slot="countdown" justify="center")
+          v-col(cols="12" sm="8" md="6" xl="4")
+            v-card(class="ec-gradient")
+              v-card-title(class="text-body-1 text-md-h6 text-lg-h6 text-xl-h6 text--secondary justify-center pb-2") Die Anmeldung wird freigeschaltet in:
+              v-card-text
+                ec-countdown(:target="page.anmeldung.startAt")
+                  template(v-slot:digits="slotProp")
+                    span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
+                  template(v-slot:units="slotProp")
+                    span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
 </template>
 <style lang="scss">
 .nuxt-content {
