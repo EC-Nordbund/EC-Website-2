@@ -119,7 +119,7 @@ import {
   useContext,
 } from '@nuxtjs/composition-api'
 
-import copy from "~/helpers/copy";
+import copy from '~/helpers/copy'
 
 export default defineComponent({
   setup() {
