@@ -1,65 +1,61 @@
-let once = false
+import { defineNuxtPlugin } from '@nuxtjs/composition-api'
 
-const __IS_DEV__ = false
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-}
-
-onUpdate((update) => {
-  if (
-    __IS_DEV__ ||
-    window.confirm('Eine neue Version ist verfügbar willst du sie laden?')
-  ) {
-    update()
-  }
-})
-
-async function onUpdate(cb: (cb: () => void) => void) {
-  if (once) {
-    console.warn(
-      'You should only call onUpdate once. This is way more efficient.'
-    )
-  }
-  once = true
-  if (!navigator.serviceWorker) {
-    return
+export default defineNuxtPlugin((ctx) => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
   }
 
-  if (!navigator.serviceWorker.controller) {
-    return
-  }
-
-  navigator.serviceWorker.addEventListener('controllerchange', (ev) => {
-    location.reload()
+  onUpdate((doUpdate) => {
+    if (
+      ctx.isDev ||
+      window.confirm(
+        'Eine neue Version ist verfügbar willst du sie laden? - Es dauert keine 5 Sekunden :D'
+      )
+    ) {
+      doUpdate()
+    }
   })
 
-  const updateFactory = (sw: ServiceWorker) => () =>
-    sw.postMessage({ msg: 'update-sw' })
-
-  const registration = (await navigator.serviceWorker.getRegistration())!
-
-  if (registration.waiting) {
-    cb(updateFactory(registration.waiting))
-    return
-  }
-
-  if (registration.installing) {
-    cb(updateFactory(registration.installing))
-    return
-  }
-
-  registration.addEventListener('updatefound', (ev) => {
-    const sw = registration.installing
-
-    if (!sw) {
+  async function onUpdate(updateReadyCB: (doUpdate: () => void) => void) {
+    if (!navigator.serviceWorker) {
       return
     }
 
-    sw.addEventListener('statechange', (ev) => {
-      if (sw.state === 'installed') {
-        cb(updateFactory(sw))
-      }
+    if (!navigator.serviceWorker.controller) {
+      return
+    }
+
+    navigator.serviceWorker.addEventListener('controllerchange', (ev) => {
+      location.reload()
     })
-  })
-}
+
+    const updateFactory = (sw: ServiceWorker) => () =>
+      sw.postMessage({ msg: 'update-sw' })
+
+    const registration = (await navigator.serviceWorker.getRegistration())!
+
+    if (registration.waiting) {
+      updateReadyCB(updateFactory(registration.waiting))
+      return
+    }
+
+    if (registration.installing) {
+      updateReadyCB(updateFactory(registration.installing))
+      return
+    }
+
+    registration.addEventListener('updatefound', (ev) => {
+      const sw = registration.installing
+
+      if (!sw) {
+        return
+      }
+
+      sw.addEventListener('statechange', (ev) => {
+        if (sw.state === 'installed') {
+          updateReadyCB(updateFactory(sw))
+        }
+      })
+    })
+  }
+})
