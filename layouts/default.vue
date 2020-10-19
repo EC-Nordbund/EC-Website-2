@@ -1,7 +1,7 @@
 <template lang="pug">
   v-app
     header(class="sticky-header")
-      v-toolbar(dense short flat color="rgba(0, 0, 0, 0.05)" height="40")
+      v-toolbar(dense short flat color="rgba(0, 0, 0, 0.04)" height="40")
         v-container
           v-row(align="center")
             v-btn(icon medium class="ml-n5 mr-n1 hover-facebook" href="https://www.facebook.com/ECNordbund/" target="_blank" rel="noopener" aria-label="Facebook")
@@ -11,6 +11,7 @@
             v-btn(icon medium class="mx-n1 hover-youtube" href="https://www.youtube.com/channel/UC0kn9I7w4sCwl7IJ6ZOTF0w" target="_blank" rel="noopener" aria-label="YouTube")
               v-icon mdi-youtube
             v-spacer
+              ec-marquee(:length="marqueeContentLength" color="rgba(0,0,0,0.06)")
             v-col(sm=6 md=8 xl=10 align-self="center" v-if="losungen.Losungstext" class="hidden-xs-only")
               ec-marquee(:length="losungen.Losungstext[0].length + losungen.Losungsvers[0].length + losungen.Lehrtext[0].length + losungen.Lehrtextvers[0].length + 140")
                 span(v-html="losungen.Losungstext[0].split('/').join('<b><i>').split(':<b><i>').join(':</i></b>')")
