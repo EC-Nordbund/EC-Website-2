@@ -40,7 +40,7 @@
             v-btn(color="error" depressed rounded :x-small="$vuetify.breakpoint.smAndDown" :fab="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden")
               v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
               span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
-      v-app-bar(color="rgba(255, 255, 255, 0.9)")
+      v-app-bar(color="white")
         v-container
           v-row
             v-col(sm=12 class="d-flex align-center px-0")
