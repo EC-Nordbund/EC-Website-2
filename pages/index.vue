@@ -2,7 +2,7 @@
   div
     v-container
       div(class="d-flex flex-row justify-space-between")
-        h2 Aktuelles
+        h2(id="aktuelles") Aktuelles
         v-btn(text depressed tile large @click="$router.push(`/blog/`)")
           | Mehr Beiträge
           v-icon(class="ml-1 mr-n1") mdi-arrow-right
@@ -16,7 +16,7 @@
                   v-card-subtitle(class="pb-2 secondary--text") Vom {{item.published.split('T')[0].split('-').reverse().join('.')}}
     v-container
       div(class="d-flex flex-row justify-space-between")
-        h2 Nächste Veranstaltungen
+        h2(id="nächste-veranstaltungen") Nächste Veranstaltungen
         v-btn(text depressed tile large @click="$router.push(`/veranstaltungen/`)")
           | Mehr Veranstaltungen
           v-icon(class="ml-1 mr-n1") mdi-arrow-right
@@ -28,6 +28,8 @@
                 div(class="ec-gradient")
                   v-card-title(class="pt-2 font-weight-bold") {{item.title}}
                   v-card-subtitle(class="pb-2 secondary--text") Vom {{item.begin.split('-').reverse().join('.')}} bis {{item.ende.split('-').reverse().join('.')}}
+    v-container
+        h2(id="über-uns") Über uns
 </template>
 <script>
 export default {
