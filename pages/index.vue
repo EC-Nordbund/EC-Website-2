@@ -1,10 +1,10 @@
 <template lang="pug">
   div
     v-container
-      div(class="d-flex flex-row justify-space-between")
+      div(class="d-flex flex-row justify-space-between align-end")
         h2(id="aktuelles") Aktuelles
         v-btn(text depressed tile large @click="$router.push(`/blog/`)")
-          | Mehr Beiträge
+          span(class="hidden-xs-only") Mehr Beiträge
           v-icon(class="ml-1 mr-n1") mdi-arrow-right
       v-row
         v-col(cols="12" sm="6" md="4" v-for="item in recentPosts" :key="item.slug")
@@ -15,10 +15,10 @@
                   v-card-title(class="pt-2 font-weight-bold") {{item.title}}
                   v-card-subtitle(class="pb-2 secondary--text") Vom {{item.published.split('T')[0].split('-').reverse().join('.')}}
     v-container
-      div(class="d-flex flex-row justify-space-between")
+      div(class="d-flex flex-row justify-space-between align-end")
         h2(id="nächste-veranstaltungen") Nächste Veranstaltungen
         v-btn(text depressed tile large @click="$router.push(`/veranstaltungen/`)")
-          | Mehr Veranstaltungen
+          span(class="hidden-xs-only") Mehr Veranstaltungen
           v-icon(class="ml-1 mr-n1") mdi-arrow-right
       v-row
         v-col(cols="12" sm="6" md="4" v-for="item in upcomingEvents" :key="item.slug")
