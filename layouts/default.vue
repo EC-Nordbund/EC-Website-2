@@ -52,7 +52,7 @@
               v-btn(text class="hidden-sm-and-down mr-2" to="/veranstaltungen" color="primary")
                 span(class="subtitle-1 text-capitalize font-weight-medium") Veranstaltungen
               v-btn(text class="hidden-sm-and-down mr-2" to="/orte" color="primary")
-                span(class="subtitle-1 text-capitalize font-weight-medium") Orte
+                span(class="subtitle-1 text-capitalize font-weight-medium") Vor Ort
               v-btn(text class="hidden-sm-and-down" to="/mitarbeiter/anmeldung" color="primary")
                 span(class="subtitle-1 text-capitalize font-weight-medium") Anmeldung
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
@@ -72,7 +72,7 @@
           v-list-item-icon
             v-icon mdi-map-marker
           v-list-item-content
-            v-list-item-title Orte
+            v-list-item-title Vor Ort
         v-list-item(link to="/mitarbeiter/anmeldung")
           v-list-item-icon
             v-icon mdi-account-plus
