@@ -11,20 +11,31 @@
             v-btn(icon medium class="mx-n1 hover-youtube" href="https://www.youtube.com/channel/UC0kn9I7w4sCwl7IJ6ZOTF0w" target="_blank" rel="noopener" aria-label="YouTube")
               v-icon mdi-youtube
             v-spacer
+            v-col(sm=7 md=8 xl=10 align-self="center" v-if="losungen.Losungstext" class="hidden-xs-only")
               ec-marquee(:length="marqueeContentLength" color="rgba(0,0,0,0.06)")
-            v-col(sm=6 md=8 xl=10 align-self="center" v-if="losungen.Losungstext" class="hidden-xs-only")
-              ec-marquee(:length="losungen.Losungstext[0].length + losungen.Losungsvers[0].length + losungen.Lehrtext[0].length + losungen.Lehrtextvers[0].length + 140")
-                span(v-html="losungen.Losungstext[0].split('/').join('<b><i>').split(':<b><i>').join(':</i></b>')")
-                |  —
-                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/LUT/${losungen.Losungsvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Losungsvers[0]")
-                | +++
-                span(class="pl-6" v-html="losungen.Lehrtext[0].split('/').join('<i>').split(':<i>').join(':</i>')")
-                |  —
-                a(class="font-italic caption pr-6 no-underline" :href="`https://www.bibelserver.com/LUT/${losungen.Lehrtextvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Lehrtextvers[0]")
-                | +++
-                a(class="no-underline" href="https://www.herrnhuter.de/" target="_blank" rel="noopener" class="pl-6 pr-2") © Evangelische Brüder-Unität – Herrnhuter Brüdergemeine
-                |  —
-                a(class="no-underline" href="https://www.losungen.de" target="_blank" rel="noopener" class="pl-2") Weitere Informationen zu den Losungen findest du hier.
+                div(class="text-body-2 text--secondary")
+                  //- Losung
+                  | Losung:&nbsp;
+                  span(v-html="losung")
+                  |  —&nbsp;
+                  a(class="font-italic pr-6 caption hellGrau--text" :href="`https://www.bibelserver.com/LUT/${losungen.Losungsvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Losungsvers[0]")
+
+                  //- Lehrtext
+                  | Lehrtext:&nbsp;
+                  span(v-html="lehrtext")
+                  |  —&nbsp;
+                  a(class="font-italic pr-6 caption hellGrau--text" :href="`https://www.bibelserver.com/LUT/${losungen.Lehrtextvers[0]}`" target="_blank" rel="noopener" v-html="losungen.Lehrtextvers[0]")
+
+                  //- Copyright
+                  span(class="caption") (
+                    a(class="no-underline hellGrau--text pr-2" href="https://www.herrnhuter.de/" target="_blank" rel="noopener")
+                      | © Evangelische Brüder-Unität – Herrnhuter Brüdergemeine
+                    |  —&nbsp;
+                    a(class="no-underline hellGrau--text pl-2" href="https://www.losungen.de" target="_blank" rel="noopener")
+                      | Weitere Informationen zu den Losungen findest du
+                      span(class="text-decoration-underline") hier
+                      | .
+                    | )
             v-spacer
             v-btn(depressed small rounded color="error")
               v-icon(small class="mr-1") mdi-alarm-light
@@ -118,6 +129,7 @@ import {
   ref,
   onMounted,
   useContext,
+  computed,
 } from '@nuxtjs/composition-api'
 
 import copy from '~/helpers/copy'
@@ -129,6 +141,14 @@ export default defineComponent({
     const { isDev, $content } = useContext()
 
     const losungen = ref({})
+
+    const losung = computed(() => losungen.value.Losungstext[0].split('/').join('<b><i>').split(':<b><i>').join(':</i></b>'))
+    const lehrtext = computed(() => losungen.value.Lehrtext[0].split('/').join('<i>').split(':<i>').join(':</i>'))
+    const marqueeContentLength = computed(() => losungen.value.Losungstext[0].length
+                                              + losungen.value.Losungsvers[0].length
+                                              + losungen.value.Lehrtext[0].length
+                                              + losungen.value.Lehrtextvers[0].length
+                                              + 140)
 
     onMounted(async () => {
       losungen.value = (
@@ -150,6 +170,9 @@ export default defineComponent({
 
     return {
       losungen,
+      losung,
+      lehrtext,
+      marqueeContentLength,
       drawer,
       copy2clip: copy,
       isDev,
