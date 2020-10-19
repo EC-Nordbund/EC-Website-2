@@ -43,7 +43,6 @@ const vuetifyTheme = {
 }
 
 export default {
-  mode: 'universal',
   target: 'server',
   modern: true,
 
@@ -127,7 +126,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: '~/plugins/analytics.ts', mode: 'client' }],
+  plugins: [{ src: '~/plugins/analytics.ts', mode: 'client' }, { src: '~/plugins/swUpdate.ts', mode: 'client' }],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -142,7 +141,8 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
   ],
-  modules: ['@nuxtjs/pwa', '@nuxt/content', 'vue2-leaflet-nuxt'],
+  // '@nuxtjs/pwa', 
+  modules: ['@nuxt/content', 'vue2-leaflet-nuxt'],
   vuetify: {
     customVariables: ['~/assets/styles/variables-vuetify.scss'],
     theme: {
@@ -218,5 +218,10 @@ export default {
   },
   serverMiddleware: {
     '/api': '~/api'
+  },
+  render: {
+    bundleRenderer: {
+      shouldPreload: () => false
+    }
   }
 }
