@@ -191,15 +191,15 @@ export default defineComponent({
   text-decoration: none;
 }
 .hover-facebook:hover {
-  color: #1877f2 !important;
-  fill: #1877f2;
+  color: var(--v-facebook-base) !important;
+  fill: var(--v-facebook-base);
 }
 .hover-instagram:hover {
-  color: #c32aa3 !important;
-  fill: #c32aa3;
+  color: var(--v-instagram-base) !important;
+  fill: var(--v-instagram-base);
 }
 .hover-youtube:hover {
-  color: #f00 !important;
-  fill: #f00;
+  color: var(--v-youtube-base) !important;
+  fill: var(--v-youtube-base);
 }
 </style>

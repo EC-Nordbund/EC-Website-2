@@ -40,6 +40,11 @@ const vuetifyTheme = {
   // Gradient
   'gradient-left': '#a3cf4b',
   'gradient-right': '#5da635',
+
+  // Social
+  facebook: '#1877f2',
+  instagram: '#c32aa3',
+  youtube: '#f00',
 }
 
 export default {
