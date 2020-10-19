@@ -38,8 +38,7 @@
                   v-col(cols="12") {{item.description}}
 
               //- actions/buttons
-              v-card-act
-              ions(class="pa-4")
+              v-card-actions(class="pa-4")
                 v-spacer
                 v-btn(color="primary" class="ec-gradient" depressed tile large @click="$router.push(`/veranstaltungen/${item.slug}`)")
                   //- TODO: hexagon shape for button (maybe in a custom component) 
