@@ -2173,7 +2173,7 @@ ace-builds@^1.4.11:
   resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.12.tgz#888efa386e36f4345f40b5233fcc4fe4c588fae7"
   integrity sha512-G+chJctFPiiLGvs3+/Mly3apXTcfgE45dT5yp12BcWZ1kUs+gm0qd3/fv4gsz6fVag4mM0moHVpjHDIgph6Psg==
 
-ackee-tracker@^4.0.1:
+ackee-tracker@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/ackee-tracker/-/ackee-tracker-4.0.2.tgz#fdee1ec329f9b7245a42c022652b5c7063c50c16"
   integrity sha512-JQkfKW+1bu8bdv2JGcb53ip8oDNWzpiUpP1D453+/PAjMuEngVA2wzS8Tqan8unBvbOOMXj/HI+GvwgIMWlXLQ==
@@ -4552,14 +4552,7 @@ eslint-plugin-import@^2.22.0:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-eslint-plugin-jest@^23.18.2:
-  version "23.20.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.20.0.tgz#e1d69c75f639e99d836642453c4e75ed22da4099"
-  integrity sha512-+6BGQt85OREevBDWCvhqj1yYA4+BFK4XnRZSGJionuEYmcglMZYLNNBBemwzbqUAckURaHdJSBcjHPyrtypZOw==
-  dependencies:
-    "@typescript-eslint/experimental-utils" "^2.5.0"
-
-eslint-plugin-jest@^23.19.0:
+eslint-plugin-jest@^23.18.2, eslint-plugin-jest@^23.19.0:
   version "23.20.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.20.0.tgz#e1d69c75f639e99d836642453c4e75ed22da4099"
   integrity sha512-+6BGQt85OREevBDWCvhqj1yYA4+BFK4XnRZSGJionuEYmcglMZYLNNBBemwzbqUAckURaHdJSBcjHPyrtypZOw==
