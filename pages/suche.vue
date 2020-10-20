@@ -1,25 +1,50 @@
 <template lang="pug">
-  v-container
-    h1 Suche
-    v-text-field(v-model="suche" label="Suche...")
+v-container
+  h1 Suche
+  v-text-field(v-model='suche', label='Suche...')
 
-    template(v-if="suche")
-      h2 Blog
-      v-row(v-if="posts.length > 0")
-        v-col(cols="12" sm="6" md="4" v-for="item in posts" :key="item.slug")
-          v-card(tile hover outlined @click="$router.push(`/blog/${item.slug}`)")
-            ec-image-item(:image="item.featuredImage" :title="item.title" :subTitle="`Vom ${item.published.split('T')[0].split('-').reverse().join('.')}`")
-      p(v-else) Keine Suchergebnisse gefunden!
-      
-      h2 Veranstaltungen
-      v-row(v-if="veranstaltungen.length > 0")
-        v-col(cols="12" sm="6" md="4" v-for="item in veranstaltungen" :key="item.slug")
-          v-card(tile hover outlined @click="$router.push(`/veranstaltungen/${item.slug}`)")
-            ec-image-item(:image="item.featuredImage" :title="item.title" :subTitle="`Vom ${item.begin.split('-').reverse().join('.')} bis ${item.ende.split('-').reverse().join('.')}`")
-      p(v-else) Keine Suchergebnisse gefunden!
-    p(v-else) Gebe einen Suchbegriff ein.
+  template(v-if='suche')
+    h2 Blog
+    v-row(v-if='posts.length > 0')
+      v-col(cols='12', sm='6', md='4', v-for='item in posts', :key='item.slug')
+        v-card(
+          tile,
+          hover,
+          outlined,
+          @click='$router.push(`/blog/${item.slug}`)'
+        )
+          ec-image-item(
+            :image='item.featuredImage',
+            :title='item.title',
+            :subTitle='`Vom ${item.published.split("T")[0].split("-").reverse().join(".")}`'
+          )
+    p(v-else) Keine Suchergebnisse gefunden!
+
+    h2 Veranstaltungen
+    v-row(v-if='veranstaltungen.length > 0')
+      v-col(
+        cols='12',
+        sm='6',
+        md='4',
+        v-for='item in veranstaltungen',
+        :key='item.slug'
+      )
+        v-card(
+          tile,
+          hover,
+          outlined,
+          @click='$router.push(`/veranstaltungen/${item.slug}`)'
+        )
+          ec-image-item(
+            :image='item.featuredImage',
+            :title='item.title',
+            :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
+          )
+    p(v-else) Keine Suchergebnisse gefunden!
+  p(v-else) Gebe einen Suchbegriff ein.
 </template>
 <script lang="ts">
+import { IContentDocument } from '@nuxt/content/types/content'
 import {
   defineComponent,
   ref,
@@ -30,8 +55,8 @@ import {
 export default defineComponent({
   setup() {
     const suche = ref('')
-    const posts = ref([])
-    const veranstaltungen = ref([])
+    const posts = ref([] as IContentDocument[])
+    const veranstaltungen = ref([] as IContentDocument[])
 
     const { $content } = useContext()
 
@@ -58,8 +83,8 @@ export default defineComponent({
           .fetch(),
       ])
 
-      posts.value = p
-      veranstaltungen.value = v
+      posts.value = Array.isArray(p) ? p : [p]
+      veranstaltungen.value = Array.isArray(v) ? v : [v]
     })
 
     return {
