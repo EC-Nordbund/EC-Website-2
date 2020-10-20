@@ -8,14 +8,14 @@
           v-row(no-gutters @click="$router.push(`/blog/${item.slug}`)")
             v-col(cols="12" sm="6" md="5" lg="4" class="hellGrau")
                 //- image
-                v-img(:src="item.featuredImage" :height="imgHeight" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
+                v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
                   v-card-actions(class="pa-3 hidden-sm-and-up")
                     v-spacer
                     v-btn(color="accent" class="ec-gradient" elevation="16" fab tile @click="$router.push(`/blog/${item.slug}`)")
                       //- TODO: hexagon shape for button (maybe in a custom component)
                       v-icon(color="white" size="28") mdi-arrow-right
             v-col(cols="12" sm="6" md="7" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
-              d-flex()
+              v-flex()
                 //- title
                 div(class="ec-gradient white--text")
                   v-card-title(class="d-block pt-2 font-weight-bold text-truncate") {{item.title}}
@@ -35,10 +35,7 @@
               //- actions/buttons
               v-card-actions(class="pa-4 hidden-xs-only")
                 v-spacer
-                v-btn(color="primary" class="ec-gradient" depressed tile large @click="$router.push(`/blog/${item.slug}`)")
-                  //- TODO: hexagon shape for button (maybe in a custom component)
-                  | Mehr Anzeigen
-                  v-icon mdi-arrow-right
+                ec-hexa-button(@click="$router.push(`/blog/${item.slug}`)" icon="mdi-arrow-right" rotate="30")
 
     v-pagination(
       v-model="page"
@@ -50,7 +47,14 @@
 const pagination = {
   getPostsOfPage($content, page) {
     return $content('blog')
-      .only(['title', 'tags', 'description', 'featuredImage', 'slug', 'published'])
+      .only([
+        'title',
+        'tags',
+        'description',
+        'featuredImage',
+        'slug',
+        'published',
+      ])
       .sortBy('published', 'desc')
       .skip(10 * (page - 1))
       .limit(10)
@@ -66,30 +70,30 @@ export default {
   computed: {
     detailsMaxHeight() {
       switch (this.$vuetify.breakpoint.name) {
-        case "xs":
-        case "sm":
-          return "";
+        case 'xs':
+        case 'sm':
+          return ''
         default:
-          return "max-height: 300px;";
+          return 'max-height: 300px;'
       }
     },
     imgHeight() {
       switch (this.$vuetify.breakpoint.name) {
-        case "xs":
-        case "sm":
-          return undefined;
+        case 'xs':
+        case 'sm':
+          return undefined
         default:
-          return 300;
+          return 300
       }
-    }
+    },
   },
   methods: {
     getDescription(item) {
-      if(typeof item.description == "string" && item.description.length > 0) {
-        return item.description;
+      if (typeof item.description == 'string' && item.description.length > 0) {
+        return item.description
       }
-      return 'Klicke auf "Mehr Anzeigen" um den Betrag zu vollständig zu lesen.';
-    }
+      return 'Klicke auf "Mehr Anzeigen" um den Betrag zu vollständig zu lesen.'
+    },
   },
   async asyncData({ $content, query }) {
     const page = parseInt(query.page || '1') || 1

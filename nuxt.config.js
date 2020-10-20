@@ -185,7 +185,9 @@ export default {
       vue: {
         compilerOptions: {
           modules: [
-            getIconInjector({}),
+            getIconInjector({}, {
+              'ec-hexa-button': ['icon']
+            }),
           ],
         },
       },
