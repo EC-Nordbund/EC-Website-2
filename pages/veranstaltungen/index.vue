@@ -3,18 +3,12 @@
     h1 Freizeiten & Events
     //- TODO: sortby by date (asc/desc), alphabetic (asc/desc) 
     //- TODO: filter by tags, age, date-range
-    v-row
+    v-row(v-if="veranstaltungen")
       v-col(v-for="item in veranstaltungen" cols="12" sm="6" md="12" :key="item.slug")
-        v-card(outlined tile hover class="overflow-hidden" color="offWhite")
+        v-card(outlined tile hover class="overflow-hidden" color="offWhite" style="border-bottom: 0px;")
           v-row(no-gutters @click="$router.push(`/veranstaltungen/${item.slug}`)")
-            //- image-area (top/left part)
             v-col(cols="12" md="6" lg="4" class="hellGrau")
-              //- image
-              v-img(:src="item.featuredImage" height="300" class="white--text align-end" gradient="180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.64) 92%")
-                //- title
-                div(class="ec-gradient")
-                  v-card-title(class="pt-2 font-weight-bold") {{item.title}}
-                  v-card-subtitle(class="pb-2 secondary--text") Vom {{item.begin.split('-').reverse().join('.')}} bis {{item.ende.split('-').reverse().join('.')}}
+              ec-image-item(:image="item.featuredImage" :title="item.title" :subTitle="`Vom ${item.begin.split('-').reverse().join('.')} bis ${item.ende.split('-').reverse().join('.')}`")
 
             //- white-area (bottom/right part)
             v-col(cols="12" md="6" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
@@ -40,88 +34,96 @@
               //- actions/buttons
               v-card-actions(class="pa-4")
                 v-spacer
-                v-btn(color="primary" class="ec-gradient" depressed tile large @click="$router.push(`/veranstaltungen/${item.slug}`)")
-                  //- TODO: hexagon shape for button (maybe in a custom component) 
-                  | Details
-                  v-icon mdi-arrow-right
+                ec-hexa-button(@click="$router.push(`/veranstaltungen/${item.slug}`)" icon="mdi-arrow-right")
 </template>
-<script>
-export default {
-  computed: {
-    detailsMaxHeight() {
-      switch (this.$vuetify.breakpoint.name) {
-        case "md":
-        case "lg":
-        case "xl":
-          return "max-height: 300px;";
+<script lang="ts">
+import {
+  defineComponent,
+  useAsync,
+  useContext,
+  computed,
+} from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  setup(props, ctx) {
+    const detailsMaxHeight = computed(() => {
+      switch (ctx.root.$vuetify.breakpoint.name) {
+        case 'md':
+        case 'lg':
+        case 'xl':
+          return 'max-height: 300px;'
         default:
-          return "";
+          return ''
       }
-    },
-  },
-  methods: {
-    textWaitingQueue(wl) {
+    })
+
+    const textWaitingQueue = (wl: 'männlich' | 'weiblich' | any) => {
       switch (wl) {
         case 'männlich':
-          return "Für Männer nur noch Warteliste";
+          return 'Für Männer nur noch Warteliste'
         case 'weiblich':
-          return "Für Frauen nur noch Warteliste";
+          return 'Für Frauen nur noch Warteliste'
         default:
-          return "Nur noch Warteliste";
+          return 'Nur noch Warteliste'
       }
     }
-  },
-  async asyncData({ $content }) {
-    const page = await $content('veranstaltungen').fetch()
 
-    const veranstaltungen = await $content('veranstaltung')
-      .only([
-        'slug',
-        'title',
-        'begin',
-        'ende',
-        'veranstaltungsort',
-        'description',
-        'minAlter',
-        'maxAlter',
-        'featuredImage',
-        'warteliste',
-        'tags',
-      ])
-      .sortBy('begin')
-      .fetch()
+    const { $content } = useContext()
 
-    return { page, veranstaltungen }
-  },
-  head() {
+    const veranstaltungen = useAsync(async () => {
+      const veranstaltungen = await $content('veranstaltung')
+        .only([
+          'slug',
+          'title',
+          'begin',
+          'ende',
+          'veranstaltungsort',
+          'description',
+          'minAlter',
+          'maxAlter',
+          'featuredImage',
+          'warteliste',
+          'tags',
+        ])
+        .sortBy('begin')
+        .fetch()
+
+      return veranstaltungen
+    })
+
     return {
-      title: 'Veranstaltungen',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Liste aller Veranstaltungen des EC-Nordbundes.',
-        },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: 'Veranstaltungen' },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'Liste aller Veranstaltungen des EC-Nordbundes.',
-        },
-        // Twitter Card
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: 'Veranstaltungen',
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: 'Liste aller Veranstaltungen des EC-Nordbundes..',
-        },
-      ],
+      detailsMaxHeight,
+      textWaitingQueue,
+      veranstaltungen,
     }
   },
-}
+  head: {
+    title: 'Veranstaltungen',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Liste aller Veranstaltungen des EC-Nordbundes.',
+      },
+      // Open Graph
+      { hid: 'og:title', property: 'og:title', content: 'Veranstaltungen' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Liste aller Veranstaltungen des EC-Nordbundes.',
+      },
+      // Twitter Card
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Veranstaltungen',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Liste aller Veranstaltungen des EC-Nordbundes..',
+      },
+    ],
+  },
+})
 </script>
