@@ -1,9 +1,52 @@
 <template lang="pug">
-  v-container
-    nuxt-content(:document="page")
-    ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; height: 500px; z-index: 0;")
-    template(v-if="page.anmeldung")
-      h2 Anmeldung
+  div
+    //- cover
+    v-img(:src="page.featuredImage" height="420" class="white--text" gradient="180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.02) 32%, rgba(0,0,0,0.02) 48%, rgba(0,0,0,0.72) 96%")
+      v-container(class="d-flex flex-column justify-space-between" style="height:100%")
+        v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
+          //- go back to overview
+          v-col(cols="2" sm="1")
+            v-btn(color="primary" tile fab small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
+              v-icon(size="28") mdi-arrow-left
+
+          //- display indicators
+          v-col(cols="auto" class="d-flex flex-column")
+                v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
+                  v-icon(small class="ml-n1 mr-1") mdi-alert-circle
+                  | Für Männer nur noch Warteliste
+
+                v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.weiblich")
+                  v-icon(small class="ml-n1 mr-1") mdi-alert-circle
+                  | Für Frauen nur noch Warteliste
+
+                v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.allgemein")
+                  v-icon(small class="ml-n1 mr-1") mdi-alert-circle
+                  | Nur noch Warteliste
+
+        v-row(no-gutters align="end" class="flex-grow-0 mb-n1")
+          //- title
+          v-col(cols="12" md="6" class="order-last order-md-0")
+            h1(class="d-block d-md-inline-block ec-gradient py-1 px-5 my-2 elevation-16") {{page.title}}
+
+          //- categories
+          v-col(cols="12" md="6" class="d-flex justify-start justify-sm-end flex-wrap-reverse")
+            v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
+              | {{ tag }}
+
+    v-container
+      nuxt-content(:document="page")
+
+    v-container(fluid class="grey lighten-4")
+      v-row
+        v-col(cols="12" md="6" xl="7" class="d-flex flex-column")
+          h2(class="mb-2 text-center") Ort
+          ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+        v-col(cols="12" md="6" xl="5")
+          h2(class="mb-2 text-center") Preisstaffelung
+          ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" dense-breakpoint="xsOnly")
+
+    v-container(v-if="page.anmeldung")
+      h2(class="mb-2 text-center") Anmeldung
       ec-anmeldung(
         v-bind="page.anmeldung"
         :veranstaltungsBegin="page.begin"
@@ -11,8 +54,25 @@
         :maxAlter="page.maxAlter"
         :veranstaltungsID="page.veranstaltungsID"
       )
+        v-alert(slot="disabled" type="info" color="hellGrau" dense text outlined) Die Anmeldung zu dieser Veranstaltung ist deaktiviert.
+        v-row(slot="countdown" justify="center")
+          v-col(cols="12" sm="8" md="6" xl="4")
+            v-card(class="ec-gradient")
+              v-card-title(class="text-body-1 text-md-h6 text-lg-h6 text-xl-h6 text--secondary justify-center pb-2") Die Anmeldung wird freigeschaltet in:
+              v-card-text
+                ec-countdown(:target="page.anmeldung.startAt")
+                  template(v-slot:digits="slotProp")
+                    span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
+                  template(v-slot:units="slotProp")
+                    span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
 </template>
-
+<style lang="scss">
+.nuxt-content {
+  h1:first-child {
+    display: none;
+  }
+}
+</style>
 <script>
 export default {
   async asyncData({ $content, params, redirect, route }) {

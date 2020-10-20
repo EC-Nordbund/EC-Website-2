@@ -3,3 +3,22 @@
 // The variables you want to modify
 // $font-size-root: 20px;
 $color-pack: false;
+$body-font-family: 'Montserrat';
+// $heading-font-family: 'Montserrat-Bold' sans-serif;
+$headings: (
+  'h1': (
+    'weight': bold,
+  ),
+  'h2': (
+    'weight': bold,
+  ),
+  'h3': (
+    'weight': bold,
+  ),
+  'h4': (
+    'weight': bold,
+  ),
+  'h5': (
+    'weight': bold,
+  ),
+);

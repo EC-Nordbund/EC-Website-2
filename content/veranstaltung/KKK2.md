@@ -32,5 +32,3 @@ Jeweils 4 Tage, 15 Kinder, 100% Spaßfaktor! Wir werden ganz viel draußen sein 
 
 Das Ganze wird natürlich unter Berücksichtigung der aktuell geltenden Hygienemaßnahmen und Abstandsregeln durchgeführt.
 Unser mit dem Gesundheitsamt abgestimmtes Hygienekonzept können sie hier einsehen.
-
-<ec-anmeldung></ec-anmeldung>

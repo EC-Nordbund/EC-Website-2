@@ -30,6 +30,19 @@ warteliste:
 tags:
   - Karlsminde
   - Freizeit
+  - ab 8 Jahren
+
+#Preise
+preise:
+  - label: Frühbucher
+    preis: 100
+    ende: '2020-11-30'
+  - label: Normal
+    preis: 105
+  - label: Last-Minute
+    preis: 110
+    begin: '2021-04-01'
+  
 
 # Anmeldestuff
 anmeldung:
@@ -43,8 +56,8 @@ anmeldung:
   hatFahrgemeinschaft: true
   hatFreizeitleitung: true
   extraFields: []
-  disabled: false
-  startAt: '2020-06-29 06:17:23'
+  disabled: true
+  startAt: '2020-11-08 12:00:00'
 ---
     
 # KalmiKurzKämp

@@ -1,3 +1,5 @@
+const base = 'http://localhost:3000'
+
 export async function get<T = {}>(url: string):Promise<T> {
   let fetch:Window['fetch']
 
@@ -7,7 +9,7 @@ export async function get<T = {}>(url: string):Promise<T> {
     fetch = window.fetch
   }
 
-  const res = await fetch(url)
+  const res = await fetch(base + url)
   const json = await res.json()
 
   return json
@@ -22,7 +24,7 @@ export async function post<T = {}>(url: string, data: any): Promise<T> {
     fetch = window.fetch
   }
 
-  const res = await fetch(url, {
+  const res = await fetch(base + url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

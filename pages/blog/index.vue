@@ -1,14 +1,42 @@
 <template lang="pug">
   v-container
-    v-list(three-line)
-      v-list-item(v-for="item in posts" @click="$router.push(`/blog/${item.slug}`)" :key="item.slug")
-        v-list-item-avatar
-          v-img(:src="item.featuredImage")
-        v-list-item-content
-          v-list-item-title 
-            span(style="margin-right: 20px;") {{item.title}}
-            v-chip(color="secondary" v-for="tag in item.tags" :key="tag") {{ tag }}
-          v-list-item-subtitle {{item.description}}
+    h1 Beiträge
+    //- TODO: filter by tags, author, source (if instagram-feed is included)
+    v-row
+      v-col(v-for="item in posts" cols="12" :key="item.slug")
+        v-card(outlined tile hover class="overflow-hidden" color="offWhite")
+          v-row(no-gutters @click="$router.push(`/blog/${item.slug}`)")
+            v-col(cols="12" sm="6" md="5" lg="4" class="hellGrau")
+                //- image
+                v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
+                  v-card-actions(class="pa-3 hidden-sm-and-up")
+                    v-spacer
+                    v-btn(color="accent" class="ec-gradient" elevation="16" fab tile @click="$router.push(`/blog/${item.slug}`)")
+                      //- TODO: hexagon shape for button (maybe in a custom component)
+                      v-icon(color="white" size="28") mdi-arrow-right
+            v-col(cols="12" sm="6" md="7" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
+              v-flex()
+                //- title
+                div(class="ec-gradient white--text")
+                  v-card-title(class="d-block pt-2 font-weight-bold text-truncate") {{item.title}}
+                  v-card-subtitle(class="pb-2 secondary--text d-flex justify-space-between")
+                    span Vom {{item.published.split('T')[0].split('-').reverse().join('.')}}
+                v-card-text(class="full-heigth overflow-hidden py-0 hidden-xs-only")
+                  //- labels
+                  v-row(no-gutters)
+                    //- categories
+                    v-col(cols="12" lg="8" class="d-flex flex-wrap mb-n1 ml-n2 mt-3")
+                      v-chip(color="secondary" text-color="primary" class="ml-2 mb-1 font-weight-medium" outlined small v-for="tag in item.tags" :key="tag")
+                        | {{ tag }}
+                  //- description
+                  v-row
+                    v-col(cols="12") {{getDescription(item)}}
+
+              //- actions/buttons
+              v-card-actions(class="pa-4 hidden-xs-only")
+                v-spacer
+                ec-hexa-button(@click="$router.push(`/blog/${item.slug}`)" icon="mdi-arrow-right" rotate="30")
+
     v-pagination(
       v-model="page"
       :length="pageCount"
@@ -19,7 +47,14 @@
 const pagination = {
   getPostsOfPage($content, page) {
     return $content('blog')
-      .only(['title', 'tags', 'description', 'featuredImage', 'slug'])
+      .only([
+        'title',
+        'tags',
+        'description',
+        'featuredImage',
+        'slug',
+        'published',
+      ])
       .sortBy('published', 'desc')
       .skip(10 * (page - 1))
       .limit(10)
@@ -32,6 +67,34 @@ const pagination = {
 }
 
 export default {
+  computed: {
+    detailsMaxHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+        case 'sm':
+          return ''
+        default:
+          return 'max-height: 300px;'
+      }
+    },
+    imgHeight() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+        case 'sm':
+          return undefined
+        default:
+          return 300
+      }
+    },
+  },
+  methods: {
+    getDescription(item) {
+      if (typeof item.description == 'string' && item.description.length > 0) {
+        return item.description
+      }
+      return 'Klicke auf "Mehr Anzeigen" um den Betrag zu vollständig zu lesen.'
+    },
+  },
   async asyncData({ $content, query }) {
     const page = parseInt(query.page || '1') || 1
 
@@ -58,7 +121,7 @@ export default {
 
   head() {
     return {
-      title: `Blog (Seite ${this.page})`,
+      title: 'Blog',
       meta: [
         {
           hid: 'description',
@@ -70,7 +133,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `Blog (Seite ${this.page})`,
+          content: 'Blog',
         },
         {
           hid: 'og:description',
@@ -82,7 +145,7 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `Blog (Seite ${this.page})`,
+          content: 'Blog',
         },
         {
           hid: 'twitter:description',

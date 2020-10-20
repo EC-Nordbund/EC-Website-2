@@ -1,13 +1,26 @@
 <template lang="pug" functional>
-  div(class="marquee text-no-wrap")
-    span(:style="{animationDuration: `${ props.length * 0.15 || 15 }s`}" class="body-2")
+  div(class="marquee text-no-wrap" :style="{'background-color':props.color}")
+    span(:style="{animationDuration: `${ props.length * 0.15 || 15 }s`}")
       slot
 </template>
+<script>
+export default {
+  props: {
+    color: {
+      type: String,
+      default: 'none'
+    },
+    length: {
+      type: Number,
+      required: true
+    }
+  }
+}
+</script>
 <style scoped lang="scss">
 .marquee {
   margin: 0 auto;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   padding: 2px 6px;
   > span {
