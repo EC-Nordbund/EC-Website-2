@@ -3,7 +3,6 @@ div
   div(
     style='padding: 32px 79px 100px 79px; background: var(--v-offWihte-base); clip-path: polygon(0 0, 0 100%, 100% calc(100% - 3.492vw), 100% 0);margin-bottom: -68px;'
   )
-    //- v-container
     .d-flex.flex-row.justify-space-between.align-end
       h2#aktuelles Aktuelles
       v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)')
@@ -14,7 +13,7 @@ div
         cols='12',
         sm='6',
         md='4',
-        v-for='item in recentPosts',
+        v-for='item in pages.recentPosts',
         :key='item.slug'
       )
         v-card(
@@ -28,7 +27,6 @@ div
             :title='item.title',
             :subTitle='`Vom ${item.published.split("T")[0].split("-").reverse().join(".")}`'
           )
-    //- v-container
     .d-flex.flex-row.justify-space-between.align-end
       h2(id='nächste-veranstaltungen') Nächste Veranstaltungen
       v-btn(
@@ -45,7 +43,7 @@ div
         cols='12',
         sm='6',
         md='4',
-        v-for='item in upcomingEvents',
+        v-for='item in pages.upcomingEvents',
         :key='item.slug'
       )
         v-card(
@@ -70,58 +68,64 @@ div
       | Im EC-Nordbund sind alle EC-Kinder- und Jugendarbeiten aus Schleswig-Holstein und Hamburg.
 </template>
 <script>
-export default {
-  async asyncData({ $content }) {
-    const upcomingEvents = await $content('veranstaltung')
-      .only(['slug', 'title', 'begin', 'ende', 'featuredImage', 'tags'])
-      .sortBy('begin') // TODO: compare to todays date
-      .limit(3)
-      .fetch()
+import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
 
-    const recentPosts = await $content('blog')
-      .only([
-        'title',
-        'tags',
-        'description',
-        'featuredImage',
-        'slug',
-        'published',
-      ])
-      .sortBy('published', 'desc')
-      .limit(3)
-      .fetch()
+export default defineComponent({
+  setup() {
+    const { $content } = useContext()
 
-    return { upcomingEvents, recentPosts }
+    const pages = useAsync(async () => {
+      const upcomingEvents = await $content('veranstaltung')
+        .only(['slug', 'title', 'begin', 'ende', 'featuredImage', 'tags'])
+        .sortBy('begin') // TODO: compare to todays date
+        .limit(3)
+        .fetch()
+
+      const recentPosts = await $content('blog')
+        .only([
+          'title',
+          'tags',
+          'description',
+          'featuredImage',
+          'slug',
+          'published',
+        ])
+        .sortBy('published', 'desc')
+        .limit(3)
+        .fetch()
+
+      return { upcomingEvents, recentPosts }
+    })
+
+    return { pages }
   },
-  head() {
-    return {
-      title: 'Startseite',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Wir sind der Nordbund!',
-        },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: 'Veranstaltungen' },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'Wir sind der Nordbund!',
-        },
-        // Twitter Card
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: 'Veranstaltungen',
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: 'Wir sind der Nordbund!',
-        },
-      ],
-    }
+  head: {
+    title: 'Startseite',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Wir sind der Nordbund!',
+      },
+      // Open Graph
+      { hid: 'og:title', property: 'og:title', content: 'Veranstaltungen' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Wir sind der Nordbund!',
+      },
+      // Twitter Card
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Veranstaltungen',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Wir sind der Nordbund!',
+      },
+    ],
   },
-}
+})
 </script>

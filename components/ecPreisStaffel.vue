@@ -9,30 +9,32 @@
           p(class="text-center text-h4 font-weight-light mb-0") {{preis.preis}} EUR
           p(class="hidden-sm-and-up text-right") {{subtitle(preis)}}
 </template>
-<script lang="js">
+<script lang="ts">
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 // TODO: highlight current price
 // TODO: display alerts when the next category is in a few days
-export default {
-  computed: {
-    dense() {
-      return this.$vuetify.breakpoint[this.denseBreakpoint] || false
-    } 
-  },
-  methods: {
-    subtitle(preis) {
-      if(preis.begin) {
-        return `ab dem ${preis.begin.split('-').reverse().join('.')}`;
-      } else if(preis.ende) {
-          return `bis zum ${preis.ende.split('-').reverse().join('.')}`;
+export default defineComponent({
+  setup(props, ctx) {
+    const dense = computed(
+      // @ts-expect-error
+      () => ctx.root.$vuetify.breakpoint[props.denseBreakpoint] || false
+    )
+
+    const subtitle = (preis: { begin: string; ende: string }) => {
+      if (preis.begin) {
+        return `ab dem ${preis.begin.split('-').reverse().join('.')}`
+      } else if (preis.ende) {
+        return `bis zum ${preis.ende.split('-').reverse().join('.')}`
       }
-      return "";
+      return ''
+    }
+
+    return {
+      dense,
+      subtitle,
     }
   },
   props: {
-    value: {
-      type: String,
-      required: true,
-    },
     preise: {
       type: Array,
       default: [],
@@ -40,20 +42,20 @@ export default {
     // choose from: `xsOny`, `smAndDown`, `smAndUp`, `mdAndDown`, ... , `xlOnly`
     denseBreakpoint: {
       type: String,
-      default: ""
+      required: true,
     },
     dark: {
       type: Boolean,
-      default: false
+      default: false,
     },
     fillDot: {
       type: Boolean,
-      default: false
+      default: false,
     },
     dotColor: {
-      type: undefined | String,
-      default: undefined
-    }
+      type: String,
+      required: false,
+    },
   },
-}
+})
 </script>

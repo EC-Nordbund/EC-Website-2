@@ -3,8 +3,9 @@
     span(:style="{animationDuration: `${ props.length * 0.15 || 15 }s`}")
       slot
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "@nuxtjs/composition-api";
+export default defineComponent({
   props: {
     color: {
       type: String,
@@ -15,7 +16,7 @@ export default {
       required: true
     }
   }
-}
+})
 </script>
 <style scoped lang="scss">
 .marquee {

@@ -112,6 +112,9 @@
                 nuxt-link(to="/downloads/") Downloads
             ul
               li
+                nuxt-link(to="/teilnahmebedingungen/") Teilnahmebedingungen
+            ul
+              li
                 nuxt-link(to="/datenschutz") Datenschutz
             ul
               li

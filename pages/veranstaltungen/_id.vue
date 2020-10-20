@@ -43,7 +43,7 @@
           ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
         v-col(cols="12" md="6" xl="5")
           h2(class="mb-2 text-center") Preisstaffelung
-          ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" dense-breakpoint="xsOnly")
+          ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
 
     v-container(v-if="page.anmeldung")
       h2(class="mb-2 text-center") Anmeldung
