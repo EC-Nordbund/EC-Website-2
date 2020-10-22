@@ -78,9 +78,9 @@
         //-     v-icon mdi-account-plus
         //-   v-list-item-content
         //-     v-list-item-title Anmeldung
-    v-main
+    v-main(class="ec-bottom-rotated-2" style="margin-bottom: -68px;")
       nuxt
-    footer(class="secondary darken-1 white--text" style="clip-path: polygon(0 0, 100% 3.492vw, 100% 100%, 0 100%); padding-top: 42px;")
+    footer(class="secondary darken-1 white--text ec-top-rotated-1")
       v-container
         v-row(justify="space-between")
           v-col(md="4" )
@@ -99,7 +99,7 @@
                   v-list-item-title NOLADE21SHO
                   v-list-item-subtitle BIC
           //- v-col(md="4" align-self="end") © by EC-Nordbund
-          v-col(md="4" style="margin-top: 16px;")
+          v-col(md="4")
             h2 Links
             ul
               li

@@ -1,11 +1,9 @@
 // @ts-ignore
 import { create } from 'ackee-tracker/src/scripts/main'
-import { Plugin } from '@nuxt/types'
+import { defineNuxtPlugin } from '@nuxtjs/composition-api'
 
-const plugin: Plugin = (context) => {
-  const doNotTracking = (navigator.doNotTrack == "1")
-
-  if(!doNotTracking) {
+export default defineNuxtPlugin((context) => {
+  if (navigator.doNotTrack != '1') {
     const ackee = create(
       {
         server: 'https://next.analytics.ec-nordbund.de',
@@ -16,10 +14,8 @@ const plugin: Plugin = (context) => {
         detailed: true,
       }
     )
-    
-    // @ts-ignore
+
+    // @ts-expect-error
     context.app.router.afterEach(() => ackee.record())
   }
-}
-
-export default plugin
+})

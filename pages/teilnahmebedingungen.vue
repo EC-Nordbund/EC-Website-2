@@ -13,7 +13,7 @@ export default defineComponent({
     const page = useAsync(async () => {
       const page = await $content('teilnahmebedingungen').fetch()
 
-      return { page }
+      return page
     })
 
     return { page }

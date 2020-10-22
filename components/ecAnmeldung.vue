@@ -1,5 +1,9 @@
 <template lang="pug">
   v-form(v-if="!disabled && !countdown")
+    v-alert(type="info")
+      | Die Anmeldung für 
+      b Mitarbeiter 
+      | läuft ab sofort anders als bissher bitte wende dich an deinen Verantsaltungsleiter für weitere Informationen.
     v-radio-group(v-model="data.geschlecht" required label="Geschlecht" @change="geschlechtEvent" :error-messages="geschlechtErrors")
       v-radio(value="m" label="Männlich")
       v-radio(value="w" label="Weiblich")
@@ -89,7 +93,7 @@ import {
   watchEffect,
   toRefs,
 } from '@nuxtjs/composition-api'
-import { post } from "~/helpers/fetch";
+import { post } from '~/helpers/fetch'
 import { useValidation, ruleLib } from '../plugins/validate'
 import { useAlter } from '../plugins/alter'
 function useExtraFields(extraFields) {

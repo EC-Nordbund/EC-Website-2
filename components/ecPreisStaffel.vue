@@ -1,6 +1,6 @@
 <template lang="pug">
   v-timeline(:dark="dark" :dense="dense")
-    v-timeline-item(v-for="preis in preise" :key="preis" small :fill-dot="fillDot" :color="dotColor") 
+    v-timeline-item(v-for="preis in preise" :key="JSON.stringify(preis)" small :fill-dot="fillDot" :color="dotColor") 
       //- | {{preis.label}}
       span(slot="opposite") {{subtitle(preis)}}
       v-card(tile)

@@ -5,5 +5,6 @@ module.exports = {
   rules: {
     'font-family-no-missing-generic-family-keyword': null,
     'at-rule-no-unknown': null,
+    'length-zero-no-unit': null
   },
 }

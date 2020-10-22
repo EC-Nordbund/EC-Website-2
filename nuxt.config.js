@@ -143,7 +143,7 @@ export default {
   buildModules: [
     '@nuxtjs/composition-api',
     '@nuxt/typescript-build',
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
   ],
   // '@nuxtjs/pwa', 

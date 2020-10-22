@@ -36,7 +36,7 @@
     v-container
       nuxt-content(:document="page")
 
-    v-container(fluid class="grey lighten-4")
+    v-container(fluid class="grey lighten-4 ec-top-bottom-rotated-1")
       v-row
         v-col(cols="12" md="6" xl="7" class="d-flex flex-column")
           h2(class="mb-2 text-center") Ort

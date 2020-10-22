@@ -91,31 +91,29 @@ export default defineComponent({
 
     return { fileRoute, data, toBreadcrumb }
   },
-  head() {
-    return {
-      title: 'Downloads',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Download von Vorlagen, Dokumenten etc.',
-        },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: 'Downloads' },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'Download von Vorlagen, Dokumenten etc.',
-        },
-        // Twitter Card
-        { hid: 'twitter:title', name: 'twitter:title', content: 'Downloads' },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: 'Download von Vorlagen, Dokumenten etc..',
-        },
-      ],
-    }
+  head: {
+    title: 'Downloads',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Download von Vorlagen, Dokumenten etc.',
+      },
+      // Open Graph
+      { hid: 'og:title', property: 'og:title', content: 'Downloads' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Download von Vorlagen, Dokumenten etc.',
+      },
+      // Twitter Card
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Downloads' },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Download von Vorlagen, Dokumenten etc..',
+      },
+    ],
   },
 })
 </script>

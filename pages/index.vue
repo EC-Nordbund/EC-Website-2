@@ -1,71 +1,103 @@
 <template lang="pug">
 div
   div(
-    style='padding: 32px 79px 100px 79px; background: var(--v-offWihte-base); clip-path: polygon(0 0, 0 100%, 100% calc(100% - 3.492vw), 100% 0);margin-bottom: -68px;'
+    v-if="pages"
+    class="ec-bottom-rotated-1"
+    style='background: var(--v-offWihte-base);margin-bottom: -68px;'
   )
-    .d-flex.flex-row.justify-space-between.align-end
-      h2#aktuelles Aktuelles
-      v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)')
-        span.hidden-xs-only Mehr Beiträge
-        v-icon.ml-1.mr-n1 mdi-arrow-right
-    v-row
-      v-col(
-        cols='12',
-        sm='6',
-        md='4',
-        v-for='item in pages.recentPosts',
-        :key='item.slug'
-      )
-        v-card(
-          tile,
-          hover,
-          outlined,
-          @click='$router.push(`/blog/${item.slug}`)'
+    v-container
+      .d-flex.flex-row.justify-space-between.align-end
+        h2#aktuelles Aktuelles
+        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)')
+          span.hidden-xs-only Mehr Beiträge
+          v-icon.ml-1.mr-n1 mdi-arrow-right
+      v-row
+        v-col(
+          cols='12',
+          sm='6',
+          md='4',
+          v-for='item in pages.recentPosts',
+          :key='item.slug'
         )
-          ec-image-item(
-            :image='item.featuredImage',
-            :title='item.title',
-            :subTitle='`Vom ${item.published.split("T")[0].split("-").reverse().join(".")}`'
+          v-card(
+            tile,
+            hover,
+            outlined,
+            @click='$router.push(`/blog/${item.slug}`)'
           )
-    .d-flex.flex-row.justify-space-between.align-end
-      h2(id='nächste-veranstaltungen') Nächste Veranstaltungen
-      v-btn(
-        text,
-        depressed,
-        tile,
-        large,
-        @click='$router.push(`/veranstaltungen/`)'
-      )
-        span.hidden-xs-only Mehr Veranstaltungen
-        v-icon.ml-1.mr-n1 mdi-arrow-right
-    v-row
-      v-col(
-        cols='12',
-        sm='6',
-        md='4',
-        v-for='item in pages.upcomingEvents',
-        :key='item.slug'
-      )
-        v-card(
+            ec-image-item(
+              :image='item.featuredImage',
+              :title='item.title',
+              :subTitle='`Vom ${item.published.split("T")[0].split("-").reverse().join(".")}`'
+            )
+      .d-flex.flex-row.justify-space-between.align-end
+        h2(id='nächste-veranstaltungen') Nächste Veranstaltungen
+        v-btn(
+          text,
+          depressed,
           tile,
-          hover,
-          outlined,
-          @click='$router.push(`/veranstaltungen/${item.slug}`)'
+          large,
+          @click='$router.push(`/veranstaltungen/`)'
         )
-          ec-image-item(
-            :image='item.featuredImage',
-            :title='item.title',
-            :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
+          span.hidden-xs-only Mehr Veranstaltungen
+          v-icon.ml-1.mr-n1 mdi-arrow-right
+      v-row
+        v-col(
+          cols='12',
+          sm='6',
+          md='4',
+          v-for='item in pages.upcomingEvents',
+          :key='item.slug'
+        )
+          v-card(
+            tile,
+            hover,
+            outlined,
+            @click='$router.push(`/veranstaltungen/${item.slug}`)'
           )
-    //- v-container
+            ec-image-item(
+              :image='item.featuredImage',
+              :title='item.title',
+              :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
+            )
+      //- v-container
   div(
-    style='padding: 100px 79px; background: var(--v-primary-base); clip-path: polygon(0 3.492vw, 0 calc(100% - 3.492vw), 100% 100%, 100% 0); margin-bottom: -68px;'
+    class="ec-top-bottom-rotated-2"
+    style='background: var(--v-primary-base); margin-bottom: -67px; --ec-rotation-padding-addition: 15px;'
   )
-    h2(id='über-uns') Über uns
-    p 
-      | Der EC-Nordbund ist einer von 18 Landesverbänden des Deutschen EC-Verbandes.
-      | EC bedeutet: „Entschieden für Christus“ und markiert die grundsätzlich evangelische Ausrichtung aller Aktivitäten.
-      | Im EC-Nordbund sind alle EC-Kinder- und Jugendarbeiten aus Schleswig-Holstein und Hamburg.
+    v-container
+      h2(id='über-uns') Über uns
+      //- p 
+        | Der EC-Nordbund ist einer von 18 Landesverbänden des Deutschen EC-Verbandes.
+        | EC bedeutet: „Entschieden für Christus“ und markiert die grundsätzlich evangelische Ausrichtung aller Aktivitäten.
+        | Im EC-Nordbund sind alle EC-Kinder- und Jugendarbeiten aus Schleswig-Holstein und Hamburg.
+      p
+        | Die EC-Arbeit in Deutschland hat den Auftrag,
+        | junge Menschen zu Jüngern zu machen
+        | und sie zu prägenden Persönlichkeiten heranzubilden,
+        | durch die wiederum Menschen ihrer Generation
+        | zu Jüngern werden.
+      p
+        | Der EC-Nordbund ist einer der 18 Landesverbänden des Deutschen EC-Verbandes. Im EC-Nordbund sind alle EC-Kinder- und Jugendarbeiten aus Schleswig-Holstein und Hamburg vereint.
+      p
+        | EC bedeutet: „Entschieden für Christus“ und markiert die Aurichtung auf Jesus in allen unseren Aktivitäten.
+      p
+        | Der EC-Nordbund arbeitet eng mit dem Verband der Gemeinschaften in der Evangelischen Kirche in Schleswig-Holstein e.V. (kurz VG) zusammen. Wir betreiben gemeinsam das Erholungs- und Bildungszentrum Wittensee (kurz EBZ) und unser Ferienlager in Karlsminde (bei Eckernförde).
+      p
+        | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
+      v-row
+        v-col 
+          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="300" :height="300" style="border-radius: 50%; margin: 5px auto;")
+          p(style="text-align: center;display: block;")
+            b Thomas Seeger
+            br
+            | Jugendreferent
+        v-col
+          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="300" :height="300" style="border-radius: 50%; margin: 5px auto;")
+          p(style="text-align: center;display: block;")
+            b Dortje Gaertner
+            br
+            | Kinder- und Jungschararbeit
 </template>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
