@@ -12,14 +12,10 @@ Wir der <a href="/">EC-Nordbund</a> wird dort durch eine Fußballmannschaft und 
 
 
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/G0081854-e.jpg" alt width="100%">
-</div>T. Krause
+<img loading="lazy" src="/old/G0081854-e.jpg" alt>T. Krause
 
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/G0012317-e.jpg" alt width="100%">
-</div>T. Krause
+<img loading="lazy" src="/old/G0012317-e.jpg" alt>T. Krause
 
 
 

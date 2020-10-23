@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 11  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_02-26_IN-tag-11.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_02-26_IN-tag-11.jpg" alt>
 
 Johannes 13,34+35 
 Ich gebe euch ein neues Gebot: 

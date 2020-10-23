@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Mit den Menschen eine Kirche bauen
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_4090-e1494844165759.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_4090-e1494844165759.jpg" alt>
 
 Der Wahnsinn! In zwei Tagen eine Kirche bauen. Das geht doch gar nicht. Geht ja wohl.
 
@@ -19,6 +17,4 @@ Katharina von Bora fragt Martin Luther: &#8222;Aber Martin, wie kann man heute n
 
 An so einer Kirche bauen wir gerne mit&#8230;
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_4011.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_4011.jpg" alt>

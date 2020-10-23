@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 01  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_02-14_UP-tag-01-1.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_02-14_UP-tag-01-1.jpg" alt>
 
 Stell deinen Handy-Wecker um 6 Uhr, 9 Uhr, 12 Uhr, 15 Uhr, 18 Uhr und 21 Uhr, um zu beten.
 

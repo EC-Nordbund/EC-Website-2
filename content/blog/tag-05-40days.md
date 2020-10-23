@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 05  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_02-19_UP-tag-05.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_02-19_UP-tag-05.jpg" alt>
 
 5. Mose 6,4+5 
 Hört! Der Herr ist unser Gott, der Herr allein. Ihr sollt ihn von ganzem Herzen lieben, mit ganzer Hingabe, mit all eurer Kraft. Bewahrt die Worte im Herzen, die ich euch heute sage! 

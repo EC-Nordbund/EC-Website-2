@@ -11,7 +11,7 @@ featuredImage: /card.png
 Das PfingstCamp fällt in diesem Jahr aus. Das ist schade. Aber du musst nicht völlig darauf verzichten. Es gibt ein light ein High*light*! – Wir bringen dir ein kleines Stückchen PfingstCamp zu dir nach Hause.
 
 
-<span><iframe type="text/html" src="https://www.youtube.com/embed/kkxYJtsOG_M?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent" allowfullscreen="true"></iframe></span>
+<span><iframe src="https://www.youtube.com/embed/kkxYJtsOG_M?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent" allowfullscreen="true"></iframe></span>
 
 
 Von Samstag bis Montag gibt es jeweils ab 19:00 Uhr ein paar Minuten PfingstCamp auf YouTube.

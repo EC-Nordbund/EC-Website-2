@@ -36,19 +36,17 @@ sage: Das Abenteuer hat sich gelohnt und hat uns im Verband nicht etwa
 geschwächt, weil der ein oder andere sich erkältet hat, sondern es hat uns
 gestärkt und vor allem geistlich näher zusammen gebracht.
 
-<div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 5px;">
-<img src="/old/Website11-e1547017174137.jpg" alt width="100%">
-<img src="/old/Website08.jpg" alt width="100%">
-<img src="/old/Website12-e1547017140645.jpg" alt width="100%">
-<img src="/old/Website10.jpg" alt width="100%">
-<img src="/old/Website01.jpg" alt width="100%">
-<img src="/old/Website04.jpg" alt width="100%">
-<img src="/old/Website05.jpg" alt width="100%">
-<img src="/old/Website03.jpg" alt width="100%">
-<img src="/old/Website06.jpg" alt width="100%">
-<img src="/old/Website02.jpg" alt width="100%">
-<img src="/old/Website13-e1547016876564.jpg" alt width="100%">
-<img src="/old/Website09-e1547017187515.jpg" alt width="100%">
-<img src="/old/Website07.jpg" alt width="100%">
-<img src="/old/Website14.jpg" alt width="100%">
-</div>
+* <img loading="lazy" src="/old/Website11-e1547017174137.jpg" alt>
+* <img loading="lazy" src="/old/Website08.jpg" alt>
+* <img loading="lazy" src="/old/Website12-e1547017140645.jpg" alt>
+* <img loading="lazy" src="/old/Website10.jpg" alt>
+* <img loading="lazy" src="/old/Website01.jpg" alt>
+* <img loading="lazy" src="/old/Website04.jpg" alt>
+* <img loading="lazy" src="/old/Website05.jpg" alt>
+* <img loading="lazy" src="/old/Website03.jpg" alt>
+* <img loading="lazy" src="/old/Website06.jpg" alt>
+* <img loading="lazy" src="/old/Website02.jpg" alt>
+* <img loading="lazy" src="/old/Website13-e1547016876564.jpg" alt>
+* <img loading="lazy" src="/old/Website09-e1547017187515.jpg" alt>
+* <img loading="lazy" src="/old/Website07.jpg" alt>
+* <img loading="lazy" src="/old/Website14.jpg" alt>

@@ -7,10 +7,7 @@ featuredImage: /card.png
 
 # Wenn der Postmann dreimal klingelt
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1304.jpg" alt width="100%">
-<img src="/old/DSC_1307.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1304.jpg" alt> <img loading="lazy" src="/old/DSC_1307.jpg" alt>
 
 Heute kam ganz unerwartet &#8211; weil viel früher als gedacht &#8211; eine kleine Paketlieferung aus 16 Kartons an.
 

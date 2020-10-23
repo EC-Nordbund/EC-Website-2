@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # ich glaubs kommt  nach Neumünster
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/WhatsApp-Image-2017-05-16-at-20.49.13.jpeg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/WhatsApp-Image-2017-05-16-at-20.49.13.jpeg" alt>
 
 Noch sind die Reihen leer. Das nennt sich die Ruhe vor dem Sturm. Denn schon in wenigen Stunden geht es los. Der EC-Neumünster lädt ein zur &#8222;ich glaub&#8217;s&#8220;-Woche.
 

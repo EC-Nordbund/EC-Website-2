@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 26  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-15_WITH-tag-26.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-15_WITH-tag-26.jpg" alt>
 
 &#8222;Alle Menschen haben einen Zugang zu Gott, aber jeder einen anderen.&#8220;
 

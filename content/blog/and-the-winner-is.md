@@ -9,9 +9,7 @@ featuredImage: /card.png
 
 Elmshorn!
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/1-Platz_Elmshorn.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/1-Platz_Elmshorn.jpg" alt>
 
 Auch in diesem Jahr war unser Turnier ein voller Erfolg.
 
@@ -29,14 +27,4 @@ Und weil er doch vergeht, bleibt nur noch zu sagen, dass ein neuer Hallenturnier
 
 Hier noch ein paar Impressionen vom Tag&#8230;
 
-<div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 5px;">
-<img src="/old/Andacht-2.jpg" alt width="100%">
-<img src="/old/Aufwaermen.jpg" alt width="100%">
-<img src="/old/Barteheide_Ratzeburg-2.jpg" alt width="100%">
-<img src="/old/Barteheide_Ratzeburg-3_Tor.jpg" alt width="100%">
-<img src="/old/Elmshorn_Luebeck-2.jpg" alt width="100%">
-<img src="/old/Luebeck_Mannschftsfoto.jpg" alt width="100%">
-<img src="/old/Pokale.jpg" alt width="100%">
-<img src="/old/Zuschauer-1.jpg" alt width="100%">
-<img src="/old/Zuschauer-2.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/Andacht-2.jpg" alt> <img loading="lazy" src="/old/Aufwaermen.jpg" alt> <img loading="lazy" src="/old/Barteheide_Ratzeburg-2.jpg" alt> <img loading="lazy" src="/old/Barteheide_Ratzeburg-3_Tor.jpg" alt> <img loading="lazy" src="/old/Elmshorn_Luebeck-2.jpg" alt> <img loading="lazy" src="/old/Luebeck_Mannschftsfoto.jpg" alt> <img loading="lazy" src="/old/Pokale.jpg" alt> <img loading="lazy" src="/old/Zuschauer-1.jpg" alt> <img loading="lazy" src="/old/Zuschauer-2.jpg" alt>

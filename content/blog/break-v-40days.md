@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Break V  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-18_WITH-break5.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-18_WITH-break5.jpg" alt>
 
 Segne in der Stille einen Bekannten und bete, dass er Jesus kennenlernt. Egal, wo du gerade bist.
 

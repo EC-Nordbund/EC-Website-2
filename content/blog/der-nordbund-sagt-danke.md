@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Der Nordbund sagt danke!
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/thank-you-2179891.jpg" alt width="100%">
-</div> 
+<img loading="lazy" src="/old/thank-you-2179891.jpg" alt> 
 Der Nordbund bedankt sich bei 601 Personen, die für uns bei dem ING-DiBa-Ranking gevotet haben. Wir sind überwältigt von so viel Engagement, Unterstützung und Zustimmung. Leider hat es nicht ganz zu den 1.000,&#8211; EUR gereicht. Wir sind auf Platz 217 (von immerhin 2423) gelandet. Trotzdem ein beachtliches Ergebnis.
 
 Wenn jetzt jeder, der für uns gevotet hat 1,67 EUR spendet, kommen die 1.000,&#8211; EUR auch so zusammen. 
@@ -21,9 +19,5 @@ IBAN: DE47230510300510833643
 BIC: NOLADE21SHO**
 
 Ich hab&#8217;s gerade gemacht. Bist du auch dabei? 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/piggy-bank-2930506.jpg" alt width="100%">
-</div> 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/money-2724235.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/piggy-bank-2930506.jpg" alt> 
+<img loading="lazy" src="/old/money-2724235.jpg" alt>

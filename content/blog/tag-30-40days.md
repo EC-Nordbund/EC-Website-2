@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 30  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-20_OUT-tag-30.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-20_OUT-tag-30.jpg" alt>
 
 Wünsche heute allen Menschen, von denen du dich verabschiedest, Gottes Segen.
 

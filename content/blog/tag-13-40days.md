@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 13  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_02-28_IN-tag-13.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_02-28_IN-tag-13.jpg" alt>
 
 Gründe eine WhatsApp-Gruppe zum Austausch von Gebetsanliegen.
 

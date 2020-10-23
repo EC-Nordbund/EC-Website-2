@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 20  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-08_WITH-tag-20.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-08_WITH-tag-20.jpg" alt>
 
 &#8222;Eine christliche Gemeinschaft lebt aus der Fürbitte füreinander oder sie geht zugrunde.&#8220; (Dietrich Bonhoeffer)
 

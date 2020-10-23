@@ -13,39 +13,44 @@ Da nur – oder immerhin – 8 Mannschaften teilnahmen, wurden 2 Gruppenphasen g
 In der ersten Gruppenphase ging es also darum, ob man um Platz 1-4, oder 5-8 spielt. In der ersten Gruppe landeten Elmshorn, Bargteheide I, Sparrieshoop und das Team Hanse. In der zweiten Gruppe spielten Bargteheide II, Ratzeburg, das Nord-Team, und Bargteheide III.
 
 
-   <style type="text/css"></style>
+   <style type="text/css">
+  #gallery-1 {
+    margin: auto;
+  }
+  #gallery-1 .gallery-item {
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+    width: 33%;
+  }
+  #gallery-1 img {
+    border: 2px solid #cfcfcf;
+  }
+  #gallery-1 .gallery-caption {
+    margin-left: 0;
+  }
+  /* see gallery_shortcode() in wp-includes/media.php */
+   </style>
    
 
 <dl>
   <dt>
-    <a href="/old/IMG_2435.jpg"><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_2435.jpg" alt width="100%">
-</div></a>
+    <a href="/old/IMG_2435.jpg"><img src="/old/IMG_2435.jpg" alt loading="lazy"></a>
   </dt></dl><dl>
   <dt>
-    <a href="/old/IMG_2525.jpg"><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_2525.jpg" alt width="100%">
-</div></a>
+    <a href="/old/IMG_2525.jpg"><img src="/old/IMG_2525.jpg" alt loading="lazy"></a>
   </dt></dl><dl>
   <dt>
-    <a href="/old/IMG_2566.jpg"><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_2566.jpg" alt width="100%">
-</div></a>
+    <a href="/old/IMG_2566.jpg"><img src="/old/IMG_2566.jpg" alt loading="lazy"></a>
   </dt></dl> <dl>
   <dt>
-    <a href="/old/IMG_2584.jpg"><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_2584.jpg" alt width="100%">
-</div></a>
+    <a href="/old/IMG_2584.jpg"><img src="/old/IMG_2584.jpg" alt loading="lazy"></a>
   </dt></dl><dl>
   <dt>
-    <a href="/old/IMG_2607.jpg"><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_2607.jpg" alt width="100%">
-</div></a>
+    <a href="/old/IMG_2607.jpg"><img src="/old/IMG_2607.jpg" alt loading="lazy"></a>
   </dt></dl><dl>
   <dt>
-    <a href="/old/IMG_2630.jpg"><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_2630.jpg" alt width="100%">
-</div></a>
+    <a href="/old/IMG_2630.jpg"><img src="/old/IMG_2630.jpg" alt loading="lazy"></a>
   </dt>
     <dd>
     Die Sieger

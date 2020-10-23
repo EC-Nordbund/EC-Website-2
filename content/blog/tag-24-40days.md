@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 24  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-13_WITH-tag-24.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-13_WITH-tag-24.jpg" alt>
 
 Schreibe einer Person aus einer anderen Gemeinde oder Jugendgruppe, mit der du schon lange keinen Kontakt mehr hattest.
 

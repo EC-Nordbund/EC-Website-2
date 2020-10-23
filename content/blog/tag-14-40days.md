@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 14  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-01_IN-tag-14.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-01_IN-tag-14.jpg" alt>
 
 Die wirkliche Gemeinschaft fängt klein und in der Stille an. Aber danach wächst sie.
 

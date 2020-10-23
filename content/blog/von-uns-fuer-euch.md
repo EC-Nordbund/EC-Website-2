@@ -16,9 +16,7 @@ Danke für diese Premiere bei uns im Norden!
 
 *Philine Kröger, EC-Elmshorn*
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 5px;">
-<img src="/old/quer-5-1.jpg" alt width="100%">
-<img src="/old/quer-1.jpg" alt width="100%">
-<img src="/old/quer-3.jpg" alt width="100%">
-<img src="/old/hoch-1.jpg" alt width="100%">
-</div>
+* <img loading="lazy" src="/old/quer-5-1.jpg" alt>
+* <img loading="lazy" src="/old/quer-1.jpg" alt>
+* <img loading="lazy" src="/old/quer-3.jpg" alt>
+* <img loading="lazy" src="/old/hoch-1.jpg" alt>

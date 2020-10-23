@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Break IV  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-11_WITH-break4.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-11_WITH-break4.jpg" alt>
 
 Nimm dir Zeit und lass den heutigen Gottesdienst noch einmal an dir vorüberziehen. Was war neu? Was war anders als sonst? Was bleibt hängen?
 

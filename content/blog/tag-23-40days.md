@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 23  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-12_WITH-tag-23.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-12_WITH-tag-23.jpg" alt>
 
 1. Korinther. 12,12 Es ist wie beim menschlichen Körper:
 

@@ -19,25 +19,6 @@ Du zweifelst noch? Dann überzeuge dich doch selbst und sei im nächsten Jahr Te
 
 &nbsp;
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/PfingstCamp.png" alt width="100%">
-</div>
+<img loading="lazy" src="/old/PfingstCamp.png" alt>
 
-<div style="display: grid; grid-template-columns: repeat(5, 1fr); grid-gap: 5px;">
-<img src="/old/IMG_7335.jpg" alt width="100%">
-<img src="/old/IMG_7380.jpg" alt width="100%">
-<img src="/old/IMG_7481.jpg" alt width="100%">
-<img src="/old/IMG_7543.jpg" alt width="100%">
-<img src="/old/IMG_7567.jpg" alt width="100%">
-<img src="/old/IMG_7640.jpg" alt width="100%">
-<img src="/old/IMG_7663.jpg" alt width="100%">
-<img src="/old/IMG_7679.jpg" alt width="100%">
-<img src="/old/IMG_7694.jpg" alt width="100%">
-<img src="/old/IMG_7758.jpg" alt width="100%">
-<img src="/old/IMG_7772.jpg" alt width="100%">
-<img src="/old/IMG_7889.jpg" alt width="100%">
-<img src="/old/IMG_7965.jpg" alt width="100%">
-<img src="/old/IMG_7993.jpg" alt width="100%">
-<img src="/old/IMG_8035.jpg" alt width="100%">
-<img src="/old/IMG_8044.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/IMG_7335.jpg" alt> <img loading="lazy" src="/old/IMG_7380.jpg" alt> <img loading="lazy" src="/old/IMG_7481.jpg" alt> <img loading="lazy" src="/old/IMG_7543.jpg" alt> <img loading="lazy" src="/old/IMG_7567.jpg" alt> <img loading="lazy" src="/old/IMG_7640.jpg" alt> <img loading="lazy" src="/old/IMG_7663.jpg" alt> <img loading="lazy" src="/old/IMG_7679.jpg" alt> <img loading="lazy" src="/old/IMG_7694.jpg" alt> <img loading="lazy" src="/old/IMG_7758.jpg" alt> <img loading="lazy" src="/old/IMG_7772.jpg" alt> <img loading="lazy" src="/old/IMG_7889.jpg" alt> <img loading="lazy" src="/old/IMG_7965.jpg" alt> <img loading="lazy" src="/old/IMG_7993.jpg" alt> <img loading="lazy" src="/old/IMG_8035.jpg" alt> <img loading="lazy" src="/old/IMG_8044.jpg" alt>

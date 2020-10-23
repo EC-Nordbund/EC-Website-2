@@ -13,6 +13,4 @@ Die hauptamtlichen Mitarbeiter des VG treffen sich zur Arko in Kiel. Unser Vorst
 
 Unser Beitrag für einen gelungenen kollegialen Abend&#8230;
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1912.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1912.jpg" alt>

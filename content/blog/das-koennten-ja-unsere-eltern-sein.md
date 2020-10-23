@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Das könnten ja unsere Eltern sein 
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_38691.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_38691.jpg" alt>
 
 &#8230; aber es sind unsere Brüder und Schwestern.
 

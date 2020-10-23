@@ -7,10 +7,7 @@ featuredImage: /card.png
 
 # Sie gehen wieder los
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 5px;">
-<img src="/old/BibleCamp_groß2.png" alt width="100%">
-<img src="/old/DSC_3799.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/BibleCamp_groß2.png" alt><img loading="lazy" src="/old/DSC_3799.jpg" alt>
 
 die Nachtschichten vor dem BibleCamp. Nach dem gestrigen Druckmarathon sind die ersten 50 Skripte fertig. Das macht Vorfreude auf eine tolle Woche.
 

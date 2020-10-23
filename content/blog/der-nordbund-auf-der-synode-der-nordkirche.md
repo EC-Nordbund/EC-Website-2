@@ -10,32 +10,18 @@ featuredImage: /card.png
 Zusammen mit den anderen Jugendverbänden der AEJSH (<ins datetime="2017-11-19T23:28:44+00:00">A</ins>rbeitsgemeinschaft<ins datetime="2017-11-19T23:28:44+00:00">J</ins>ugend<ins datetime="2017-11-19T23:28:44+00:00">E</ins>vangelisation in <ins datetime="2017-11-19T23:28:44+00:00">S</ins>chleswig-<ins datetime="2017-11-19T23:28:44+00:00">H</ins>olstein) hatten wir am Freitag die einmalige Chance, unsere Arbeit auf der Synode der Nordkirche in Travemünde vorzustellen. Wir freuen uns über so viel Aufmerksamkeit und sind gerne Teil dieser Kirche. 
 **Hier ein paar Eindrücke von einem kurzweiligen Tag:** 
 Unser Stand (vormittags von unserer großartigen Annka Holzhauer betreut). 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1455.jpg" alt width="100%">
-</div> 
+<img loading="lazy" src="/old/DSC_1455.jpg" alt> 
 Über den Tag war bei uns mit Abstand am Meisten los. Wir haben gepuzzlet, Memory gespielt und mit den Freunden vom CVJM und vom VCP richtig viel Spaß gehabt. 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1474.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1474.jpg" alt>
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1470.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1470.jpg" alt>
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1471.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1471.jpg" alt>
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1476.jpg" alt width="100%">
-</div> 
+<img loading="lazy" src="/old/DSC_1476.jpg" alt> 
 Micha Beutel und Vincent Hinkofer haben sich für uns am Vormittag bei der Bibelarbeit mit den Synodalen eingebracht und anschließend war auch noch etwas Zeit, das geniale Wetter und die einzigartige Lage des Maritim Hotels zu genießen. 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1464.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1464.jpg" alt>
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_1460.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_1460.jpg" alt>
 
 Ein rundum gelungener Tag&#8230;

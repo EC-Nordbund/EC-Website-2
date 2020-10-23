@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # We are the Champions
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_0147.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_0147.jpg" alt>
 
 Da hat sich die lange Anfahrt doch gelohnt.
 
@@ -19,9 +17,4 @@ In Vor- und Hauptrunde mussten sie sich kein einziges Mal geschlagen geben. Ein 
 
 Gemeinsam macht es am meisten Spaß und am Meisten sind wir, wenn am Wenigsten fehlen.
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_0125.jpg" alt width="100%">
-<img src="/old/DSC_0129.jpg" alt width="100%">
-<img src="/old/DSC_0133.jpg" alt width="100%">
-<img src="/old/DSC_0140.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_0125.jpg" alt> <img loading="lazy" src="/old/DSC_0129.jpg" alt> <img loading="lazy" src="/old/DSC_0133.jpg" alt> <img loading="lazy" src="/old/DSC_0140.jpg" alt>

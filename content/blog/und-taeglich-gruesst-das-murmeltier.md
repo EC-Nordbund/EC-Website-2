@@ -7,12 +7,7 @@ featuredImage: /card.png
 
 # und täglich grüßt das Murmeltier
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_3790.jpg" alt width="100%">
-<img src="/old/Volker-Riewesell-01.jpg" alt width="100%">
-<img src="/old/Volker-Riewesell-02.jpg" alt width="100%">
-<img src="/old/Sieger-Alt-Neumünster.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_3790.jpg" alt> <img loading="lazy" src="/old/Volker-Riewesell-01.jpg" alt> <img loading="lazy" src="/old/Volker-Riewesell-02.jpg" alt><img loading="lazy" src="/old/Sieger-Alt-Neumünster.jpg" alt>
 
 Es ist doch wirklich nicht zu fassen: Da wird nach 12 Jahren das EC-Volleyballturnier wiederbelebt und das erste Turnier gewinnt die Generation von damals&#8230;
 

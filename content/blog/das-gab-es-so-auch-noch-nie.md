@@ -13,11 +13,6 @@ zu Ostern noch freie Plätze für das PfingstCamp – das ist neu. Aber in diese
 
 Unser Suchspiel zu Ostern: Irgendwo auf dieser Seite haben wir noch eine Anmeldung versteckt. Jetzt schnell draufklicken und die letzten freien Plätze sichern.
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 5px;">
-<img src="/old/Flyer-001.jpg" alt width="100%">
-<img src="/old/Flyer-002.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/Flyer-001.jpg" alt><img loading="lazy" src="/old/Flyer-002.jpg" alt>
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/PfingstCamp.png" alt width="100%">
-</div>
+<img loading="lazy" src="/old/PfingstCamp.png" alt>

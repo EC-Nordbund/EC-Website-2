@@ -91,6 +91,8 @@ sw.*
 
 static/plz
 static/downloads
+static/old
 content/downloadFiles.json
 slugs.json
 fileToDownload.json
+

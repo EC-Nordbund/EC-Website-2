@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Break II  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_02-25_IN-break2.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_02-25_IN-break2.jpg" alt>
 
 Nimm dir Zeit für eine Person und höre ihr einfach mal gut zu.
 

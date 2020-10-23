@@ -19,7 +19,4 @@ Coole Überraschung als wir nach Hause kamen: Das ganze Lager im bunten Meer von
 
 #Lieblingsstreich #meinEC
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_3844.jpg" alt width="100%">
-<img src="/old/DSC_3851.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_3844.jpg" alt> <img loading="lazy" src="/old/DSC_3851.jpg" alt>

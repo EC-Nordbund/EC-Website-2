@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 37  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-28_WITH-tag-37.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-28_WITH-tag-37.jpg" alt>
 
 Wo oder wie kannst du mit anderen Christen gemeinsam etwas entstehen lassen?
 

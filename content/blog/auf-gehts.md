@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Auf gehts
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/DSC_17391.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/DSC_17391.jpg" alt>
 
 Das ist mal ein Frühstück: Die Kinder aus dem Haus, lecker Toast und heißer Marshmallow-Kakao aus der neuen **Tasse mit EC-Versprechen** (bald im Fan-Shop).
 

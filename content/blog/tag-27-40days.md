@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 27  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-16_OUT-tag-27.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-16_OUT-tag-27.jpg" alt>
 
 Wann hast du das letzte Mal mit einem Nichtchristen über deinen Glauben gesprochen?
 

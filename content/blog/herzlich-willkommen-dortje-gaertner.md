@@ -8,9 +8,7 @@ featuredImage: /card.png
 # Herzlich willkommen, Dortje Gaertner
 
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/Dortje-Einführung.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/Dortje-Einführung.jpg" alt>
 
 
 ## Wir begrüßen unsere neue Kinder- und Jungscharreferentin im EC-Nordbund.
@@ -20,6 +18,4 @@ Dortje Gaertner kommt ursprünglich aus dem Nordbund, genauer gesagt aus Burg in
 
 Wenn Du dabei sein willst, dann komm gerne vorbei. ***Gemeinschaft i.d.Ev. Kirche Uetersen/Pinneberg Martin-Luther-Haus Am Markt, 25436 Uetersen***
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/rechteckig_2.png" alt width="100%">
-</div>
+<img loading="lazy" src="/old/rechteckig_2.png" alt>

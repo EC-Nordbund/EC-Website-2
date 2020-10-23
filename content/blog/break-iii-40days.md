@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Break III  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-04_IN-break3.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-04_IN-break3.jpg" alt>
 
 Triff dich mit jemandem zum Spazierengehen und sprecht dabei nicht, sondern genießt das gemeinsame Schweigen.
 

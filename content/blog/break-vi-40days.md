@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Break VI  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-25_OUT-break6.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-25_OUT-break6.jpg" alt>
 
 Lies für dich Matthäus 28,16-18 und nimm dir Zeit, zu entdecken, welche verschiedenen Typen Jesus beauftragt. Danach überlege, wo Gott dir mit seiner Vollmacht helfen kann, so dass du losgehst. Bete.
 

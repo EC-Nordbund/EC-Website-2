@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Der Countdown zum Kickerturnier läuft
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/WhatsApp-Image-2017-04-15-at-15.20.15.jpeg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/WhatsApp-Image-2017-04-15-at-15.20.15.jpeg" alt>
 
 Ab jetzt kann man sich wieder anmelden.
 

@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 17  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-05_IN-tag-17.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-05_IN-tag-17.jpg" alt>
 
 Apostelgeschichte 2,42
 

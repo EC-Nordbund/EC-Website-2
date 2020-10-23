@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Wir sind der Nordbund
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/Wir-sind-der-Nordbund.png" alt width="100%">
-</div>
+<img loading="lazy" src="/old/Wir-sind-der-Nordbund.png" alt>
 
 Herzlich willkommen auf unserer neuen Homepage. Wir hoffen, du fühlst dich wohl und findest dich zurecht.
 

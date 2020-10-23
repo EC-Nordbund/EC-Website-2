@@ -13,7 +13,4 @@ Wir wollen unseren Kinder- und Jungscharbreich wieder verstärken. Dazu schaffen
 
 Wir freuen uns über deine Bewerbung oder über einen gezielten Tipp.
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 5px;">
-<img src="/old/Bild-1.jpg" alt width="100%">
-<img src="/old/gardener-1015520.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/Bild-1.jpg" alt> <img loading="lazy" src="/old/gardener-1015520.jpg" alt>

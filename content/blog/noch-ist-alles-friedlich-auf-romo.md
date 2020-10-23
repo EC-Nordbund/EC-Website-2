@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Noch ist alles friedlich auf Rømø
 
-<span data-failed="Unable to resolve host &quot;www.ec-nordbund.de&quot;: No address associated with hostname"></span><b><div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/20170409_0945411.jpg" alt width="100%">
-</div></b>
+<span data-failed="Unable to resolve host &quot;www.ec-nordbund.de&quot;: No address associated with hostname"></span><b><img loading="lazy" src="/old/20170409_0945411.jpg" alt></b>
 
 Noch scheinen alle zu schlafen. Aber in wenigen Minuten tobt hier wieder das Leben. Das hat ein bisschen was von Auferstehung. 
 Gestern haben wir versucht, den Leiden Jesu nachzuspüren. &#8222;Danke Jesus, dass du diesen Weg für mich gegangen bist.&#8220;

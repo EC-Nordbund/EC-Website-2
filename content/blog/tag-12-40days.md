@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 12  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_02-27_IN-tag-12.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_02-27_IN-tag-12.jpg" alt>
 
 Versöhne dich mit einer Person in deinem Umfeld. Rede mit jemandem, mit dem du ein Problem hast, und versuche, die Sache zu klären.
 

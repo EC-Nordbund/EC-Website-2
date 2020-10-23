@@ -7,9 +7,7 @@ featuredImage: /card.png
 
 # Tag 32  #40days
 
-<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-gap: 5px;">
-<img src="/old/40DAYS_03-22_OUT-tag-32.jpg" alt width="100%">
-</div>
+<img loading="lazy" src="/old/40DAYS_03-22_OUT-tag-32.jpg" alt>
 
 &#8222;Eine Form Nachfolge zu leben, ist zur Nachfolge einzuladen.&#8220;
 
