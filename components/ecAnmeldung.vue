@@ -39,12 +39,12 @@
         span(v-else-if="data.geschlecht === 'm'")  Sohn
         span(v-else)  Kind
         |  darf...
-      v-checkbox(dense class="mt-0" label="Bootfahren" v-model="data.bootfahren")
-      v-checkbox(dense class="mt-0" label="Radfahren" v-model="data.fahrrad")
-      v-checkbox(dense class="mt-0" label="Klettern" v-model="data.klettern")
-      v-checkbox(dense class="mt-0" label="Sich in Gruppen von mindestens 3 Personen entfernen" v-model="data.sichEntfernen")
+      v-checkbox(dense class="mt-0" label="Bootfahren" v-model="data.bootfahren" v-if="hatErlaubnisBoot")
+      v-checkbox(dense class="mt-0" label="Radfahren" v-model="data.fahrrad" v-if="hatErlaubnisFahrrad")
+      v-checkbox(dense class="mt-0" label="Klettern" v-model="data.klettern" v-if="hatErlaubnisKlettern")
+      v-checkbox(dense class="mt-0" label="Sich in Gruppen von mindestens 3 Personen entfernen" v-model="data.sichEntfernen" v-if="hatErlaubnisSichEntfernen")
       div
-        v-radio-group(label="Schwimmen / Baden (unter Aufsicht)" v-model="data.schwimmen" class="mt-0")
+        v-radio-group(label="Schwimmen / Baden (unter Aufsicht)" v-model="data.schwimmen" class="mt-0" v-if="hatErlaubnisSchwimmen")
           v-radio(:value="0" class="ml-2" label="Nicht erlaubt")
           v-radio(:value="1" class="ml-2" label="Erlaubt - nicht Schwimmer")
           v-radio(:value="2" class="ml-2" label="Erlaubt - mittlmäßiger Schwimmer")
@@ -64,9 +64,9 @@
     v-checkbox(required v-model="data.tnBedingungen" @change="tnBedingungenEvent" :error-messages="tnBedingungenErrors")
       template(v-slot:label)
         p Ich erkenne die&nbsp;
-          strong Teilnahmebedingungen&nbsp;
+          a(href="/teilnahmebedingungen" target="_tn_bed" rel="noopener") Teilnahmebedingungen&nbsp;
           | für Freizeiten an und melde mich hiermit verbindlich an. (ggf. Einverständnis des Erziehungsberechtigten)
-    v-checkbox(required v-model="data.freizeitLeitung" @change="freizeitLeitungEvent" :error-messages="freizeitLeitungErrors")
+    v-checkbox(required v-model="data.freizeitLeitung" @change="freizeitLeitungEvent" :error-messages="freizeitLeitungErrors" v-if="hatFreizeitleitung")
       template(v-slot:label)
         p Ich versichere, dass mein Kind von mir angewiesen wurde, den Anordnungen der Freizeitleitung Folge zu leisten.
     v-checkbox(v-if="hatFahrgemeinschaft" v-model="data.fahrgemeinschaften")

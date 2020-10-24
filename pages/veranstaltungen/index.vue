@@ -20,6 +20,8 @@
                     //- TODO: colored tags
                     v-chip(color="secondary" text-color="primary" class="ml-2 mb-1 font-weight-medium" outlined small v-for="tag in item.tags" :key="tag")
                       | {{ tag }}
+                    v-chip(color="secondary" text-color="primary" class="ml-2 mb-1 font-weight-medium" outlined small v-if="item.juleica")
+                      | JuLeiCa-Fortbildung
 
                   //- indicator
                   v-col(cols="12" lg="4" class="d-flex flex-wrap justify-md-end mb-1 ml-n2")

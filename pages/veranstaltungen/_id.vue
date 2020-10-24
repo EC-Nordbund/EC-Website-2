@@ -6,11 +6,16 @@
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
-            v-btn(color="primary" tile fab small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
-              v-icon(size="28") mdi-arrow-left
+            ec-hexa-button(@click="$router.push(`/veranstaltungen`)" icon="mdi-arrow-left")
+            //- v-btn(color="primary" tile fab small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
+            //-   v-icon(size="28") mdi-arrow-left
+
+          v-spacer
 
           //- display indicators
           v-col(cols="auto" class="d-flex flex-column")
+            v-row(style="text-align: right;")
+              v-col
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Für Männer nur noch Warteliste
@@ -22,7 +27,11 @@
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.allgemein")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Nur noch Warteliste
-
+            //- JuLeiCa Fortbildung
+            v-row(v-if="page.juleica")
+              v-col
+                v-img(width="260" height="200" :src="require('~/assets/img/juLeiCa.png')")
+          
         v-row(no-gutters align="end" class="flex-grow-0 mb-n1")
           //- title
           v-col(cols="12" md="6" class="order-last order-md-0")
@@ -35,6 +44,8 @@
 
     v-container
       nuxt-content(:document="page")
+    
+    ec-image-container(style="margin-bottom: -3.492vw; padding-top: 0 !important;" class="ec-top-bottom-rotated-2" :images="page.images" v-if="page.images")
 
     v-container(fluid class="grey lighten-4 ec-top-bottom-rotated-1")
       v-row
@@ -66,13 +77,6 @@
                   template(v-slot:units="slotProp")
                     span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
 </template>
-<style lang="scss">
-.nuxt-content {
-  h1:first-child {
-    display: none;
-  }
-}
-</style>
 <script>
 export default {
   async asyncData({ $content, params, redirect, route }) {

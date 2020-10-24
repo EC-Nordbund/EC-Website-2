@@ -22,6 +22,7 @@ warteliste:
   allgemein: true
   männlich: false
   weiblich: false
+juleica: true
 tags:
   - Karlsminde
   - Freizeit
@@ -49,8 +50,6 @@ anmeldung:
   disabled: false
   startAt: '2020-10-08 12:00:00'
 ---
-    
-# KalmiKurzKämp
 
 **\*\*\* Corona-Spezial \*\*\* Corona-Spezial \*\*\* Corona-Spezial \*\*\* Corona-Spezial \*\*\***
 
