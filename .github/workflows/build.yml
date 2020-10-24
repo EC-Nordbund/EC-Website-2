@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         node: [12]
 
     steps:
@@ -36,3 +36,10 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Lighthouse Audits
+        run: |
+          yarn lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{secrets.LHCI_GITHUB_APP_TOKEN}}
+          LHCI_TOKEN: ${{secrets.LHCI_TOKEN}}
