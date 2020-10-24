@@ -10,7 +10,7 @@ export default defineNuxtPlugin((context) => {
         domainId: '12ac1013-cf6c-4515-89b4-64ea9514b3e0',
       },
       {
-        ignoreLocalhost: false,
+        ignoreLocalhost: true,
         detailed: true,
       }
     )
