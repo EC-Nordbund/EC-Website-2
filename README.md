@@ -1,6 +1,6 @@
 # content-test
 
-## Build Setup
+## Build Setup LIGHTHOUSE TEST
 
 ```bash
 # install dependencies
