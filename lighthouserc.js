@@ -5,7 +5,9 @@ module.exports = {
       startServerCommand: 'yarn start'
     },
     upload: {
-      target: 'temporary-public-storage'
-    }
+      target: 'lhci',
+      serverBaseUrl: 'http://next.ec-nordbund.de:9000',
+      // token: 'Your *build token* goes here', // could also use LHCI_TOKEN variable instead
+    },
   }
 }
