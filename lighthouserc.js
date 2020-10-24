@@ -9,8 +9,14 @@ module.exports = {
       serverBaseUrl: 'http://next.ec-nordbund.de:9000',
       // token: 'Your *build token* goes here', // could also use LHCI_TOKEN variable instead
     },
-    assert: {
-      preset: 'lighthouse:recommended',
-    },
+    // TODO: Überlegen was hier sinn macht.
+    // assert: {
+      // preset: 'lighthouse:recommended',
+      // assertions: {
+        // "first-contentful-paint": "off",
+        // "works-offline": ["warn", { "minScore": 1 }],
+        // "uses-responsive-images": ["error", { "maxLength": 0 }]
+      // }
+    // },
   }
 }
