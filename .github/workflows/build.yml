@@ -39,7 +39,7 @@ jobs:
 
       - name: Lighthouse Audits
         run: |
-          yarn global add @lhci/cli@0.5.x
-          lhci autorun
+          yarn add @lhci/cli@0.5.x
+          yarn lhci autorun
     env:
       LHCI_GITHUB_APP_TOKEN: ${{secrets.LHCI_GITHUB_APP_TOKEN}}
