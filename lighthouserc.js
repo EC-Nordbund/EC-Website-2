@@ -21,7 +21,7 @@ module.exports = {
       "assertions": {
         "categories:performance": ["error", { "minScore": 0.85 }],
         "categories:accessibility": ["error", { "minScore": 0.98 }],
-        "categories:pwa": ["error", { "minScore": 0.89 }],
+        "categories:pwa": ["error", { "minScore": 0.85 }],
         "categories:seo": ["error", { "minScore": 0.9 }],
         "categories:best-practices": ["error", { "minScore": 0.9 }],
         "color-contrast": "off",
@@ -35,7 +35,8 @@ module.exports = {
         // Kann bald wieder rein
         "apple-touch-icon": "off",
         // Sollte bald wieder rein
-        "uses-optimized-images": "off"
+        "uses-optimized-images": "off",
+        "content-width": "off"
       }
     },
   }
