@@ -1,0 +1,7 @@
+{
+  "name": "EC-Nordbund",
+  "short_name": "EC-Nordbund",
+  "description": "Seite des EC-Nordbundes.",
+  "display": "standalone",
+  "scope": "/"
+}
