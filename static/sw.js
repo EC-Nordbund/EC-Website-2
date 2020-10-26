@@ -9,12 +9,32 @@ if (!__DEV__) {
   const _self = self
 
   const __CONFIG__ = {
-    CACHE_NAME: 'CACHE_V1',
+    CACHE_NAME: 'CACHE_V2',
     OFFLINE_URL: '/empty',
   }
 
-  _self.addEventListener('install', () => _self.skipWaiting())
-  _self.addEventListener('activate', () => { })
+  _self.addEventListener('install', ev => {
+    ev.waitUntil((async () => {
+      const cache = await caches.open(__CONFIG__.CACHE_NAME)
+      await cache.add(__CONFIG__.OFFLINE_URL)
+    })())
+  })
+  _self.addEventListener('activate', ev => {
+    ev.waitUntil(
+      (async () => {
+        const keys = await caches.keys();
+
+        await Promise.all(
+          keys.map(async (key) => {
+            if (key === __CONFIG__.CACHE_NAME) {
+              return true;
+            }
+            return caches.delete(key);
+          })
+        );
+      })()
+    );
+  })
   _self.addEventListener('fetch', ev => {
     if (ev.request.isReloadNavigation) {
       ev.respondWith((async () => {
@@ -36,7 +56,7 @@ if (!__DEV__) {
     }
 
 
-    if (ev.request.url.startsWith('/_nuxt') || ev.request.url.startsWith('_nuxt')) {
+    if (ev.request.url.includes('_nuxt')) {
       ev.respondWith((async () => {
         const cache = await caches.open(__CONFIG__.CACHE_NAME)
         const cacheRes = await cache.match(ev.request)
@@ -56,4 +76,9 @@ if (!__DEV__) {
       })())
     }
   })
+  _self.addEventListener("message", (ev) => {
+    if (ev.data && ev.data.msg === "update-sw") {
+      _self.skipWaiting();
+    }
+  });
 }
