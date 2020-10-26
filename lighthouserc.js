@@ -18,7 +18,10 @@ module.exports = {
         "categories:pwa": ["error", { "minScore": 0.89 }],
         "categories:seo": ["error", { "minScore": 1 }],
         "categories:best-practices": ["error", { "minScore": 1 }],
-        // User Farbschema geht sonst nicht
+        /**
+         * User Farbschema geht sonst nicht
+         * https://web.dev/color-contrast/?utm_source=lighthouse&utm_medium=cli
+         */ 
         "color-contrast": "off",
         // Geht in CI nicht
         "redirects-http": "off",

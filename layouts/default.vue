@@ -128,7 +128,7 @@
                     | Impressum
               v-list-item(to="/admin" v-if="isDev")
                 v-list-item-content
-                  v-list-item-titlef
+                  v-list-item-title
                     | Admin
       v-container(fluid class="secondary darken-2")
         v-row
