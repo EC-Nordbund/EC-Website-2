@@ -35,7 +35,7 @@
               //- actions/buttons
               v-card-actions(class="pa-4 hidden-xs-only")
                 v-spacer
-                ec-hexa-button(@click="$router.push(`/blog/${item.slug}`)" icon="mdi-arrow-right" :rotate="30")
+                ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :rotate="30" :aria-label="`Gehe zu Blogeintrag ${item.title}`")
 
     v-pagination(
       v-model="page"
