@@ -124,9 +124,16 @@ export default {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'Seite des EC-Nordbundes',
-      }, {name: 'theme-color', content: '#92c355'}
+      },
+      {
+        name: 'theme-color', 
+        content: '#92c355'
+      }
     ],
-    link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
+    link: [
+      { rel: 'icon', href: '/favicon_512.png', hid: 'favicon' },
+      { rel: 'manifest', href: '/manifest.webmanifest' }
+    ],
   },
 
   css: ['~/assets/styles/global.scss'],
