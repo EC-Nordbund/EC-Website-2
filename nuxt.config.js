@@ -133,7 +133,10 @@ export default {
     link: [
       { rel: 'icon', href: '/favicon_512.png', hid: 'favicon' },
       { rel: 'manifest', href: '/manifest.webmanifest' },
-      { rel: 'apple-touch-icon', href: '/apple-icon.png' }
+      { rel: 'apple-touch-icon', href: '/apple-icon.png' },
+      ...(process.browser && !window.location.origin.includes('ec-nordbund.de') ? [
+        { rel: 'preconnect', href: 'https://www.ec-nordbund.de' }
+      ] : [])
     ],
   },
 
