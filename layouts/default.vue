@@ -126,7 +126,7 @@
                 v-list-item-content
                   v-list-item-title
                     | Impressum
-              v-list-item(:to="'/admin')" v-if="isDev")
+              v-list-item(to="/admin" v-if="isDev")
                 v-list-item-content
                   v-list-item-titlef
                     | Admin
