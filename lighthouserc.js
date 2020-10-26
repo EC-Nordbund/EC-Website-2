@@ -15,7 +15,7 @@ module.exports = {
       "assertions": {
         "categories:performance": ["error", { "minScore": 0.80 }],
         "categories:accessibility": ["error", { "minScore": 0.98 }],
-        "categories:pwa": ["error", { "minScore": 0.93 }],
+        "categories:pwa": ["error", { "minScore": 0.89 }],
         "categories:seo": ["error", { "minScore": 1 }],
         "categories:best-practices": ["error", { "minScore": 1 }],
         // User Farbschema geht sonst nicht
