@@ -24,8 +24,6 @@ module.exports = {
         "redirects-http": "off",
         // Geht in CI nicht
         "uses-http2": "off",
-        // Links im Footer müssten größer
-        "tap-targets": "off",
         // Zu viel unsed JS + CSS
         "unused-css-rules": "off",
         "unused-javascript": "off",
