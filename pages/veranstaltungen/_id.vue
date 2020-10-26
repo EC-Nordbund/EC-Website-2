@@ -7,7 +7,7 @@
           //- go back to overview
           v-col(cols="2" sm="1")
             ec-hexa-button(@click="$router.push(`/veranstaltungen`)" icon="mdi-arrow-left")
-            //- v-btn(color="primary" tile fab small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
+            //- v-btn(color="primary" tile small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
             //-   v-icon(size="28") mdi-arrow-left
 
           v-spacer
