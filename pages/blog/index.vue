@@ -11,7 +11,7 @@
                 v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
                   v-card-actions(class="pa-3 hidden-sm-and-up")
                     v-spacer
-                    v-btn(color="accent" class="ec-gradient" elevation="16" fab tile @click="$router.push(`/blog/${item.slug}`)")
+                    v-btn(color="accent" class="ec-gradient" elevation="16" fab tile :to="`/blog/${item.slug}`" :aria-label="`Gehe zu Blogeintrag ${item.title}`")
                       //- TODO: hexagon shape for button (maybe in a custom component)
                       v-icon(color="white" size="28") mdi-arrow-right
             v-col(cols="12" sm="6" md="7" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
