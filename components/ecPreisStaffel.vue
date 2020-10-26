@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-timeline(:dark="dark" :dense="dense")
+  v-timeline(:dense="dense")
     v-timeline-item(v-for="preis in preise" :key="JSON.stringify(preis)" small :fill-dot="fillDot" :color="dotColor") 
       //- | {{preis.label}}
       span(slot="opposite") {{subtitle(preis)}}
@@ -43,10 +43,6 @@ export default defineComponent({
     denseBreakpoint: {
       type: String,
       required: true,
-    },
-    dark: {
-      type: Boolean,
-      default: false,
     },
     fillDot: {
       type: Boolean,
