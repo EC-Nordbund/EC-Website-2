@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen', 'http://localhost:3000/blog/all'],
+      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen/', 'http://localhost:3000/blog/all'],
       startServerCommand: 'yarn start'
     },
     upload: {
@@ -11,12 +11,12 @@ module.exports = {
     },
     // TODO: Überlegen was hier sinn macht.
     // assert: {
-      // preset: 'lighthouse:recommended',
-      // assertions: {
-        // "first-contentful-paint": "off",
-        // "works-offline": ["warn", { "minScore": 1 }],
-        // "uses-responsive-images": ["error", { "maxLength": 0 }]
-      // }
+    // preset: 'lighthouse:recommended',
+    // assertions: {
+    // "first-contentful-paint": "off",
+    // "works-offline": ["warn", { "minScore": 1 }],
+    // "uses-responsive-images": ["error", { "maxLength": 0 }]
+    // }
     // },
   }
 }
