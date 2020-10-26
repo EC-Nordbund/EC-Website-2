@@ -10,7 +10,7 @@ if (!__DEV__) {
 
   const __CONFIG__ = {
     CACHE_NAME: 'CACHE_V2',
-    OFFLINE_URL: '/empty',
+    OFFLINE_URL: '/empty.html',
   }
 
   _self.addEventListener('install', ev => {
@@ -36,7 +36,7 @@ if (!__DEV__) {
     );
   })
   _self.addEventListener('fetch', ev => {
-    if (ev.request.isReloadNavigation) {
+    if (!ev.request.url.includes('.')) {
       ev.respondWith((async () => {
         try {
           return await fetch(ev.request)
@@ -74,6 +74,8 @@ if (!__DEV__) {
 
         return network
       })())
+
+      return
     }
   })
   _self.addEventListener("message", (ev) => {
