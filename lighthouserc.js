@@ -18,10 +18,15 @@ module.exports = {
         "categories:pwa": ["error", { "minScore": 0.85 }],
         "categories:seo": ["error", { "minScore": 0.9 }],
         "categories:best-practices": ["error", { "minScore": 1 }],
+        // User Farbschema geht sonst nicht
         "color-contrast": "off",
+        // Geht in CI nicht
         "redirects-http": "off",
-        "tap-targets": "off",
+        // Geht in CI nicht
         "uses-http2": "off",
+        // Links im Footer müssten größer
+        "tap-targets": "off",
+        // Zu viel unsed JS + CSS
         "unused-css-rules": "off",
         "unused-javascript": "off",
         // Kann wenn Testbeiträge weg sind wieder rein.
