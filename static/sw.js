@@ -81,4 +81,6 @@ if (!__DEV__) {
       _self.skipWaiting();
     }
   });
+} else {
+  throw 'SERVICE WORKER DARF IN PRODUCTION NICHT AUF DEV SEIN!'
 }
