@@ -28,7 +28,7 @@
 
                   //- Copyright
                   span(class="caption") (
-                    a(class="no-underline hellGrau--text pr-2" href="https://www.herrnhuter.de/" target="_blank" rel="noopener")
+                    a(class="no-underline hellGrau--text pr-2" href="https://https://www.ebu.de/startseite/" target="_blank" rel="noopener")
                       | © Evangelische Brüder-Unität – Herrnhuter Brüdergemeine
                     |  —&nbsp;
                     a(class="no-underline hellGrau--text pl-2" href="https://www.losungen.de" target="_blank" rel="noopener")
