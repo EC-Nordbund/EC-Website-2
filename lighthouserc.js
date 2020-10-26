@@ -23,7 +23,7 @@ module.exports = {
         "categories:accessibility": ["error", { "minScore": 0.98 }],
         "categories:pwa": ["error", { "minScore": 0.85 }],
         "categories:seo": ["error", { "minScore": 0.9 }],
-        "categories:best-practices": ["error", { "minScore": 0.9 }],
+        "categories:best-practices": ["error", { "minScore": 1 }],
         "color-contrast": "off",
         "redirects-http": "off",
         "tap-targets": "off",
