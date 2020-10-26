@@ -29,8 +29,6 @@ module.exports = {
         // Zu viel unsed JS + CSS
         "unused-css-rules": "off",
         "unused-javascript": "off",
-        // Kann wenn Testbeiträge weg sind wieder rein.
-        "uses-rel-preconnect": "off",
         // Sollte bald wieder rein
         "uses-optimized-images": "off",
         "content-width": "off"
