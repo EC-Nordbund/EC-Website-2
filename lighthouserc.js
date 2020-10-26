@@ -1,7 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen/', 'http://localhost:3000/blog/all'],
+      // , 'http://localhost:3000/blog/all'
+      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen/'],
       startServerCommand: 'yarn start'
     },
     upload: {
