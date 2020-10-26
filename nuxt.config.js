@@ -126,13 +126,14 @@ export default {
         content: 'Seite des EC-Nordbundes',
       },
       {
-        name: 'theme-color', 
+        name: 'theme-color',
         content: '#92c355'
       }
     ],
     link: [
       { rel: 'icon', href: '/favicon_512.png', hid: 'favicon' },
-      { rel: 'manifest', href: '/manifest.webmanifest' }
+      { rel: 'manifest', href: '/manifest.webmanifest' },
+      { rel: 'apple-touch-icon', href: '/apple-icon.png' }
     ],
   },
 
