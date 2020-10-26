@@ -56,7 +56,7 @@
               //- v-btn(text class="hidden-sm-and-down" to="/mitarbeiter/anmeldung" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Anmeldung
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
-    v-navigation-drawer(app right temporary v-model="drawer" dark color="primary darken-1")
+    v-navigation-drawer(app right temporary v-model="drawer" color="primary")
       v-list(nav)
         v-list-item(link to="/blog")
           v-list-item-icon
@@ -80,12 +80,12 @@
         //-     v-list-item-title Anmeldung
     v-main(class="ec-bottom-rotated-2" style="margin-bottom: -68px;")
       nuxt
-    footer(class="secondary darken-1 white--text ec-top-rotated-1")
+    footer(class="secondary white--text ec-top-rotated-1")
       v-container
         v-row(justify="space-between")
           v-col(md="4" )
             h2 Spenden
-            v-list(dark color="transparent px-0")
+            v-list(color="transparent px-0")
               v-list-item(@click="copy2clip('Sparkasse Südholstein')")
                 v-list-item-content
                   v-list-item-title Sparkasse Südholstein
@@ -101,7 +101,7 @@
           //- v-col(md="4" align-self="end") © by EC-Nordbund
           v-col(md="4" class="links")
             h2 Links
-            v-list(dark color="transparent px-0")
+            v-list(color="transparent px-0")
               v-list-item(to="/")
                 v-list-item-content
                   v-list-item-title
@@ -130,7 +130,7 @@
                 v-list-item-content
                   v-list-item-title
                     | Admin
-      v-container(fluid class="secondary darken-2")
+      v-container(fluid class="secondary")
         v-row
           v-col(class="text-center") © by EC-Nordbund
 </template>
