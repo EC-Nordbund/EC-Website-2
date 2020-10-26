@@ -22,14 +22,13 @@ module.exports = {
         "color-contrast": "off",
         // Geht in CI nicht
         "redirects-http": "off",
-        // Geht in CI nicht
         "uses-http2": "off",
         // Zu viel unsed JS + CSS
-        "unused-css-rules": "off",
-        "unused-javascript": "off",
+        "unused-css-rules": "warn",
+        "unused-javascript": "warn",
         // Sollte bald wieder rein
-        "uses-optimized-images": "off",
-        "content-width": "off"
+        "uses-optimized-images": "warn",
+        "content-width": "warn"
       }
     },
   }
