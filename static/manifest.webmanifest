@@ -3,5 +3,12 @@
   "short_name": "EC-Nordbund",
   "description": "Seite des EC-Nordbundes.",
   "display": "standalone",
-  "scope": "/"
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
