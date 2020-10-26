@@ -37,7 +37,7 @@
                       | .
                     | )
             v-spacer
-            v-btn(color="error" depressed rounded :x-small="$vuetify.breakpoint.smAndDown" :fab="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden")
+            v-btn(color="error" depressed :style="'border-radius: 14px;' + ($vuetify.breakpoint.smAndDown ? 'height: 28px;width: 28px;' : '')" :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden" aria-label="Krisenintervention")
               v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
               span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
       v-app-bar(color="white")
@@ -86,42 +86,50 @@
           v-col(md="4" )
             h2 Spenden
             v-list(dark color="transparent px-0")
-              v-list-item(class="px-0" @click="copy2clip('Sparkasse Südholstein')")
+              v-list-item(@click="copy2clip('Sparkasse Südholstein')")
                 v-list-item-content
                   v-list-item-title Sparkasse Südholstein
                   v-list-item-subtitle Bank
-              v-list-item(class="px-0" @click="copy2clip('DE47 2305 1030 0510 8336 43')")
+              v-list-item(@click="copy2clip('DE47 2305 1030 0510 8336 43')")
                 v-list-item-content
                   v-list-item-title DE47 2305 1030 0510 8336 43
                   v-list-item-subtitle IBAN
-              v-list-item(class="px-0" @click="copy2clip('NOLADE21SHO')")
+              v-list-item(@click="copy2clip('NOLADE21SHO')")
                 v-list-item-content
                   v-list-item-title NOLADE21SHO
                   v-list-item-subtitle BIC
           //- v-col(md="4" align-self="end") © by EC-Nordbund
-          v-col(md="4")
+          v-col(md="4" class="links")
             h2 Links
-            ul
-              li
-                nuxt-link(to="/") Startseite
-            ul
-              li
-                nuxt-link(to="/suche/") Suche
-            ul
-              li
-                nuxt-link(to="/downloads/") Downloads
-            ul
-              li
-                nuxt-link(to="/teilnahmebedingungen/") Teilnahmebedingungen
-            ul
-              li
-                nuxt-link(to="/datenschutz") Datenschutz
-            ul
-              li
-                nuxt-link(to="/impressum") Impressum
-            ul(v-if="isDev")
-              li
-                nuxt-link(to="/admin") Admin
+            v-list(dark color="transparent px-0")
+              v-list-item(to="/")
+                v-list-item-content
+                  v-list-item-title
+                    | Startseite
+              v-list-item(to="/suche/")
+                v-list-item-content
+                  v-list-item-title
+                    | Suche
+              v-list-item(to="/downloads/")
+                v-list-item-content
+                  v-list-item-title
+                    | Downloads
+              v-list-item(to="/teilnahmebedingungen/")
+                v-list-item-content
+                  v-list-item-title
+                    | Teilnahmebedingungen
+              v-list-item(to="/datenschutz")
+                v-list-item-content
+                  v-list-item-title
+                    | Datenschutz
+              v-list-item(to="/impressum")
+                v-list-item-content
+                  v-list-item-title
+                    | Impressum
+              v-list-item(to="/admin" v-if="isDev")
+                v-list-item-content
+                  v-list-item-title
+                    | Admin
       v-container(fluid class="secondary darken-2")
         v-row
           v-col(class="text-center") © by EC-Nordbund
@@ -224,5 +232,9 @@ export default defineComponent({
 .hover-youtube:hover {
   color: var(--v-youtube-base) !important;
   fill: var(--v-youtube-base);
+}
+.links > a {
+  display: block;
+  height: 48px
 }
 </style>

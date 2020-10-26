@@ -30,6 +30,8 @@ jobs:
 
       - name: Build
         run: yarn build
+        env:
+          CI: true
 
       - name: Lighthouse Audits
         run: |
@@ -37,3 +39,4 @@ jobs:
         env:
           LHCI_GITHUB_APP_TOKEN: ${{secrets.LHCI_GITHUB_APP_TOKEN}}
           LHCI_TOKEN: ${{secrets.LHCI_TOKEN}}
+          CI: true

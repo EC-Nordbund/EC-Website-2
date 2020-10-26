@@ -84,6 +84,9 @@ export default {
 
       return 'EC-Nordbund'
     },
+    htmlAttrs: {
+      lang: 'de'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -122,8 +125,19 @@ export default {
         name: 'twitter:image:alt',
         content: 'Seite des EC-Nordbundes',
       },
+      {
+        name: 'theme-color',
+        content: '#92c355'
+      }
     ],
-    link: [{ rel: 'icon', href: '/favicon_512.png', hid: 'favicon' }],
+    link: [
+      { rel: 'icon', href: '/favicon_512.png', hid: 'favicon' },
+      { rel: 'manifest', href: '/manifest.webmanifest' },
+      { rel: 'apple-touch-icon', href: '/apple-icon.png' },
+      ...(process && process.env && process.env.CI ? [
+        { rel: 'preconnect', href: 'https://www.ec-nordbund.de' }
+      ] : [])
+    ],
   },
 
   css: ['~/assets/styles/global.scss'],
