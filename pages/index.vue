@@ -1,11 +1,7 @@
 <template lang="pug">
-div
-  div(
-    v-if="pages"
-    class="ec-bottom-rotated-1"
-    style='background: var(--v-offWihte-base);margin-bottom: -68px;'
-  )
-    v-container
+div(class="section-wrapper")
+  div(class="angle--bottom-right offWhite")
+    v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
         h2#aktuelles Aktuelles
         v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Blog Einträge")
@@ -61,11 +57,7 @@ div
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
             )
-      //- v-container
-  div(
-    class="ec-top-bottom-rotated-2"
-    style='background: var(--v-primary-base); margin-bottom: -67px; --ec-rotation-padding-addition: 15px;'
-  )
+  div(class="angle--both-left-right grey lighten-4")
     v-container
       h2(id='über-uns') Über uns
       //- p 
@@ -100,6 +92,18 @@ div
             br
             | Kinder- und Jungschararbeit
 </template>
+<style lang="scss" scoped>
+.section-wrapper > div:last-child {
+  &.angle--bottom-left,
+  &.angle--bottom-right,
+  &.angle--both-right-right,
+  &.angle--both-left-right,
+  &.angle--both-right-left,
+  &.angle--both-left-left {
+    margin-bottom: -3.492vw;
+  }
+}
+</style>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
 

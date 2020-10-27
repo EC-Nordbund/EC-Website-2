@@ -78,9 +78,9 @@
         //-     v-icon mdi-account-plus
         //-   v-list-item-content
         //-     v-list-item-title Anmeldung
-    v-main(class="ec-bottom-rotated-2" style="margin-bottom: -68px;")
+    v-main
       nuxt
-    footer(class="secondary white--text ec-top-rotated-1")
+    footer(class="secondary darken-1 white--text angle--top-left")
       v-container
         v-row(justify="space-between")
           v-col(md="4" )

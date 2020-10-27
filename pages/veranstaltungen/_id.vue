@@ -45,9 +45,9 @@
     v-container
       nuxt-content(:document="page")
     
-    ec-image-container(style="margin-bottom: -3.492vw; padding-top: 0 !important;" class="ec-top-bottom-rotated-2" :images="page.images" v-if="page.images")
+    ec-image-container(v-if="page.images" class="angle--both-left-left" :images="page.images")
 
-    v-container(fluid class="grey lighten-4 ec-top-bottom-rotated-1")
+    v-container(fluid class="grey lighten-4 angle--both-right-right")
       v-row
         v-col(cols="12" :md="page.preise ? 6 : 12" :xl="page.preise ? 7 : 12" class="d-flex flex-column")
           h2(class="mb-2 text-center") Ort
