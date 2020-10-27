@@ -1,12 +1,12 @@
 <template lang="pug">
   v-timeline(:dense="dense")
-    v-timeline-item(v-for="preis in myPreise" :key="preis.preis" small :fill-dot="fillDot" :color="dotColor") 
+    v-timeline-item(v-for="preis in myPreise" :key="preis.preis" small :fill-dot="fillDot" :color="preis.active ? 'primary' : dotColor") 
       //- | {{preis.label}}
       span(slot="opposite") {{subtitle(preis)}}
-      v-card(tile :style="preis.active ? 'background: red' : ''")
+      v-card(tile)
         v-card-title(class="ec-gradient white--text pb-2 pt-3") {{preis.label}}
         v-card-text(class="py-3")
-          p(class="text-center text-h4 font-weight-light mb-0") {{preis.preis}} EUR
+          p(class="text-center text-h4 font-weight-light mb-0" :class="{'font-weight-bold primary--text': preis.active}") {{preis.preis}} EUR
           p(class="hidden-sm-and-up text-right") {{subtitle(preis)}}
 </template>
 <script lang="ts">
@@ -29,7 +29,6 @@ export default defineComponent({
       return ''
     }
 
-    
 
     const myPreise = computed(() => {
       let hadActive = false;
