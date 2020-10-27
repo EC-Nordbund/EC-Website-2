@@ -1,3 +1,5 @@
+@import '~vuetify/src/styles/settings/_variables';
+
 .nuxt-content {
   & > *:first-child {
     margin-top: 0 !important;
@@ -6,10 +8,31 @@
     margin-bottom: 0 !important;
   }
 
+  @for $i from 1 to 6 {
+    h#{$i} {
+      @media #{map-get($display-breakpoints, 'md-and-up')} {
+        > a {
+          float: left;
+          margin-left: -1em;
+          opacity: 0;
+          transition: opacity 100ms ease-in-out;
+
+          .icon-link::before {
+            padding-right: 0;
+          }
+        }
+
+        &:hover > a {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .icon-link::before {
     content: '#';
     display: inline-block;
-    margin-right: 6px;
+    padding-right: 6px;
   }
 
   ol li ul:first-of-type {
