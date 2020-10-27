@@ -16,7 +16,7 @@ Bestimmt kauft ihr alle immer mal was auf Amazon ein. Macht das gern weiter. Abe
 
 Das würde uns echt helfen, unsere Freizeiten weiterhin günstig anzubieten, sodass möglichst viele Leute mitfahren können! Das Konzept ist genial und denkbar einfach:
 
-**Einfach über <a href="http://smile.amazon.de/ch/19-290-86012" data-type="URL" target="_blank" rel="noreferrer noopener">smile.amazon.de/ch/19-290-86012</a> einkaufen oder in der App die „Smile“-Funktion einschalten und uns auswählen.**
+**Einfach über <a href="https://smile.amazon.de/ch/19-290-86012" data-type="URL" target="_blank" rel="noreferrer noopener">smile.amazon.de/ch/19-290-86012</a> einkaufen oder in der App die „Smile“-Funktion einschalten und uns auswählen.**
 
 Es kostet euch keinen Cent mehr, aber wir bekommen 0,5% von eures Einkaufswertes von Amazon als Spende. Klingt vielleicht nicht so mega viel, aber es läppert sich zusammen.
 
