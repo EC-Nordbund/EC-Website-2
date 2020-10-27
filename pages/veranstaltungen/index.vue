@@ -36,7 +36,7 @@
               //- actions/buttons
               v-card-actions(class="pa-4")
                 v-spacer
-                ec-hexa-button(:to="`/veranstaltungen/${item.slug}`" icon="mdi-arrow-right" :aria-label="`Gehe zu Veranstaltung ${item.title}`")
+                ec-hexa-button(:to="`/veranstaltungen/${item.slug}`" icon="mdi-arrow-right" :aria-label="`Zur Veranstaltung: ${item.title}`")
 </template>
 <script lang="ts">
 import {

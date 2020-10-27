@@ -4,7 +4,7 @@ div(class="section-wrapper")
     v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
         h2#aktuelles Aktuelles
-        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Blog Einträge")
+        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Beiträge anzeigen")
           span.hidden-xs-only Mehr Beiträge
           v-icon.ml-1.mr-n1 mdi-arrow-right
       v-row(class="mb-4")
@@ -34,7 +34,7 @@ div(class="section-wrapper")
           tile,
           large,
           to="/veranstaltungen/"
-          aria-label="Mehr Veranstaltungen"
+          aria-label="Mehr Veranstaltungen anzeigen"
         )
           span.hidden-xs-only Mehr Veranstaltungen
           v-icon.ml-1.mr-n1 mdi-arrow-right
