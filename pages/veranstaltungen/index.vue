@@ -8,7 +8,7 @@
         v-card(outlined tile hover class="overflow-hidden" color="offWhite" style="border-bottom: 0px;")
           v-row(no-gutters @click="$router.push(`/veranstaltungen/${item.slug}`)")
             v-col(cols="12" md="6" lg="4" class="hellGrau")
-              ec-image-item(:image="item.featuredImage" :title="item.title" :subTitle="`Vom ${item.begin.split('-').reverse().join('.')} bis ${item.ende.split('-').reverse().join('.')}`")
+              ec-image-item(:image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')" :title="item.title" :subTitle="`Vom ${item.begin.split('-').reverse().join('.')} bis ${item.ende.split('-').reverse().join('.')}`")
 
             //- white-area (bottom/right part)
             v-col(cols="12" md="6" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
@@ -45,6 +45,7 @@ import {
   useContext,
   computed,
 } from '@nuxtjs/composition-api'
+import { supportWebp } from "../../helpers/webp";
 
 export default defineComponent({
   setup(props, ctx) {
@@ -97,6 +98,7 @@ export default defineComponent({
       detailsMaxHeight,
       textWaitingQueue,
       veranstaltungen,
+      supportWebp,
     }
   },
   head: {

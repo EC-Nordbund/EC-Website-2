@@ -1,5 +1,15 @@
 <template lang="pug">
 div(class="section-wrapper")
+  div
+    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" max-height="400" height="auto" min-width="100%" min-height="100%" class="secondary align-end")
+      .d-flex.flex-row.justify-center
+        v-card(class="py-2 px-4 mb-4 ec-gradient text-center" tile)
+          span(class="mb-2") Anmeldephase beginnt in:
+          ec-countdown(target="2020-11-08 15:00:00")
+            template(v-slot:digits="slotProp")
+              span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
+            template(v-slot:units="slotProp")
+              span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
   div(class="angle--bottom-right offWhite")
     v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
@@ -53,7 +63,7 @@ div(class="section-wrapper")
             @click='$router.push(`/veranstaltungen/${item.slug}`)'
           )
             ec-image-item(
-              :image='item.featuredImage',
+              :image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')",
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
             )
@@ -80,11 +90,11 @@ div(class="section-wrapper")
         | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
       v-row
         v-col(align="center")
-          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128")
+          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128" class="hexagon-shape")
           div(class="text-h6") Thomas Seeger
           | Jugendreferent
         v-col(align="center")
-          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128")
+          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128" class="hexagon-shape")
           div(class="text-h6") Dortje Gaertner
           | Kinder- und Jungschararbeit
 </template>
@@ -99,10 +109,14 @@ div(class="section-wrapper")
     margin-bottom: -3.492vw;
   }
 }
+
+.hexagon-shape {
+  clip-path: polygon(50% 100%, 5% 75%, 5% 25%, 50% 0%, 95% 25%, 95% 75%);
+}
 </style>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
-
+import { supportWebp } from "../helpers/webp";
 export default defineComponent({
   setup() {
     const { $content } = useContext()
@@ -130,7 +144,7 @@ export default defineComponent({
       return { upcomingEvents, recentPosts }
     })
 
-    return { pages }
+    return { pages, supportWebp }
   },
   head: {
     title: 'Startseite',
