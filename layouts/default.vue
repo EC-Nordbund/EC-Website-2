@@ -101,7 +101,7 @@
           //- v-col(md="4" align-self="end") © by EC-Nordbund
           v-col(md="4" class="links")
             h2 Links
-            v-list(color="transparent px-0")
+            v-list(color="transparent px-0 white--text")
               v-list-item(to="/")
                 v-list-item-content
                   v-list-item-title
@@ -159,8 +159,7 @@ export default defineComponent({
       ).body.FreeXml.Losungen.filter((v) =>
         v.Datum[0].startsWith(
           `${new Date().getFullYear()}-${
-            new Date().getMonth() + 1 < 10
-              ? '0' + (new Date().getMonth() + 1)
+            new Date().getMonth() + 1 < 10? '0' + (new Date().getMonth() + 1)
               : new Date().getMonth() + 1
           }-${
             new Date().getDate() < 10
@@ -212,7 +211,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style>
 .sticky-header {
   position: sticky;
   top: -40px;
@@ -236,5 +235,11 @@ export default defineComponent({
 .links > a {
   display: block;
   height: 48px
+}
+footer * {
+  color: #fff !important;
+}
+footer .v-list-item:hover {
+  background: rgba(1,1,1,0.2);
 }
 </style>

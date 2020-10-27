@@ -37,6 +37,7 @@ function handleContents(content) {
   return content.split('}')
     .filter(v => {
       const sel = v.split('{')[0]
+      // sel.includes(':not') ||
       return sel.split(',').every(selector =>
         !selector.includes('.v-application--is-rtl') && !selector.includes('.v-toolbar__items') && !selector.includes('[dir=rtl]') && !(selector.includes('rounded') && !selector.includes('0')) &&
         !selector.includes('.v-navigation-drawer--mini-variant') && !selector.includes('.v-text-field--enclosed') && !selector.includes('.v-text-field--outlined') &&
