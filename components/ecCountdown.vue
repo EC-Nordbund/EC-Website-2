@@ -40,6 +40,7 @@ import {
   onMounted,
   onUnmounted,
   watchEffect,
+  ref,
 } from '@nuxtjs/composition-api'
 
 export default defineComponent({
