@@ -1,13 +1,11 @@
 ---
 veranstaltungsID: 430
-title: Großes Mitarbeiterwochenende
+title: Mitarbeitertag
 begin: '2021-11-13'
 ende: '2021-11-13'
 description: >-
-  Ich habe ein altes Testament gefunden. Ob es mich reich macht? Komm und finde es heraus. 
-  Wir stellen uns in diesen Tagen der Frage, was das Alte Testament mit unserem Leben von heute zu tun hat.
-featuredImage: >-
-  /veranstaltungen/MaWoE/MaWoE1.jpg
+  Wenige Wochen nach den Sommerferien treffen sich alle EC-Mitarbeiter für ein Herbstseminar an einem Ort. So ist es guter Brauch bei uns im Nordbund. Aber gute Angebote muss man nutzen und so legen wir diesen Tag mit dem Impulstag des Gemeinschaftsverbandes zusammen, denn auch der VG will einen Tag investieren, um möglichst vielfältige Angebote zur Weiterbildung zu schaffen.
+featuredImage: /veranstaltungen/MaTag/MaTag6.jpg
 veranstaltungsort: Gymnasium Kaltenkirchen
 strasse: Flottkamp 34
 plz: 24568
@@ -27,7 +25,7 @@ images:
   - /veranstaltungen/MaTag/MaTag3
   # - /veranstaltungen/MaTag/MaTag4
   - /veranstaltungen/MaTag/MaTag5
-  - /veranstaltungen/MaTag/MaTag6
+  # - /veranstaltungen/MaTag/MaTag6
 tags:
   # - Karlsminde
   # - Freizeit
@@ -55,3 +53,7 @@ Ein Tag, der jeden Mitarbeiter weiter qualifizieren soll, aber auch die Neuausri
 
 - Kommt gemeinsam, bildet Fahrgemeinschaften, spart.
 - Nutzt und genießt den Austausch über die Arbeitsbereiche hinaus.
+
+## Kosten
+
+Die Teilnahme ist kostenlos. Man darf sich aber gerne mit einer Spende an der Kollekte des VG-Impulstages beteiligen.
