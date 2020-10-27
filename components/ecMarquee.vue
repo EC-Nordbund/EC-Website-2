@@ -29,6 +29,7 @@ export default defineComponent({
     padding-left: 100%;
     animation: marquee linear infinite;
     color: var(--v-secondary-lighten1);
+    will-change: transform;
   }
   &:hover > span {
     animation-play-state: paused;
