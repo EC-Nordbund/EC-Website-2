@@ -39,7 +39,7 @@
             v-spacer
             v-col(cols="1")
             //- TODO: Krisenintervention
-            //- v-btn(color="error" depressed :fab="$vuetify.breakpoint.smAndDown" :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden v-btn--rounded" aria-label="Krisenintervention")
+            //- v-btn(color="error" depressed :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" :class="'overflow-hidden krisenbutton'+($vuetify.breakpoint.mdAndUp ? '-extended' : '')" aria-label="Krisenintervention")
             //-   v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
             //-   span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
       v-app-bar(color="white")
@@ -221,7 +221,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .sticky-header {
   position: sticky;
   top: -40px;
@@ -244,9 +244,23 @@ export default defineComponent({
 }
 .links > a {
   display: block;
-  height: 48px
+  height: 48px;
 }
-.v-btn--rounded:not(.v-btn--fab) {
-  border-radius: 14px;
+
+.krisenbutton {
+  padding: 0 !important;
+  width: 32px ;
+  height: 32px !important;
+  min-height: 0;
+  min-width: 0 !important;
+  border-radius: 50%;
+  font-size: .625rem;
+
+  &-extended {
+    border-radius: 14px;
+    height: 28px;
+    padding: 0 #{28/2.25}px;
+    font-size: .75rem;
+  }
 }
 </style>
