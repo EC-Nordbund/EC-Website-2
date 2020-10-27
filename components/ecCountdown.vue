@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="ec-countdown")
     //- days
-    div(v-if="days > 0" class="counter-days")
+    div(v-if="(days > 0 || keepZeros)" class="counter-days")
       slot(name="digits" :digits="formatDigits(days)")
         span(class="digits") {{formatDigits(days)}}
 
@@ -9,7 +9,7 @@
         span(class="unit") {{dayLabel}}
 
     //- hours
-    div(v-if="(days > 0 || hours > 0)" class="counter-hours")
+    div(v-if="(days > 0 || hours > 0 || keepZeros)" class="counter-hours")
       slot(name="digits" :digits="formatDigits(hours)")
         span(class="digits") {{formatDigits(hours)}}
 
@@ -17,7 +17,7 @@
         span(class="unit") {{hourLabel}}
 
     //- minute
-    div(v-if="(days > 0 || hours > 0 || minutes > 0)" class="counter-minutes")
+    div(v-if="(days > 0 || hours > 0 || minutes > 0 || keepZeros)" class="counter-minutes")
       slot(name="digits" :digits="formatDigits(minutes)")
         span(class="digits") {{formatDigits(minutes)}}
 
@@ -46,6 +46,10 @@ import {
 export default defineComponent({
   props: {
     target: String,
+    keepZeros: {
+      type: Boolean,
+      default: false
+    },
     hideUnits: {
       type: Boolean,
       default: false
