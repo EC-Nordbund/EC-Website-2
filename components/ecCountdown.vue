@@ -82,12 +82,12 @@ export default defineComponent({
         inter = setInterval(() => {
           now.value = new Date()
         }, 500)
-      }
-    })
 
-    watchEffect(() => {
-      if (ended.value) {
-        // window.location.reload() // TODO: window is undefined
+        watchEffect(() => {
+          if (ended.value) {
+            window.location.reload()
+          }
+        })
       }
     })
 
