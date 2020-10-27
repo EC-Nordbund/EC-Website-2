@@ -90,11 +90,11 @@ div(class="section-wrapper")
         | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
       v-row
         v-col(align="center")
-          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128")
+          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128" class="hexagon-shape")
           div(class="text-h6") Thomas Seeger
           | Jugendreferent
         v-col(align="center")
-          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128")
+          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128" class="hexagon-shape")
           div(class="text-h6") Dortje Gaertner
           | Kinder- und Jungschararbeit
 </template>
@@ -108,6 +108,10 @@ div(class="section-wrapper")
   &.angle--both-left-left {
     margin-bottom: -3.492vw;
   }
+}
+
+.hexagon-shape {
+  clip-path: polygon(50% 100%, 5% 75%, 5% 25%, 50% 0%, 95% 25%, 95% 75%);
 }
 </style>
 <script>
