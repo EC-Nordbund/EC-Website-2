@@ -1,9 +1,9 @@
 <template lang="pug">
-  v-btn(color="primary" class="ec-gradient" depressed tile large :style="`transform: rotate(${rotate}deg);`")
-    v-icon(:style="`transform: rotate(-${rotate}deg);`")  {{icon}}
+  v-btn(color="primary" class="ec-gradient" depressed tile fab :width="size_px" :height="size_px" :style="`transform: rotate(${rotate}deg);`")
+    v-icon(:style="`transform: rotate(-${rotate}deg);`" :size="icon_size") {{icon}}
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {
@@ -15,13 +15,22 @@ export default defineComponent({
       type: Number,
       default: 0,
     },
+    size: {
+      type: Number,
+      default: 72
+    }
   },
+  setup(props) {
+    const size_px = computed(() => props.size + 'px')
+
+    const icon_size = computed(() => Math.floor(props.size*.45))
+
+    return { size_px, icon_size }
+  }
 })
 </script>
 <style scoped>
 .ec-gradient {
   clip-path: polygon(50% 100%, 5% 75%, 5% 25%, 50% 0%, 95% 25%, 95% 75%);
-  height: 85px !important;
-  width: 85px !important;
 }
 </style>

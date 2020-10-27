@@ -6,8 +6,13 @@
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
+<<<<<<< HEAD
             ec-hexa-button(@click="$router.push(`/veranstaltungen`)" icon="mdi-arrow-left")
             //- v-btn(color="primary" tile small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
+=======
+            ec-hexa-button(@click="$router.push(`/veranstaltungen/`)" icon="mdi-arrow-left" size="64")
+            //- v-btn(color="transparent" tile fab small depressed @click="$router.push(`/veranstaltungen/`)")
+>>>>>>> 50afef0... adjust hexa btn
             //-   v-icon(size="28") mdi-arrow-left
 
           v-spacer
