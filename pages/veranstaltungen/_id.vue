@@ -14,7 +14,7 @@
 
           //- display indicators
           v-col(cols="auto" class="d-flex flex-column")
-            v-row(style="text-align: right;")
+            v-row(class="text-right")
               v-col
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
