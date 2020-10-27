@@ -5,7 +5,7 @@
     //- TODO: filter by tags, age, date-range
     v-row(v-if="veranstaltungen")
       v-col(v-for="item in veranstaltungen" cols="12" sm="6" md="12" :key="item.slug")
-        v-card(outlined tile hover class="overflow-hidden" color="offWhite" style="border-bottom: 0px;")
+        v-card(outlined tile hover class="overflow-hidden" color="offWhite")
           v-row(no-gutters @click="$router.push(`/veranstaltungen/${item.slug}`)")
             v-col(cols="12" md="6" lg="4" class="hellGrau")
               ec-image-item(:image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')" :title="item.title" :subTitle="`Vom ${item.begin.split('-').reverse().join('.')} bis ${item.ende.split('-').reverse().join('.')}`")
