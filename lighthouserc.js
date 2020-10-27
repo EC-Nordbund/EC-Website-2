@@ -1,18 +1,18 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog'],
+      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen/'],
       startServerCommand: 'yarn start'
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'http://next.ec-nordbund.de:9000',
+      serverBaseUrl: 'https://lh.ec-nordbund.de',
       // token: 'Your *build token* goes here', // could also use LHCI_TOKEN variable instead
     },
     assert: {
       preset: 'lighthouse:recommended',
       "assertions": {
-        "categories:performance": ["error", { "minScore": 0.80 }],
+        "categories:performance": ["error", { "minScore": 0.72 }],
         "categories:accessibility": ["error", { "minScore": 0.98 }],
         "categories:pwa": ["error", { "minScore": 0.89 }],
         "categories:seo": ["error", { "minScore": 1 }],

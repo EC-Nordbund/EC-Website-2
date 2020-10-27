@@ -1,6 +1,6 @@
 <template lang="pug">
 div(class="section-wrapper")
-  div(class="")
+  div
     v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : undefined" class="secondary align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
       v-container(class="countdown pb-0 pb-md-1")
         v-row(justify="center" no-gutters)
@@ -16,7 +16,7 @@ div(class="section-wrapper")
     v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
         h2#aktuelles Aktuelles
-        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Beiträge anzeigen")
+        v-btn(text depressed tile large to="/blog/" aria-label="Mehr Beiträge anzeigen")
           span.hidden-xs-only Mehr Beiträge
           v-icon.ml-1.mr-n1 mdi-arrow-right
       v-row(class="mb-4")
@@ -31,7 +31,7 @@ div(class="section-wrapper")
             tile,
             hover,
             outlined,
-            @click='$router.push(`/blog/${item.slug}`)'
+            :to='`/blog/${item.slug}`'
           )
             ec-image-item(
               :image='item.featuredImage',
@@ -62,10 +62,10 @@ div(class="section-wrapper")
             tile,
             hover,
             outlined,
-            @click='$router.push(`/veranstaltungen/${item.slug}`)'
+            :to='`/veranstaltungen/${item.slug}`'
           )
             ec-image-item(
-              :image='item.featuredImage',
+              :image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')",
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
             )
@@ -92,11 +92,11 @@ div(class="section-wrapper")
         | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
       v-row
         v-col(align="center")
-          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128")
+          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128" class="hexagon-shape")
           div(class="text-h6") Thomas Seeger
           | Jugendreferent
         v-col(align="center")
-          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128")
+          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128" class="hexagon-shape")
           div(class="text-h6") Dortje Gaertner
           | Kinder- und Jungschararbeit
 </template>
@@ -124,10 +124,14 @@ div(class="section-wrapper")
       0 9px 46px 8px rgba(0, 0, 0, 0.12) !important;
   }
 }
+
+.hexagon-shape {
+  clip-path: polygon(50% 100%, 5% 75%, 5% 25%, 50% 0%, 95% 25%, 95% 75%);
+}
 </style>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
-
+import { supportWebp } from "../helpers/webp";
 export default defineComponent({
   setup() {
     const { $content } = useContext()
@@ -155,7 +159,7 @@ export default defineComponent({
       return { upcomingEvents, recentPosts }
     })
 
-    return { pages }
+    return { pages, supportWebp }
   },
   head: {
     title: 'Startseite',

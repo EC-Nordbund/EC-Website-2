@@ -1,12 +1,12 @@
 <template lang="pug">
   div
     //- cover
-    v-img(:src="page.featuredImage" height="420" class="white--text" gradient="180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.02) 32%, rgba(0,0,0,0.02) 48%, rgba(0,0,0,0.72) 96%")
+    v-img(:src="page.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')" height="420" class="white--text" gradient="180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.02) 32%, rgba(0,0,0,0.02) 48%, rgba(0,0,0,0.72) 96%")
       v-container(class="d-flex flex-column justify-space-between" style="height:100%")
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
-            ec-hexa-button(@click="$router.push(`/veranstaltungen/`)" icon="mdi-arrow-left" size="64" aria-label="Zurück zur Übersicht.")
+            ec-hexa-button(:to="`/veranstaltungen/`" icon="mdi-arrow-left" size="64" aria-label="Zurück zur Übersicht.")
 
           v-spacer
 
@@ -49,7 +49,10 @@
       v-row
         v-col(cols="12" :md="page.preise ? 6 : 12" :xl="page.preise ? 7 : 12" class="d-flex flex-column")
           h2(class="mb-2 text-center") Ort
-          ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+          ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+          //- Empty Location Content
+          p(v-else)
+            | Der Veranstaltungsort steht zum aktuellen Zeitpunkt noch nicht fest.
         v-col(cols="12" md="6" xl="5" v-if="page.preise")
           h2(class="mb-2 text-center") Preisstaffelung
           ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
@@ -76,6 +79,8 @@
                     span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
 </template>
 <script>
+import { supportWebp } from "../../helpers/webp";
+
 export default {
   async asyncData({ $content, params, redirect, route }) {
     try {
@@ -84,6 +89,11 @@ export default {
       return { page }
     } catch (e) {
       redirect('/404', { path: route.path })
+    }
+  },
+  setup() {
+    return {
+      supportWebp
     }
   },
   head() {
