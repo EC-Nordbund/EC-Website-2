@@ -186,6 +186,18 @@ export default defineComponent({
           .join('<b><i>')
           .split(':<b><i>')
           .join(':</i></b>')
+          .split('#')
+          .map((v,i)=>{
+            if(i===0) {
+              return v
+            }
+
+            if(i%2===0) {
+              return '</i>' + v
+            } else {
+              return '<i>' + v
+            }
+          }).join('')
     )
     const lehrtext = computed(
       () =>
@@ -195,6 +207,18 @@ export default defineComponent({
           .join('<i>')
           .split(':<i>')
           .join(':</i>')
+          .split('#')
+          .map((v,i)=>{
+            if(i===0) {
+              return v
+            }
+
+            if(i%2===0) {
+              return '</i>' + v
+            } else {
+              return '<i>' + v
+            }
+          }).join('')
     )
     const marqueeContentLength = computed(
       () =>
