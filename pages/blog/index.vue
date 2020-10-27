@@ -11,7 +11,7 @@
                 v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
                   v-card-actions(class="pa-3 hidden-sm-and-up")
                     v-spacer
-                    v-btn(color="accent" class="ec-gradient" elevation="16" tile :to="`/blog/${item.slug}`" :aria-label="`Gehe zu Blogeintrag ${item.title}`")
+                    v-btn(color="accent" class="ec-gradient" elevation="16" tile :to="`/blog/${item.slug}`" :aria-label="`Zum Beitrag: ${item.title}`")
                       //- TODO: hexagon shape for button (maybe in a custom component)
                       v-icon(color="white" size="28") mdi-arrow-right
             v-col(cols="12" sm="6" md="7" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
@@ -35,7 +35,7 @@
               //- actions/buttons
               v-card-actions(class="pa-4 hidden-xs-only")
                 v-spacer
-                ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :rotate="30" :aria-label="`Gehe zu Blogeintrag ${item.title}`")
+                ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :rotate="30" :aria-label="`Zum Beitrag: ${item.title}`")
 
     v-pagination(
       v-model="page"

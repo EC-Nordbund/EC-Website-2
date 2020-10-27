@@ -6,15 +6,13 @@
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
-            ec-hexa-button(@click="$router.push(`/veranstaltungen`)" icon="mdi-arrow-left" aria-label="Zurück zur Übersicht.")
-            //- v-btn(color="primary" tile small class="ec-gradient elevation-16" @click="$router.push(`/veranstaltungen/`)")
-            //-   v-icon(size="28") mdi-arrow-left
+            ec-hexa-button(@click="$router.push(`/veranstaltungen/`)" icon="mdi-arrow-left" size="64" aria-label="Zurück zur Übersicht.")
 
           v-spacer
 
           //- display indicators
           v-col(cols="auto" class="d-flex flex-column")
-            v-row(style="text-align: right;")
+            v-row(class="text-right")
               v-col
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
@@ -45,13 +43,16 @@
     v-container
       nuxt-content(:document="page")
     
-    ec-image-container(style="margin-bottom: -3.492vw; padding-top: 0 !important;" class="ec-top-bottom-rotated-2" :images="page.images" v-if="page.images")
+    ec-image-container(v-if="page.images" class="angle--both-left-left" :images="page.images")
 
-    v-container(fluid class="grey lighten-4 ec-top-bottom-rotated-1")
+    v-container(fluid class="grey lighten-4 angle--both-right-right")
       v-row
         v-col(cols="12" :md="page.preise ? 6 : 12" :xl="page.preise ? 7 : 12" class="d-flex flex-column")
           h2(class="mb-2 text-center") Ort
-          ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+          ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+          //- Empty Location Content
+          p(v-else)
+            | Der Veranstaltungsort steht zum aktuellen Zeitpunkt noch nicht fest.
         v-col(cols="12" md="6" xl="5" v-if="page.preise")
           h2(class="mb-2 text-center") Preisstaffelung
           ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")

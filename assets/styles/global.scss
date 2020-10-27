@@ -1,6 +1,7 @@
 // Official EC colors
 @import './fonts.scss';
 @import './markdown.scss';
+@import './angle.scss';
 
 // Definiere Gradient
 .ec-gradient,
@@ -11,43 +12,4 @@
     var(--v-gradient-left-base) 0%,
     var(--v-gradient-right-base) 100%
   ) !important;
-}
-
-.ec-top-bottom-rotated-1 {
-  padding-top: calc(var(--ec-rotation-padding-addition) + 3.492vw) !important;
-  padding-bottom: calc(
-    var(--ec-rotation-padding-addition) + 3.492vw
-  ) !important;
-  clip-path: polygon(0 0, 0 100%, 100% calc(100% - 3.492vw), 100% 3.492vw);
-}
-
-.ec-top-bottom-rotated-2 {
-  padding-top: calc(var(--ec-rotation-padding-addition) + 3.492vw) !important;
-  padding-bottom: calc(
-    var(--ec-rotation-padding-addition) + 3.492vw
-  ) !important;
-  clip-path: polygon(0 3.492vw, 0 calc(100% - 3.492vw), 100% 100%, 100% 0);
-}
-
-.ec-bottom-rotated-1 {
-  clip-path: polygon(0 0, 0 100%, 100% calc(100% - 3.492vw), 100% 0);
-  padding-bottom: calc(
-    var(--ec-rotation-padding-addition) + 3.492vw
-  ) !important;
-}
-
-.ec-bottom-rotated-2 {
-  clip-path: polygon(0 0, 0 calc(100% - 3.492vw), 100% 100%, 100% 0);
-  padding-bottom: calc(
-    var(--ec-rotation-padding-addition) + 3.492vw
-  ) !important;
-}
-
-.ec-top-rotated-1 {
-  clip-path: polygon(0 0, 100% 3.492vw, 100% 100%, 0 100%);
-  padding-top: 3.492vw;
-}
-
-:root {
-  --ec-rotation-padding-addition: 0px;
 }
