@@ -89,7 +89,7 @@
     footer(class="secondary darken-1 white--text angle--top-left")
       v-container
         v-row(justify="space-between")
-          v-col(md="4" )
+          v-col(md="4" class="px-4")
             h2 Spenden
             v-list(color="transparent px-0")
               v-list-item(@click="copy2clip('Sparkasse Südholstein')" class="ml-n4")
@@ -105,7 +105,7 @@
                   v-list-item-title NOLADE21SHO
                   v-list-item-subtitle BIC
           //- v-col(md="4" align-self="end") © by EC-Nordbund
-          v-col(md="4" class="links")
+          v-col(md="4" class="links px-4")
             h2 Links
             v-list(color="transparent px-0 white--text")
               v-list-item(to="/" class="ml-n4")
@@ -186,6 +186,18 @@ export default defineComponent({
           .join('<b><i>')
           .split(':<b><i>')
           .join(':</i></b>')
+          .split('#')
+          .map((v,i)=>{
+            if(i===0) {
+              return v
+            }
+
+            if(i%2===0) {
+              return '</i>' + v
+            } else {
+              return '<i>' + v
+            }
+          }).join('')
     )
     const lehrtext = computed(
       () =>
@@ -195,6 +207,18 @@ export default defineComponent({
           .join('<i>')
           .split(':<i>')
           .join(':</i>')
+          .split('#')
+          .map((v,i)=>{
+            if(i===0) {
+              return v
+            }
+
+            if(i%2===0) {
+              return '</i>' + v
+            } else {
+              return '<i>' + v
+            }
+          }).join('')
     )
     const marqueeContentLength = computed(
       () =>
