@@ -53,6 +53,8 @@
                 span(class="subtitle-1 text-capitalize font-weight-medium") Blog
               v-btn(text class="hidden-sm-and-down mr-2" to="/veranstaltungen" color="primary")
                 span(class="subtitle-1 text-capitalize font-weight-medium") Veranstaltungen
+              v-btn(text class="hidden-sm-and-down mr-2" to="/downloads/" color="primary")
+                span(class="subtitle-1 text-capitalize font-weight-medium") Downloads
               //- TODO: Orte
               //- v-btn(text class="hidden-sm-and-down mr-2" to="/orte" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Vor Ort
@@ -60,11 +62,11 @@
               //- v-btn(text class="hidden-sm-and-down" to="/mitarbeiter/anmeldung" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Anmeldung
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
-    v-navigation-drawer(app right temporary v-model="drawer" color="primary")
+    v-navigation-drawer(app right temporary v-model="drawer")
       v-list(nav)
         v-list-item(link to="/blog")
           v-list-item-icon
-            v-icon mdi-calendar
+            v-icon mdi-post-outline
           v-list-item-content
             v-list-item-title Blog
         v-list-item(link to="/veranstaltungen")
@@ -72,6 +74,11 @@
             v-icon mdi-calendar
           v-list-item-content
             v-list-item-title Veranstaltungen
+        v-list-item(link to="/downloads/")
+          v-list-item-icon
+            v-icon mdi-cloud-download
+          v-list-item-content
+            v-list-item-title Downloads
         //- TODO: Orte
         //- v-list-item(link to="/orte")
         //-   v-list-item-icon

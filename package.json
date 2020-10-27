@@ -14,6 +14,7 @@
     "docker:builder": "yarn && yarn build"
   },
   "dependencies": {
+    "@mdi/js": "^5.8.55",
     "@nuxt/content": "1.10.0",
     "@nuxt/typescript-runtime": "2.0.0",
     "@nuxtjs/composition-api": "^0.13.5",
@@ -44,7 +45,7 @@
     "@types/express": "^4.17.8",
     "babel-eslint": "10.1.0",
     "eslint": "7.12.1",
-    "eslint-config-prettier": "6.14.0",
+    "eslint-config-prettier": "6.15.0",
     "eslint-plugin-nuxt": "1.0.0",
     "eslint-plugin-prettier": "3.1.4",
     "prettier": "2.1.2",
