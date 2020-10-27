@@ -102,7 +102,7 @@ div(class="section-wrapper")
 </style>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
-import { supportWebp } from "../../helpers/webp";
+import { supportWebp } from "../helpers/webp";
 export default defineComponent({
   setup() {
     const { $content } = useContext()
