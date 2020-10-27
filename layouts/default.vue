@@ -37,9 +37,11 @@
                       | .
                     | )
             v-spacer
-            v-btn(color="error" depressed :style="'border-radius: 14px;' + ($vuetify.breakpoint.smAndDown ? 'height: 28px;width: 28px;' : '')" :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden" aria-label="Krisenintervention")
-              v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
-              span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
+            v-col(cols="1")
+            //- TODO: Krisenintervention
+            //- v-btn(color="error" depressed :fab="$vuetify.breakpoint.smAndDown" :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden v-btn--rounded" aria-label="Krisenintervention")
+            //-   v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
+            //-   span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
       v-app-bar(color="white")
         v-container
           v-row
@@ -236,5 +238,8 @@ export default defineComponent({
 .links > a {
   display: block;
   height: 48px
+}
+.v-btn--rounded:not(.v-btn--fab) {
+  border-radius: 14px;
 }
 </style>
