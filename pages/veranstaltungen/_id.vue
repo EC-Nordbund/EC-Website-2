@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     //- cover
-    v-img(:src="page.featuredImage" height="420" class="white--text" gradient="180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.02) 32%, rgba(0,0,0,0.02) 48%, rgba(0,0,0,0.72) 96%")
+    v-img(:src="page.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')" height="420" class="white--text" gradient="180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.02) 32%, rgba(0,0,0,0.02) 48%, rgba(0,0,0,0.72) 96%")
       v-container(class="d-flex flex-column justify-space-between" style="height:100%")
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
@@ -79,6 +79,8 @@
                     span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
 </template>
 <script>
+import { supportWebp } from "../../helpers/webp";
+
 export default {
   async asyncData({ $content, params, redirect, route }) {
     try {
@@ -87,6 +89,11 @@ export default {
       return { page }
     } catch (e) {
       redirect('/404', { path: route.path })
+    }
+  },
+  setup() {
+    return {
+      supportWebp
     }
   },
   head() {
