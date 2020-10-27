@@ -1,7 +1,7 @@
 <template lang="pug">
   div(class="ec-countdown")
     //- days
-    div(v-if="days > 0" class="counter-days")
+    div(v-if="(days > 0 || keepZeros)" class="counter-days")
       slot(name="digits" :digits="formatDigits(days)")
         span(class="digits") {{formatDigits(days)}}
 
@@ -9,7 +9,7 @@
         span(class="unit") {{dayLabel}}
 
     //- hours
-    div(v-if="(days > 0 || hours > 0)" class="counter-hours")
+    div(v-if="(days > 0 || hours > 0 || keepZeros)" class="counter-hours")
       slot(name="digits" :digits="formatDigits(hours)")
         span(class="digits") {{formatDigits(hours)}}
 
@@ -17,7 +17,7 @@
         span(class="unit") {{hourLabel}}
 
     //- minute
-    div(v-if="(days > 0 || hours > 0 || minutes > 0)" class="counter-minutes")
+    div(v-if="(days > 0 || hours > 0 || minutes > 0 || keepZeros)" class="counter-minutes")
       slot(name="digits" :digits="formatDigits(minutes)")
         span(class="digits") {{formatDigits(minutes)}}
 
@@ -46,6 +46,10 @@ import {
 export default defineComponent({
   props: {
     target: String,
+    keepZeros: {
+      type: Boolean,
+      default: false
+    },
     hideUnits: {
       type: Boolean,
       default: false
@@ -58,10 +62,10 @@ export default defineComponent({
     const diff = computed(() =>
       Math.trunc((target.getTime() - now.value.getTime()) / 1000)
     )
-    const days = computed(() => Math.trunc(diff.value / 60 / 60 / 24))
-    const hours = computed(() => (Math.trunc(diff.value / 60 / 60) % 24))
-    const minutes = computed(() => Math.trunc(diff.value / 60) % 60)
-    const seconds = computed(() => Math.trunc(diff.value) % 60)
+    const days = computed(() => Math.max(Math.trunc(diff.value / 60 / 60 / 24), 0))
+    const hours = computed(() => Math.max(Math.trunc(diff.value / 60 / 60) % 24, 0))
+    const minutes = computed(() => Math.max(Math.trunc(diff.value / 60) % 60, 0))
+    const seconds = computed(() => Math.max(Math.trunc(diff.value) % 60, 0))
 
     const dayLabel = computed(() => days.value !== 1 ? 'Tage' : 'Tag')
     const hourLabel = computed(() => hours.value !== 1 ? 'Stunden' : 'Stunde')
@@ -74,14 +78,16 @@ export default defineComponent({
 
     onUnmounted(() => clearInterval(inter))
     onMounted(() => {
-      inter = setInterval(() => {
-        now.value = new Date()
-      }, 500)
+      if (!ended.value) {
+        inter = setInterval(() => {
+          now.value = new Date()
+        }, 500)
+      }
     })
 
     watchEffect(() => {
       if (ended.value) {
-        window.location.reload()
+        // window.location.reload() // TODO: window is undefined
       }
     })
 
