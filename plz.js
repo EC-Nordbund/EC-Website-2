@@ -1,7 +1,7 @@
 const fs = require('fs')
 const fetch = require('node-fetch')
 
-const PATH = './static/plz/'
+const PATH = '/app/static/plz/'
 
 function plz() {
   if (!fs.existsSync(PATH)) {
