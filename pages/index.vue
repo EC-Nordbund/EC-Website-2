@@ -7,7 +7,7 @@ div(class="section-wrapper")
           v-col(cols="12" md="7")
             v-card(class="px-3 ec-gradient text-center pt-4 pb-8" tile)
               span(class="text-h6 pb-5 white--text") Die Anmeldephase beginnt in:
-              ec-countdown(target="2020-10-27 18:00:00" keep-zeros)
+              ec-countdown(target="2020-11-08 15:00:00" keep-zeros)
                 template(v-slot:digits="slotProp")
                   span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
                 template(v-slot:units="slotProp")

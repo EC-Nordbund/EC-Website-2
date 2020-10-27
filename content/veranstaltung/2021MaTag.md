@@ -43,7 +43,7 @@ anmeldung:
   hatFreizeitleitung: false
   extraFields: []
   disabled: false
-  startAt: '2020-11-08 12:00:00'
+  startAt: '2020-11-08 15:00:00'
 ---
 
 Wenige Wochen nach den Sommerferien treffen sich alle EC-Mitarbeiter für ein Herbstseminar an einem Ort. So ist es guter Brauch bei uns im Nordbund. Aber gute Angebote muss man nutzen und so legen wir diesen Tag mit dem Impulstag des Gemeinschaftsverbandes zusammen, denn auch der VG will einen Tag investieren, um möglichst vielfältige Angebote zur Weiterbildung zu schaffen.
