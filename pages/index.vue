@@ -110,7 +110,7 @@ export default defineComponent({
     const pages = useAsync(async () => {
       const upcomingEvents = await $content('veranstaltung')
         .only(['slug', 'title', 'begin', 'ende', 'featuredImage', 'tags'])
-        .sortBy('begin') // TODO: compare to todays date
+        .sortBy('begin') // TODO: compare to today's date
         .limit(3)
         .fetch()
 
