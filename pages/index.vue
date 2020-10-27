@@ -53,7 +53,7 @@ div(class="section-wrapper")
             @click='$router.push(`/veranstaltungen/${item.slug}`)'
           )
             ec-image-item(
-              :image='item.featuredImage',
+              :image='item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')',
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
             )
@@ -102,7 +102,7 @@ div(class="section-wrapper")
 </style>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
-
+import { supportWebp } from "../../helpers/webp";
 export default defineComponent({
   setup() {
     const { $content } = useContext()
@@ -130,7 +130,7 @@ export default defineComponent({
       return { upcomingEvents, recentPosts }
     })
 
-    return { pages }
+    return { pages, supportWebp }
   },
   head: {
     title: 'Startseite',
