@@ -13,7 +13,7 @@ Lange geplant - jetzt ist sie da! Die neue Version unserer Website!
 
 Leider hat die alte Website einige Nachteile gehabt. Desswegen haben wir etwas neues Entwickelt. (Für die Nerds unter euch: Wir nutzen jetzt Nuxt also Vue + Vue-Router mit zusätzlich Vuetify als UI-Framework. Der Server läuft in einem Docker Container. Den Source-Code findet man [hier](https://github.com/EC-Nordbund/EC-Website-2).)
 
-In den Nächsten Wochen werden noch einige weitere Funktionen folgen die leider nicht ganz rechtzeitig fertig wurden...
+In den Nächsten Wochen werden noch einige weitere Funktionen folgen die leider nicht ganz rechtzeitig fertig wurden... Auch haben wir an 2-3 stellen noch kleine performance Probleme die wir in kürze lösen werden.
 
 ## Vorteile
 
@@ -30,6 +30,7 @@ Das lässt sich leider nicht ausschließen du kannst ihn per Mail an [app@ec-nor
 ## Internet Explorer
 
 Der Internet Explorer (von Microsoft) gilt ab nächstem Jahr selbst bei Microsoft selbst als veraltet. Wir unterstützen ihn (leider) schon jetzt nicht mehr. 
+
 
 
 # Die nächste Anmeldephase
