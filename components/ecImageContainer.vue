@@ -2,7 +2,7 @@
   v-carousel(
     continuous
     cycle
-    height="600"
+    :height="height"
     :show-arrows="false" 
     hide-delimiters
   )
@@ -25,7 +25,7 @@
 }
 </style>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {
@@ -34,5 +34,20 @@ export default defineComponent({
       required: true,
     },
   },
+  setup(_, ctx) {
+    const height = computed(()=> {
+      if (ctx.root.$vuetify.breakpoint.xsOnly) {
+        return 300;
+      }
+
+      if (ctx.root.$vuetify.breakpoint.mdAndDown) {
+        return 400;
+      }
+
+      return 500;
+    })
+
+    return { height }
+  }
 })
 </script>
