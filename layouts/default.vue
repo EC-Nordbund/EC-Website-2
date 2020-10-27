@@ -46,7 +46,7 @@
         v-container
           v-row
             v-col(sm=12 class="d-flex align-center px-0")
-              nuxt-link(class="d-flex align-center mr-auto no-underline"  to="/")
+              nuxt-link(class="d-flex align-center mr-auto no-underline" :to="{path: '/'}")
                 ec-logo(size="42px" alt="EC")
                 h1 Nordbund
               v-btn(text class="hidden-sm-and-down mr-2" to="/blog" color="primary")
