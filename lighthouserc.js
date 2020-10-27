@@ -2,7 +2,7 @@ module.exports = {
   ci: {
     collect: {
       // , 'http://localhost:3000/blog/all'
-      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen/'],
+      url: ['http://localhost:3000/', 'http://localhost:3000/datenschutz', 'http://localhost:3000/blog', 'http://localhost:3000/veranstaltungen/2021JF'],
       startServerCommand: 'yarn start'
     },
     upload: {
@@ -21,7 +21,7 @@ module.exports = {
         /**
          * User Farbschema geht sonst nicht
          * https://web.dev/color-contrast/?utm_source=lighthouse&utm_medium=cli
-         */ 
+         */
         "color-contrast": "off",
         // Geht in CI nicht
         "redirects-http": "off",
