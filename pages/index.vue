@@ -1,15 +1,17 @@
 <template lang="pug">
 div(class="section-wrapper")
-  div
-    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" max-height="400" height="auto" min-width="100%" min-height="100%" class="secondary align-end")
-      .d-flex.flex-row.justify-center
-        v-card(class="py-2 px-4 mb-4 ec-gradient text-center" tile)
-          span(class="mb-2") Anmeldephase beginnt in:
-          ec-countdown(target="2020-11-08 15:00:00")
-            template(v-slot:digits="slotProp")
-              span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
-            template(v-slot:units="slotProp")
-              span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
+  div(class="")
+    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : undefined" class="secondary align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
+      v-container(class="countdown pb-0 pb-md-1")
+        v-row(justify="center" no-gutters)
+          v-col(cols="12" md="7")
+            v-card(class="px-3 ec-gradient text-center pt-4 pb-8" tile)
+              span(class="text-h6 pb-5 white--text") Die Anmeldephase beginnt in:
+              ec-countdown(target="2020-11-08 15:00:00")
+                template(v-slot:digits="slotProp")
+                  span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
+                template(v-slot:units="slotProp")
+                  span(slot="units" class="text-caption text-uppercase white--text") {{slotProp.unit}}
   div(class="angle--bottom-right offWhite")
     v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
@@ -107,6 +109,19 @@ div(class="section-wrapper")
   &.angle--both-right-left,
   &.angle--both-left-left {
     margin-bottom: -3.492vw;
+  }
+}
+
+.countdown {
+  margin-bottom: -3.493vw;
+
+  .v-sheet {
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.12),
+      0 11px 15px -7px rgba(0, 0, 0, 0.2),
+      0 24px 38px 3px rgba(0, 0, 0, 0.14),
+      0 9px 46px 8px rgba(0, 0, 0, 0.12) !important;
   }
 }
 </style>
