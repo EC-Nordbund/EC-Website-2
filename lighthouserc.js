@@ -6,7 +6,7 @@ module.exports = {
     },
     upload: {
       target: 'lhci',
-      serverBaseUrl: 'http://next.ec-nordbund.de:9000',
+      serverBaseUrl: 'https://lh.ec-nordbund.de',
       // token: 'Your *build token* goes here', // could also use LHCI_TOKEN variable instead
     },
     assert: {
