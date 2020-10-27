@@ -14,7 +14,7 @@
               br(v-if="m.email")
               a(v-if="m.email" :href="`mailto:${m.email}`") {{m.email}}
               br(v-if="!m.noMore")
-              a(v-if="!m.noMore" @click="$router.push(m.more)" style="cursor: pointer") mehr...
+              nuxt-link(v-if="!m.noMore" :to="m.mor)" style="cursor: pointer") mehr...
 </template>
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'

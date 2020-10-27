@@ -11,7 +11,7 @@ v-container
           tile,
           hover,
           outlined,
-          @click='$router.push(`/blog/${item.slug}`)'
+          :to='`/blog/${item.slug}`'
         )
           ec-image-item(
             :image='item.featuredImage',

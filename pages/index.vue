@@ -14,7 +14,7 @@ div(class="section-wrapper")
     v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
         h2#aktuelles Aktuelles
-        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Beiträge anzeigen")
+        v-btn(text depressed tile large to="/blog/" aria-label="Mehr Beiträge anzeigen")
           span.hidden-xs-only Mehr Beiträge
           v-icon.ml-1.mr-n1 mdi-arrow-right
       v-row(class="mb-4")
@@ -29,7 +29,7 @@ div(class="section-wrapper")
             tile,
             hover,
             outlined,
-            @click='$router.push(`/blog/${item.slug}`)'
+            :to='`/blog/${item.slug}`'
           )
             ec-image-item(
               :image='item.featuredImage',
@@ -60,7 +60,7 @@ div(class="section-wrapper")
             tile,
             hover,
             outlined,
-            @click='$router.push(`/veranstaltungen/${item.slug}`)'
+            :to='`/veranstaltungen/${item.slug}`'
           )
             ec-image-item(
               :image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')",
