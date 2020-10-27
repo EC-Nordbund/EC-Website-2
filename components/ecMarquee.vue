@@ -30,6 +30,8 @@ export default defineComponent({
     animation: marquee linear infinite;
     color: var(--v-secondary-lighten1);
     will-change: transform;
+    // Hold animation for 2s at start (while loading)
+    animation-delay: 2s;
   }
   &:hover > span {
     animation-play-state: paused;
