@@ -39,7 +39,6 @@ import {
   computed,
   onMounted,
   onUnmounted,
-  shallowRef,
   watchEffect,
 } from '@nuxtjs/composition-api'
 
@@ -52,13 +51,14 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const now = shallowRef(new Date())
+    const now = ref(null)
+    now.value = new Date()
     const target = new Date(props.target)
     const diff = computed(() =>
       Math.trunc((target.getTime() - now.value.getTime()) / 1000)
     )
     const days = computed(() => Math.trunc(diff.value / 60 / 60 / 24))
-    const hours = computed(() => (Math.trunc(diff.value / 60 / 60) & 24))
+    const hours = computed(() => (Math.trunc(diff.value / 60 / 60) % 24))
     const minutes = computed(() => Math.trunc(diff.value / 60) % 60)
     const seconds = computed(() => Math.trunc(diff.value) % 60)
 
