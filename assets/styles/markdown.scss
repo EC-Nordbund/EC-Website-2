@@ -10,6 +10,10 @@
 
   @for $i from 1 to 6 {
     h#{$i} {
+      line-height: 1.125em;
+      padding-top: 0.125em;
+      padding-bottom: 0.333em;
+
       @media #{map-get($display-breakpoints, 'md-and-up')} {
         > a {
           float: left;
