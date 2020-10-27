@@ -37,9 +37,11 @@
                       | .
                     | )
             v-spacer
-            v-btn(color="error" depressed :style="'border-radius: 14px;' + ($vuetify.breakpoint.smAndDown ? 'height: 28px;width: 28px;' : '')" :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" class="overflow-hidden" aria-label="Krisenintervention")
-              v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
-              span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
+            v-col(cols="1")
+            //- TODO: Krisenintervention
+            //- v-btn(color="error" depressed :x-small="$vuetify.breakpoint.smAndDown" :small="$vuetify.breakpoint.mdAndUp" :class="'overflow-hidden krisenbutton'+($vuetify.breakpoint.mdAndUp ? '-extended' : '')" aria-label="Krisenintervention")
+            //-   v-icon(small class="ml-n1 mr-n1") mdi-alarm-light
+            //-   span(v-if="$vuetify.breakpoint.mdAndUp" class="pl-2 subtitle-2 text-capitalize font-weight-medium") Krisenintervention
       v-app-bar(color="white")
         v-container
           v-row
@@ -51,8 +53,10 @@
                 span(class="subtitle-1 text-capitalize font-weight-medium") Blog
               v-btn(text class="hidden-sm-and-down mr-2" to="/veranstaltungen" color="primary")
                 span(class="subtitle-1 text-capitalize font-weight-medium") Veranstaltungen
+              //- TODO: Orte
               //- v-btn(text class="hidden-sm-and-down mr-2" to="/orte" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Vor Ort
+              //- TODO: MA-Anmeldung
               //- v-btn(text class="hidden-sm-and-down" to="/mitarbeiter/anmeldung" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Anmeldung
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
@@ -68,19 +72,21 @@
             v-icon mdi-calendar
           v-list-item-content
             v-list-item-title Veranstaltungen
+        //- TODO: Orte
         //- v-list-item(link to="/orte")
         //-   v-list-item-icon
         //-     v-icon mdi-map-marker
         //-   v-list-item-content
         //-     v-list-item-title Vor Ort
+        //- TODO: MA-Anmeldung
         //- v-list-item(link to="/mitarbeiter/anmeldung")
         //-   v-list-item-icon
         //-     v-icon mdi-account-plus
         //-   v-list-item-content
         //-     v-list-item-title Anmeldung
-    v-main(class="ec-bottom-rotated-2" style="margin-bottom: -68px;")
+    v-main
       nuxt
-    footer(class="secondary white--text ec-top-rotated-1")
+    footer(class="secondary darken-1 white--text angle--top-left")
       v-container
         v-row(justify="space-between")
           v-col(md="4" )
@@ -147,7 +153,7 @@ import {
 import copy from '~/helpers/copy'
 
 export default defineComponent({
-  setup() {
+  setup(_, ctx) {
     const drawer = ref(false)
 
     const { isDev, $content } = useContext()
@@ -169,6 +175,8 @@ export default defineComponent({
         )
       )[0]
     })
+
+    const isStartPage = computed(() => ctx.root.$nuxt.$route.path == '/')
 
     const losung = computed(
       () =>
@@ -206,12 +214,13 @@ export default defineComponent({
       drawer,
       copy2clip: copy,
       isDev,
+      isStartPage,
     }
   },
 })
 </script>
 
-<style>
+<style lang="scss">
 .sticky-header {
   position: sticky;
   top: -40px;
@@ -234,7 +243,24 @@ export default defineComponent({
 }
 .links > a {
   display: block;
-  height: 48px
+  height: 48px;
+}
+
+.krisenbutton {
+  padding: 0 !important;
+  width: 32px ;
+  height: 32px !important;
+  min-height: 0;
+  min-width: 0 !important;
+  border-radius: 50%;
+  font-size: .625rem;
+
+  &-extended {
+    border-radius: 14px;
+    height: 28px;
+    padding: 0 #{28/2.25}px;
+    font-size: .75rem;
+  }
 }
 footer * {
   color: #fff !important;

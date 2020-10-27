@@ -1,17 +1,13 @@
 <template lang="pug">
-div
-  div(
-    v-if="pages"
-    class="ec-bottom-rotated-1"
-    style='background: var(--v-offWihte-base);margin-bottom: -68px;'
-  )
-    v-container
+div(class="section-wrapper")
+  div(class="angle--bottom-right offWhite")
+    v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end
         h2#aktuelles Aktuelles
-        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Blog Einträge")
+        v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Beiträge anzeigen")
           span.hidden-xs-only Mehr Beiträge
           v-icon.ml-1.mr-n1 mdi-arrow-right
-      v-row
+      v-row(class="mb-4")
         v-col(
           cols='12',
           sm='6',
@@ -38,11 +34,11 @@ div
           tile,
           large,
           to="/veranstaltungen/"
-          aria-label="Mehr Veranstaltungen"
+          aria-label="Mehr Veranstaltungen anzeigen"
         )
           span.hidden-xs-only Mehr Veranstaltungen
           v-icon.ml-1.mr-n1 mdi-arrow-right
-      v-row
+      v-row(class="mb-4")
         v-col(
           cols='12',
           sm='6',
@@ -61,11 +57,7 @@ div
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
             )
-      //- v-container
-  div(
-    class="ec-top-bottom-rotated-2"
-    style='background: var(--v-primary-base); margin-bottom: -67px; --ec-rotation-padding-addition: 15px;'
-  )
+  div(class="angle--both-left-right grey lighten-4")
     v-container
       h2(id='über-uns') Über uns
       //- p 
@@ -87,19 +79,27 @@ div
       p
         | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
       v-row
-        v-col 
-          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="300" :height="300" style="border-radius: 50%; margin: 5px auto;")
-          p(style="text-align: center;display: block;")
-            b Thomas Seeger
-            br
-            | Jugendreferent
-        v-col
-          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="300" :height="300" style="border-radius: 50%; margin: 5px auto;")
-          p(style="text-align: center;display: block;")
-            b Dortje Gaertner
-            br
-            | Kinder- und Jungschararbeit
+        v-col(align="center")
+          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128")
+          div(class="text-h6") Thomas Seeger
+          | Jugendreferent
+        v-col(align="center")
+          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128")
+          div(class="text-h6") Dortje Gaertner
+          | Kinder- und Jungschararbeit
 </template>
+<style lang="scss" scoped>
+.section-wrapper > div:last-child {
+  &.angle--bottom-left,
+  &.angle--bottom-right,
+  &.angle--both-right-right,
+  &.angle--both-left-right,
+  &.angle--both-right-left,
+  &.angle--both-left-left {
+    margin-bottom: -3.492vw;
+  }
+}
+</style>
 <script>
 import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
 
@@ -110,7 +110,7 @@ export default defineComponent({
     const pages = useAsync(async () => {
       const upcomingEvents = await $content('veranstaltung')
         .only(['slug', 'title', 'begin', 'ende', 'featuredImage', 'tags'])
-        .sortBy('begin') // TODO: compare to todays date
+        .sortBy('begin') // TODO: compare to today's date
         .limit(3)
         .fetch()
 

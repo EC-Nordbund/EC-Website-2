@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container(style="text-align: center" v-if="page")
+  v-container(class="text-center" v-if="page")
     v-row
       v-col
         nuxt-content(:document="page")
