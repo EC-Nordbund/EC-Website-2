@@ -77,14 +77,16 @@ export default defineComponent({
 
     onUnmounted(() => clearInterval(inter))
     onMounted(() => {
-      inter = setInterval(() => {
-        now.value = new Date()
-      }, 500)
+      if (!ended.value) {
+        inter = setInterval(() => {
+          now.value = new Date()
+        }, 500)
+      }
     })
 
     watchEffect(() => {
       if (ended.value) {
-        window.location.reload()
+        // window.location.reload() // TODO: window is undefined
       }
     })
 
