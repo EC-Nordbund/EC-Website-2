@@ -35,6 +35,7 @@ div(class="section-wrapper")
               :image='item.featuredImage',
               :title='item.title',
               :subTitle='`Vom ${item.published.split("T")[0].split("-").reverse().join(".")}`'
+              class="hellGrau"
             )
       .d-flex.flex-row.justify-space-between.align-end
         h2(id='nächste-veranstaltungen') Nächste Veranstaltungen
@@ -66,6 +67,7 @@ div(class="section-wrapper")
               :image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')",
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
+              class="hellGrau"
             )
   div(class="angle--both-left-right grey lighten-4")
     v-container
