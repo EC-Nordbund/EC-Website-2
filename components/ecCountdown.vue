@@ -61,10 +61,10 @@ export default defineComponent({
     const diff = computed(() =>
       Math.trunc((target.getTime() - now.value.getTime()) / 1000)
     )
-    const days = computed(() => Math.trunc(diff.value / 60 / 60 / 24))
-    const hours = computed(() => (Math.trunc(diff.value / 60 / 60) & 24))
-    const minutes = computed(() => Math.trunc(diff.value / 60) % 60)
-    const seconds = computed(() => Math.trunc(diff.value) % 60)
+    const days = computed(() => Math.max(Math.trunc(diff.value / 60 / 60 / 24), 0))
+    const hours = computed(() => Math.max(Math.trunc(diff.value / 60 / 60) % 24, 0))
+    const minutes = computed(() => Math.max(Math.trunc(diff.value / 60) % 60, 0))
+    const seconds = computed(() => Math.max(Math.trunc(diff.value) % 60, 0))
 
     const dayLabel = computed(() => days.value !== 1 ? 'Tage' : 'Tag')
     const hourLabel = computed(() => hours.value !== 1 ? 'Stunden' : 'Stunde')
