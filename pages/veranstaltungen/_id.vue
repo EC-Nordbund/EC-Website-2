@@ -49,7 +49,10 @@
       v-row
         v-col(cols="12" :md="page.preise ? 6 : 12" :xl="page.preise ? 7 : 12" class="d-flex flex-column")
           h2(class="mb-2 text-center") Ort
-          ec-location(:zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+          ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+          //- Empty Location Content
+          p(v-else)
+            | Der Veranstaltungsort steht zum aktuellen Zeitpunkt noch nicht fest.
         v-col(cols="12" md="6" xl="5" v-if="page.preise")
           h2(class="mb-2 text-center") Preisstaffelung
           ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
