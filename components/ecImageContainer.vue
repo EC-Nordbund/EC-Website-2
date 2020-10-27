@@ -1,10 +1,6 @@
 <template lang="pug">
-  //- div
-    //- v-row
-    //-   v-col(:key="img" v-for="img in images")
-    //-     v-img(:src="img" height="300" width="500")  
-    //- cycle
   v-carousel(
+    continuous
     cycle
     height="600"
     :show-arrows="false" 
@@ -13,13 +9,21 @@
     v-carousel-item(
       v-for="(img, i) in images"
       :key="i"
+      class="secondary"
     )
-      //- v-responsive(height="600")
-      picture(style="height: 600px; transform: translate(-50%, 0); margin-top: -50%;")
+      picture
         source(:srcset="img + '.webp'" type="image/webp")
         source(:srcset="img + '.jpg'" type="image/jpg")
-        img(:src="img + '.jpg'" :alt="img" style="transform: translate(0, calc(-50% + 300px));width: 100%;")
+        img(:src="img + '.jpg'" :alt="img" class="responsive-image")
 </template>
+<style lang="scss" scoped>
+.responsive-image {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 600px;
+}
+</style>
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
 
