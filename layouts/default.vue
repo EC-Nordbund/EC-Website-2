@@ -149,7 +149,7 @@ import {
 import copy from '~/helpers/copy'
 
 export default defineComponent({
-  setup() {
+  setup(_, ctx) {
     const drawer = ref(false)
 
     const { isDev, $content } = useContext()
@@ -172,6 +172,8 @@ export default defineComponent({
         )
       )[0]
     })
+
+    const isStartPage = computed(() => ctx.root.$nuxt.$route.path == '/')
 
     const losung = computed(
       () =>
@@ -209,6 +211,7 @@ export default defineComponent({
       drawer,
       copy2clip: copy,
       isDev,
+      isStartPage,
     }
   },
 })

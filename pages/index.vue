@@ -7,7 +7,7 @@ div(class="section-wrapper")
         v-btn(text, depressed, tile, large, @click='$router.push(`/blog/`)' aria-label="Mehr Blog Einträge")
           span.hidden-xs-only Mehr Beiträge
           v-icon.ml-1.mr-n1 mdi-arrow-right
-      v-row
+      v-row(class="mb-4")
         v-col(
           cols='12',
           sm='6',
@@ -38,7 +38,7 @@ div(class="section-wrapper")
         )
           span.hidden-xs-only Mehr Veranstaltungen
           v-icon.ml-1.mr-n1 mdi-arrow-right
-      v-row
+      v-row(class="mb-4")
         v-col(
           cols='12',
           sm='6',
@@ -79,18 +79,14 @@ div(class="section-wrapper")
       p
         | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
       v-row
-        v-col 
-          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="300" :height="300" style="border-radius: 50%; margin: 5px auto;")
-          p(style="text-align: center;display: block;")
-            b Thomas Seeger
-            br
-            | Jugendreferent
-        v-col
-          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="300" :height="300" style="border-radius: 50%; margin: 5px auto;")
-          p(style="text-align: center;display: block;")
-            b Dortje Gaertner
-            br
-            | Kinder- und Jungschararbeit
+        v-col(align="center")
+          v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128")
+          div(class="text-h6") Thomas Seeger
+          | Jugendreferent
+        v-col(align="center")
+          v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128")
+          div(class="text-h6") Dortje Gaertner
+          | Kinder- und Jungschararbeit
 </template>
 <style lang="scss" scoped>
 .section-wrapper > div:last-child {
