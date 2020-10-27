@@ -1,5 +1,15 @@
 <template lang="pug">
 div(class="section-wrapper")
+  div
+    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" max-height="400" height="auto" min-width="100%" min-height="100%" class="secondary align-end")
+      .d-flex.flex-row.justify-center
+        v-card(class="py-2 px-4 mb-4 ec-gradient text-center" tile)
+          span(class="mb-2") Anmeldephase beginnt in:
+          ec-countdown(target="2020-11-08 15:00:00")
+            template(v-slot:digits="slotProp")
+              span(slot="digits" class="text-h4 font-weight-bold white--text") {{slotProp.digits}}
+            template(v-slot:units="slotProp")
+              span(slot="units" class="text-caption text-uppercase") {{slotProp.unit}}
   div(class="angle--bottom-right offWhite")
     v-container(class="mb-4")
       .d-flex.flex-row.justify-space-between.align-end

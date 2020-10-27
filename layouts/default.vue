@@ -92,15 +92,15 @@
           v-col(md="4" )
             h2 Spenden
             v-list(color="transparent px-0")
-              v-list-item(@click="copy2clip('Sparkasse Südholstein')")
+              v-list-item(@click="copy2clip('Sparkasse Südholstein')" class="ml-n4")
                 v-list-item-content
                   v-list-item-title Sparkasse Südholstein
                   v-list-item-subtitle Bank
-              v-list-item(@click="copy2clip('DE47 2305 1030 0510 8336 43')")
+              v-list-item(@click="copy2clip('DE47 2305 1030 0510 8336 43')" class="ml-n4")
                 v-list-item-content
                   v-list-item-title DE47 2305 1030 0510 8336 43
                   v-list-item-subtitle IBAN
-              v-list-item(@click="copy2clip('NOLADE21SHO')")
+              v-list-item(@click="copy2clip('NOLADE21SHO')" class="ml-n4")
                 v-list-item-content
                   v-list-item-title NOLADE21SHO
                   v-list-item-subtitle BIC
@@ -108,31 +108,31 @@
           v-col(md="4" class="links")
             h2 Links
             v-list(color="transparent px-0 white--text")
-              v-list-item(to="/")
+              v-list-item(to="/" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Startseite
-              v-list-item(to="/suche/")
+              v-list-item(to="/suche/" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Suche
-              v-list-item(to="/downloads/")
+              v-list-item(to="/downloads/" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Downloads
-              v-list-item(to="/teilnahmebedingungen/")
+              v-list-item(to="/teilnahmebedingungen/" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Teilnahmebedingungen
-              v-list-item(to="/datenschutz")
+              v-list-item(to="/datenschutz" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Datenschutz
-              v-list-item(to="/impressum")
+              v-list-item(to="/impressum" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Impressum
-              v-list-item(to="/admin" v-if="isDev")
+              v-list-item(to="/admin" v-if="isDev" class="ml-n4")
                 v-list-item-content
                   v-list-item-title
                     | Admin
@@ -241,9 +241,12 @@ export default defineComponent({
   color: var(--v-youtube-base) !important;
   fill: var(--v-youtube-base);
 }
-.links > a {
-  display: block;
-  height: 48px;
+.links .v-list-item {
+  min-height: 32px;
+
+  .v-list-item__content {
+    padding: 8px 0;
+  }
 }
 
 .krisenbutton {
