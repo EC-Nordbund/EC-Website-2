@@ -11,7 +11,7 @@
                 v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
                   v-card-actions(class="pa-3 hidden-sm-and-up")
                     v-spacer
-                    ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :aria-label="`Zum Beitrag: ${item.title}`" size="64")
+                    ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :aria-label="`Zum Beitrag: ${item.title}`" :size="64")
             v-col(cols="12" sm="6" md="7" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
               v-flex()
                 //- title
