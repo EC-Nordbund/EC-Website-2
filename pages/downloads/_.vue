@@ -13,7 +13,7 @@
       v-divider
       v-list-item(v-for="el in data.files" :key="$route.fullpath + el.filename" :href="`/downloads/${el.filename}`" :download="el.filename" two-line)
         v-list-item-avatar
-          v-icon(size="32") {{ {'pdf': 'mdi-file-pdf-outline', docx: 'mdi-file-word', jpg: 'mdi-file-image', png: 'mdi-file-image'}[el.filename.split('.')[1].toLowerCase()] || 'mdi-file' }}
+          v-icon(size="32") {{ {pdf: mdiFilePdfOutline, docx: mdiFileWord, jpg: mdiFileImage, png: mdiFileImage}[el.filename.split('.')[1].toLowerCase()] || mdiFile }}
         v-list-item-content
           v-list-item-title {{el.title}}
           v-list-item-subtitle {{el.description}}
@@ -31,6 +31,7 @@ import {
   useAsync,
   computed,
 } from '@nuxtjs/composition-api'
+import {mdiFilePdfOutline, mdiFileWord, mdiFileImage, mdiFile} from '@mdi/js'
 
 export default defineComponent({
   setup() {
@@ -89,7 +90,7 @@ export default defineComponent({
       return item
     }
 
-    return { fileRoute, data, toBreadcrumb }
+    return { fileRoute, data, toBreadcrumb, mdiFilePdfOutline, mdiFileWord, mdiFileImage, mdiFile }
   },
   head: {
     title: 'Downloads',
