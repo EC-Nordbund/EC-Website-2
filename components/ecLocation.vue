@@ -1,7 +1,7 @@
 <template lang="pug">
    client-only
       l-map(:zoom="zoom" :center="marker[0].marker")
-        l-tile-layer(:email="`app@ec-nordbund.de`" url="https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png" attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors')
+        l-tile-layer(:email="`app@ec-nordbund.de`" url="https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png" attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors')
         l-control-scale(position="topright" metric)
         l-marker(v-for="m in marker" :lat-lng="m.marker" :key="m.title")
           l-popup(:options="{keepInView:true,autoClose:false}")
