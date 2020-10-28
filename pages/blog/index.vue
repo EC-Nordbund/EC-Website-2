@@ -5,7 +5,7 @@
     v-row
       v-col(v-for="item in posts" cols="12" :key="item.slug")
         v-card(outlined tile hover class="overflow-hidden" color="offWhite")
-          v-row(no-gutters :to="`/blog/${item.slug}`")
+          v-row(no-gutters @click="$router.push(`/blog/${item.slug}`)")
             v-col(cols="12" sm="6" md="5" lg="4" class="hellGrau")
                 //- image
                 v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
