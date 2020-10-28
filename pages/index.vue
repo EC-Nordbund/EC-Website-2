@@ -138,6 +138,7 @@ p(v-else) Loading...
   height: 128px; 
   background: var(--v-primary-base); 
   opacity: 0; 
+  will-change: opacity;
   transition: opacity .3s;
 }
 
