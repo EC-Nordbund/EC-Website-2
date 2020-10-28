@@ -291,19 +291,19 @@ export default defineComponent({
 }
 
 .back-to-top--btn {
-  border-radius: 50%;
+  border-radius: 50% !important;
   height: 56px !important;
   width: 56px;
   min-width: 0 !important;
   padding: 0 !important;
   bottom: 16px;
   right: 16px;
-  position: fixed;
-  opacity: .95;
-	box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  position: fixed !important;
+  opacity: .95 !important;
+	box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
 
   &:hover {
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 
