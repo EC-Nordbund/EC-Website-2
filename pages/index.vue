@@ -1,7 +1,7 @@
 <template lang="pug">
 div(class="section-wrapper")
   div
-    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : undefined" class="secondary align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
+    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : '360px'" class="hellGrau align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
       v-container(class="countdown pb-0 pb-md-1")
         v-row(justify="center" no-gutters)
           v-col(cols="12" md="7")
