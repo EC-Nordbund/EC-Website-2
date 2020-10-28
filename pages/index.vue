@@ -1,7 +1,7 @@
 <template lang="pug">
 div(class="section-wrapper" v-if="pages")
   div
-    v-img(:src="require('~/assets/img/hero-image.jpg')" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : '360px'" class="hellGrau align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
+    v-img(:src="require('~/assets/img/hero-image.jpg')" height="400" width="auto" min-width="100%" class="hero-image hellGrau align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
       v-container(class="countdown pb-0 pb-md-1")
         v-row(justify="center" no-gutters)
           v-col(cols="12" md="7")
@@ -106,6 +106,16 @@ div(class="section-wrapper" v-if="pages")
 p(v-else) Loading...
 </template>
 <style lang="scss" scoped>
+@import '~vuetify/src/styles/settings/_variables';
+
+.hero-image {
+  height: calc(100vh + 3.492vw - 96px);
+
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    height: 400px;
+  };
+}
+
 .section-wrapper > div:last-child {
   &.angle--bottom-left,
   &.angle--bottom-right,
