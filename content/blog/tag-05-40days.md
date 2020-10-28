@@ -2,7 +2,7 @@
 title: "Tag 05  #40days"
 published: 2018-02-19T07:00:10
 description: "Tag 05 - #40days\n#WirsindderNordbund #my40days #gotteswort #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 05  #40days

@@ -4,16 +4,15 @@
     //- TODO: filter by tags, author, source (if instagram-feed is included)
     v-row
       v-col(v-for="item in posts" cols="12" :key="item.slug")
-        v-card(outlined tile hover class="overflow-hidden" color="offWhite")
-          v-row(no-gutters :to="`/blog/${item.slug}`")
+        v-card(outlined tile hover class="overflow-hidden" color="offWhite" :to="`/blog/${item.slug}`")
+          v-row(no-gutters) 
+            //-  @click="$router.push(`/blog/${item.slug}`)"
             v-col(cols="12" sm="6" md="5" lg="4" class="hellGrau")
                 //- image
                 v-img(:src="item.featuredImage" height="300" aspectRatio="1" class="white--text" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 24%, rgba(0,0,0,0.02) 64%, rgba(0,0,0,0.24) 100%")
                   v-card-actions(class="pa-3 hidden-sm-and-up")
                     v-spacer
-                    v-btn(color="accent" class="ec-gradient" elevation="16" tile :to="`/blog/${item.slug}`" :aria-label="`Zum Beitrag: ${item.title}`")
-                      //- TODO: hexagon shape for button (maybe in a custom component)
-                      v-icon(color="white" size="28") mdi-arrow-right
+                    ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :aria-label="`Zum Beitrag: ${item.title}`" :size="64")
             v-col(cols="12" sm="6" md="7" lg="8" class="d-flex flex-column justify-space-between" :style="detailsMaxHeight")
               v-flex()
                 //- title
@@ -35,7 +34,7 @@
               //- actions/buttons
               v-card-actions(class="pa-4 hidden-xs-only")
                 v-spacer
-                ec-hexa-button(:to="`/blog/${item.slug}`" icon="mdi-arrow-right" :rotate="30" :aria-label="`Zum Beitrag: ${item.title}`")
+                ec-hexa-button(:to="`/blog/${item.slug}`" exact icon="mdi-arrow-right" :rotate="30" :aria-label="`Zum Beitrag: ${item.title}`")
 
     v-pagination(
       v-model="page"

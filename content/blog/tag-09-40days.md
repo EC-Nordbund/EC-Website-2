@@ -2,7 +2,7 @@
 title: "Tag 09  #40days"
 published: 2018-02-23T07:00:00
 description: "Tag 09 - #40days\n#WirsindderNordbund #my40days #gefragt #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 09  #40days

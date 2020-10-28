@@ -2,7 +2,7 @@
 title: "Tag 32  #40days"
 published: 2018-03-22T07:00:10
 description: "Tag 32 - #40days #WirsindderNordbund #my40days #copypaste #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 32  #40days

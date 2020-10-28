@@ -2,7 +2,7 @@
 title: "Das gab es so auch noch nie"
 published: 2017-04-17T11:36:58
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Das gab es so auch noch nie

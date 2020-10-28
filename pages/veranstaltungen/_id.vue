@@ -6,14 +6,15 @@
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
-            ec-hexa-button(:to="`/veranstaltungen/`" icon="mdi-arrow-left" size="64" aria-label="Zurück zur Übersicht.")
+            ec-hexa-button(to="/veranstaltungen" exact icon="mdi-arrow-left" :size="64" aria-label="Zurück zur Übersicht.")
 
           v-spacer
 
           //- display indicators
           v-col(cols="auto" class="d-flex flex-column")
-            v-row(class="text-right")
+            v-row(v-if="Object.values(page.warteliste).some((e)=>e)" class="text-right")
               v-col
+                | {{page.warteliste}}
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Für Männer nur noch Warteliste
@@ -25,10 +26,11 @@
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.allgemein")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Nur noch Warteliste
+
             //- JuLeiCa Fortbildung
-            v-row(v-if="page.juleica")
+            v-row(v-if="page.juleica" no-gutters)
               v-col
-                v-img(width="260" height="200" :src="require('~/assets/img/juLeiCa.png')")
+                v-img( max-height="160" max-width="160" width="auto" height="auto" :src="require('~/assets/img/juLeiCa.png')")
           
         v-row(no-gutters align="end" class="flex-grow-0 mb-n1")
           //- title
@@ -40,23 +42,26 @@
             v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
               | {{ tag }}
 
+    //- description
     v-container
       nuxt-content(:document="page")
     
-    ec-image-container(v-if="page.images" class="angle--both-left-left" :images="page.images")
+    //- bilder
+    ec-image-container(v-if="page.images" :class="'angle--both-left-' + (page.preise || !(page.lat == 0 && page.long == 0) ? 'left' : 'right') + ' clip-angle'" :images="page.images")
 
-    v-container(fluid class="grey lighten-4 angle--both-right-right")
-      v-row
-        v-col(cols="12" :md="page.preise ? 6 : 12" :xl="page.preise ? 7 : 12" class="d-flex flex-column")
-          h2(class="mb-2 text-center") Ort
-          ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
-          //- Empty Location Content
-          p(v-else)
-            | Der Veranstaltungsort steht zum aktuellen Zeitpunkt noch nicht fest.
-        v-col(cols="12" md="6" xl="5" v-if="page.preise")
-          h2(class="mb-2 text-center") Preisstaffelung
-          ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
+    //- preise
+    div(v-if="page.preise" class="grey lighten-4 angle--both-right-left")
+      v-container(py-0)
+        v-row(no-gutters justify="center")
+          v-col(cols="12" md="9")
+            h2(class="mb-2 text-center") Preisstaffelung
+            ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
 
+    //- standort
+    div(v-if="!(page.lat == 0 && page.long == 0)" :class="'angle--both-right-right'  +' clip-angle'")
+      ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: calc(400px + 3.492vw * 2); max-height: 100%; z-index: 0;")
+
+    //- anmeldung
     v-container(v-if="page.anmeldung")
       h2(class="mb-2 text-center") Anmeldung
       ec-anmeldung(
@@ -68,7 +73,7 @@
       )
         v-alert(slot="disabled" type="info" color="hellGrau" dense text outlined) Die Anmeldung zu dieser Veranstaltung ist deaktiviert.
         v-row(slot="countdown" justify="center")
-          v-col(cols="12" sm="8" md="6" xl="4")
+          v-col(cols="12" sm="8" md="6" xl="6")
             v-card(class="ec-gradient")
               v-card-title(class="text-body-1 text-md-h6 text-lg-h6 text-xl-h6 text--secondary justify-center pb-2") Die Anmeldung wird freigeschaltet in:
               v-card-text

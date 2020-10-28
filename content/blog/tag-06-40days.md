@@ -2,7 +2,7 @@
 title: "Tag 06  #40days"
 published: 2018-02-20T07:00:15
 description: "Tag 06 - #40days\n#WirsindderNordbund #my40days #challenge #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 06  #40days

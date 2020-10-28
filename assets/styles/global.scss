@@ -3,6 +3,8 @@
 @import './markdown.scss';
 @import './angle.scss';
 
+@import '~vuetify/src/styles/settings/_variables';
+
 // Definiere Gradient
 .ec-gradient,
 .nuxt-progress:not(.nuxt-progress-failed) {
@@ -12,4 +14,13 @@
     var(--v-gradient-left-base) 0%,
     var(--v-gradient-right-base) 100%
   ) !important;
+}
+
+.v-main,
+footer {
+  .container:not(.container--fluid):not(.container--wide) {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
+      max-width: 1028px;
+    }
+  }
 }

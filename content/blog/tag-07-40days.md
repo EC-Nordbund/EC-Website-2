@@ -2,7 +2,7 @@
 title: "Tag 07  #40days"
 published: 2018-02-21T07:00:02
 description: "Tag 07 - #40days\n#WirsindderNordbund #my40days #gottunddu #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 07  #40days

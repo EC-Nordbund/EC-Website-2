@@ -2,7 +2,7 @@
 title: "Tag 01  #40days"
 published: 2018-02-14T07:00:54
 description: "40Days 14. Februar\n#WirsindderNordbund #my40days #gottunddu #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 01  #40days

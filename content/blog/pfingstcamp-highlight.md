@@ -2,7 +2,7 @@
 title: "Pfingstcamp (High-)light"
 published: 2020-05-29T17:26:35
 description: "Das PfingstCamp fällt in diesem Jahr aus. Das ist schade.\nAber du musst nicht völlig darauf verzichten. Es gibt ein\nlight - ein Highlight!\n"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Pfingstcamp (High-)light

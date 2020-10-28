@@ -2,7 +2,7 @@
 title: "Tag 18  #40days"
 published: 2018-03-06T07:00:02
 description: "Tag 18 - #40days\n#WirsindderNordbund #my40days #challenge #meinEC"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 18  #40days

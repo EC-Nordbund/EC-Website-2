@@ -2,7 +2,7 @@
 title: "Lagerfeuer, Monopoly und Nachtworkshops  Das war das PfingstCamp"
 published: 2017-06-09T11:11:42
 description: "Lagerfeuer, Monopoly und Nachtworkshops... - Das war das PfingstCamp...\n#meinEC #Karlsminde #wirsindderNordbund #sinnvollLeben"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Lagerfeuer, Monopoly und Nachtworkshops  Das war das PfingstCamp

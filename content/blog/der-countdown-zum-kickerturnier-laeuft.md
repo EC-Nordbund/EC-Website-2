@@ -2,7 +2,7 @@
 title: "Der Countdown zum Kickerturnier läuft"
 published: 2017-04-16T01:35:23
 description: "Durchdrehen verboten! Aber endlich läuft der Ball wieder. Am 30.04. kommt es zur Neuauflage des inzwischen legendären Kickerturniers des EC-Nordbundes.\n\n#wirsindderNordbund #meinEC #ak-sport"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Der Countdown zum Kickerturnier läuft

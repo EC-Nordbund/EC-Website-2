@@ -2,7 +2,7 @@
 title: "Tag 17  #40days"
 published: 2018-03-05T07:00:31
 description: "Tag 17 - #40days\n#WirsindderNordbund #my40days #gotteswort #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 17  #40days

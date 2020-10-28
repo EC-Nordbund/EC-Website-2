@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-btn(color="primary" class="ec-gradient" depressed tile :width="size_px" :height="size_px" :style="`transform: rotate(${rotate}deg);`")
+  v-btn(v-bind="$attrs" color="primary" class="ec-gradient" depressed tile :width="size_px" :height="size_px" :style="`transform: rotate(${rotate}deg);`")
     v-icon(:style="`transform: rotate(-${rotate}deg);`" :size="icon_size") {{icon}}
 </template>
 <script lang="ts">

@@ -2,7 +2,7 @@
 title: "Volleyballturnier 2018"
 published: 2018-04-01T23:12:19
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Volleyballturnier 2018

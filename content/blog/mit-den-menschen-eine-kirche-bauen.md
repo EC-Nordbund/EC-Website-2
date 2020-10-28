@@ -2,7 +2,7 @@
 title: "Mit den Menschen eine Kirche bauen"
 published: 2017-05-15T12:32:14
 description: "Mit den Menschen eine Kirche bauen\nStadtfest in Bargteheide. Der EC-Bargteheide ist dabei.\n#EC-Bargteheide #meinEC #wirsindderNordbund #Kirchefueralle"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Mit den Menschen eine Kirche bauen

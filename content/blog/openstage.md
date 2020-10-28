@@ -2,7 +2,7 @@
 title: "OpenStage"
 published: 2018-02-20T19:22:51
 description: "OpenStage\n#WirsindderNordbund #OpenStage #kollegenhighlight #FeierAbend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # OpenStage

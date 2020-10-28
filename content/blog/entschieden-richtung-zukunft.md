@@ -2,7 +2,7 @@
 title: "Entschieden > Richtung >> Zukunft >>>"
 published: 2017-11-24T15:06:18
 description: "Entschieden > Richtung >> Zukunft >>>\n#WirSindDerNordbund #Entschieden #TimeOut #TrauDich"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Entschieden > Richtung >> Zukunft >>>

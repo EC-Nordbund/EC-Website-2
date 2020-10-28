@@ -2,7 +2,7 @@
 title: "Kickerturnier 2018"
 published: 2018-04-30T19:07:33
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Kickerturnier 2018

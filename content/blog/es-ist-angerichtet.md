@@ -2,7 +2,7 @@
 title: "Es ist angerichtet"
 published: 2017-04-23T16:34:57
 description: "Die neue Freizeitsaison kann kommen:-)\n#Karlsminde #wirsindderNordbund #meinEC #geileZeit #PfingsCamp #LJF"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Es ist angerichtet

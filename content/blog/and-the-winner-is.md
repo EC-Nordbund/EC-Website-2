@@ -2,7 +2,7 @@
 title: "And the winner is"
 published: 2017-11-24T15:00:58
 description: "Hallenfußball deluxe...\n#WirSindDerNordbund #Entschieden #AK-Sport #Glueckwunsch"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # And the winner is

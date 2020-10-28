@@ -2,7 +2,7 @@
 title: "Hilf uns 1.000€ für unsere Freizeitarbeit zu gewinnen"
 published: 2017-10-21T14:41:39
 description: "Wir brauchen DEINE Stimme!\n\n...einfach kurz unter https://www.ing-diba.de/verein/app/club/societydetails/3241e054-c8c7-4ce9-99e7-9a121c99cdaf abstimmen & mit deinen Freunden teilen!\n\n#WirSindDerNordbund #meinEC #Abstimmen"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Hilf uns 1.000€ für unsere Freizeitarbeit zu gewinnen

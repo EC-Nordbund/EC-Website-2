@@ -2,7 +2,7 @@
 title: "Ein Fußball-Samstag"
 published: 2018-06-10T18:20:52
 description: "Kicken mit Leidenschaft\n\n#leidenschaftlich #meinEC #wirSindDerNordbund"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Ein Fußball-Samstag

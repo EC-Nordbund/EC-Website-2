@@ -2,7 +2,7 @@
 title: "Tag 35  #40days"
 published: 2018-03-26T07:00:00
 description: "Tag 35 - #40days\n#WirsindderNordbund #my40days #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 35  #40days

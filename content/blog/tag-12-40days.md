@@ -2,7 +2,7 @@
 title: "Tag 12  #40days"
 published: 2018-02-27T07:00:16
 description: "Tag 12 - #40days\n#WirsindderNordbund #my40days #challenge #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 12  #40days

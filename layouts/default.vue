@@ -4,7 +4,7 @@
       v-toolbar(dense short flat color="rgba(0, 0, 0, 0.04)" height="40")
         v-container
           v-row(align="center")
-            v-btn(icon medium class="ml-n5 mr-n1 hover-facebook" href="https://www.facebook.com/ECNordbund/" target="_blank" rel="noopener" aria-label="Facebook")
+            v-btn(icon medium class="ml-n5 ml-md-n3 mr-n1 hover-facebook" href="https://www.facebook.com/ECNordbund/" target="_blank" rel="noopener" aria-label="Facebook")
               v-icon mdi-facebook
             v-btn(icon medium class="mx-n1 hover-instagram" href="https://www.instagram.com/ec_nordbund/" target="_blank" rel="noopener" aria-label="Instagram")
               v-icon mdi-instagram
@@ -46,7 +46,7 @@
         v-container
           v-row
             v-col(sm=12 class="d-flex align-center px-0")
-              nuxt-link(class="d-flex align-center mr-auto no-underline"  to="/")
+              nuxt-link(class="d-flex align-center mr-auto no-underline" to="/" exact)
                 ec-logo(size="42px" alt="EC")
                 h1 Nordbund
               v-btn(text class="hidden-sm-and-down mr-2" to="/blog" color="primary")
@@ -62,6 +62,8 @@
               //- v-btn(text class="hidden-sm-and-down" to="/mitarbeiter/anmeldung" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Anmeldung
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
+      v-btn(v-scroll="onScroll" v-show="btt" @click="$vuetify.goTo(0)" color="accent" class="back-to-top--btn")
+        v-icon(size="28") mdi-chevron-up
     v-navigation-drawer(app right temporary v-model="drawer")
       v-list(nav)
         v-list-item(link to="/blog")
@@ -93,10 +95,10 @@
         //-     v-list-item-title Anmeldung
     v-main
       nuxt
-    footer(class="secondary darken-1 white--text angle--top-left")
+    footer(class="secondary white--text angle--top-left")
       v-container
         v-row(justify="space-between")
-          v-col(md="4" class="px-4")
+          v-col(md="6" class="px-4")
             h2 Spenden
             v-list(color="transparent px-0")
               v-list-item(@click="copy2clip('Sparkasse Südholstein')" class="ml-n4")
@@ -111,11 +113,10 @@
                 v-list-item-content
                   v-list-item-title NOLADE21SHO
                   v-list-item-subtitle BIC
-          //- v-col(md="4" align-self="end") © by EC-Nordbund
-          v-col(md="4" class="links px-4")
+          v-col(md="6" class="links px-4")
             h2 Links
             v-list(color="transparent px-0 white--text")
-              v-list-item(to="/" class="ml-n4")
+              v-list-item(to="/" class="ml-n4" exact)
                 v-list-item-content
                   v-list-item-title
                     | Startseite
@@ -143,8 +144,8 @@
                 v-list-item-content
                   v-list-item-title
                     | Admin
-      v-container(fluid class="secondary")
-        v-row
+
+        v-row(class="pt-1")
           v-col(class="text-center") © by EC-Nordbund
 </template>
 <script>
@@ -162,6 +163,7 @@ import copy from '~/helpers/copy'
 export default defineComponent({
   setup(_, ctx) {
     const drawer = ref(false)
+    const btt = ref(false)
 
     const { isDev, $content } = useContext()
 
@@ -237,8 +239,16 @@ export default defineComponent({
           140
     )
 
+    function onScroll(e) {
+      if (typeof window === "undefined") return;
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      btt.value = top > 128;
+    }
+
     return {
       losungen,
+      btt,
+      onScroll,
       losung,
       lehrtext,
       marqueeContentLength,
@@ -247,7 +257,7 @@ export default defineComponent({
       isDev,
       isStartPage,
     }
-  },
+  }
 })
 </script>
 
@@ -277,6 +287,23 @@ export default defineComponent({
 
   .v-list-item__content {
     padding: 8px 0;
+  }
+}
+
+.back-to-top--btn {
+  border-radius: 50%;
+  height: 56px !important;
+  width: 56px;
+  min-width: 0 !important;
+  padding: 0 !important;
+  bottom: 16px;
+  right: 16px;
+  position: fixed;
+  opacity: .95;
+	box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    opacity: 1;
   }
 }
 

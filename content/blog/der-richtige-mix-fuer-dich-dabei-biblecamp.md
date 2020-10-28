@@ -2,7 +2,7 @@
 title: "Der richtige Mix für dich dabei? #BibleCamp"
 published: 2018-03-03T11:00:02
 description: "Der richtige Mix für dich dabei?\n#Auszeit #Action #Gemeinschaft #BibleCamp\n\n#meinEC #wirsindderNordbund"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Der richtige Mix für dich dabei? #BibleCamp

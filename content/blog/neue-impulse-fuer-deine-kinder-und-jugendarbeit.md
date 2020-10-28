@@ -2,7 +2,7 @@
 title: "Neue Impulse für deine Kinder- und Jugendarbeit"
 published: 2018-06-19T15:48:29
 description: "Am 8. September bieten wir wieder den MitarbeiterTag an.\n\n#MitarbeiterTag #Herbstseminar #meinEC #WirSindDerNordbund"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Neue Impulse für deine Kinder- und Jugendarbeit

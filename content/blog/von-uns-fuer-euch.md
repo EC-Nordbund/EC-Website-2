@@ -2,7 +2,7 @@
 title: "von uns für euch"
 published: 2019-02-11T09:29:26
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # von uns für euch

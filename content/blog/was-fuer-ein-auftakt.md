@@ -2,7 +2,7 @@
 title: "Was für ein Auftakt"
 published: 2017-05-18T16:25:45
 description: "Was für ein Auftakt\n#IchGlaubs #ECNeumuenster #WirsindderNordbund"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Was für ein Auftakt

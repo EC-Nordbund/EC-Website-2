@@ -1,7 +1,7 @@
 <template lang="pug">
-div(class="section-wrapper")
+div(class="section-wrapper" v-if="pages")
   div
-    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : undefined" class="secondary align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
+    v-img(src="https://www.ec-nordbund.de/wp-content/uploads/bg_pic-5.jpg" :max-height="$vuetify.breakpoint.mdAndUp ? 420 : undefined" height="auto" width="auto" min-width="100%" :min-height="$vuetify.breakpoint.smAndDown ? 'calc(100vh + 3.492vw - 96px)' : '360px'" class="hellGrau align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
       v-container(class="countdown pb-0 pb-md-1")
         v-row(justify="center" no-gutters)
           v-col(cols="12" md="7")
@@ -37,6 +37,7 @@ div(class="section-wrapper")
               :image='item.featuredImage',
               :title='item.title',
               :subTitle='`Vom ${item.published.split("T")[0].split("-").reverse().join(".")}`'
+              class="hellGrau"
             )
       .d-flex.flex-row.justify-space-between.align-end
         h2(id='nächste-veranstaltungen') Nächste Veranstaltungen
@@ -68,6 +69,7 @@ div(class="section-wrapper")
               :image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')",
               :title='item.title',
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
+              class="hellGrau"
             )
   div(class="angle--both-left-right grey lighten-4")
     v-container
@@ -91,14 +93,17 @@ div(class="section-wrapper")
       p
         | Der EC-Nordbund basiert als Gemeinnütziger Verein auf Ehrenamt wir haben nur 2 Hauptamtliche Mitarbeiter. 
       v-row
-        v-col(align="center")
+        v-col(align="center" class="person" @click="mail('referent@ec-nordbund.de')")
           v-img(:src="require('~/assets/img/thomas_seeger.jpg')" :width="128" :height="128" class="hexagon-shape")
+            div(class="hexa-image-overlay" v-ripple)
           div(class="text-h6") Thomas Seeger
           | Jugendreferent
-        v-col(align="center")
+        v-col(align="center" class="person" @click="mail('kinder-referent@ec-nordbund.de')")
           v-img(:src="require('~/assets/img/dortje_gaertner.jpg')" :width="128" :height="128" class="hexagon-shape")
+            div(class="hexa-image-overlay" v-ripple)
           div(class="text-h6") Dortje Gaertner
           | Kinder- und Jungschararbeit
+p(v-else) Loading...
 </template>
 <style lang="scss" scoped>
 .section-wrapper > div:last-child {
@@ -128,15 +133,36 @@ div(class="section-wrapper")
 .hexagon-shape {
   clip-path: polygon(50% 100%, 5% 75%, 5% 25%, 50% 0%, 95% 25%, 95% 75%);
 }
+
+.hexa-image-overlay {
+  height: 128px; 
+  background: var(--v-primary-base); 
+  opacity: 0; 
+  transition: opacity .3s;
+}
+
+.person {
+  cursor: pointer;
+
+  // transition: background-color .3s;
+  &:hover {
+    // background-color: var(--v-primary-base);
+
+    & .hexa-image-overlay {
+      opacity: 0.7;
+    }
+  }
+}
 </style>
 <script>
-import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
+import { defineComponent, useContext, useAsync, ssrRef, computed } from '@nuxtjs/composition-api'
 import { supportWebp } from "../helpers/webp";
 export default defineComponent({
   setup() {
     const { $content } = useContext()
 
-    const pages = useAsync(async () => {
+
+    const pages_loading = useAsync(async () => {
       const upcomingEvents = await $content('veranstaltung')
         .only(['slug', 'title', 'begin', 'ende', 'featuredImage', 'tags'])
         .sortBy('begin') // TODO: compare to today's date
@@ -159,7 +185,9 @@ export default defineComponent({
       return { upcomingEvents, recentPosts }
     })
 
-    return { pages, supportWebp }
+    const pages = computed(() => pages_loading.value ? pages_loading.value : {upcomingEvents: [], recentPosts: []})
+
+    return { pages, supportWebp, mail: (m) => location.href = `mailto:${m}` }
   },
   head: {
     title: 'Startseite',

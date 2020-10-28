@@ -2,7 +2,7 @@
 title: "Kreuzweg 2020"
 published: 2020-04-07T19:41:07
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Kreuzweg 2020

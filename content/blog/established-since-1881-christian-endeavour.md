@@ -2,7 +2,7 @@
 title: "established since 1881  Christian Endeavour"
 published: 2018-02-05T11:36:18
 description: "established since 1881 - Christian Endeavour\n#WirsindderNordbund #1881 #1904 #ChristianEndeavour #Portland #FranisClark #Segen #Jubiläum #keinbisschenleise"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # established since 1881  Christian Endeavour

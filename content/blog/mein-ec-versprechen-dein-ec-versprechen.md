@@ -2,7 +2,7 @@
 title: "Mein EC-Versprechen! Dein EC-Versprechen?"
 published: 2017-10-12T13:11:28
 description: "Mein EC-Versprechen! Dein EC-Versprechen?\n#MeinEC #wirsindderNordbund #entschieden"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Mein EC-Versprechen! Dein EC-Versprechen?

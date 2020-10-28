@@ -2,7 +2,7 @@
 title: "Das könnten ja unsere Eltern sein "
 published: 2017-04-12T11:21:50
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Das könnten ja unsere Eltern sein 

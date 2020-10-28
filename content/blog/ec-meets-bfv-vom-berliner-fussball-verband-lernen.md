@@ -2,7 +2,7 @@
 title: "EC meets BFV  vom Berliner Fußball-Verband lernen"
 published: 2017-12-11T15:58:20
 description: "EC meets BFV - vom Berliner Fußball-Verband lernen\n#Entschieden #WirSindDerNordbund #Austausch"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # EC meets BFV  vom Berliner Fußball-Verband lernen
