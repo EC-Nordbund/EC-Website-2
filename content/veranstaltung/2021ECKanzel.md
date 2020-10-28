@@ -37,7 +37,7 @@ anmeldung:
   hatFreizeitleitung: false
   extraFields: []
   disabled: false
-  startAt: '2020-11-08 15:00:00'
+  startAt: '2020-11-08T15:00:00'
 ---
 
 Begeistert von Gott reden? – Ein Kinderspiel. So sollte es zumindest sein. Aber auf der Kanzel? Muss ich dann predigen? Am Sonntag? Vor allen? – So ist es gedacht.  

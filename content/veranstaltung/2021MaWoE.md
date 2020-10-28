@@ -50,7 +50,7 @@ anmeldung:
   hatFreizeitleitung: false
   extraFields: []
   disabled: false
-  startAt: '2020-11-08 15:00:00'
+  startAt: '2020-11-08T15:00:00'
 ---
 
 ## Testamentseröffnung
