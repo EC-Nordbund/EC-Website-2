@@ -31,6 +31,10 @@
       }
 
       padding-top: #{$angle}vw !important;
+
+      &.clip-angle > * {
+        margin-top: -#{$angle}vw;
+      }
     }
   
   
@@ -49,6 +53,10 @@
       }
 
       padding-bottom: #{$angle}vw !important;
+
+      &.clip-angle > * {
+        margin-bottom: -#{$angle}vw;
+      }
     }
   
     $clip-path: polygon($clip-path-top, $clip-path-bottom);
@@ -91,7 +99,7 @@
   .angle--bottom-left,
   .angle--both-left-left,
   .angle--both-right-left {
-      + .angle--top-right
+      + .angle--top-right,
       + .angle--both-right-left,
       + .angle--both-right-right {
         margin-top: -3.492vw;

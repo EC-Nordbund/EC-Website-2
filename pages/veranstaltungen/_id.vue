@@ -44,19 +44,18 @@
     v-container
       nuxt-content(:document="page")
     
-    ec-image-container(v-if="page.images" class="angle--both-left-left" :images="page.images")
+    ec-image-container(v-if="page.images" class="angle--both-left-left clip-angle" :images="page.images")
 
-    v-container(fluid class="grey lighten-4 angle--both-right-right")
-      v-row
-        v-col(cols="12" :md="page.preise ? 6 : 12" :xl="page.preise ? 7 : 12" class="d-flex flex-column")
-          h2(class="mb-2 text-center") Ort
-          ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
-          //- Empty Location Content
-          p(v-else)
-            | Der Veranstaltungsort steht zum aktuellen Zeitpunkt noch nicht fest.
-        v-col(cols="12" md="6" xl="5" v-if="page.preise")
-          h2(class="mb-2 text-center") Preisstaffelung
-          ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
+    div(v-if="page.preise" class="grey lighten-4 angle--both-right-left")
+      v-container(py-0)
+        v-row(no-gutters justify="center")
+          v-col(cols="12" md="9")
+            h2(class="mb-2 text-center") Preisstaffelung
+            ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
+
+    div(v-if="!(page.lat == 0 && page.long == 0)" class="angle--top-right clip-angle")
+      ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+
 
     v-container(v-if="page.anmeldung")
       h2(class="mb-2 text-center") Anmeldung
