@@ -2,7 +2,7 @@
 div(class="section-wrapper" v-if="pages")
   div
     v-img(:src="require('~/assets/img/hero-image.jpg')" height="400" width="auto" min-width="100%" class="hero-image hellGrau align-end angle--bottom-right" gradient="180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.02) 16%, rgba(0,0,0,0.02) 80%, rgba(0,0,0,0.48) 100%")
-      v-container(class="countdown pb-0 pb-md-1")
+      v-container(class="countdown pb-0 pb-md-1 pb-lg-2 pb-xl-4")
         v-row(justify="center" no-gutters)
           v-col(cols="12" md="7")
             v-card(class="px-3 ec-gradient text-center pt-4 pb-8" tile)
