@@ -1,12 +1,12 @@
 <template lang="pug">
   v-timeline(:dense="dense")
-    v-timeline-item(v-for="preis in preise" :key="JSON.stringify(preis)" small :fill-dot="fillDot" :color="dotColor") 
+    v-timeline-item(v-for="preis in myPreise" :key="preis.preis" small :fill-dot="fillDot" :color="preis.active ? 'primary' : dotColor") 
       //- | {{preis.label}}
       span(slot="opposite") {{subtitle(preis)}}
-      v-card(tile)
-        v-card-title(class="ec-gradient white--text pb-2 pt-3") {{preis.label}}
+      v-card(tile :class="{'elevation-5': preis.active}")
+        v-card-title(class="ec-gradient white--text pb-2 pt-3" :class="{'font-weight-bold': preis.active}") {{preis.label}}
         v-card-text(class="py-3")
-          p(class="text-center text-h4 font-weight-light mb-0") {{preis.preis}} EUR
+          p(class="text-center text-h4 font-weight-light mb-0" :class="{'font-weight-bold primary--text': preis.active}") {{preis.preis}} EUR
           p(class="hidden-sm-and-up text-right") {{subtitle(preis)}}
 </template>
 <script lang="ts">
@@ -29,9 +29,40 @@ export default defineComponent({
       return ''
     }
 
+    const myPreise = computed(() => {
+      let hadActive = false;
+
+      return props.preise.map((v: any, i)=>{
+        v.active = false
+        const now = new Date()
+        const nowStr = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
+
+        if(hadActive) {
+          return v
+        } else {
+          if((v.begin && v.begin > nowStr) || (v.ende && v.ende < nowStr)) {
+            return v
+          }
+
+          if(!v.begin && !v.ende) {
+            const next: any = props.preise[i + 1]
+            if(next && ((next.begin && next.begin > nowStr) || (next.ende && next.ende < nowStr))) {
+              return v
+            }
+          }
+
+          hadActive = true
+
+          v.active = true
+          return v
+        }
+      })
+    })
+
     return {
       dense,
       subtitle,
+      myPreise
     }
   },
   props: {
