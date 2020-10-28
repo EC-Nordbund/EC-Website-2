@@ -6,7 +6,8 @@
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
-            ec-hexa-button(:to="`/veranstaltungen/`" icon="mdi-arrow-left" :size="64" aria-label="Zurück zur Übersicht.")
+            nuxt-link(to="/veranstaltungen")
+              ec-hexa-button(icon="mdi-arrow-left" :size="64" aria-label="Zurück zur Übersicht.")
 
           v-spacer
 
