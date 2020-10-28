@@ -6,8 +6,7 @@
         v-row(no-gutters align="start" class="flex-grow-0" justify="space-between")
           //- go back to overview
           v-col(cols="2" sm="1")
-            nuxt-link(to="/veranstaltungen")
-              ec-hexa-button(icon="mdi-arrow-left" :size="64" aria-label="Zurück zur Übersicht.")
+            ec-hexa-button(to="/veranstaltungen" exact icon="mdi-arrow-left" :size="64" aria-label="Zurück zur Übersicht.")
 
           v-spacer
 
@@ -74,7 +73,7 @@
       )
         v-alert(slot="disabled" type="info" color="hellGrau" dense text outlined) Die Anmeldung zu dieser Veranstaltung ist deaktiviert.
         v-row(slot="countdown" justify="center")
-          v-col(cols="12" sm="8" md="6" xl="4")
+          v-col(cols="12" sm="8" md="6" xl="6")
             v-card(class="ec-gradient")
               v-card-title(class="text-body-1 text-md-h6 text-lg-h6 text-xl-h6 text--secondary justify-center pb-2") Die Anmeldung wird freigeschaltet in:
               v-card-text

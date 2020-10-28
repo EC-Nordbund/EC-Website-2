@@ -5,8 +5,8 @@
     //- TODO: filter by tags, age, date-range
     v-row(v-if="veranstaltungen")
       v-col(v-for="item in veranstaltungen" cols="12" sm="6" md="12" :key="item.slug")
-        v-card(outlined tile hover class="overflow-hidden" color="offWhite")
-          v-row(no-gutters )
+        v-card(outlined tile hover class="overflow-hidden" color="offWhite" :to="`/veranstaltungen/${item.slug}`")
+          v-row(no-gutters)
             v-col(cols="12" md="6" lg="4" class="hellGrau")
               ec-image-item(:image="item.featuredImage.split('.')[0] + (supportWebp() ? '.webp' : '.jpg')" :title="item.title" :subTitle="`Vom ${item.begin.split('-').reverse().join('.')} bis ${item.ende.split('-').reverse().join('.')}`" class="hellGrau")
 
@@ -37,6 +37,7 @@
               v-card-actions(class="pa-4")
                 v-spacer
                 ec-hexa-button(:to="`/veranstaltungen/${item.slug}`" icon="mdi-arrow-right" :aria-label="`Zur Veranstaltung: ${item.title}`")
+    p(v-else) Loading...
 </template>
 <script lang="ts">
 import {

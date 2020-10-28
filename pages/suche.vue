@@ -33,7 +33,7 @@ v-container
           tile,
           hover,
           outlined,
-          @click='$router.push(`/veranstaltungen/${item.slug}`)'
+          :to="`/veranstaltungen/${item.slug}`"
         )
           ec-image-item(
             :image='item.featuredImage',
