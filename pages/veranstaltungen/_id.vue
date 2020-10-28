@@ -44,7 +44,7 @@
     v-container
       nuxt-content(:document="page")
     
-    ec-image-container(v-if="page.images" class="angle--both-left-left clip-angle" :images="page.images")
+    ec-image-container(v-if="page.images" :class="'angle--both-left-' + (page.preise || !(page.lat == 0 && page.long == 0) ? 'left' : 'right') + ' clip-angle'" :images="page.images")
 
     div(v-if="page.preise" class="grey lighten-4 angle--both-right-left")
       v-container(py-0)
