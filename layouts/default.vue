@@ -4,7 +4,7 @@
       v-toolbar(dense short flat color="rgba(0, 0, 0, 0.04)" height="40")
         v-container
           v-row(align="center")
-            v-btn(icon medium class="ml-n5 mr-n1 hover-facebook" href="https://www.facebook.com/ECNordbund/" target="_blank" rel="noopener" aria-label="Facebook")
+            v-btn(icon medium class="ml-n5 ml-md-n3 mr-n1 hover-facebook" href="https://www.facebook.com/ECNordbund/" target="_blank" rel="noopener" aria-label="Facebook")
               v-icon mdi-facebook
             v-btn(icon medium class="mx-n1 hover-instagram" href="https://www.instagram.com/ec_nordbund/" target="_blank" rel="noopener" aria-label="Instagram")
               v-icon mdi-instagram
@@ -96,7 +96,7 @@
     footer(class="secondary darken-1 white--text angle--top-left")
       v-container
         v-row(justify="space-between")
-          v-col(md="4" class="px-4")
+          v-col(md="6" class="px-4")
             h2 Spenden
             v-list(color="transparent px-0")
               v-list-item(@click="copy2clip('Sparkasse Südholstein')" class="ml-n4")
@@ -111,8 +111,7 @@
                 v-list-item-content
                   v-list-item-title NOLADE21SHO
                   v-list-item-subtitle BIC
-          //- v-col(md="4" align-self="end") © by EC-Nordbund
-          v-col(md="4" class="links px-4")
+          v-col(md="6" class="links px-4")
             h2 Links
             v-list(color="transparent px-0 white--text")
               v-list-item(to="/" class="ml-n4")
@@ -143,8 +142,8 @@
                 v-list-item-content
                   v-list-item-title
                     | Admin
-      v-container(fluid class="secondary")
-        v-row
+
+        v-row(class="pt-1")
           v-col(class="text-center") © by EC-Nordbund
 </template>
 <script>
