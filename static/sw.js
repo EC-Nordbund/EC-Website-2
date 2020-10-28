@@ -36,7 +36,48 @@ if (!__DEV__) {
     );
   })
   _self.addEventListener('fetch', ev => {
-    if (ev.request.url.includes('_nuxt')) {
+    if (ev.request.url.includes('analytics')) {
+      return
+    }
+
+    if (ev.request.url.includes('_content')) {
+      return
+      const network = fetch(ev.request)
+      const cache = _self.caches.match(ev.request)
+
+      ev.respondWith((async () => {
+        const cachedResponse = await cache;
+
+        if (cachedResponse) {
+          ev.waitUntil((async () => {
+            if (!await cache) {
+              const networkRes = await network
+
+              const c = await _self.caches.open(__CONFIG__.CACHE_NAME)
+              await c.put(ev.request, networkRes)
+              if ('isNewerVersion') {
+                _self.clients.get(ev.clientId).then((c) => {
+                  c.postMessage({
+                    tag: 'newVersion',
+                    url: ev.request
+                  })
+                })
+              }
+            }
+          })())
+
+          return cachedResponse
+        }
+
+        return network
+      })())
+
+
+
+      return
+    }
+
+    if (ev.request.url.split('ec-nordbund.de')[1].includes('.')) {
       ev.respondWith((async () => {
         const cache = await caches.open(__CONFIG__.CACHE_NAME)
         const cacheRes = await cache.match(ev.request)
@@ -58,7 +99,7 @@ if (!__DEV__) {
       return
     }
 
-    if (!ev.request.url.split('ec-nordbund.de')[1].includes('.') && !ev.request.url.includes('_') && !ev.request.url.includes('api')) {
+    if (!ev.request.mode === 'navigate') {
       ev.respondWith((async () => {
         try {
           return await fetch(ev.request)
@@ -76,9 +117,6 @@ if (!__DEV__) {
 
       return
     }
-
-
-
   })
   _self.addEventListener("message", (ev) => {
     if (ev.data && ev.data.msg === "update-sw") {
