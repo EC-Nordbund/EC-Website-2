@@ -71,7 +71,7 @@ div(class="section-wrapper" v-if="pages")
               :subTitle='`Vom ${item.begin.split("-").reverse().join(".")} bis ${item.ende.split("-").reverse().join(".")}`'
               class="hellGrau"
             )
-  div(class="angle--both-left-right grey lighten-4")
+  div(class="angle--both-left-right"  style="background: #f5f5f5;")
     v-container
       h2(id='über-uns') Über uns
       //- p 

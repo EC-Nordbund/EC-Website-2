@@ -50,7 +50,7 @@
     ec-image-container(v-if="page.images" :class="'angle--both-left-' + (page.preise || !(page.lat == 0 && page.long == 0) ? 'left' : 'right') + ' clip-angle'" :images="page.images")
 
     //- preise
-    div(v-if="page.preise" class="grey lighten-4 angle--both-right-left")
+    div(v-if="page.preise" class="angle--both-right-left" style="background: #f5f5f5;")
       v-container(py-0)
         v-row(no-gutters justify="center")
           v-col(cols="12" md="9")
