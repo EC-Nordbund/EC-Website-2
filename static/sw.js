@@ -36,26 +36,6 @@ if (!__DEV__) {
     );
   })
   _self.addEventListener('fetch', ev => {
-    if (!ev.request.url.includes('.')) {
-      ev.respondWith((async () => {
-        try {
-          return await fetch(ev.request)
-        } catch (ex) {
-          const cache = await caches.open(__CONFIG__.CACHE_NAME)
-          const cacheRes = await cache.match(__CONFIG__.OFFLINE_URL)
-
-          if (!cacheRes) {
-            return new Response('Du bist Offline und ein Fehler ist aufgetreten wurde.')
-          }
-
-          return cacheRes
-        }
-      })())
-
-      return
-    }
-
-
     if (ev.request.url.includes('_nuxt')) {
       ev.respondWith((async () => {
         const cache = await caches.open(__CONFIG__.CACHE_NAME)
@@ -77,6 +57,28 @@ if (!__DEV__) {
 
       return
     }
+
+    if (!ev.request.url.split('ec-nordbund.de')[1].includes('.') && !ev.request.url.includes('_') && !ev.request.url.includes('api')) {
+      ev.respondWith((async () => {
+        try {
+          return await fetch(ev.request)
+        } catch (ex) {
+          const cache = await caches.open(__CONFIG__.CACHE_NAME)
+          const cacheRes = await cache.match(__CONFIG__.OFFLINE_URL)
+
+          if (!cacheRes) {
+            return new Response('Du bist Offline und ein Fehler ist aufgetreten wurde.')
+          }
+
+          return cacheRes
+        }
+      })())
+
+      return
+    }
+
+
+
   })
   _self.addEventListener("message", (ev) => {
     if (ev.data && ev.data.msg === "update-sw") {
