@@ -77,7 +77,7 @@ if (!__DEV__) {
       return
     }
 
-    if (ev.request.url.split('ec-nordbund.de')[1].includes('.')) {
+    if ((ev.request.url.split('ec-nordbund.de')[1] || ev.request.url).includes('.')) {
       ev.respondWith((async () => {
         const cache = await caches.open(__CONFIG__.CACHE_NAME)
         const cacheRes = await cache.match(ev.request)
@@ -99,7 +99,7 @@ if (!__DEV__) {
       return
     }
 
-    if (!ev.request.mode === 'navigate') {
+    if (ev.request.mode === 'navigate') {
       ev.respondWith((async () => {
         try {
           return await fetch(ev.request)
