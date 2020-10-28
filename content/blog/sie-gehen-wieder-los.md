@@ -2,7 +2,7 @@
 title: "Sie gehen wieder los"
 published: 2017-03-28T16:16:44
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Sie gehen wieder los

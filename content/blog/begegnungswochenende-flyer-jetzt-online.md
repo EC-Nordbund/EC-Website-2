@@ -2,7 +2,7 @@
 title: "Begegnungswochenende  Flyer jetzt online"
 published: 2018-01-25T18:40:26
 description: "Komm zum größten Begegnungswohenende des Nordbundes\n#WirsindderNordbund #MeinEC #MaWoE #Begegnung #JA4D #ChillAndGrill"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Begegnungswochenende  Flyer jetzt online

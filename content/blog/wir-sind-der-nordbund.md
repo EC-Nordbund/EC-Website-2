@@ -2,7 +2,7 @@
 title: "Wir sind der Nordbund"
 published: 2017-03-28T16:05:12
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Wir sind der Nordbund

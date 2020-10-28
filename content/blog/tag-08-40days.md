@@ -2,7 +2,7 @@
 title: "Tag 08  #40days"
 published: 2018-02-22T07:00:06
 description: "Tag 08 - #40days\n#WirsindderNordbund #my40days #copypaste #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 08  #40days

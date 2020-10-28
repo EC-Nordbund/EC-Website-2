@@ -2,7 +2,7 @@
 title: "ich glaubs kommt  nach Neumünster"
 published: 2017-05-16T21:57:46
 description: "ich glaub's kommt nach Neumünster. Der Veranstaltungstipp für diese Woche.\n#IchGlaubs #wirsindderNordbund #ECNeumünster #TilliLinz #Radieschenfieber"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # ich glaubs kommt  nach Neumünster

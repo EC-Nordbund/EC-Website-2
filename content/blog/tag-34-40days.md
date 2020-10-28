@@ -2,7 +2,7 @@
 title: "Tag 34  #40days"
 published: 2018-03-24T07:00:37
 description: "Tag 34 - #40days\n#WirsindderNordbund #my40days #erlebt #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 34  #40days

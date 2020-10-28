@@ -2,7 +2,7 @@
 title: "Herzlich willkommen, Dortje Gaertner"
 published: 2019-10-25T12:58:43
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Herzlich willkommen, Dortje Gaertner

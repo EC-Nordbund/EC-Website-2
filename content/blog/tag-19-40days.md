@@ -2,7 +2,7 @@
 title: "Tag 19  #40days"
 published: 2018-03-07T07:00:33
 description: "Tag 19 - #40days\n#WirsindderNordbund #my40days #gottunddu #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 19  #40days

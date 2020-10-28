@@ -2,7 +2,7 @@
 title: "Nichts geht mehr  außer guter Laune"
 published: 2017-06-25T23:34:41
 description: "Erster Turnierabbruch wegen Starkregen in der Geschichte der EC-Nordbund-Sportarbeit...\n#Spielabbruch #WirsindderNordbund #GeileZeit #meinEC"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Nichts geht mehr  außer guter Laune

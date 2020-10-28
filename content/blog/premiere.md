@@ -2,7 +2,7 @@
 title: "Premiere"
 published: 2017-05-30T17:30:48
 description: "erste Vorstandssitzung in neuer Zusammensetzung. #Spannung #AllesNeu #WirsindderNordbund"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Premiere

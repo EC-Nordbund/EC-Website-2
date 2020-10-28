@@ -2,7 +2,7 @@
 title: "Auf gehts"
 published: 2018-01-10T08:46:15
 description: "Geiler Start in den Tag.\n#WirsindderNordbund #Entschieden #ECBewegung #geilesFruehstueck #ECVersprechen #Lichtstrahlen"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Auf gehts

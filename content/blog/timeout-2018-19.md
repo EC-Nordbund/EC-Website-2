@@ -2,7 +2,7 @@
 title: "TimeOut 2018/19"
 published: 2019-01-09T08:08:28
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # TimeOut 2018/19

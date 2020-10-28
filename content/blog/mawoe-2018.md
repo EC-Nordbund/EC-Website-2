@@ -2,7 +2,7 @@
 title: "MaWoE 2018"
 published: 2018-03-13T09:17:24
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # MaWoE 2018

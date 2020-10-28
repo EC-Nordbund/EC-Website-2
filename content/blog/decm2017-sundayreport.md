@@ -2,7 +2,7 @@
 title: "#decm2017  SundayReport"
 published: 2017-06-11T21:35:27
 description: "SundayReport von den #decm2017 ist mit den Ergebnissen und Mannschaftsfotos online\nWir hatten eine Menge Spaß am Sport! :D\n\n#meinEC #wirsindderNordbund #decm2017\n\nHoffentlich sind alle mittlerweile gut Zuhause angekommen :)"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # #decm2017  SundayReport

@@ -2,7 +2,7 @@
 title: "Papa, ab wann ist das BibleCamp? "
 published: 2017-04-14T13:47:44
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Papa, ab wann ist das BibleCamp? 

@@ -2,7 +2,7 @@
 title: "Wir suchen  dich vielleicht?"
 published: 2018-02-01T11:52:37
 description: "Der EC-Nordbund sucht Verstärkung\n#WirsindderNordbund #TRAUMJOB #MeldDichMal #MeinEC #VG #UETERSEN"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Wir suchen  dich vielleicht?

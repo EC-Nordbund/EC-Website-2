@@ -2,7 +2,7 @@
 title: "Tag 23  #40days"
 published: 2018-03-12T07:00:28
 description: "Tag 23 - #40days\n#WirsindderNordbund #my40days #gotteswort #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 23  #40days

@@ -2,7 +2,7 @@
 title: "#decm2017  SaturdayReport"
 published: 2017-06-10T19:07:22
 description: "Kleiner Saturday Report von den deutschen EC-Meisterschaften in Baunatal\n\n#meinEC #wirsindderNordbund #Volleyball #Fußball #alotoffun"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # #decm2017  SaturdayReport

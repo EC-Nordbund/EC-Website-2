@@ -2,7 +2,7 @@
 title: "About us  Alles neu"
 published: 2018-03-06T18:50:03
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # About us  Alles neu
@@ -15,17 +15,17 @@ Also ging es dieses Jahr schon am Freitagabend los und zwar mit einem gemeinsame
 
 
 
+   <a href="/old/DSC_0252.jpg">  <img src="/old/DSC_0252.jpg" title="DSC_0252" alt="Foto: Pia Stammerjohan"> </a>  Foto: Pia Stammerjohan 
+
+ 
+
+  <a href="/old/DSC_0256.jpg">  <img src="/old/DSC_0256.jpg" title="DSC_0256" alt="Foto: Pia Stammerjohan"> </a>  Foto: Pia Stammerjohan 
+
+ 
+
+ 
+
    <a href="/old/DSC_0223.jpg">  <img src="/old/DSC_0223.jpg" title="DSC_0223" alt="Foto: Pia Stammerjohan"> </a>  Foto: Pia Stammerjohan 
-
- 
-
-  <a href="/old/DSC_0252.jpg">  <img src="/old/DSC_0252.jpg" title="DSC_0252" alt="Foto: Pia Stammerjohan"> </a>  Foto: Pia Stammerjohan 
-
- 
-
- 
-
-   <a href="/old/DSC_0256.jpg">  <img src="/old/DSC_0256.jpg" title="DSC_0256" alt="Foto: Pia Stammerjohan"> </a>  Foto: Pia Stammerjohan 
 
  
 

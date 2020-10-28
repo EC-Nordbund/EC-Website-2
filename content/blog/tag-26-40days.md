@@ -2,7 +2,7 @@
 title: "Tag 26  #40days"
 published: 2018-03-15T07:00:44
 description: "Tag 26 - #40days\n#WirsindderNordund #my40days #copypaste #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 26  #40days

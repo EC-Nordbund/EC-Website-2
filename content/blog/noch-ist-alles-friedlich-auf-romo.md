@@ -2,7 +2,7 @@
 title: "Noch ist alles friedlich auf Rømø"
 published: 2017-04-09T09:22:44
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Noch ist alles friedlich auf Rømø

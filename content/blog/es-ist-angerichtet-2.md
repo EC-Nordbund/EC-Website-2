@@ -2,7 +2,7 @@
 title: "Es ist angerichtet"
 published: 2017-10-27T11:41:25
 description: "EC-Nordbund-Meisterschaften 2017\n#meinEC #WirsindderNordbund #entschieden #ak-sport"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Es ist angerichtet

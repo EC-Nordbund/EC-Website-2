@@ -2,7 +2,7 @@
 title: "Tag 24  #40days"
 published: 2018-03-13T07:00:28
 description: "Tag 24 - #40days\n#WirsindderNordbund #my40days #challenge #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 24  #40days

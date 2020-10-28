@@ -2,7 +2,7 @@
 title: "Kurzentschlossenes Wiedersehen in Karlmsminde"
 published: 2018-09-12T22:16:22
 description: "Gemeinsam mit Freunden den Sommer in Karsminde ausklingen lassen? - Dann jetzt noch kurzfristig zur Jung-Erwachsenen Freizeit anmelden!\n\n#Karlsminde #WirSindDerNordbund #meinEC"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Kurzentschlossenes Wiedersehen in Karlmsminde

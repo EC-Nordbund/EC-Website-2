@@ -2,7 +2,7 @@
 title: "Break II  #40days"
 published: 2018-02-25T07:00:33
 description: "Break II - #40days\n#WirsindderNordbund #my40days #break #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Break II  #40days

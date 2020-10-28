@@ -2,7 +2,7 @@
 title: "Empfehlung zum Umgang mit Covid-19 („Corona“)"
 published: 2020-03-13T14:42:28
 description: "Empfehlung zum Umgang mit Covid-19 („Corona“)"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Empfehlung zum Umgang mit Covid-19 („Corona“)

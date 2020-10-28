@@ -2,7 +2,7 @@
 title: "Tag 16  #40days"
 published: 2018-03-03T07:00:56
 description: "Tag 16 - #40days\n#WirsindderNordbund #my40days #erlebt #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 16  #40days

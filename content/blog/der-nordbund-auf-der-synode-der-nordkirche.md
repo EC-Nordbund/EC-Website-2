@@ -2,7 +2,7 @@
 title: "Neulich auf der Synode der Nordkirche"
 published: 2017-11-20T01:02:38
 description: "Der Nordbund stellt dich auf der Synode der Nordkirche vor.\n#WirSindDerNordbund #AEJSH #Nordkirche"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Neulich auf der Synode der Nordkirche

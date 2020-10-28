@@ -2,7 +2,7 @@
 title: "Der Nordbund sagt danke!"
 published: 2017-11-10T16:59:50
 description: "Der Nordbund sagt danke!\n#WirSindDerNordbund #MeinEC #Nachhaltigkeit #JetztErstRecht #zweieuro"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Der Nordbund sagt danke!

@@ -2,7 +2,7 @@
 title: "und täglich grüßt das Murmeltier"
 published: 2017-03-31T16:26:25
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # und täglich grüßt das Murmeltier

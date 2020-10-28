@@ -2,7 +2,7 @@
 title: "Na also"
 published: 2017-04-10T23:35:02
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Na also

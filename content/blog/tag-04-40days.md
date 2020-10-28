@@ -2,7 +2,7 @@
 title: "Tag 04  #40days"
 published: 2018-02-17T07:00:29
 description: "Tag 04 - #40days\n#WirsindderNordbund Was hilft dir, an Jesus dran zu bleiben? #my40days #gerlebt #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 04  #40days

@@ -2,7 +2,7 @@
 title: "Pfingstcamp"
 published: 2018-04-13T09:13:10
 description: ""
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Pfingstcamp

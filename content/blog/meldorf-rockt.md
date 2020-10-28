@@ -2,7 +2,7 @@
 title: "Meldorf rockt"
 published: 2017-07-09T14:14:01
 description: "Landesjungschartag in Meldorf - jetzt live\n#MeinEC #WirsindderNordbund #MeldorfRockt #LandesJungscharTag\n#GottseiDank"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Meldorf rockt

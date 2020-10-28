@@ -2,7 +2,7 @@
 title: "Anmeldephase 2020"
 published: 2019-11-03T14:31:04
 description: "Die Anmeldephase 2020 startet nächsten Sonntag - um 15 Uhr!\n\nHier gehts zu den Events: https://www.ec-nordbund.de/veranstaltung/\n\nTipp: Sichert euch den Frühbucher-Rabatt bis zum 30.11.2019 ;)"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Anmeldephase 2020

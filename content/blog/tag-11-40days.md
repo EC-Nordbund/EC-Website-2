@@ -2,7 +2,7 @@
 title: "Tag 11  #40days"
 published: 2018-02-26T07:00:12
 description: "Tag 11 - #40days\n#WirsindderNordbund #my40days #gotteswort #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 11  #40days

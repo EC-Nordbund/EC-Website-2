@@ -420,7 +420,7 @@ async function main() {
         .split('"')
         .join(
           '\\"'
-        )}"\nfeaturedImage: /card.png\n---\n\n# ${v.title.rendered
+        )}"\nfeaturedImage: /blog-default.png\n---\n\n# ${v.title.rendered
         .split('"')
         .join('\\"')
         .split(HTML_ENCODED)

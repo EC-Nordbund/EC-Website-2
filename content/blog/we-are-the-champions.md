@@ -2,7 +2,7 @@
 title: "We are the Champions"
 published: 2017-05-06T14:24:50
 description: "We are the Champions - Neue Nordbund-Kickermeister kommen aus Ratzeburg.\n#wirsindderNordbund #meinEC #AK-Sport #Fruehjahrstagung"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # We are the Champions

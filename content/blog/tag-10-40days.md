@@ -2,7 +2,7 @@
 title: "Tag 10  #40days"
 published: 2018-02-24T07:00:41
 description: "Tag 10 - #40days\n#WirsindderNordbund #my40days #erlebt #meinEC #ecjugend"
-featuredImage: /card.png
+featuredImage: /blog-default.png
 ---
 
 # Tag 10  #40days
