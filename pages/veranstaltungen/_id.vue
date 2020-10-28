@@ -13,8 +13,9 @@
 
           //- display indicators
           v-col(cols="auto" class="d-flex flex-column")
-            v-row(class="text-right")
+            v-row(v-if="Object.values(page.warteliste).some((e)=>e)" class="text-right")
               v-col
+                | {{page.warteliste}}
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Für Männer nur noch Warteliste
@@ -26,10 +27,11 @@
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.allgemein")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Nur noch Warteliste
+
             //- JuLeiCa Fortbildung
-            v-row(v-if="page.juleica")
+            v-row(v-if="page.juleica" no-gutters)
               v-col
-                v-img(width="260" height="200" :src="require('~/assets/img/juLeiCa.png')")
+                v-img( max-height="160" max-width="160" width="auto" height="auto" :src="require('~/assets/img/juLeiCa.png')")
           
         v-row(no-gutters align="end" class="flex-grow-0 mb-n1")
           //- title
