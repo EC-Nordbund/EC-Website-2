@@ -62,6 +62,8 @@
               //- v-btn(text class="hidden-sm-and-down" to="/mitarbeiter/anmeldung" color="primary")
               //-   span(class="subtitle-1 text-capitalize font-weight-medium") Anmeldung
               v-app-bar-nav-icon(class="hidden-md-and-up" @click.stop="drawer = !drawer" aria-label="Menü")
+      v-btn(v-scroll="onScroll" v-show="btt" @click="$vuetify.goTo(0)" color="accent" class="back-to-top--btn")
+        v-icon(size="28") mdi-chevron-up
     v-navigation-drawer(app right temporary v-model="drawer")
       v-list(nav)
         v-list-item(link to="/blog")
@@ -161,6 +163,7 @@ import copy from '~/helpers/copy'
 export default defineComponent({
   setup(_, ctx) {
     const drawer = ref(false)
+    const btt = ref(false)
 
     const { isDev, $content } = useContext()
 
@@ -236,8 +239,16 @@ export default defineComponent({
           140
     )
 
+    function onScroll(e) {
+      if (typeof window === "undefined") return;
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      btt.value = top > 128;
+    }
+
     return {
       losungen,
+      btt,
+      onScroll,
       losung,
       lehrtext,
       marqueeContentLength,
@@ -246,7 +257,7 @@ export default defineComponent({
       isDev,
       isStartPage,
     }
-  },
+  }
 })
 </script>
 
@@ -276,6 +287,23 @@ export default defineComponent({
 
   .v-list-item__content {
     padding: 8px 0;
+  }
+}
+
+.back-to-top--btn {
+  border-radius: 50%;
+  height: 56px !important;
+  width: 56px;
+  min-width: 0 !important;
+  padding: 0 !important;
+  bottom: 16px;
+  right: 16px;
+  position: fixed;
+  opacity: .95;
+	box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    opacity: 1;
   }
 }
 
