@@ -209,7 +209,7 @@ export default defineComponent({
         content: 'Wir sind der Nordbund!',
       },
       // Open Graph
-      { hid: 'og:title', property: 'og:title', content: 'Veranstaltungen' },
+      { hid: 'og:title', property: 'og:title', content: 'EC-Nordbund' },
       {
         hid: 'og:description',
         property: 'og:description',
@@ -219,7 +219,7 @@ export default defineComponent({
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Veranstaltungen',
+        content: 'EC-Nordbund!',
       },
       {
         hid: 'twitter:description',
