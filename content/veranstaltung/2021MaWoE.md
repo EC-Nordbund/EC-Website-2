@@ -1,8 +1,8 @@
 ---
 veranstaltungsID: 430
 title: Großes Mitarbeiterwochenende
-begin: '2021-01-08'
-ende: '2021-01-10'
+begin: '2021-03-08'
+ende: '2021-03-10'
 description: >-
   Ich habe ein altes Testament gefunden. Ob es mich reich macht? Komm und finde es heraus. 
   Wir stellen uns in diesen Tagen der Frage, was das Alte Testament mit unserem Leben von heute zu tun hat.
