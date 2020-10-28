@@ -19,6 +19,7 @@
           float: left;
           margin-left: -1em;
           opacity: 0;
+          will-change: opacity;
           transition: opacity 100ms ease-in-out;
 
           .icon-link::before {
