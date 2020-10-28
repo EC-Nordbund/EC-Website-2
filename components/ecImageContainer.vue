@@ -3,7 +3,7 @@
     continuous
     cycle
     :height="height"
-    :show-arrows="false" 
+    show-arrows
     hide-delimiters
   )
     v-carousel-item(
@@ -11,12 +11,30 @@
       :key="i"
       class="secondary"
     )
-      picture
-        source(:srcset="img + '.webp'" type="image/webp")
-        source(:srcset="img + '.jpg'" type="image/jpg")
-        img(:src="img + '.jpg'" :alt="img" class="responsive-image")
+      div(class="image-overlay")
+        picture
+          source(:srcset="img + '.webp'" type="image/webp")
+          source(:srcset="img + '.jpg'" type="image/jpg")
+          img(:src="img + '.jpg'" :alt="img" class="responsive-image")
 </template>
 <style lang="scss" scoped>
+.image-overlay:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.32) 0%,
+    rgba(0, 0, 0, 0.02) 16%,
+    rgba(0, 0, 0, 0.02) 72%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
 .responsive-image {
   object-fit: cover;
   min-width: 100%;
