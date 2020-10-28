@@ -93,7 +93,7 @@
         //-     v-list-item-title Anmeldung
     v-main
       nuxt
-    footer(class="secondary darken-1 white--text angle--top-left")
+    footer(class="secondary white--text angle--top-left")
       v-container
         v-row(justify="space-between")
           v-col(md="6" class="px-4")
