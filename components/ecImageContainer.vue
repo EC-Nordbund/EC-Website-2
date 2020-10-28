@@ -2,7 +2,7 @@
   v-carousel(
     continuous
     cycle
-    :height="height"
+    height="calc(400px + 3.492vw * 2)"
     show-arrows
     hide-delimiters
   )
@@ -18,6 +18,8 @@
           img(:src="img + '.jpg'" :alt="img" class="responsive-image")
 </template>
 <style lang="scss" scoped>
+// TODO: if sloped -> adjust prev & next btn
+
 .image-overlay:after {
   content: '';
   position: absolute;

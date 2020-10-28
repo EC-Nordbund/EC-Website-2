@@ -41,11 +41,14 @@
             v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
               | {{ tag }}
 
+    //- description
     v-container
       nuxt-content(:document="page")
     
+    //- bilder
     ec-image-container(v-if="page.images" :class="'angle--both-left-' + (page.preise || !(page.lat == 0 && page.long == 0) ? 'left' : 'right') + ' clip-angle'" :images="page.images")
 
+    //- preise
     div(v-if="page.preise" class="grey lighten-4 angle--both-right-left")
       v-container(py-0)
         v-row(no-gutters justify="center")
@@ -53,10 +56,11 @@
             h2(class="mb-2 text-center") Preisstaffelung
             ec-preis-staffel(:preise="page.preise" fill-dot dot-color="white" denseBreakpoint="xsOnly")
 
-    div(v-if="!(page.lat == 0 && page.long == 0)" class="angle--top-right clip-angle")
-      ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: 300px; max-height: 100%; z-index: 0;")
+    //- standort
+    div(v-if="!(page.lat == 0 && page.long == 0)" :class="'angle--both-right-right'  +' clip-angle'")
+      ec-location(v-if="!(page.lat == 0 && page.long == 0)" :zoom="12" :marker="[{...page, marker: [page.lat, page.long], noMore: true}]" style="width: 100%; min-height: calc(400px + 3.492vw * 2); max-height: 100%; z-index: 0;")
 
-
+    //- anmeldung
     v-container(v-if="page.anmeldung")
       h2(class="mb-2 text-center") Anmeldung
       ec-anmeldung(
