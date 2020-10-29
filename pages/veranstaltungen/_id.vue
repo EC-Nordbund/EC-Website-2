@@ -38,9 +38,18 @@
             h1(class="d-block d-md-inline-block ec-gradient py-1 px-5 my-2 elevation-16") {{page.title}}
 
           //- categories
-          v-col(cols="12" md="6" class="d-flex justify-start justify-sm-end flex-wrap-reverse")
-            v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
-              | {{ tag }}
+          //- v-col(cols="12" md="6" class="d-flex justify-start justify-sm-end flex-wrap-reverse")
+          //-   v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
+          //-     | {{ tag }}
+
+    //- hardfacts
+    .ec-gradient.text-body-2.font-weight-medium
+      v-container
+        v-row(no-gutters justify="space-between" align="center")
+          v-col(v-if="page.begin||page.ende") Vom {{page.begin.split('-').reverse().join('.')}} bis {{page.ende.split('-').reverse().join('.')}}
+          v-spacer
+          v-chip(color="offWhite" text-color="secondary" class="mr-2 mb-1 font-weight-medium" small v-for="tag in page.tags" :key="tag")
+            | {{ tag }}
 
     //- description
     v-container
