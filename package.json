@@ -33,7 +33,7 @@
     "vuetify-icon-injector": "1.3.0"
   },
   "devDependencies": {
-    "@lhci/cli": "0.5.x",
+    "@lhci/cli": "0.6.x",
     "@nuxt/types": "2.14.7",
     "@nuxt/typescript-build": "2.0.3",
     "@nuxtjs/eslint-config": "4.0.0",
