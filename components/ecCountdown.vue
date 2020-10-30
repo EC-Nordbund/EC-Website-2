@@ -67,7 +67,7 @@ export default defineComponent({
     const minutes = computed(() => Math.max(Math.trunc(diff.value / 60) % 60, 0))
     const seconds = computed(() => Math.max(Math.trunc(diff.value) % 60, 0))
 
-    const dayLabel = computed(() => days.value !== 1 ? 'Tage' : 'Tag')
+    const dayLabel = computed(() => days.value !== 1 ? 'Tagen' : 'Tag')
     const hourLabel = computed(() => hours.value !== 1 ? 'Stunden' : 'Stunde')
     const minuteLabel = computed(() => minutes.value !== 1 ? 'Minuten' : 'Minute')
     const secondLabel = computed(() => seconds.value !== 1 ? 'Sekunden' : 'Sekunde')
