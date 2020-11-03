@@ -76,6 +76,14 @@
           br
           | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
     v-btn(@click="submit" :disabled="!valid") Absenden
+    v-btn(@click="submit") Absenden2
+    v-alert(type="error" v-if="error")
+      p Es sind folgende Fehler aufgetreten:
+        template(v-for="e in typeof error === 'string' ? [error] : error") 
+          br
+          | {{e}}
+    v-alert(v-if="success" type="info")
+      p Daten erfolgreich übertragen
   div(v-else-if="disabled" class="anmeldung-disabled")
     slot(name="disabled")
       p Die Anmeldung ist gesperrt.
@@ -92,6 +100,7 @@ import {
   computed,
   watchEffect,
   toRefs,
+  ref
 } from '@nuxtjs/composition-api'
 import { post } from '~/helpers/fetch'
 import { useValidation, ruleLib } from '../plugins/validate'
@@ -135,10 +144,10 @@ function useData(extra) {
     schwimmen: 0,
     fahrrad: false,
     sichEntfernen: false,
-    datenschutz: false, // no-save
-    tnBedingungen: false, // no-save
-    freizeitLeitung: false, // no-save
-    fahrgemeinschaften: false, // no-save
+    datenschutz: false,
+    tnBedingungen: false,
+    freizeitLeitung: false,
+    fahrgemeinschaften: false,
     extra,
   })
   return { data }
@@ -195,10 +204,14 @@ export default defineComponent({
         props.hatErlaubnisSchwimmen ||
         props.hatErlaubnisSichEntfernen
     )
+    const sending = ref(false)
+    const success = ref(false)
+    const error = ref(null)// as null | string[] | string)
     const { extraData, extraRules } = useExtraFields(props.extraFields)
     const { data } = useData(extraData)
     handleFreizeitleitung(data, props)
-    const submit = () => {
+    const submit = async () => {
+      sending.value = true
       const submitData = {
         vorname: data.vorname,
         nachname: data.nachname,
@@ -220,8 +233,24 @@ export default defineComponent({
         sichEntfernen: data.sichEntfernen,
         fahrgemeinschaften: data.fahrgemeinschaften,
         extra: data.extra,
+        datenschutz: data.datenschutz,
+        freizeitLeitung: data.freizeitLeitung,          
+        tnBedingungen: data.tnBedingungen,
+        fahrgemeinschaften: data.fahrgemeinschaften
       }
-      post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
+      try {
+        const ret = await post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
+        if(ret.status !== 'OK') {
+          error.value = ret.context
+        } else {
+          error.value = null
+          success.value = true // WEITERLEITUNG? TODO: Tobi
+        }
+        console.log('testANMELDUNG1', ret)
+      } catch(e) {
+        console.log('testANMELDUNG_FEHLER_2')
+      }
+      sending.value = false
     }
     const validation = useValidation(
       data,
@@ -280,6 +309,9 @@ export default defineComponent({
       submit,
       hatErlaubnisse,
       countdown: new Date().getTime() < new Date(props.startAt).getTime(),
+      sending,
+      success,
+      error
     }
   },
 })

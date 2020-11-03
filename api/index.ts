@@ -3,6 +3,9 @@ import { json } from 'body-parser'
 import { ruleLib } from '../plugins/validateLib'
 import { saveForConfirm, validateToken, cleanup } from './fs-helpers'
 import { validate } from './validate'
+import { sendMail } from './sendMail'
+
+console.log('test')
 
 const app = express()
 
@@ -55,7 +58,6 @@ app.post('/anmeldung/ma/ort', (req, res) => {
     })
   }
 })
-
 app.post('/anmeldung/ma/veranstaltung', (req, res) => {
   const rules = {
     vorname: ruleLib.vorname,
@@ -104,17 +106,22 @@ app.post('/anmeldung/ma/veranstaltung', (req, res) => {
     })
   }
 })
-app.post('/anmeldung/tn', (req, res) => {
+// app.use(async (req, res, next) => {
+//   console.log(req)
+//   next()
+// })
+app.post('/anmeldung/tn/:id', async (req, res) => {
+  console.log('test2')
   const rules = {
     vorname: ruleLib.vorname,
     nachname: ruleLib.nachname,
     geschlecht: ruleLib.geschlecht,
     gebDat: ruleLib.gebDat,
     strasse: ruleLib.strasse,
-    plzOrt: {
-      plz: ruleLib.plz,
-      ort: ruleLib.ort,
-    },
+    // plzOrt: {
+    plz: ruleLib.plz,
+    ort: ruleLib.ort,
+    // },
     email: ruleLib.email,
     telefon: ruleLib.telefon,
     bemerkungen: ruleLib.textArea250,
@@ -141,7 +148,17 @@ app.post('/anmeldung/tn', (req, res) => {
 
     const { email } = req.body
 
-    // TODO: send Email
+    const mail = await sendMail({
+      to: email,
+      from: 'anmeldung@ec-nordbund.de',
+      subject: `Deine Anmeldung beim EC-Nordbund (${req.params.id})`, // TODO: welche Veranstaltung
+      html: `
+        <p>Deine Anmeldung für ... TOKEN: ${token}</p>
+        DATA: ${JSON.stringify(req.body)}
+      `
+    })
+
+    console.log(mail)
 
     res.status(200)
     res.json({
@@ -214,6 +231,12 @@ app.post('/confirm/:token', (req, res) => {
       })
       return
     }
+
+    res.status(500)
+    res.json({
+      status: 'ERROR',
+      context: 'DATEN fehlerhaft',
+    })
   } catch (ex) {
     res.status(500)
     res.json({
@@ -225,7 +248,7 @@ app.post('/confirm/:token', (req, res) => {
 
 cleanup()
 
-setInterval(cleanup, 1000*60*59)
+setInterval(cleanup, 1000 * 60 * 59)
 
 export default app
 
