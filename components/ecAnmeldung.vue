@@ -13,11 +13,15 @@
     p(v-if="zuJung")
       span(class="font-weight-bold") Hinweis:
       br
-      | Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+      template(v-if="minAlter!==-1") Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+      template(v-else-if="jahrgangMax!==2100") Du bist später geboren als das maximale Geburtsjahr von {{jahrgangMax}} diese Veranstaltung.
+      template(v-else) Du bist zu jung für diese Veranstaltung.
     p(v-if="zuAlt")
       span(class="font-weight-bold") Hinweis:
         br
-        | Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+        template(v-if="maxAlter!==999") Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+        template(v-else-if="jahrgangMin!==1999") Du bist später geboren als das maximale Geburtsjahr von {{jahrgangMin}} diese Veranstaltung.
+        template(v-else) Du bist zu alt für diese Veranstaltung.
     p(v-if="zuJung||zuAlt")
       | Du kannst dich trotzdem anmelden.
       br
@@ -192,6 +196,14 @@ export default defineComponent({
       type: Number,
       required: true,
     },
+    jahrgangMin:{
+      type: Number,
+      default: 1900,
+    },
+    jahrgangMax: {
+      type: Number,
+      default: 2100,
+    },
     disabled: Boolean,
     startAt: String,
   },
@@ -296,8 +308,8 @@ export default defineComponent({
     )
     const alterData = {
       under18,
-      zuJung: computed(() => alter.value < props.minAlter),
-      zuAlt: computed(() => alter.value > props.maxAlter),
+      zuJung: computed(() => alter.value < props.minAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) > props.jahrgangMax )),
+      zuAlt: computed(() => alter.value > props.maxAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) < props.jahrgangMin)),
     }
     return {
       ...validation.rootMapper,
