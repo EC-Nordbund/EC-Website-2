@@ -172,6 +172,11 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
     })
   }
 })
+
+function escape(data: string = '') {
+  return JSON.stringify(data.trim())
+}
+
 app.post('/confirm/:token', (req, res) => {
   const token = req.params.token
 
@@ -182,8 +187,50 @@ app.post('/confirm/:token', (req, res) => {
 
     if (type === 1) {
       // TN Anmeldung
+      console.log(data)
 
       // TODO: Send to other API
+      const gqlCode = `
+        mutation {
+          anmelden(
+            isWP: true, 
+            token: "TBD", 
+            vorname: ${escape(data.vorname)}, 
+            nachname: ${escape(data.nachname)}, 
+            gebDat: ${escape(data.gebDat)}, 
+            geschlecht: ${escape(data.geschlecht)}, 
+            position: 1, 
+            veranstaltungsID: 4200, 
+            eMail: ${escape(data.email)}, 
+            telefon: ${escape(data.telefon)}, 
+            strasse: ${escape(data.strasse)}, 
+            plz: ${escape(data.plz)}, 
+            ort: ${escape(data.ort)}, 
+            anmeldeZeitpunkt: ${escape(data.__internals.time)}, 
+            vegetarisch: ${!!data.vegetarisch}, 
+            lebensmittelAllergien: ${escape(data.lebensmittelallergien)}, 
+            gesundheitsinformationen: ${escape(data.gesundheit)}, 
+            bemerkungen: ${escape(data.bemerkungen)}, 
+            radfahren: ${!!data.radfahren}, 
+            schwimmen: ${data.schwimmen}, 
+            fahrgemeinschaften: ${!!data.fahrgemeinschaften}, 
+            klettern: ${!!data.klettern}, 
+            sichEntfernen: ${!!data.sichEntfernen}, 
+            bootFahren: ${!!data.bootFahren}, 
+            extra_json: "{}"
+          ) {
+            status
+            anmeldeID
+          }
+        }
+      `
+
+      console.log(gqlCode)
+      console.log('test')
+
+      if (!data.alter) {
+        // TODO: send Mail to Anmeldecenter
+      }
 
       res.status(200)
       res.json({
@@ -238,6 +285,7 @@ app.post('/confirm/:token', (req, res) => {
       context: 'DATEN fehlerhaft',
     })
   } catch (ex) {
+    console.log(ex)
     res.status(500)
     res.json({
       status: 'ERROR',

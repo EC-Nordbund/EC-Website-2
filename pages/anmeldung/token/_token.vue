@@ -12,7 +12,7 @@ import { defineComponent, useContext, ref, useAsync } from '@nuxtjs/composition-
 import { post } from '~/helpers/fetch'
 export default defineComponent({
  setup(_, ctx) {
-   const token = useContext().query.value.token
+   const token = useContext().params.value.token
    const loading = ref(true)
    const anmeldeID = ref(null as null | string)
    const wList = ref(0)
