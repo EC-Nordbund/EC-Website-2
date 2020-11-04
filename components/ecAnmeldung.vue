@@ -20,7 +20,7 @@
       span(class="font-weight-bold") Hinweis:
         br
         template(v-if="maxAlter!==999") Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
-        template(v-else-if="jahrgangMin!==1999") Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+        template(v-else-if="jahrgangMin!==1900") Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
         template(v-else) Du bist zu alt für diese Veranstaltung.
     p(v-if="zuJung||zuAlt")
       | Du kannst dich trotzdem anmelden.

@@ -192,7 +192,7 @@ app.post('/confirm/:token', async (req, res) => {
 
       // __VERANSTALTUNGS_DATA__[]
 
-      // TODO: Send to other API
+      // TODO: Send to other API, inject TOkken from env
       const gqlCode = `
         mutation {
           anmelden(
