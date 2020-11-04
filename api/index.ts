@@ -144,7 +144,7 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
   }
 
   try {
-    const token = saveForConfirm(req.body, 1)
+    const token = saveForConfirm({ ...req.body, veranstaltungsID: parseInt(req.params.id) }, 1)
 
     const { email } = req.body
 
@@ -178,7 +178,7 @@ function escape(data: string = '') {
   return JSON.stringify(data.trim())
 }
 
-app.post('/confirm/:token', (req, res) => {
+app.post('/confirm/:token', async (req, res) => {
   const token = req.params.token
 
   try {
@@ -189,6 +189,8 @@ app.post('/confirm/:token', (req, res) => {
     if (type === 1) {
       // TN Anmeldung
       console.log(data)
+
+      // __VERANSTALTUNGS_DATA__[]
 
       // TODO: Send to other API
       const gqlCode = `
@@ -201,7 +203,7 @@ app.post('/confirm/:token', (req, res) => {
             gebDat: ${escape(data.gebDat)}, 
             geschlecht: ${escape(data.geschlecht)}, 
             position: 1, 
-            veranstaltungsID: 4200, 
+            veranstaltungsID: ${data.veranstaltungsID}, 
             eMail: ${escape(data.email)}, 
             telefon: ${escape(data.telefon)}, 
             strasse: ${escape(data.strasse)}, 
@@ -231,6 +233,12 @@ app.post('/confirm/:token', (req, res) => {
 
       if (!data.alter) {
         // TODO: send Mail to Anmeldecenter
+        await sendMail({
+          to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;', //TODO Birgit hinzufügen.
+          from: 'anmeldung@ec-nordbund.de',
+          subject: `Anmeldung mit fehlerhaften Alter`,
+          html: `<p>Es gab eine Anmeldung mit nicht passenden Alter. AnmeldeID: TODO</p>`
+        })
       }
 
       res.status(200)
