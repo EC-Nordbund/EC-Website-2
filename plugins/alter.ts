@@ -1,8 +1,8 @@
-import { Ref, computed } from '@nuxtjs/composition-api'
+import { Ref, computed, unref } from '@nuxtjs/composition-api'
 
-function getAge(gebDat: Ref<string>, wann?: string | Date) {
+function getAge(gebDat: Ref<string> | string, wann?: string | Date) {
   const today = wann ? new Date(wann) : new Date()
-  const birthDate = new Date(gebDat.value)
+  const birthDate = new Date(unref(gebDat))
   let age = today.getFullYear() - birthDate.getFullYear()
   const m = today.getMonth() - birthDate.getMonth()
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {

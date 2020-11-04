@@ -14,18 +14,18 @@
       span(class="font-weight-bold") Hinweis:
       br
       template(v-if="minAlter!==-1") Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
-      template(v-else-if="jahrgangMax!==2100") Du bist später geboren als das maximale Geburtsjahr von {{jahrgangMax}} diese Veranstaltung.
+      template(v-else-if="jahrgangMax!==2100") Du bist zu jung! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
       template(v-else) Du bist zu jung für diese Veranstaltung.
     p(v-if="zuAlt")
       span(class="font-weight-bold") Hinweis:
         br
         template(v-if="maxAlter!==999") Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
-        template(v-else-if="jahrgangMin!==1999") Du bist später geboren als das maximale Geburtsjahr von {{jahrgangMin}} diese Veranstaltung.
+        template(v-else-if="jahrgangMin!==1999") Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
         template(v-else) Du bist zu alt für diese Veranstaltung.
     p(v-if="zuJung||zuAlt")
       | Du kannst dich trotzdem anmelden.
       br
-      | Wir behalten uns allerdings vor, dir den Platz zu verwähren und andere Teilnehmer im Zielgruppenalter zu bevorzugen.
+      | Wir behalten uns allerdings vor, dir den Platz zu verwehren und andere Teilnehmer im Zielgruppenalter zu bevorzugen.
       br
       | In diesem Falle werden wir uns bei dir melden.
     v-text-field(v-model="data.strasse" required label="Straße" counter="50" @change="strasseEvent" :error-messages="strasseErrors")
@@ -248,7 +248,8 @@ export default defineComponent({
         datenschutz: data.datenschutz,
         freizeitLeitung: data.freizeitLeitung,          
         tnBedingungen: data.tnBedingungen,
-        fahrgemeinschaften: data.fahrgemeinschaften
+        fahrgemeinschaften: data.fahrgemeinschaften,
+        alter: alterData.falschesAlter.value
       }
       try {
         const ret = await post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
@@ -310,6 +311,7 @@ export default defineComponent({
       under18,
       zuJung: computed(() => alter.value < props.minAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) > props.jahrgangMax )),
       zuAlt: computed(() => alter.value > props.maxAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) < props.jahrgangMin)),
+      falschesAlter: computed(() => !(alterData.zuJung.value || alterData.zuAlt.value))
     }
     return {
       ...validation.rootMapper,
