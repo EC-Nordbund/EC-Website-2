@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { sha3_512 as sha } from 'js-sha3';
+import { sha3_224 as sha } from 'js-sha3';
 
 const ANMELDUNG_SAVE_DIR = '../confirm'
 export function cleanup() {

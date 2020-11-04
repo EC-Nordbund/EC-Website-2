@@ -153,6 +153,7 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
       from: 'anmeldung@ec-nordbund.de',
       subject: `Deine Anmeldung beim EC-Nordbund (${req.params.id})`, // TODO: welche Veranstaltung
       html: `
+        <p>Um deine Anmeldung zu bestätigen klicke <a href="https://www.ec-nordbund.de/anmeldung/token/${token}">HIER</a>.<br>Oder gebe den Verifizierungscode ${token} auf <a href="https://www.ec-nordbund.de/anmeldung/token">https://www.ec-nordbund.de/anmeldung/token</a> ein</p>
         <p>Deine Anmeldung für ... TOKEN: ${token}</p>
         DATA: ${JSON.stringify(req.body)}
       `
