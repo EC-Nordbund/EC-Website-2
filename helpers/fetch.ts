@@ -1,9 +1,9 @@
-const base = 'http://localhost:3000'
+const base = process.env.WPToken ? 'https://www.ec-nordbund.de' : 'http://localhost:3000'
 
-export async function get<T = {}>(url: string):Promise<T> {
-  let fetch:Window['fetch']
+export async function get<T = {}>(url: string): Promise<T> {
+  let fetch: Window['fetch']
 
-  if(process.server) {
+  if (process.server) {
     fetch = require('node-fetch')
   } else {
     fetch = window.fetch
@@ -16,9 +16,9 @@ export async function get<T = {}>(url: string):Promise<T> {
 }
 
 export async function post<T = {}>(url: string, data: any): Promise<T> {
-  let fetch:Window['fetch']
+  let fetch: Window['fetch']
 
-  if(process.server) {
+  if (process.server) {
     fetch = require('node-fetch')
   } else {
     fetch = window.fetch

@@ -4,6 +4,7 @@ import { ruleLib } from '../plugins/validateLib'
 import { saveForConfirm, validateToken, cleanup } from './fs-helpers'
 import { validate } from './validate'
 import { sendMail } from './sendMail'
+import axios from 'axios'
 
 console.log('test')
 
@@ -197,7 +198,7 @@ app.post('/confirm/:token', async (req, res) => {
         mutation {
           anmelden(
             isWP: true, 
-            token: "TBD", 
+            token: "${process.env.WPToken || 'NO WP-TOKEN'}", 
             vorname: ${escape(data.vorname)}, 
             nachname: ${escape(data.nachname)}, 
             gebDat: ${escape(data.gebDat)}, 
@@ -209,7 +210,7 @@ app.post('/confirm/:token', async (req, res) => {
             strasse: ${escape(data.strasse)}, 
             plz: ${escape(data.plz)}, 
             ort: ${escape(data.ort)}, 
-            anmeldeZeitpunkt: ${escape(data.__internals.time)}, 
+            anmeldeZeitpunkt: ${escape(data.__internals.time.split('.')[0])}, 
             vegetarisch: ${!!data.vegetarisch}, 
             lebensmittelAllergien: ${escape(data.lebensmittelallergien)}, 
             gesundheitsinformationen: ${escape(data.gesundheit)}, 
@@ -228,10 +229,23 @@ app.post('/confirm/:token', async (req, res) => {
         }
       `
 
+      const gqlRes = await axios.post('https://api.ec-nordbund.de/graphql', {
+        query: gqlCode
+      })
+
+      // if(gqlRes.data.data.anmelden.status < 0) {
+      //   res.status(500)
+
+      //   return
+      // }
+
+      console.log(gqlRes)
+      console.log(gqlRes.data)
+
       console.log(gqlCode)
       console.log('test')
 
-      if (!data.alter) {
+      if (!data.alter && gqlRes.data.data.anmelden.status >= 0) {
         // TODO: send Mail to Anmeldecenter
         await sendMail({
           to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;', //TODO Birgit hinzufügen.
@@ -244,6 +258,8 @@ app.post('/confirm/:token', async (req, res) => {
       res.status(200)
       res.json({
         status: 'OK',
+        anmeldeID: gqlRes.data.data.anmelden.anmeldeID,
+        wList: gqlRes.data.data.anmelden.status
       })
       return
     }

@@ -23,6 +23,11 @@ export default defineComponent({
      if(res.status === 'OK') {
        loading.value = false
 
+        if(res.wList && res.wList < 0) {
+          ctx.root.$router.push('/anmeldung/token?error=Fehler beim Senden an API. Bitte kontaktiere uns unter app@ec-nordbund.de.')
+          return
+        }
+
         if(res.wList) {
           wList.value = res.wList
         }
