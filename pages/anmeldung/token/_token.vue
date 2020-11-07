@@ -32,7 +32,7 @@ v-container.fill-height
             v-responsive(aspect-ratio='1')
               template(slot='progress')
                 v-progress-linear
-              .d-flex.flex-column.justify-space-between.align-center.fill-height.ec-step2(:class="{'ec-animation': checkedOn === 'server'}")
+              .d-flex.flex-column.justify-space-between.align-center.fill-height.ec-step2
                 v-card-title.text-h5.font-weight-black.justify-center(
                   :class='{ "white--text": !loading }'
                 ) 2. Schritt
@@ -43,14 +43,13 @@ v-container.fill-height
                     :max-width='avatarMaxSize',
                     size='128',
                     color='rgba(255,255,255,0.16)'
-                    class="ec-avatar"
                   )
                     //- TODO: Warteliste
                     v-icon(color='white', size='92') mdi-check-bold
                 v-card-subtitle.text-subtitle-1.font-weight-medium {{ step2Text }}
 
         v-col(cols='12', md='4')
-          v-responsive(aspect-ratio='1', class="step-3")
+          v-responsive.step-3(aspect-ratio='1')
             v-row(style='height: calc(50% - 6px);margin:5px;')
               v-card(tile, disabled, style='width: 100%')
                 //- v-responsive(aspect-ratio="2")
@@ -80,7 +79,7 @@ import {
   ref,
   ssrRef,
   useAsync,
-  computed,
+  computed
 } from '@nuxtjs/composition-api'
 import { post } from '~/helpers/fetch'
 export default defineComponent({
@@ -130,7 +129,6 @@ export default defineComponent({
     )
 
     const status = useAsync(async () => {
-      console.log('exec')
       checkedOn.value = process.browser ? 'client' : 'server'
 
       const res = await post<{
@@ -198,21 +196,5 @@ export default defineComponent({
 
 .v-responsive:not(.step-3) ::v-deep .v-responsive__content {
   padding: 8px;
-}
-
-.ec-step2 {
-
-}
-
-.ec-animation {
-
-}
-
-.ec-avatar {
-  
-}
-
-.ec-animation .ec-avatar {
-
 }
 </style>
