@@ -1,5 +1,5 @@
-const dsgvoTN = require('remark')().use(require('remark-html')).processSync('\n' + require('fs').readFileSync('./content/datenschutz/teilnehmer.md').replace(/\n\s*#/, '\n##')).toString()
-const footer = require('remark')().use(require('remark-html')).processSync('\n' + require('fs').readFileSync('./content/datenschutz/kontakt.md').replace(/\n\s*#/, '\n##')).toString()
+const dsgvoTN = require('remark')().use(require('remark-html')).processSync('\n' + require('fs').readFileSync('./content/datenschutz/teilnehmer.md', 'utf8').replace(/\n\s*#/, '\n##')).toString()
+const footer = require('remark')().use(require('remark-html')).processSync('\n' + require('fs').readFileSync('./content/datenschutz/kontakt.md', 'utf8').replace(/\n\s*#/, '\n##')).toString()
 
 const erlaubnisse = [
   "klettern",
