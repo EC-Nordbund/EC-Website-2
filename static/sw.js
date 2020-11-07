@@ -9,7 +9,7 @@ if (!__DEV__) {
   const _self = self
 
   const __CONFIG__ = {
-    CACHE_NAME: 'CACHE_V2',
+    CACHE_NAME: 'CACHE_V3',
     OFFLINE_URL: '/empty.html',
   }
 
