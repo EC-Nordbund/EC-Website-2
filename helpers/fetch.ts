@@ -1,4 +1,4 @@
-const base = process.env.ON_SERVER ? 'https://www.ec-nordbund.de' : 'http://localhost:3000'
+const base = process.browser ? window.origin : 'http://localhost:3000'
 
 export async function get<T = {}>(url: string): Promise<T> {
   let fetch: Window['fetch']

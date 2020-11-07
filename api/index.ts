@@ -5,6 +5,7 @@ import { saveForConfirm, validateToken, cleanup } from './fs-helpers'
 import { validate } from './validate'
 import { sendMail } from './sendMail'
 import axios from 'axios'
+import { createMailContentTN } from './mailContent'
 
 console.log('test')
 
@@ -111,6 +112,7 @@ app.post('/anmeldung/ma/veranstaltung', (req, res) => {
 //   console.log(req)
 //   next()
 // })
+
 app.post('/anmeldung/tn/:id', async (req, res) => {
   console.log('test2')
   const rules = {
@@ -144,6 +146,7 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
     return
   }
 
+
   try {
     const token = saveForConfirm({ ...req.body, veranstaltungsID: parseInt(req.params.id) }, 1)
 
@@ -153,11 +156,12 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
       to: email,
       from: 'anmeldung@ec-nordbund.de',
       subject: `Deine Anmeldung beim EC-Nordbund (${req.params.id})`, // TODO: welche Veranstaltung
-      html: `
-        <p>Um deine Anmeldung zu bestätigen klicke <a href="https://www.ec-nordbund.de/anmeldung/token/${token}">HIER</a>.<br>Oder gebe den Verifizierungscode ${token} auf <a href="https://www.ec-nordbund.de/anmeldung/token">https://www.ec-nordbund.de/anmeldung/token</a> ein</p>
-        <p>Deine Anmeldung für ... TOKEN: ${token}</p>
-        DATA: ${JSON.stringify(req.body)}
-      `
+      // html: `
+      //   <p>Um deine Anmeldung zu bestätigen klicke <a href="https://www.ec-nordbund.de/anmeldung/token/${token}">HIER</a>.<br>Oder gebe den Verifizierungscode ${token} auf <a href="https://www.ec-nordbund.de/anmeldung/token">https://www.ec-nordbund.de/anmeldung/token</a> ein</p>
+      //   <p>Deine Anmeldung für ... TOKEN: ${token}</p>
+      //   DATA: ${JSON.stringify(req.body)}
+      // `
+      html: await createMailContentTN(req.body, token)
     })
 
     console.log(mail)
@@ -245,15 +249,23 @@ app.post('/confirm/:token', async (req, res) => {
       console.log(gqlCode)
       console.log('test')
 
-      if (!data.alter && gqlRes.data.data.anmelden.status >= 0) {
+      if (data.alter && gqlRes.data.data.anmelden.status >= 0) {
         // TODO: send Mail to Anmeldecenter
         await sendMail({
-          to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;', //TODO Birgit hinzufügen.
+          // to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;app@ec-nordbund.de', //TODO Birgit hinzufügen.
+          to: 'app@ec-nordbund.de',
           from: 'anmeldung@ec-nordbund.de',
           subject: `Anmeldung mit fehlerhaften Alter`,
           html: `<p>Es gab eine Anmeldung mit nicht passenden Alter. AnmeldeID: TODO</p>`
         })
       }
+
+      await sendMail({
+        to: data.email,
+        from: 'anmeldung@ec-nordbund.de',
+        subject: `Anmeldung erfolgreich abgeschlossen.`,
+        html: `<p>Deine Anmeldung wurde bestätigt.</p>`
+      })
 
       res.status(200)
       res.json({

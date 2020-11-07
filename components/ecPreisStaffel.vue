@@ -34,8 +34,7 @@ export default defineComponent({
 
       return props.preise.map((v: any, i)=>{
         v.active = false
-        const now = new Date()
-        const nowStr = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
+        const nowStr = new Date().toISOString().split('T')[0]
 
         if(hadActive) {
           return v
