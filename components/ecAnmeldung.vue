@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-form(v-if="!disabled && !countdown")
+  v-form(v-if="force || (!disabled && !countdown)")
     v-alert(type="info")
       | Die Anmeldung für 
       b Mitarbeiter 
@@ -104,7 +104,8 @@ import {
   computed,
   watchEffect,
   toRefs,
-  ref
+  ref,
+  useContext
 } from '@nuxtjs/composition-api'
 import { post } from '~/helpers/fetch'
 import { useValidation, ruleLib } from '../plugins/validate'
@@ -325,7 +326,8 @@ export default defineComponent({
       countdown: new Date().getTime() < new Date(props.startAt).getTime(),
       sending,
       success,
-      error
+      error,
+      force: !!useContext().query.anmeldung
     }
   },
 })
