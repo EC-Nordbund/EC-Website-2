@@ -133,12 +133,12 @@ export async function createMailContentTN(data: any, token: string): Promise<str
       <b>Hallo ${data.vorname} ${data.nachname},</b><br><br>
       danke für deine Anmeldung!
     </p>
-    ${!data.alter ? `<p>Du hast nicht das richtige Alter um an dieser Veranstaltung Teilzunehmen! Du kannst dich trotzdem anmelden musst aber damit rechnen, dass deine Anmeldung im nachhinein noch abgelehnt wird!</p>` : ``}
+    ${!data.alter ? `<p>Du hast nicht das richtige Alter um an dieser Veranstaltung teilzunehmen! Du kannst dich trotzdem anmelden, musst aber damit rechnen, dass deine Anmeldung im Nachhinein noch abgelehnt wird!</p>` : ``}
     <p>
       Um deine Anmeldung zu bestätigen überprüfe deine Daten, lese bitte die Datenschutzhinweise und klicke dann
       auf Anmeldung bestätigen.
     </p>
-    <p>Sollte es einen Fehler in deinen Daten geben melde dich bitte <b>erneut</b> an.</p>
+    <p>Sollte es einen Fehler in deinen Daten geben, melde dich bitte <b>erneut</b> an.</p>
     <div class="btn">
         <a href="https://www.ec-nordbund.de/anmeldung/token/${token}">Anmeldung bestätigen</a>
     </div>
@@ -150,7 +150,7 @@ export async function createMailContentTN(data: any, token: string): Promise<str
     <div>
       <h1>Deine Daten</h1>
       <h2>Persönliche Daten</h2>
-      <p>${data.geschlecht === 'm' ? 'Herr' : 'Frau'} ${data.vorname} ${data.nachname} geb. am ${data.gebDat.split('-').reverse().join('.')}</p>
+      <p>${data.geschlecht === 'm' ? 'Herr' : 'Frau'} ${data.vorname} ${data.nachname}, geb. am ${data.gebDat.split('-').reverse().join('.')}</p>
       <h2>Kontakt Daten</h2>
       <p>
         <b>Mail:</b> ${data.email}<br>
