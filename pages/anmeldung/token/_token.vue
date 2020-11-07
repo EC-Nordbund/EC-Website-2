@@ -32,7 +32,7 @@ v-container.fill-height
             v-responsive(aspect-ratio='1')
               template(slot='progress')
                 v-progress-linear
-              .d-flex.flex-column.justify-space-between.align-center.fill-height
+              .d-flex.flex-column.justify-space-between.align-center.fill-height.ec-step2(:class="{'ec-animation': checkedOn === 'server'}")
                 v-card-title.text-h5.font-weight-black.justify-center(
                   :class='{ "white--text": !loading }'
                 ) 2. Schritt
@@ -43,13 +43,14 @@ v-container.fill-height
                     :max-width='avatarMaxSize',
                     size='128',
                     color='rgba(255,255,255,0.16)'
+                    class="ec-avatar"
                   )
                     //- TODO: Warteliste
                     v-icon(color='white', size='92') mdi-check-bold
                 v-card-subtitle.text-subtitle-1.font-weight-medium {{ step2Text }}
 
         v-col(cols='12', md='4')
-          v-responsive(aspect-ratio='1', style='padding: 0')
+          v-responsive(aspect-ratio='1', class="step-3")
             v-row(style='height: calc(50% - 6px);margin:5px;')
               v-card(tile, disabled, style='width: 100%')
                 //- v-responsive(aspect-ratio="2")
@@ -77,6 +78,7 @@ import {
   defineComponent,
   useContext,
   ref,
+  ssrRef,
   useAsync,
   computed,
 } from '@nuxtjs/composition-api'
@@ -85,9 +87,9 @@ export default defineComponent({
   layout: 'minimal',
   setup(_, ctx) {
     const token = useContext().params.value.token
-    const loading = ref(true)
-    const anmeldeID = ref(null as null | string)
-    const wList = ref(0)
+    const loading = ssrRef(true)
+    const anmeldeID = ssrRef(null as null | string)
+    const wList = ssrRef(0)
 
     const statusMessage = computed(() => {
       if (loading.value) {
@@ -115,6 +117,8 @@ export default defineComponent({
       return 'error'
     })
 
+    const checkedOn = ssrRef(null as null | 'client' | 'server')
+
     const avatarMaxSize = computed(() => {
       return ctx.root.$vuetify.breakpoint.xsOnly
         ? 'calc(100vw * .75)'
@@ -127,6 +131,7 @@ export default defineComponent({
 
     const status = useAsync(async () => {
       console.log('exec')
+      checkedOn.value = process.browser ? 'client' : 'server'
 
       const res = await post<{
         status: 'OK' | 'ERROR'
@@ -174,6 +179,7 @@ export default defineComponent({
       step2Text,
       step2Color,
       statusMessage,
+      checkedOn,
     }
   },
 })
@@ -190,7 +196,23 @@ export default defineComponent({
   right: 0;
 }
 
-.v-responsive ::v-deep .v-responsive__content {
+.v-responsive:not(.step-3) ::v-deep .v-responsive__content {
   padding: 8px;
+}
+
+.ec-step2 {
+
+}
+
+.ec-animation {
+
+}
+
+.ec-avatar {
+  
+}
+
+.ec-animation .ec-avatar {
+
 }
 </style>
