@@ -133,7 +133,7 @@ export async function createMailContentTN(data: any, token: string): Promise<str
       <b>Hallo ${data.vorname} ${data.nachname},</b><br><br>
       danke für deine Anmeldung!
     </p>
-    ${data.alter ? `<p>Du hast nicht das richtige Alter um an dieser Veranstaltung Teilzunehmen! Du kannst dich trotzdem anmelden musst aber damit rechnen, dass deine Anmeldung im nachhinein noch abgelehnt wird!</p>` : ``}
+    ${!data.alter ? `<p>Du hast nicht das richtige Alter um an dieser Veranstaltung Teilzunehmen! Du kannst dich trotzdem anmelden musst aber damit rechnen, dass deine Anmeldung im nachhinein noch abgelehnt wird!</p>` : ``}
     <p>
       Um deine Anmeldung zu bestätigen überprüfe deine Daten, lese bitte die Datenschutzhinweise und klicke dann
       auf Anmeldung bestätigen.
