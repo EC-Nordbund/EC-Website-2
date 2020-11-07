@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-form(v-if="force || (!disabled && !countdown)")
+  v-form(v-if="(force || (!disabled && !countdown)) && !success")
     v-alert(type="info")
       | Die Anmeldung für 
       b Mitarbeiter 
@@ -86,8 +86,9 @@
         template(v-for="e in typeof error === 'string' ? [error] : error") 
           br
           | {{e}}
-    v-alert(v-if="success" type="info")
-      p Daten erfolgreich übertragen
+  v-alert(v-else-if="success" type="info")
+    p Daten erfolgreich übertragen.
+    v-btn(@click="reload()") Noch eine Anmeldung für diese Veranstaltung ausfüllen.
   div(v-else-if="disabled" class="anmeldung-disabled")
     slot(name="disabled")
       p Die Anmeldung ist gesperrt.
@@ -327,7 +328,8 @@ export default defineComponent({
       sending,
       success,
       error,
-      force: !!useContext().query.value.anmeldung
+      force: !!useContext().query.value.anmeldung,
+      reload: () => location.reload()
     }
   },
 })
