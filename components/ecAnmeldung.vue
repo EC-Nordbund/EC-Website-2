@@ -25,9 +25,9 @@
     p(v-if="zuJung||zuAlt")
       | Du kannst dich trotzdem anmelden.
       br
-      | Wir behalten uns allerdings vor, dir den Platz zu verwehren und andere Teilnehmer im Zielgruppenalter zu bevorzugen.
+      | Wir behalten uns allerdings vor, dir den Platz zu verwehren. 
       br
-      | In diesem Falle werden wir uns bei dir melden.
+      | Wir melden uns bei dir.
     v-text-field(v-model="data.strasse" required label="Straße" counter="50" @change="strasseEvent" :error-messages="strasseErrors")
     ec-adresse(v-model="data.plzOrt" :errorMap="errorMap.plzOrt")
     v-text-field(label="E-Mail" type="email" required v-model="data.email" counter="50" @change="emailEvent" :error-messages="emailErrors")
