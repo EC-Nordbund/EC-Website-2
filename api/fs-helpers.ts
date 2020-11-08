@@ -42,7 +42,13 @@ export function validateToken(token: string): any {
     throw 'Token not found';
   }
   const data = JSON.parse(fs.readFileSync(filename, 'utf-8'));
-  fs.unlinkSync(filename);
+
+  if (data.finished) {
+    throw 'Anmeldung bereits bestätigt.'
+  }
+
+  const nData = JSON.stringify({ __internals: data.__internals, finished: true, __old: data })
+  fs.writeFileSync(filename, nData);
   return data;
 }
 

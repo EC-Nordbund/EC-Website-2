@@ -9,6 +9,23 @@ import { createMailContentTN } from './mailContent'
 
 console.log('test')
 
+const vData = {
+  428: "TimeOut 2020/21",
+  440: "EC'ler auf der Kanzel",
+  441: "Mitarbeiter Wochenende",
+  442: "PfingstCamp",
+  443: "Landesjungscharfreizeit I",
+  444: "Landesjungscharfreizeit II",
+  445: "TeenCamp",
+  446: "Jugendfreizeit",
+  447: "BibleCamp",
+  448: "Abenteuerfreizeit",
+  449: "Reiterfreizeit",
+  450: "MaTag",
+  451: "TimeOut 2021/22"
+}
+
+
 const app = express()
 
 app.use(json())
@@ -155,7 +172,7 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
     const mail = await sendMail({
       to: email,
       from: 'anmeldung@ec-nordbund.de',
-      subject: `Deine Anmeldung beim EC-Nordbund (${req.params.id})`, // TODO: welche Veranstaltung
+      subject: `Deine Anmeldung beim EC-Nordbund (${vData[parseInt(req.params.id) as keyof typeof vData]})`, // TODO: welche Veranstaltung
       // html: `
       //   <p>Um deine Anmeldung zu bestätigen klicke <a href="https://www.ec-nordbund.de/anmeldung/token/${token}">HIER</a>.<br>Oder gebe den Verifizierungscode ${token} auf <a href="https://www.ec-nordbund.de/anmeldung/token">https://www.ec-nordbund.de/anmeldung/token</a> ein</p>
       //   <p>Deine Anmeldung für ... TOKEN: ${token}</p>
@@ -260,12 +277,12 @@ app.post('/confirm/:token', async (req, res) => {
         })
       }
 
-      await sendMail({
-        to: data.email,
-        from: 'anmeldung@ec-nordbund.de',
-        subject: `Anmeldung erfolgreich abgeschlossen.`,
-        html: `<p>Deine Anmeldung wurde bestätigt.</p>`
-      })
+      // await sendMail({
+      //   to: data.email,
+      //   from: 'anmeldung@ec-nordbund.de',
+      //   subject: `Anmeldung erfolgreich abgeschlossen.`,
+      //   html: `<p>Deine Anmeldung wurde bestätigt.</p>`
+      // })
 
       res.status(200)
       res.json({
