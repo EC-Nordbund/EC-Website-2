@@ -70,13 +70,20 @@ v-container.fill-height
                   v-card-text.text-body-1.font-weight-medium(
                     v-if='!loadingStep2 && (anmeldeID || isOnWarteliste)'
                   )
-                    .text-caption.text-left(v-if='anmeldeID') Dein Anmelde-Code (bitte merken):
-                      pre.text-body-2.text-center.anmelde-id(@click='copy2clip(anmeldeID)') {{ anmeldeID }}
+                    .text-caption.text-left(v-if='anmeldeID') Dein Anmelde-Code:
+                      pre.text-body-2.text-center.anmelde-id(
+                        @click='copy2clip(anmeldeID)'
+                      ) {{ anmeldeID }}
                     .text-center(v-else-if='isOnWarteliste') Dein Wartelistenplatz
 
         //- 3. Schritt
         v-col(cols='12', sm='6', md='4')
-          v-card#third-step.fill-height(tile, outlined, disabled, :loading='loadingStep3')
+          v-card#third-step.fill-height(
+            tile,
+            outlined,
+            disabled,
+            :loading='loadingStep3'
+          )
             template(slot='progress')
               v-progress-linear(
                 indeterminate,
@@ -221,8 +228,8 @@ export default defineComponent({
         }, 2000)
       })
     )
-    
-    if(process.browser) {
+
+    if (process.browser) {
       const status = useAsync(async () => {
         const res = await post<{
           status: 'OK' | 'ERROR'

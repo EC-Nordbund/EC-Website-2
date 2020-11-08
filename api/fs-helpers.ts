@@ -39,7 +39,7 @@ export function validateToken(token: string): any {
   const filename = path.join(__dirname, ANMELDUNG_SAVE_DIR, token + '.json');
   console.log(filename)
   if (!fs.existsSync(filename)) {
-    throw 'Token not found';
+    throw 'Bestätigungscode nicht gefunden.';
   }
   const data = JSON.parse(fs.readFileSync(filename, 'utf-8'));
 
