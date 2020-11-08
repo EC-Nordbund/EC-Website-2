@@ -88,7 +88,7 @@
           | {{e}}
   v-alert(v-else-if="success" type="info")
     p Daten erfolgreich übertragen.
-    v-btn(@click="reload()") Noch eine Anmeldung für diese Veranstaltung ausfüllen.
+    v-btn(@click="reload()" style="background: var(--v-anchor-base);") Noch eine Anmeldung für diese Veranstaltung ausfüllen.
   div(v-else-if="disabled" class="anmeldung-disabled")
     slot(name="disabled")
       p Die Anmeldung ist gesperrt.
