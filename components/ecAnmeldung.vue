@@ -87,7 +87,9 @@
           br
           | {{e}}
   v-alert(v-else-if="success" type="info")
-    p Daten erfolgreich übertragen.
+    p Daten erfolgreich übertragen. Du erhältst nun automatisch eine Bestätigungsmail (schaue auch in deinem Spam-Ordner nach!).
+    br
+    | Da die Anmeldephase heute beginnt kann es aus verschiedenen Technischen Gründen passieren, dass es etwas länger dauert bis du die E-Mail erhältst.
     v-btn(@click="reload()" style="background: var(--v-anchor-base);") Noch eine Anmeldung für diese Veranstaltung ausfüllen.
   div(v-else-if="disabled" class="anmeldung-disabled")
     slot(name="disabled")
