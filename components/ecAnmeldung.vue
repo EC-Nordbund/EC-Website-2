@@ -15,16 +15,19 @@
     v-text-field(v-model="data.nachname" required label="Nachname" counter="50" @change="nachnameEvent" :error-messages="nachnameErrors")
     ec-datepicker(v-model="data.gebDat" label="Geburtsdatum" required gebDat :max="new Date().toISOString().substr(0, 10)" min="1950-01-01" @change="gebDatEvent" :error-messages="gebDatErrors")
     v-alert(v-if="zuJung||zuAlt" type="warning" icon="mdi-information").secondary--text
-      p.font-weight-medium Hinweis:
       template(v-if="zuJung")
-        p(v-if="minAlter!==-1").mb-2 Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
-        p(v-else-if="jahrgangMax!==2100").mb-2 Du bist zu jung! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
-        p(v-else).mb-2 Du bist zu jung für diese Veranstaltung.
+        p(v-if="minAlter!==-1").font-weight-medium.mb-2 Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+        template(v-else-if="jahrgangMax!==2100")
+          p.font-weight-medium.mb-1 Du bist noch zu jung!
+          p.mb-2 Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+        p(v-else).font-weight-medium.mb-2 Du bist zu jung für diese Veranstaltung.
 
       template(v-if="zuAlt")
-        p(v-if="maxAlter!==999").mb-2 Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
-        p(v-else-if="jahrgangMin!==1900").mb-2 Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
-        p(v-else).mb-2 Du bist zu alt für diese Veranstaltung.
+        p(v-if="maxAlter!==999").font-weight-medium.mb-2 Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+        template(v-else-if="jahrgangMin!==1900")
+          p.font-weight-medium.mb-1 Du bist zu alt!
+          p.mb-2 Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+        p(v-else).font-weight-medium.mb-2 Du bist zu alt für diese Veranstaltung.
 
       p.font-italic.mb-1 Du kannst dich trotzdem anmelden.
       p.font-italic.mb-0
