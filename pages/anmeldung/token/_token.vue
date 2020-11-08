@@ -6,7 +6,7 @@ v-container.fill-height
         v-col
           h1.text-center.py-4 {{ title }}
           v-progress-linear.hidden-sm-and-down(
-            :value='loading ? 33 : 66',
+            :value='loadingStep2 ? 33 : 66',
             height='12',
             striped
           )
@@ -35,8 +35,8 @@ v-container.fill-height
 
         //- 2. Schritt
         v-col(cols='12', sm="6" md='4')
-          v-card(id="second-step" :loading='loading', tile, :color='statusColor' :flat="!loading" :outlined="loading" loader-height="6")
-            .collapsable-square(:class="{'collapsed-xs-only': loading}")
+          v-card(id="second-step" :loading='loadingStep2', tile, :color='statusColor' :flat="!loadingStep2" :outlined="loadingStep2" loader-height="6")
+            .collapsable-square(:class="{'collapsed-xs-only': loadingStep2}")
               .collapsable-square__sizer
               .collapsable-square__content
                 .d-flex.flex-column.justify-space-between.fill-height
@@ -49,23 +49,25 @@ v-container.fill-height
 
                   .absolute-flex-centered
                     v-avatar(
-                      v-if='!loading',
+                      v-if='!loadingStep2',
                       :max-height='avatarMaxSize',
                       :max-width='avatarMaxSize',
                       :size='avatarSize',
                       color='rgba(255,255,255,0.16)'
                     )
-                      span(v-if="isOnWarteliste") {{wList}}
+                      .text-h3.font-weight-bold.white--text(v-if="isOnWarteliste") {{wList}}
                       v-icon(v-else color='white', size='96') {{ statusIcon }}
 
-                  v-card-text(v-if="!loading&&(anmeldeID||isOnWarteliste)").text-body-1.font-weight-medium
-                    .text-center(v-if="anmeldeID") Deine AnmeldeID:
-                      pre {{anmeldeID}}
-                    .text-center(v-elseif="isOnWarteliste") Dein Wartelistenplatz
+                  v-card-text(v-if="!loadingStep2&&(anmeldeID||isOnWarteliste)").text-body-1.font-weight-medium
+                    .text-caption(v-if="anmeldeID").text-left Dein Anmelde-Code:
+                      pre(@click="copy2clip(anmeldeID)").text-body-2.text-center.anmelde-id {{anmeldeID}}
+                    .text-center(v-else-if="isOnWarteliste") Dein Wartelistenplatz
 
         //- 3. Schritt
         v-col(cols='12', sm="6" md='4')
-          v-card(id="third-step" tile, outlined disabled).fill-height
+          v-card(id="third-step" tile, outlined disabled :loading="loadingStep3").fill-height
+            template(slot='progress')
+              v-progress-linear(indeterminate height="6" :color="statusColor")
             v-responsive(aspect-ratio='4')
               v-card-title.pb-3.pt-4.justify-center
                 h5.text-h5.font-weight-black 3. Schritt
@@ -75,16 +77,33 @@ v-container.fill-height
 
             v-responsive(aspect-ratio='2')
               .d-flex.flex-column.justify-space-around.align-center.fill-height
-                v-row(no-gutters align="center")
-                  v-col(cols="3" align="center")
-                    v-avatar(size="42" color="primary")
-                      v-icon(size="24" color="white") mdi-email
-                  v-col(cols="9").text-body-2 Du erhälst von uns eine schriftliche Teilnahmebestätigung per Post.
+                template(v-if="!loadingStep2&&!loadingStep3")
+                  //- successful
+                  v-row(v-if="isSuccessful" no-gutters align="center")
+                    v-col(cols="3" align="center")
+                      v-avatar(size="42" color="success")
+                        v-icon(size="24" color="white") mdi-email
+                    v-col(cols="9").text-body-2 Du erhälst von uns eine schriftliche Teilnahmebestätigung per Post.
 
-                  v-col(cols="3" align="center")
-                    v-avatar(size="42" color="primary")
-                      v-icon(size="24" color="white") mdi-handshake
-                  v-col(cols="9").text-body-2 Du überweist ggf. die nötige Anzahlung
+                    v-col(cols="3" align="center")
+                      v-avatar(size="42" color="success")
+                        v-icon(size="24" color="white") mdi-handshake
+                    v-col(cols="9").text-body-2 Du überweist ggf. die nötige Anzahlung
+
+                  //- warteliste
+                  v-row(v-esle-if="isOnWarteliste" no-gutters align="center")
+                    v-col(cols="3" align="center")
+                      v-avatar(size="42" color="warning")
+                        v-icon(size="24" color="white") mdi-bell
+                    v-col(cols="9").text-body-2 Wir melden uns bei dir, wenn druch Nachrücken auf den Wartelistenplätzen die Change besteht, dass du doch noch an der gewählten Veranstaltung teilnehmen kannst.
+
+                  //- error
+                  v-row(v-else no-gutters align="center")
+                    v-col(cols="3" align="center")
+                      v-avatar(size="42" color="error")
+                        v-icon(size="24" color="white") mdi-bell
+                    v-col(cols="9").text-body-2
+                      //- TODO(@mathe42): ???
             v-responsive(aspect-ratio='4')
 </template>
 <script lang="ts">
@@ -105,16 +124,17 @@ export default defineComponent({
   setup(_, ctx) {
     const token = useContext().params.value.token
     const loaded = ssrRef(true)
-    const loading = ref(true)
+    const loadingStep2 = ref(true)
+    const loadingStep3 = ref(false)
     const anmeldeID = ssrRef(null as null | string)
-    const wList = ssrRef(0)
+    const wList = ssrRef(-1)
 
     const isMobile = computed(() => ctx.root.$vuetify.breakpoint.smAndDown)
     const isSuccessful = computed(() => wList.value === 0)
     const isOnWarteliste = computed(() => wList.value > 0)
 
     const title = computed(() => {
-      if (loading.value) {
+      if (loadingStep2.value) {
         return 'Du hast es gleich geschafft!'
       }
 
@@ -122,15 +142,31 @@ export default defineComponent({
         return 'Du bist auf der Warteliste...'
       }
 
-      return 'Du bist angemeldet!'
+      if (isSuccessful.value) {
+        return 'Du bist angemeldet!'
+      }
+
+      return 'Oops: Da hat etwas nicht geklappt!'
     })
 
-    const statusText = computed(() =>
-      loading.value ? 'Anmeldung wird bestätigt...' : 'Anmeldung bestätigt'
-    )
+    const statusText = computed(() => {
+      if (loadingStep2.value) {
+        return 'Anmeldung wird bestätigt...'
+      }
+
+      if (isOnWarteliste.value) {
+        return 'Veranstaltung bereits voll!'
+      }
+
+      if (isSuccessful.value) {
+        return 'Anmeldung bestätigt'
+      }
+
+      return 'Es ist ein Fehler aufgetreten'
+    })
 
     const statusColor = computed(() => {
-      if (loading.value) {
+      if (loadingStep2.value) {
         return undefined
       }
 
@@ -162,8 +198,11 @@ export default defineComponent({
     onMounted(() =>
       ctx.root.$nextTick(() => {
         setTimeout(() => {
-          loading.value = false
-        }, 3000)
+          loadingStep3.value = true
+          loadingStep2.value = false
+
+          setTimeout(() => (loadingStep3.value = false), 1000)
+        }, 2000)
       })
     )
 
@@ -176,7 +215,7 @@ export default defineComponent({
       }>('/api/confirm/' + token, {})
 
       if (res.status === 'OK') {
-        loaded.value = false;
+        loaded.value = false
 
         if (res.wList && res.wList < 0) {
           ctx.root.$router.push(
@@ -186,13 +225,13 @@ export default defineComponent({
         }
 
         if (res.wList) {
-          wList.value =  res.wList
+          wList.value = res.wList
         }
         if (res.anmeldeID) {
           anmeldeID.value = res.anmeldeID
         }
       } else {
-        // ctx.root.$router.push('/anmeldung/token?error=' + res.context)
+        ctx.root.$router.push('/anmeldung/token?error=' + res.context)
       }
     })
 
@@ -200,7 +239,8 @@ export default defineComponent({
 
     return {
       token,
-      loading,
+      loadingStep2,
+      loadingStep3,
       title,
       avatarSize,
       avatarMaxSize,
@@ -209,15 +249,25 @@ export default defineComponent({
       statusColor,
       statusIcon,
       mdiCheckAll,
+      isSuccessful,
       isOnWarteliste,
       anmeldeID,
-      wList
+      wList,
     }
   },
 })
 </script>
 <style lang="scss" scoped>
 @import '~vuetify/src/styles/settings/_variables';
+
+.anmelde-id {
+  padding: 2px 4px;
+  background: #ccc;
+
+  &:hover {
+    background: #aaa;
+  }
+}
 
 .collapsable-square {
   display: flex;
@@ -303,6 +353,7 @@ export default defineComponent({
 
         .absolute-flex-centered {
           justify-content: center;
+          top: 48px;
           right: 0;
 
           .v-avatar {
@@ -334,6 +385,7 @@ export default defineComponent({
 
         .absolute-flex-centered {
           justify-content: center;
+          top: 48px;
           right: 0;
 
           .v-avatar {
