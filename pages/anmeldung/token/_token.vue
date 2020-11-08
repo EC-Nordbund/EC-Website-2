@@ -91,7 +91,7 @@ v-container.fill-height
                     v-col(cols="9").text-body-2 Du überweist ggf. die nötige Anzahlung
 
                   //- warteliste
-                  v-row(v-esle-if="isOnWarteliste" no-gutters align="center")
+                  v-row(v-else-if="isOnWarteliste" no-gutters align="center")
                     v-col(cols="3" align="center")
                       v-avatar(size="42" color="warning")
                         v-icon(size="24" color="white") mdi-bell
