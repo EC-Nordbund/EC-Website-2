@@ -338,6 +338,13 @@ export default defineComponent({
       ...validation,
       // disabled: props.disabled,
       // startAt: props.startAt,
+      forceValidate: () => {
+        Object.keys(validation.rootMapper).forEach((key) => {
+          if(typeof validation.rootMapper[key] === 'function') {
+            validation.rootMapper[key]()
+          }
+        })
+      },
       data,
       submit,
       hatErlaubnisse,
