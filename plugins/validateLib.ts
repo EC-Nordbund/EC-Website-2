@@ -52,15 +52,15 @@ export const ruleLib = {
     (v: string) =>
       v && v.length > 50 ? 'Die Telefonnummer ist zu lang.' : true,
     (v: string) =>
-      v && (/^\+49\d./.test(v) || /00\d./.test(v))
-        ? 'Bitte lasse die Ländervorwahl weg! (+49... und 0049... => 0...)'
+      v && (/\+49\d*/.test(v) || /00\d*/.test(v))
+        ? 'Bitte lasse die deutsche Ländervorwahl weg! (+49... und 0049... => 0...)'
         : true,
     (v: string) =>
-      v && /^\+\d./.test(v)
+      v && /^\+\d*/.test(v)
         ? 'Bitte schreibe bei der Ländervorwahl 00. (+... => 00...)'
         : true,
     (v: string) =>
-      v && /^\d./.test(v) === false
+      v && /\d*/.test(v) === false
         ? 'Die Telefonnummer darf nur aus Ziffern besetehen!'
         : true,
   ],
