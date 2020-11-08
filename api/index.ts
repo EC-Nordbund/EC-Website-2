@@ -272,7 +272,7 @@ app.post('/confirm/:token', async (req, res) => {
           // to: 'app@ec-nordbund.de',
           from: 'anmeldung@ec-nordbund.de',
           subject: `Anmeldung mit fehlerhaften Alter`,
-          html: `<p>Es gab eine Anmeldung mit nicht passenden Alter. AnmeldeID: TODO</p>`
+          html: `<p>Es gab eine Anmeldung mit nicht passenden Alter. AnmeldeID: ${gqlRes.data.data.anmelden.anmeldeID}; Wartelistenposition ${gqlRes.data.data.anmelden.status} (0 bedeutet keine Warteliste)</p>`
         })
       }
 
