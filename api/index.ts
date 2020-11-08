@@ -266,11 +266,10 @@ app.post('/confirm/:token', async (req, res) => {
       // console.log(gqlCode)
       // console.log('test')
 
-      if (data.alter && gqlRes.data.data.anmelden.status >= 0) {
-        // TODO: send Mail to Anmeldecenter
+      if (!data.alter && gqlRes.data.data.anmelden.status >= 0) {
         await sendMail({
-          // to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;app@ec-nordbund.de', //TODO Birgit hinzufügen.
-          to: 'app@ec-nordbund.de',
+          to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;app@ec-nordbund.de;BirgitHerbert@t-online.de',
+          // to: 'app@ec-nordbund.de',
           from: 'anmeldung@ec-nordbund.de',
           subject: `Anmeldung mit fehlerhaften Alter`,
           html: `<p>Es gab eine Anmeldung mit nicht passenden Alter. AnmeldeID: TODO</p>`
