@@ -123,11 +123,11 @@ export default defineComponent({
   layout: 'minimal',
   setup(_, ctx) {
     const token = useContext().params.value.token
-    const loaded = ssrRef(true)
+    const loaded = ssrRef(false)
     const loadingStep2 = ref(true)
     const loadingStep3 = ref(false)
     const anmeldeID = ssrRef(null as null | string)
-    const wList = ssrRef(-1)
+    const wList = ssrRef(0)
 
     const isMobile = computed(() => ctx.root.$vuetify.breakpoint.smAndDown)
     const isSuccessful = computed(() => wList.value === 0)
@@ -215,7 +215,7 @@ export default defineComponent({
       }>('/api/confirm/' + token, {})
 
       if (res.status === 'OK') {
-        loaded.value = false
+        loaded.value = true
 
         if (res.wList && res.wList < 0) {
           ctx.root.$router.push(
