@@ -80,7 +80,7 @@
           br
           | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
     v-btn(@click="submit" :disabled="!valid") Absenden
-    v-btn(@click="submit") Absenden2
+    //- v-btn(@click="submit") Absenden2
     v-alert(type="error" v-if="error")
       p Es sind folgende Fehler aufgetreten:
         template(v-for="e in typeof error === 'string' ? [error] : error") 
@@ -106,7 +106,7 @@ import {
   watchEffect,
   toRefs,
   ref,
-  useContext
+  useContext,
 } from '@nuxtjs/composition-api'
 import { post } from '~/helpers/fetch'
 import { useValidation, ruleLib } from '../plugins/validate'
@@ -198,7 +198,7 @@ export default defineComponent({
       type: Number,
       required: true,
     },
-    jahrgangMin:{
+    jahrgangMin: {
       type: Number,
       default: 1900,
     },
@@ -220,7 +220,7 @@ export default defineComponent({
     )
     const sending = ref(false)
     const success = ref(false)
-    const error = ref(null)// as null | string[] | string)
+    const error = ref(null) // as null | string[] | string)
     const { extraData, extraRules } = useExtraFields(props.extraFields)
     const { data } = useData(extraData)
     handleFreizeitleitung(data, props)
@@ -248,21 +248,24 @@ export default defineComponent({
         fahrgemeinschaften: data.fahrgemeinschaften,
         extra: data.extra,
         datenschutz: data.datenschutz,
-        freizeitLeitung: data.freizeitLeitung,          
+        freizeitLeitung: data.freizeitLeitung,
         tnBedingungen: data.tnBedingungen,
         fahrgemeinschaften: data.fahrgemeinschaften,
-        alter: alterData.falschesAlter.value
+        alter: alterData.falschesAlter.value,
       }
       try {
-        const ret = await post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
-        if(ret.status !== 'OK') {
+        const ret = await post(
+          '/api/anmeldung/tn/' + props.veranstaltungsID,
+          submitData
+        )
+        if (ret.status !== 'OK') {
           error.value = ret.context
         } else {
           error.value = null
           success.value = true // WEITERLEITUNG? TODO: Tobi
         }
         console.log('testANMELDUNG1', ret)
-      } catch(e) {
+      } catch (e) {
         console.log('testANMELDUNG_FEHLER_2')
       }
       sending.value = false
@@ -311,9 +314,21 @@ export default defineComponent({
     )
     const alterData = {
       under18,
-      zuJung: computed(() => alter.value < props.minAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) > props.jahrgangMax )),
-      zuAlt: computed(() => alter.value > props.maxAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) < props.jahrgangMin)),
-      falschesAlter: computed(() => !(alterData.zuJung.value || alterData.zuAlt.value))
+      zuJung: computed(
+        () =>
+          alter.value < props.minAlter ||
+          (data.gebDat &&
+            parseInt(data.gebDat.split('-')[0]) > props.jahrgangMax)
+      ),
+      zuAlt: computed(
+        () =>
+          alter.value > props.maxAlter ||
+          (data.gebDat &&
+            parseInt(data.gebDat.split('-')[0]) < props.jahrgangMin)
+      ),
+      falschesAlter: computed(
+        () => !(alterData.zuJung.value || alterData.zuAlt.value)
+      ),
     }
     return {
       ...validation.rootMapper,
@@ -329,7 +344,7 @@ export default defineComponent({
       success,
       error,
       force: !!useContext().query.value.anmeldung,
-      reload: () => location.reload()
+      reload: () => location.reload(),
     }
   },
 })
