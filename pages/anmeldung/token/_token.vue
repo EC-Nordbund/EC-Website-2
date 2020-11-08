@@ -124,8 +124,10 @@ v-container.fill-height
                     v-col(cols='3', align='center')
                       v-avatar(size='42', color='error')
                         v-icon(size='24', color='white') mdi-bell
-                    v-col.text-body-2(cols='9')
-                      //- TODO(@mathe42): ???
+                    v-col.text-body-2(cols='9') Ein Fehler ist aufgetreten - Bitte teile uns das mit. Antworte dafür einfach auf die Bestätigungsmail und füge zusätzlich folgenden Text ein: 
+                      pre {{myStatus}}
+                      br
+                      | Wir wissen dadurch dann was zu tun ist.
             v-responsive(aspect-ratio='4')
 </template>
 <script lang="ts">
@@ -229,6 +231,8 @@ export default defineComponent({
       })
     )
 
+    const myStatus = ref(null as any)
+
     if (process.browser) {
       const status = useAsync(async () => {
         const res = await post<{
@@ -237,6 +241,8 @@ export default defineComponent({
           anmeldeID?: string
           wList?: number
         }>('/api/confirm/' + token, {})
+
+        myStatus.value = res
 
         if (res.status === 'OK') {
           loaded.value = true
@@ -260,7 +266,7 @@ export default defineComponent({
       })
     }
 
-    console.log(`isOnWarteliste ${isOnWarteliste}`)
+    // console.log(`isOnWarteliste ${isOnWarteliste}`)
 
     return {
       token,
@@ -278,6 +284,7 @@ export default defineComponent({
       isOnWarteliste,
       anmeldeID,
       wList,
+      myStatus,
       copy2clip: copy,
     }
   },

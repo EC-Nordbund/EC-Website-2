@@ -6,7 +6,7 @@
 export default {
   async asyncData({ $content, params, redirect, route }) {
     const { slugs } = await $content('old-news-slugs').fetch()
-    console.log(slugs)
+    // console.log(slugs)
 
     if (slugs.includes(params.id)) {
       redirect('/blog/' + params.id)

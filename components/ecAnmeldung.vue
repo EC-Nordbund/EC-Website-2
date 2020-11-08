@@ -262,9 +262,9 @@ export default defineComponent({
           error.value = ret.context
         } else {
           error.value = null
-          success.value = true // WEITERLEITUNG? TODO: Tobi
+          success.value = true
         }
-        console.log('testANMELDUNG1', ret)
+        // console.log('testANMELDUNG1', ret)
       } catch (e) {
         console.log('testANMELDUNG_FEHLER_2')
       }

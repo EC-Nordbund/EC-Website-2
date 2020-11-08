@@ -7,7 +7,7 @@ import { sendMail } from './sendMail'
 import axios from 'axios'
 import { createMailContentTN } from './mailContent'
 
-console.log('test')
+// console.log('test')
 
 const vData = {
   428: "TimeOut 2020/21",
@@ -131,7 +131,7 @@ app.post('/anmeldung/ma/veranstaltung', (req, res) => {
 // })
 
 app.post('/anmeldung/tn/:id', async (req, res) => {
-  console.log('test2')
+  // console.log('test2')
   const rules = {
     vorname: ruleLib.vorname,
     nachname: ruleLib.nachname,
@@ -181,7 +181,7 @@ app.post('/anmeldung/tn/:id', async (req, res) => {
       html: await createMailContentTN(req.body, token)
     })
 
-    console.log(mail)
+    // console.log(mail)
 
     res.status(200)
     res.json({
@@ -210,7 +210,7 @@ app.post('/confirm/:token', async (req, res) => {
 
     if (type === 1) {
       // TN Anmeldung
-      console.log(data)
+      // console.log(data)
 
       // __VERANSTALTUNGS_DATA__[]
 
@@ -260,11 +260,11 @@ app.post('/confirm/:token', async (req, res) => {
       //   return
       // }
 
-      console.log(gqlRes)
-      console.log(gqlRes.data)
+      // console.log(gqlRes)
+      // console.log(gqlRes.data)
 
-      console.log(gqlCode)
-      console.log('test')
+      // console.log(gqlCode)
+      // console.log('test')
 
       if (data.alter && gqlRes.data.data.anmelden.status >= 0) {
         // TODO: send Mail to Anmeldecenter
