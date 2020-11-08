@@ -117,7 +117,7 @@ v-container.fill-height
                     v-col(cols='3', align='center')
                       v-avatar(size='42', color='warning')
                         v-icon(size='24', color='white') mdi-bell
-                    v-col.text-body-2(cols='9') Wir melden uns bei dir, wenn druch Nachrücken auf den Wartelistenplätzen die Change besteht, dass du doch noch an der gewählten Veranstaltung teilnehmen kannst.
+                    v-col.text-body-2(cols='9') Wir melden uns bei dir, wenn durch Nachrücken auf den Wartelistenplätzen die Möglichkeit besteht, dass du doch noch an der gewählten Veranstaltung teilnehmen kannst.
 
                   //- error
                   v-row(v-else, no-gutters, align='center')
