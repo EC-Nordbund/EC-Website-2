@@ -255,6 +255,9 @@ export default defineComponent({
       wList,
     }
   },
+  head: {
+    title: 'Anmelde-Bestätigung',
+  }
 })
 </script>
 <style lang="scss" scoped>
