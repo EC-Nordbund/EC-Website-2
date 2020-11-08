@@ -221,35 +221,37 @@ export default defineComponent({
         }, 2000)
       })
     )
+    
+    if(process.browser) {
+      const status = useAsync(async () => {
+        const res = await post<{
+          status: 'OK' | 'ERROR'
+          context: string
+          anmeldeID?: string
+          wList?: number
+        }>('/api/confirm/' + token, {})
 
-    const status = useAsync(async () => {
-      const res = await post<{
-        status: 'OK' | 'ERROR'
-        context: string
-        anmeldeID?: string
-        wList?: number
-      }>('/api/confirm/' + token, {})
+        if (res.status === 'OK') {
+          loaded.value = true
 
-      if (res.status === 'OK') {
-        loaded.value = true
+          if (res.wList && res.wList < 0) {
+            ctx.root.$router.push(
+              '/anmeldung/token?error=Fehler beim Senden an API. Bitte kontaktiere uns unter app@ec-nordbund.de.'
+            )
+            return
+          }
 
-        if (res.wList && res.wList < 0) {
-          ctx.root.$router.push(
-            '/anmeldung/token?error=Fehler beim Senden an API. Bitte kontaktiere uns unter app@ec-nordbund.de.'
-          )
-          return
+          if (res.wList) {
+            wList.value = res.wList
+          }
+          if (res.anmeldeID) {
+            anmeldeID.value = res.anmeldeID
+          }
+        } else {
+          ctx.root.$router.push('/anmeldung/token?error=' + res.context)
         }
-
-        if (res.wList) {
-          wList.value = res.wList
-        }
-        if (res.anmeldeID) {
-          anmeldeID.value = res.anmeldeID
-        }
-      } else {
-        ctx.root.$router.push('/anmeldung/token?error=' + res.context)
-      }
-    })
+      })
+    }
 
     console.log(`isOnWarteliste ${isOnWarteliste}`)
 
