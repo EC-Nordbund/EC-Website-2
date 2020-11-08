@@ -4,14 +4,14 @@ import { sha3_224 as sha } from 'js-sha3';
 
 const ANMELDUNG_SAVE_DIR = '../confirm'
 export function cleanup() {
-  fs.readdirSync(path.join(__dirname, ANMELDUNG_SAVE_DIR)).forEach(file => {
-    if (file === '.gitkeep') { return }
+  // fs.readdirSync(path.join(__dirname, ANMELDUNG_SAVE_DIR)).forEach(file => {
+  //   if (file === '.gitkeep') { return }
 
-    const exp = JSON.parse(fs.readFileSync(path.join(__dirname, ANMELDUNG_SAVE_DIR, file), 'utf-8')).__internals.expires;
-    if (expired(exp)) {
-      fs.unlinkSync(path.join(__dirname, ANMELDUNG_SAVE_DIR, file));
-    }
-  });
+  //   const exp = JSON.parse(fs.readFileSync(path.join(__dirname, ANMELDUNG_SAVE_DIR, file), 'utf-8')).__internals.expires;
+  //   if (expired(exp)) {
+  //     fs.unlinkSync(path.join(__dirname, ANMELDUNG_SAVE_DIR, file));
+  //   }
+  // });
 }
 export function saveForConfirm(data: any, type: number): string {
   if (!data.__internals) {
