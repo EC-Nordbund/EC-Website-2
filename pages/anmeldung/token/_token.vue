@@ -10,10 +10,10 @@ v-container.fill-height
             height='12',
             striped
           )
-      v-row(class="px-4 px-sm-0")
+      v-row.px-4.px-sm-0
         //- 1. Schritt
         v-col(cols='12', md='4')
-          v-card(id="first-step" color='success' tile flat)
+          v-card#first-step(color='success', tile, flat)
             .collapsable-square.collapsed-sm-and-down
               .collapsable-square__sizer
               .collapsable-square__content
@@ -34,9 +34,16 @@ v-container.fill-height
                       v-icon(color='white', :size='iconSize') mdi-check
 
         //- 2. Schritt
-        v-col(cols='12', sm="6" md='4')
-          v-card(id="second-step" :loading='loadingStep2', tile, :color='statusColor' :flat="!loadingStep2" :outlined="loadingStep2" loader-height="6")
-            .collapsable-square(:class="{'collapsed-xs-only': loadingStep2}")
+        v-col(cols='12', sm='6', md='4')
+          v-card#second-step(
+            :loading='loadingStep2',
+            tile,
+            :color='statusColor',
+            :flat='!loadingStep2',
+            :outlined='loadingStep2',
+            loader-height='6'
+          )
+            .collapsable-square(:class='{ "collapsed-xs-only": loadingStep2 }')
               .collapsable-square__sizer
               .collapsable-square__content
                 .d-flex.flex-column.justify-space-between.fill-height
@@ -55,19 +62,27 @@ v-container.fill-height
                       :size='avatarSize',
                       color='rgba(255,255,255,0.16)'
                     )
-                      .text-h3.font-weight-bold.white--text(v-if="isOnWarteliste") {{wList}}
-                      v-icon(v-else color='white', size='96') {{ statusIcon }}
+                      .text-h3.font-weight-bold.white--text(
+                        v-if='isOnWarteliste'
+                      ) {{ wList }}
+                      v-icon(v-else, color='white', size='96') {{ statusIcon }}
 
-                  v-card-text(v-if="!loadingStep2&&(anmeldeID||isOnWarteliste)").text-body-1.font-weight-medium
-                    .text-caption(v-if="anmeldeID").text-left Dein Anmelde-Code:
-                      pre(@click="copy2clip(anmeldeID)").text-body-2.text-center.anmelde-id {{anmeldeID}}
-                    .text-center(v-else-if="isOnWarteliste") Dein Wartelistenplatz
+                  v-card-text.text-body-1.font-weight-medium(
+                    v-if='!loadingStep2 && (anmeldeID || isOnWarteliste)'
+                  )
+                    .text-caption.text-left(v-if='anmeldeID') Dein Anmelde-Code (bitte merken):
+                      pre.text-body-2.text-center.anmelde-id(@click='copy2clip(anmeldeID)') {{ anmeldeID }}
+                    .text-center(v-else-if='isOnWarteliste') Dein Wartelistenplatz
 
         //- 3. Schritt
-        v-col(cols='12', sm="6" md='4')
-          v-card(id="third-step" tile, outlined disabled :loading="loadingStep3").fill-height
+        v-col(cols='12', sm='6', md='4')
+          v-card#third-step.fill-height(tile, outlined, disabled, :loading='loadingStep3')
             template(slot='progress')
-              v-progress-linear(indeterminate height="6" :color="statusColor")
+              v-progress-linear(
+                indeterminate,
+                height='6',
+                :color='statusColor'
+              )
             v-responsive(aspect-ratio='4')
               v-card-title.pb-3.pt-4.justify-center
                 h5.text-h5.font-weight-black 3. Schritt
@@ -77,32 +92,32 @@ v-container.fill-height
 
             v-responsive(aspect-ratio='2')
               .d-flex.flex-column.justify-space-around.align-center.fill-height
-                template(v-if="!loadingStep2&&!loadingStep3")
+                template(v-if='!loadingStep2 && !loadingStep3')
                   //- successful
-                  v-row(v-if="isSuccessful" no-gutters align="center")
-                    v-col(cols="3" align="center")
-                      v-avatar(size="42" color="success")
-                        v-icon(size="24" color="white") mdi-email
-                    v-col(cols="9").text-body-2 Du erhälst von uns eine schriftliche Teilnahmebestätigung per Post.
+                  v-row(v-if='isSuccessful', no-gutters, align='center')
+                    v-col(cols='3', align='center')
+                      v-avatar(size='42', color='success')
+                        v-icon(size='24', color='white') mdi-email
+                    v-col.text-body-2(cols='9') Du erhälst von uns eine schriftliche Teilnahmebestätigung per Post.
 
-                    v-col(cols="3" align="center")
-                      v-avatar(size="42" color="success")
-                        v-icon(size="24" color="white") mdi-handshake
-                    v-col(cols="9").text-body-2 Du überweist ggf. die nötige Anzahlung
+                    v-col(cols='3', align='center')
+                      v-avatar(size='42', color='success')
+                        v-icon(size='24', color='white') mdi-handshake
+                    v-col.text-body-2(cols='9') Du überweist ggf. die nötige Anzahlung
 
                   //- warteliste
-                  v-row(v-else-if="isOnWarteliste" no-gutters align="center")
-                    v-col(cols="3" align="center")
-                      v-avatar(size="42" color="warning")
-                        v-icon(size="24" color="white") mdi-bell
-                    v-col(cols="9").text-body-2 Wir melden uns bei dir, wenn druch Nachrücken auf den Wartelistenplätzen die Change besteht, dass du doch noch an der gewählten Veranstaltung teilnehmen kannst.
+                  v-row(v-else-if='isOnWarteliste', no-gutters, align='center')
+                    v-col(cols='3', align='center')
+                      v-avatar(size='42', color='warning')
+                        v-icon(size='24', color='white') mdi-bell
+                    v-col.text-body-2(cols='9') Wir melden uns bei dir, wenn druch Nachrücken auf den Wartelistenplätzen die Change besteht, dass du doch noch an der gewählten Veranstaltung teilnehmen kannst.
 
                   //- error
-                  v-row(v-else no-gutters align="center")
-                    v-col(cols="3" align="center")
-                      v-avatar(size="42" color="error")
-                        v-icon(size="24" color="white") mdi-bell
-                    v-col(cols="9").text-body-2
+                  v-row(v-else, no-gutters, align='center')
+                    v-col(cols='3', align='center')
+                      v-avatar(size='42', color='error')
+                        v-icon(size='24', color='white') mdi-bell
+                    v-col.text-body-2(cols='9')
                       //- TODO(@mathe42): ???
             v-responsive(aspect-ratio='4')
 </template>
@@ -119,6 +134,7 @@ import {
   onBeforeMount,
 } from '@nuxtjs/composition-api'
 import { post } from '~/helpers/fetch'
+import copy from '~/helpers/copy'
 export default defineComponent({
   layout: 'minimal',
   setup(_, ctx) {
@@ -253,11 +269,12 @@ export default defineComponent({
       isOnWarteliste,
       anmeldeID,
       wList,
+      copy2clip: copy,
     }
   },
   head: {
     title: 'Anmelde-Bestätigung',
-  }
+  },
 })
 </script>
 <style lang="scss" scoped>
