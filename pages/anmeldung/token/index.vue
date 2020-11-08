@@ -10,7 +10,7 @@
         v-alert(type='error', v-if='error')
           p {{ error }}
             br
-            | Bitte probiere es erneut! - Bei weiteren Problemen melde un diese bitte. Antworte dafür einfach auf die Bestätigungsmail.
+            | Bitte probiere es erneut! - Bei weiteren Problemen melde uns diese bitte. Antworte dafür einfach auf die Bestätigungsmail.
         p Bitte gebe den Verifizierungscode ein. Du kannst aber auch einfach den Link aus der E-Mail verwenden.
         v-text-field(label='Verifizierungscode', v-model='token')
         //- v-card-actions
