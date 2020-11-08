@@ -268,7 +268,7 @@ app.post('/confirm/:token', async (req, res) => {
 
       if (!data.alter && gqlRes.data.data.anmelden.status >= 0) {
         await sendMail({
-          to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;app@ec-nordbund.de;BirgitHerbert@t-online.de',
+          to: 'kinder-referent@ec-nordbund.de;referent@ec-nordbund.de;app@ec-nordbund.de;BirgitHerbert@t-online.de',
           // to: 'app@ec-nordbund.de',
           from: 'anmeldung@ec-nordbund.de',
           subject: `Anmeldung mit fehlerhaften Alter`,
