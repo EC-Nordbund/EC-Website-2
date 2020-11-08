@@ -8,7 +8,7 @@ export function validate(rules: any, data: any) {
     }
     else if (typeof rules[key] === 'object') {
       if (!data[key]) {
-        errors.push('Benötigte Angaben fehlen!');
+        errors.push(`Benötigte Angaben fehlen! ${key} - DEBUG`);
       }
       else {
         errors.push(...validate(rules[key], data[key]));

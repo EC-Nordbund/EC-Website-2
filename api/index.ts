@@ -3,6 +3,28 @@ import { json } from 'body-parser'
 import { ruleLib } from '../plugins/validateLib'
 import { saveForConfirm, validateToken, cleanup } from './fs-helpers'
 import { validate } from './validate'
+import { sendMail } from './sendMail'
+import axios from 'axios'
+import { createMailContentTN } from './mailContent'
+
+console.log('test')
+
+const vData = {
+  428: "TimeOut 2020/21",
+  440: "EC'ler auf der Kanzel",
+  441: "Mitarbeiter Wochenende",
+  442: "PfingstCamp",
+  443: "Landesjungscharfreizeit I",
+  444: "Landesjungscharfreizeit II",
+  445: "TeenCamp",
+  446: "Jugendfreizeit",
+  447: "BibleCamp",
+  448: "Abenteuerfreizeit",
+  449: "Reiterfreizeit",
+  450: "MaTag",
+  451: "TimeOut 2021/22"
+}
+
 
 const app = express()
 
@@ -55,7 +77,6 @@ app.post('/anmeldung/ma/ort', (req, res) => {
     })
   }
 })
-
 app.post('/anmeldung/ma/veranstaltung', (req, res) => {
   const rules = {
     vorname: ruleLib.vorname,
@@ -104,17 +125,23 @@ app.post('/anmeldung/ma/veranstaltung', (req, res) => {
     })
   }
 })
-app.post('/anmeldung/tn', (req, res) => {
+// app.use(async (req, res, next) => {
+//   console.log(req)
+//   next()
+// })
+
+app.post('/anmeldung/tn/:id', async (req, res) => {
+  console.log('test2')
   const rules = {
     vorname: ruleLib.vorname,
     nachname: ruleLib.nachname,
     geschlecht: ruleLib.geschlecht,
     gebDat: ruleLib.gebDat,
     strasse: ruleLib.strasse,
-    plzOrt: {
-      plz: ruleLib.plz,
-      ort: ruleLib.ort,
-    },
+    // plzOrt: {
+    plz: ruleLib.plz,
+    ort: ruleLib.ort,
+    // },
     email: ruleLib.email,
     telefon: ruleLib.telefon,
     bemerkungen: ruleLib.textArea250,
@@ -136,12 +163,25 @@ app.post('/anmeldung/tn', (req, res) => {
     return
   }
 
+
   try {
-    const token = saveForConfirm(req.body, 1)
+    const token = saveForConfirm({ ...req.body, veranstaltungsID: parseInt(req.params.id) }, 1)
 
     const { email } = req.body
 
-    // TODO: send Email
+    const mail = await sendMail({
+      to: email,
+      from: 'anmeldung@ec-nordbund.de',
+      subject: `Deine Anmeldung beim EC-Nordbund (${vData[parseInt(req.params.id) as keyof typeof vData]})`, // TODO: welche Veranstaltung
+      // html: `
+      //   <p>Um deine Anmeldung zu bestätigen klicke <a href="https://www.ec-nordbund.de/anmeldung/token/${token}">HIER</a>.<br>Oder gebe den Verifizierungscode ${token} auf <a href="https://www.ec-nordbund.de/anmeldung/token">https://www.ec-nordbund.de/anmeldung/token</a> ein</p>
+      //   <p>Deine Anmeldung für ... TOKEN: ${token}</p>
+      //   DATA: ${JSON.stringify(req.body)}
+      // `
+      html: await createMailContentTN(req.body, token)
+    })
+
+    console.log(mail)
 
     res.status(200)
     res.json({
@@ -155,7 +195,12 @@ app.post('/anmeldung/tn', (req, res) => {
     })
   }
 })
-app.post('/confirm/:token', (req, res) => {
+
+function escape(data: string = '') {
+  return JSON.stringify(data.trim())
+}
+
+app.post('/confirm/:token', async (req, res) => {
   const token = req.params.token
 
   try {
@@ -165,12 +210,85 @@ app.post('/confirm/:token', (req, res) => {
 
     if (type === 1) {
       // TN Anmeldung
+      console.log(data)
 
-      // TODO: Send to other API
+      // __VERANSTALTUNGS_DATA__[]
+
+      // TODO: Send to other API, inject TOkken from env
+      const gqlCode = `
+        mutation {
+          anmelden(
+            isWP: true, 
+            token: "${process.env.WPToken || 'NO WP-TOKEN'}", 
+            vorname: ${escape(data.vorname)}, 
+            nachname: ${escape(data.nachname)}, 
+            gebDat: ${escape(data.gebDat)}, 
+            geschlecht: ${escape(data.geschlecht)}, 
+            position: 1, 
+            veranstaltungsID: ${data.veranstaltungsID}, 
+            eMail: ${escape(data.email)}, 
+            telefon: ${escape(data.telefon)}, 
+            strasse: ${escape(data.strasse)}, 
+            plz: ${escape(data.plz)}, 
+            ort: ${escape(data.ort)}, 
+            anmeldeZeitpunkt: ${escape(data.__internals.time.split('.')[0])}, 
+            vegetarisch: ${!!data.vegetarisch}, 
+            lebensmittelAllergien: ${escape(data.lebensmittelallergien)}, 
+            gesundheitsinformationen: ${escape(data.gesundheit)}, 
+            bemerkungen: ${escape(data.bemerkungen)}, 
+            radfahren: ${!!data.radfahren}, 
+            schwimmen: ${data.schwimmen}, 
+            fahrgemeinschaften: ${!!data.fahrgemeinschaften}, 
+            klettern: ${!!data.klettern}, 
+            sichEntfernen: ${!!data.sichEntfernen}, 
+            bootFahren: ${!!data.bootFahren}, 
+            extra_json: "{}"
+          ) {
+            status
+            anmeldeID
+          }
+        }
+      `
+
+      const gqlRes = await axios.post('https://api.ec-nordbund.de/graphql', {
+        query: gqlCode
+      })
+
+      // if(gqlRes.data.data.anmelden.status < 0) {
+      //   res.status(500)
+
+      //   return
+      // }
+
+      console.log(gqlRes)
+      console.log(gqlRes.data)
+
+      console.log(gqlCode)
+      console.log('test')
+
+      if (data.alter && gqlRes.data.data.anmelden.status >= 0) {
+        // TODO: send Mail to Anmeldecenter
+        await sendMail({
+          // to: 'kinder-refernt@ec-nordbund.de;referent@ec-nordbund.de;app@ec-nordbund.de', //TODO Birgit hinzufügen.
+          to: 'app@ec-nordbund.de',
+          from: 'anmeldung@ec-nordbund.de',
+          subject: `Anmeldung mit fehlerhaften Alter`,
+          html: `<p>Es gab eine Anmeldung mit nicht passenden Alter. AnmeldeID: TODO</p>`
+        })
+      }
+
+      // await sendMail({
+      //   to: data.email,
+      //   from: 'anmeldung@ec-nordbund.de',
+      //   subject: `Anmeldung erfolgreich abgeschlossen.`,
+      //   html: `<p>Deine Anmeldung wurde bestätigt.</p>`
+      // })
 
       res.status(200)
       res.json({
         status: 'OK',
+        anmeldeID: gqlRes.data.data.anmelden.anmeldeID,
+        wList: gqlRes.data.data.anmelden.status
       })
       return
     }
@@ -214,7 +332,14 @@ app.post('/confirm/:token', (req, res) => {
       })
       return
     }
+
+    res.status(500)
+    res.json({
+      status: 'ERROR',
+      context: 'DATEN fehlerhaft',
+    })
   } catch (ex) {
+    console.log(ex)
     res.status(500)
     res.json({
       status: 'ERROR',
@@ -225,7 +350,7 @@ app.post('/confirm/:token', (req, res) => {
 
 cleanup()
 
-setInterval(cleanup, 1000*60*59)
+setInterval(cleanup, 1000 * 60 * 59)
 
 export default app
 

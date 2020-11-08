@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-form(v-if="!disabled && !countdown")
+  v-form(v-if="(force || (!disabled && !countdown)) && !success")
     v-alert(type="info")
       | Die Anmeldung für 
       b Mitarbeiter 
@@ -13,15 +13,19 @@
     p(v-if="zuJung")
       span(class="font-weight-bold") Hinweis:
       br
-      | Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+      template(v-if="minAlter!==-1") Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+      template(v-else-if="jahrgangMax!==2100") Du bist zu jung! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+      template(v-else) Du bist zu jung für diese Veranstaltung.
     p(v-if="zuAlt")
       span(class="font-weight-bold") Hinweis:
         br
-        | Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+        template(v-if="maxAlter!==999") Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+        template(v-else-if="jahrgangMin!==1900") Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+        template(v-else) Du bist zu alt für diese Veranstaltung.
     p(v-if="zuJung||zuAlt")
       | Du kannst dich trotzdem anmelden.
       br
-      | Wir behalten uns allerdings vor, dir den Platz zu verwähren und andere Teilnehmer im Zielgruppenalter zu bevorzugen.
+      | Wir behalten uns allerdings vor, dir den Platz zu verwehren und andere Teilnehmer im Zielgruppenalter zu bevorzugen.
       br
       | In diesem Falle werden wir uns bei dir melden.
     v-text-field(v-model="data.strasse" required label="Straße" counter="50" @change="strasseEvent" :error-messages="strasseErrors")
@@ -76,6 +80,15 @@
           br
           | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
     v-btn(@click="submit" :disabled="!valid") Absenden
+    v-btn(@click="submit") Absenden2
+    v-alert(type="error" v-if="error")
+      p Es sind folgende Fehler aufgetreten:
+        template(v-for="e in typeof error === 'string' ? [error] : error") 
+          br
+          | {{e}}
+  v-alert(v-else-if="success" type="info")
+    p Daten erfolgreich übertragen.
+    v-btn(@click="reload()") Noch eine Anmeldung für diese Veranstaltung ausfüllen.
   div(v-else-if="disabled" class="anmeldung-disabled")
     slot(name="disabled")
       p Die Anmeldung ist gesperrt.
@@ -92,6 +105,8 @@ import {
   computed,
   watchEffect,
   toRefs,
+  ref,
+  useContext
 } from '@nuxtjs/composition-api'
 import { post } from '~/helpers/fetch'
 import { useValidation, ruleLib } from '../plugins/validate'
@@ -135,10 +150,10 @@ function useData(extra) {
     schwimmen: 0,
     fahrrad: false,
     sichEntfernen: false,
-    datenschutz: false, // no-save
-    tnBedingungen: false, // no-save
-    freizeitLeitung: false, // no-save
-    fahrgemeinschaften: false, // no-save
+    datenschutz: false,
+    tnBedingungen: false,
+    freizeitLeitung: false,
+    fahrgemeinschaften: false,
     extra,
   })
   return { data }
@@ -183,6 +198,14 @@ export default defineComponent({
       type: Number,
       required: true,
     },
+    jahrgangMin:{
+      type: Number,
+      default: 1900,
+    },
+    jahrgangMax: {
+      type: Number,
+      default: 2100,
+    },
     disabled: Boolean,
     startAt: String,
   },
@@ -195,10 +218,14 @@ export default defineComponent({
         props.hatErlaubnisSchwimmen ||
         props.hatErlaubnisSichEntfernen
     )
+    const sending = ref(false)
+    const success = ref(false)
+    const error = ref(null)// as null | string[] | string)
     const { extraData, extraRules } = useExtraFields(props.extraFields)
     const { data } = useData(extraData)
     handleFreizeitleitung(data, props)
-    const submit = () => {
+    const submit = async () => {
+      sending.value = true
       const submitData = {
         vorname: data.vorname,
         nachname: data.nachname,
@@ -220,8 +247,25 @@ export default defineComponent({
         sichEntfernen: data.sichEntfernen,
         fahrgemeinschaften: data.fahrgemeinschaften,
         extra: data.extra,
+        datenschutz: data.datenschutz,
+        freizeitLeitung: data.freizeitLeitung,          
+        tnBedingungen: data.tnBedingungen,
+        fahrgemeinschaften: data.fahrgemeinschaften,
+        alter: alterData.falschesAlter.value
       }
-      post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
+      try {
+        const ret = await post('/api/anmeldung/tn/' + props.veranstaltungsID, submitData)
+        if(ret.status !== 'OK') {
+          error.value = ret.context
+        } else {
+          error.value = null
+          success.value = true // WEITERLEITUNG? TODO: Tobi
+        }
+        console.log('testANMELDUNG1', ret)
+      } catch(e) {
+        console.log('testANMELDUNG_FEHLER_2')
+      }
+      sending.value = false
     }
     const validation = useValidation(
       data,
@@ -267,8 +311,9 @@ export default defineComponent({
     )
     const alterData = {
       under18,
-      zuJung: computed(() => alter.value < props.minAlter),
-      zuAlt: computed(() => alter.value > props.maxAlter),
+      zuJung: computed(() => alter.value < props.minAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) > props.jahrgangMax )),
+      zuAlt: computed(() => alter.value > props.maxAlter || (data.gebDat && parseInt(data.gebDat.split('-')[0]) < props.jahrgangMin)),
+      falschesAlter: computed(() => !(alterData.zuJung.value || alterData.zuAlt.value))
     }
     return {
       ...validation.rootMapper,
@@ -280,6 +325,11 @@ export default defineComponent({
       submit,
       hatErlaubnisse,
       countdown: new Date().getTime() < new Date(props.startAt).getTime(),
+      sending,
+      success,
+      error,
+      force: !!useContext().query.value.anmeldung,
+      reload: () => location.reload()
     }
   },
 })

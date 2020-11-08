@@ -33,7 +33,7 @@ const vuetifyTheme = {
   accent: '#583a70', // lila
   secondary: '#282925', // dunkelGrau
   info: '#70b6d4', // hellBlau
-  warning: '#ea571d', // ecOrange
+  warning: '#ffd633', // gelb
   error: '#ea4c60', // koralle
   success: '#92c355', // grün (primary)
 

@@ -95,3 +95,5 @@ content/downloadFiles.json
 slugs.json
 fileToDownload.json
 
+sw.*
+confirm
