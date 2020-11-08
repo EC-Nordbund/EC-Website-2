@@ -52,7 +52,7 @@ export const ruleLib = {
     (v: string) =>
       v && v.length > 50 ? 'Die Telefonnummer ist zu lang.' : true,
     (v: string) =>
-      v && (/\+49\d*/.test(v) || /00\d*/.test(v))
+      v && (/\+49\d*/.test(v) || /0049\d*/.test(v))
         ? 'Bitte lasse die deutsche Ländervorwahl weg! (+49... und 0049... => 0...)'
         : true,
     (v: string) =>
