@@ -1,33 +1,35 @@
 <template lang="pug">
   v-form(v-if="(force || (!disabled && !countdown)) && !success")
-    v-alert(type="info")
-      | Die Anmeldung für 
-      b Mitarbeiter 
-      | läuft ab sofort anders als bissher bitte wende dich an deinen Verantsaltungsleiter für weitere Informationen.
+    //- Mitarbeiter Hinweis
+    v-alert(type="info" tile)
+      v-expansion-panels(flat tile light).transparent.ma-n3
+        v-expansion-panel.transparent
+          v-expansion-panel-header.pr-0.text-subtitle-2.font-weight-medium Anmeldung für Mitarbeiter
+          v-expansion-panel-content.pr-0.mr-n6
+            | Die Anmeldung für  Mitarbeiter läuft ab sofort anders als bissher bitte wende dich an deinen Verantsaltungsleiter für weitere Informationen.
+
     v-radio-group(v-model="data.geschlecht" required label="Geschlecht" @change="geschlechtEvent" :error-messages="geschlechtErrors")
       v-radio(value="m" label="Männlich")
       v-radio(value="w" label="Weiblich")
     v-text-field(v-model="data.vorname" required label="Vorname" counter="50" @change="vornameEvent" :error-messages="vornameErrors")
     v-text-field(v-model="data.nachname" required label="Nachname" counter="50" @change="nachnameEvent" :error-messages="nachnameErrors")
     ec-datepicker(v-model="data.gebDat" label="Geburtsdatum" required gebDat :max="new Date().toISOString().substr(0, 10)" min="1950-01-01" @change="gebDatEvent" :error-messages="gebDatErrors")
-    p(v-if="zuJung")
-      span(class="font-weight-bold") Hinweis:
-      br
-      template(v-if="minAlter!==-1") Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
-      template(v-else-if="jahrgangMax!==2100") Du bist zu jung! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
-      template(v-else) Du bist zu jung für diese Veranstaltung.
-    p(v-if="zuAlt")
-      span(class="font-weight-bold") Hinweis:
-        br
-        template(v-if="maxAlter!==999") Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
-        template(v-else-if="jahrgangMin!==1900") Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
-        template(v-else) Du bist zu alt für diese Veranstaltung.
-    p(v-if="zuJung||zuAlt")
-      | Du kannst dich trotzdem anmelden.
-      br
-      | Wir behalten uns allerdings vor, dir den Platz zu verwehren. 
-      br
-      | Wir melden uns bei dir.
+    v-alert(v-if="zuJung||zuAlt" type="warning" icon="mdi-information").secondary--text
+      p.font-weight-medium Hinweis:
+      template(v-if="zuJung")
+        p(v-if="minAlter!==-1").mb-2 Du bist jünger als das vorgesehene Mindesalter von {{minAlter}} Jahren für diese Veranstaltung.
+        p(v-else-if="jahrgangMax!==2100").mb-2 Du bist zu jung! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+        p(v-else).mb-2 Du bist zu jung für diese Veranstaltung.
+
+      template(v-if="zuAlt")
+        p(v-if="maxAlter!==999").mb-2 Du bist älter als das vorgesehende Maximalealter von {{maxAlter}} Jahren für diese Veranstaltung.
+        p(v-else-if="jahrgangMin!==1900").mb-2 Du bist zu alt! Diese Veranstaltung ist für Teilnehmer der Jahrgänge {{jahrgangMin}} - {{jahrgangMax}}.
+        p(v-else).mb-2 Du bist zu alt für diese Veranstaltung.
+
+      p.font-italic.mb-1 Du kannst dich trotzdem anmelden.
+      p.font-italic.mb-0
+        | Wir behalten uns allerdings vor, dir den Platz zu verwehren. Wir melden uns bei dir.
+
     v-text-field(v-model="data.strasse" required label="Straße" counter="50" @change="strasseEvent" :error-messages="strasseErrors")
     ec-adresse(v-model="data.plzOrt" :errorMap="errorMap.plzOrt")
     v-text-field(label="E-Mail" type="email" required v-model="data.email" counter="50" @change="emailEvent" :error-messages="emailErrors")
@@ -79,18 +81,25 @@
           strong Optional:
           br
           | Ich erkläre mich bereit meine Anschrift zum Zweck der Bildung von Fahrgemeinschaften an die anderen Teilnehmer weitergegeben werden darf.
-    v-btn(@click="submit" :disabled="!valid") Absenden
-    //- v-btn(@click="submit") Absenden2
+    
+    v-row(no-gutters justify="end")
+      v-btn(@click="submit" :disabled="!valid" color="primary" depressed tile).align-self-end Absenden
+      //- v-btn(@click="submit") Absenden2
+
     v-alert(type="error" v-if="error")
       p Es sind folgende Fehler aufgetreten:
         template(v-for="e in typeof error === 'string' ? [error] : error") 
           br
           | {{e}}
-  v-alert(v-else-if="success" type="info")
-    p Daten erfolgreich übertragen. Du erhältst nun automatisch eine Bestätigungsmail (schaue auch in deinem Spam-Ordner nach!).
-    br
-    | Da die Anmeldephase heute beginnt kann es aus verschiedenen Technischen Gründen passieren, dass es etwas länger dauert bis du die E-Mail erhältst.
-    v-btn(@click="reload()" style="background: var(--v-anchor-base);") Noch eine Anmeldung für diese Veranstaltung ausfüllen.
+  div(v-else-if="success")
+    v-alert(type="success" tile) Daten erfolgreich übertragen.
+    
+    v-alert(type="warning" tile icon="mdi-information").secondary--text
+      p.font-weight-bold Anmmeldung noch nicht fertig!
+      p Wir haben dir eine E-Mail zum bestätigen deiner Anmeldung geschickt.
+
+    v-row(no-gutters justify="end")
+      v-btn(@click="reload()" tile depressed) Noch jemanden anmelden?
   div(v-else-if="disabled" class="anmeldung-disabled")
     slot(name="disabled")
       p Die Anmeldung ist gesperrt.
@@ -268,7 +277,8 @@ export default defineComponent({
         }
         // console.log('testANMELDUNG1', ret)
       } catch (e) {
-        console.log('testANMELDUNG_FEHLER_2')
+        error.value = e
+        // console.log('testANMELDUNG_FEHLER_2')
       }
       sending.value = false
     }
