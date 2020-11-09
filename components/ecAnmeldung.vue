@@ -327,7 +327,7 @@ export default defineComponent({
       sending,
       success,
       error,
-      force: !!useContext().query.anmeldung
+      force: !!useContext().query.value.anmeldung
     }
   },
 })
