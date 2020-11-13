@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@rollup/plugin-node-resolve": "^10.0.0",
-    "esbuild": "^0.8.5",
+    "esbuild": "^0.8.6",
     "idb-keyval": "^3.2.0",
     "rollup": "^2.33.1",
     "rollup-plugin-esbuild": "^2.5.2"
