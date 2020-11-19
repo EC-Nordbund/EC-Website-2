@@ -39,7 +39,7 @@
     "@lhci/cli": "0.6.x",
     "@nuxt/types": "2.14.7",
     "@nuxt/typescript-build": "2.0.3",
-    "@nuxtjs/eslint-config": "4.0.0",
+    "@nuxtjs/eslint-config": "5.0.0",
     "@nuxtjs/eslint-config-typescript": "5.0.0",
     "@nuxtjs/eslint-module": "3.0.1",
     "@nuxtjs/stylelint-module": "4.0.0",
