@@ -12,13 +12,12 @@
         v-row(justify='center', no-gutters)
           v-col(cols='12', md='7')
             v-card.px-3.ec-gradient.text-center.pt-4.pb-8(tile)
-              span.text-h6.pb-5.white--text Die Anmeldephase beginnt in:
-              ec-countdown(target='2020-11-08T14:00:00Z', keep-zeros)
-                template(v-slot:digits='slotProp')
-                  span.text-h4.font-weight-bold.white--text(slot='digits') {{ slotProp.digits }}
-                template(v-slot:units='slotProp')
-                  span.text-caption.text-uppercase.white--text(slot='units') {{ slotProp.unit }}
-  .angle--bottom-right.offWhite
+              span.text-h6.pb-5.white--text Die Anmeldephase hat begonnen!
+              //- ec-countdown(target='2020-11-08T14:00:00Z', keep-zeros)
+              //-   template(v-slot:digits='slotProp')
+              //-     span.text-h4.font-weight-bold.white--text(slot='digits') {{ slotProp.digits }}
+              //-   template(v-slot:units='slotProp')
+              //-     span.text-caption.text-uppercase.white--text(slot='units') {{ slotProp.unit }}
     v-container.mb-4
       .d-flex.flex-row.justify-space-between.align-end
         h2#aktuelles Aktuelles
