@@ -14,7 +14,6 @@
           v-col(cols="auto" class="d-flex flex-column")
             v-row(v-if="Object.values(page.warteliste).some((e)=>e)" class="text-right")
               v-col
-                | {{page.warteliste}}
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Für Männer nur noch Warteliste
