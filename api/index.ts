@@ -236,12 +236,12 @@ app.post('/confirm/:token', async (req, res) => {
             lebensmittelAllergien: ${escape(data.lebensmittelallergien)}, 
             gesundheitsinformationen: ${escape(data.gesundheit)}, 
             bemerkungen: ${escape(data.bemerkungen)}, 
-            radfahren: ${!!data.radfahren}, 
+            radfahren: ${!!data.fahrrad}, 
             schwimmen: ${data.schwimmen}, 
             fahrgemeinschaften: ${!!data.fahrgemeinschaften}, 
             klettern: ${!!data.klettern}, 
             sichEntfernen: ${!!data.sichEntfernen}, 
-            bootFahren: ${!!data.bootFahren}, 
+            bootFahren: ${!!data.bootfahren}, 
             extra_json: "{}"
           ) {
             status
