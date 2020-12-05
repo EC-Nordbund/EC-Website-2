@@ -7,7 +7,7 @@ export default defineNuxtPlugin((context) => {
     const ackee = create(
       {
         server: 'https://analytics.ec-nordbund.de',
-        domainId: 'bab181a1-5923-45dd-a03f-4b21338a9d23',
+        domainId: '7e04b501-fc99-417a-b65a-3fd7e412050c',
       },
       {
         ignoreLocalhost: true,

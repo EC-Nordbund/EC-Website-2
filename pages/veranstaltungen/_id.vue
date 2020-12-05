@@ -14,7 +14,6 @@
           v-col(cols="auto" class="d-flex flex-column")
             v-row(v-if="Object.values(page.warteliste).some((e)=>e)" class="text-right")
               v-col
-                | {{page.warteliste}}
                 v-chip(color="warning" text-color="white" class="ml-auto mb-1 elevation-8 font-weight-medium" small v-if="page.warteliste.männlich")
                   v-icon(small class="ml-n1 mr-1") mdi-alert-circle
                   | Für Männer nur noch Warteliste
@@ -35,7 +34,7 @@
         v-row(no-gutters align="end" class="flex-grow-0 mb-n1")
           //- title
           v-col(cols="12" md="6" class="order-last order-md-0")
-            h1(class="d-block d-md-inline-block ec-gradient py-1 px-5 my-2 elevation-16") {{page.title}}
+            h1(class="d-block d-md-inline-block ec-gradient py-3 py-sm-1 px-5 my-2 elevation-16 text-h5 text-sm-h4 font-weight-bold text-truncate") {{page.title}}
 
           //- categories
           //- v-col(cols="12" md="6" class="d-flex justify-start justify-sm-end flex-wrap-reverse")
@@ -72,7 +71,7 @@
 
     //- anmeldung
     v-container(v-if="page.anmeldung")
-      h2(class="mb-2 text-center") Anmeldung
+      h2(id="anmeldung" class="mb-2 text-center") Anmeldung
       ec-anmeldung(
         v-bind="page.anmeldung"
         :veranstaltungsBegin="page.begin"
